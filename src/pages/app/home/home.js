@@ -1,11 +1,10 @@
-import AppNavigation from "../../../components/navigation/AppNavigation";
+import MainLayout from "../../../layout/MainLayout";
 
 const Home = () => {
   return (
-    <>
-      <AppNavigation />
+    <MainLayout>
       <h2>Home</h2>
-    </>
+    </MainLayout>
   );
 };
 

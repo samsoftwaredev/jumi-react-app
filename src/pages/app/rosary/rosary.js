@@ -1,5 +1,7 @@
+import MainLayout from "../../../layout/MainLayout";
+
 const Rosary = () => {
-  return <h2>Rosary</h2>;
+  return <MainLayout>Rosary</MainLayout>;
 };
 
 export default Rosary;

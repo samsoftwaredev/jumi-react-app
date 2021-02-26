@@ -1,7 +1,7 @@
 import { Container } from "reactstrap";
 import AppNavigation from "../components/navigation/AppNavigation";
 
-const AuthLayout = ({ children }) => {
+const MainLayout = ({ children }) => {
   return (
     <div>
       <AppNavigation />
@@ -10,4 +10,4 @@ const AuthLayout = ({ children }) => {
   );
 };
 
-export default AuthLayout;
+export default MainLayout;

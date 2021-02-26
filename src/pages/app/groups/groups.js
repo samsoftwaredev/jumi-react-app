@@ -1,5 +1,7 @@
+import MainLayout from "../../../layout/MainLayout";
+
 const Groups = () => {
-  return <h2>Groups</h2>;
+  return <MainLayout>Groups</MainLayout>;
 };
 
 export default Groups;
