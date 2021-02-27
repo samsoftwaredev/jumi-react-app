@@ -7,11 +7,13 @@ const Hero = (props) => {
       <Jumbotron>
         <h1 className="display-3">Juventud Misionera!</h1>
         <p className="lead">
-          This is a simple hero unit, a simple Jumbotron-style component for
-          calling extra attention to featured content or information.
+          Atraer a más jóvenes a conocer de Dios y la religión Católica
         </p>
         <hr className="my-2" />
-        <p>Unite a nosotros y aprende de tu religion</p>
+        <p>
+          Las actividades misioneras tienen como objetivo la evangelización.
+          Unamonos en oración!
+        </p>
         <p className="lead">
           <Button color="primary">Rezar Rosario</Button>
         </p>

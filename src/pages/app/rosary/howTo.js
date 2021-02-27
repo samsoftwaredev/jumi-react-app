@@ -31,17 +31,18 @@ const menu = [
   {
     label: "¿Cómo rezar el Santo Rosario?",
     path: "how-to-pray",
-    component: <>Text goes here</>,
-  },
-  {
-    label: "¿Qué es el santo rosario?",
-    path: "what-is-the-rosary",
-    component: <>Text goes here</>,
-  },
-  {
-    label: "¿Dónde podemos rezar el rosario?",
-    path: "where-can-we-pray",
-    component: <>Text goes here</>,
+    component: (
+      <>
+        <p>
+          Se enuncia en cada decena el "misterio", por ejemplo, en el primer
+          misterio: "La Encarnación del Hijo de Dios". Después de una breve
+          pausa de reflexión, se rezan: un Padre nuestro, diez Avemarías y un
+          Gloria. A cada decena del "rosario" se puede añadir una invocación. A
+          la final del Rosario se recita la Letanía Lauretana, u otras oraciones
+          marianas.
+        </p>
+      </>
+    ),
   },
   {
     label: "Misterios del Rosario",
@@ -54,7 +55,17 @@ const menu = [
         description: p.description.replace(/\//g, "\n"),
       })),
     })),
-    component: <>Text goes here</>,
+    component: (
+      <>
+        <p>
+          El Rosario está compuesto por veinte "misterios" (acontecimientos,
+          momentos significativos) de la vida de Jesús y de María. Comprende los
+          misterios gozosos (lunes y sábado), el segundo los luminosos (jueves),
+          el tercero los dolorosos (martes y viernes) y el cuarto los gloriosos
+          (miércoles y domingo).
+        </p>
+      </>
+    ),
   },
   {
     label: "Oraciones",
@@ -105,13 +116,15 @@ const HowTo = (props) => {
                 <div className="ml-1" id={s.path}>
                   <h5>{s.label}</h5>
                   <p className="ml-3">{s.description}</p>
-                  {Array.isArray(s.subMenu) &&
-                    s.subMenu.map((ss) => (
-                      <div className="ml-3">
-                        <h6>{ss.label}</h6>
-                        <p>{ss.description}</p>
-                      </div>
-                    ))}
+                  <ol className="ml-3">
+                    {Array.isArray(s.subMenu) &&
+                      s.subMenu.map((ss) => (
+                        <li>
+                          <h6>{ss.label}</h6>
+                          <p>{ss.description}</p>
+                        </li>
+                      ))}
+                  </ol>
                 </div>
               ))}
           </>
