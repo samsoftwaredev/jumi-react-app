@@ -14,39 +14,40 @@ import Prayer from "./prayer";
 const Rosary = () => {
   let match = useRouteMatch();
   let location = useLocation();
-  // paths
-  const rosaryPath = match.path;
-  const howToPrayPath = `${match.path}/how-to-pray`;
+
+  const tabs = [
+    {
+      path: match.path,
+      label: "Rezar Rosario",
+      component: Prayer,
+    },
+    {
+      path: `${match.path}/how-to-pray`,
+      label: "Aprende a Rezar",
+      component: HowTo,
+    },
+  ];
 
   return (
     <MainLayout>
-      {/* tabs to view content */}
+      {/* tabs to view components */}
       <Nav tabs className="d-flex justify-content-center">
-        <NavItem>
-          <Link
-            className={`nav-link ${
-              location.pathname === rosaryPath && "active"
-            }`}
-            to={rosaryPath}
-          >
-            Rezar Rosario
-          </Link>
-        </NavItem>
-        <NavItem>
-          <Link
-            className={`nav-link ${
-              location.pathname === howToPrayPath && "active"
-            }`}
-            to={howToPrayPath}
-          >
-            Aprende a Rezar
-          </Link>
-        </NavItem>
+        {tabs.map((t) => (
+          <NavItem>
+            <Link
+              className={`nav-link ${location.pathname === t.path && "active"}`}
+              to={t.path}
+            >
+              {t.label}
+            </Link>
+          </NavItem>
+        ))}
       </Nav>
-      {/* routes */}
+      {/* routes & component */}
       <Switch>
-        <Route exact path={rosaryPath} component={Prayer} />
-        <Route exact path={howToPrayPath} component={HowTo} />
+        {tabs.map((t) => (
+          <Route exact path={t?.path} component={t.component} />
+        ))}
       </Switch>
     </MainLayout>
   );
