@@ -1,9 +1,10 @@
+import Hero from "../../../components/hero/Hero";
 import MainLayout from "../../../layout/MainLayout";
 
 const Home = () => {
   return (
     <MainLayout>
-      <h2>Home</h2>
+      <Hero />
     </MainLayout>
   );
 };

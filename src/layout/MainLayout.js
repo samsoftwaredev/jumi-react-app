@@ -1,11 +1,11 @@
 import { Container } from "reactstrap";
-import AppNavigation from "../components/navigation/AppNavigation";
+import MainNavigation from "../components/navigation/MainNavigation";
 
 const MainLayout = ({ children }) => {
   return (
     <div>
-      <AppNavigation />
-      <Container>{children}</Container>
+      <MainNavigation />
+      <Container className="pt-2">{children}</Container>
     </div>
   );
 };
