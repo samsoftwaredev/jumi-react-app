@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Jumbotron, Button } from "reactstrap";
 
 const Hero = (props) => {
@@ -15,7 +16,11 @@ const Hero = (props) => {
           Unamonos en oración!
         </p>
         <p className="lead">
-          <Button color="primary">Rezar Rosario</Button>
+          <Button color="primary">
+            <Link to="/app/rosary" className="text-white">
+              Rezar Rosario
+            </Link>
+          </Button>
         </p>
       </Jumbotron>
     </div>

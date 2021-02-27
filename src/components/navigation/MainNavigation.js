@@ -1,36 +1,46 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   NavbarText,
 } from "reactstrap";
 
 const MainNavigation = (props) => {
+  let location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
+  const menu = [
+    {
+      label: "Rezar Rosario",
+      path: "/app/rosary",
+    },
+    {
+      label: "Grupos Religiosos",
+      path: "/app/groups",
+    },
+  ];
+
   return (
     <Navbar fixed color="light" light expand="md">
-      <NavbarBrand href="/">JUMI</NavbarBrand>
+      <Link className="navbar-brand" to="/">
+        JUMI
+      </Link>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto" navbar>
-          <NavItem>
-            <Link class="nav-link" to="/app/rosary">
-              Rezar Rosario
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link class="nav-link" to="/app/groups">
-              Grupos Religiosos
-            </Link>
-          </NavItem>
+          {menu.map((m) => (
+            <NavItem active={location.pathname === m.path}>
+              <Link class="nav-link" to={m.path}>
+                {m.label}
+              </Link>
+            </NavItem>
+          ))}
         </Nav>
         <NavbarText>Juventud Misionera</NavbarText>
       </Collapse>
