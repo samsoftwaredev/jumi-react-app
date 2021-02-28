@@ -39,6 +39,7 @@ export class RosaryPrayer {
 
   // move to the next prayer
   nextPrayer() {
+    debugger;
     const arrOfPrayers = Object.values(this._prayersList);
     if (this._prayerIndex <= arrOfPrayers.length - 1) {
       this._prayerIndex += 1;
@@ -88,10 +89,13 @@ export class RosaryPrayer {
     // 2. set all the repetitive prayers
     mysteryInfo.mysteries.forEach((mystery) => {
       arr.push({ ...mystery, mystery: true });
+      // Our Father
       arr.push({ ...this._prayerType.ourFather, cross: true });
+      // 10 Hail Mary
       new Array(10).fill(null).forEach(() => {
         arr.push({ ...this._prayerType.hailMary, beat: true });
       });
+
       arr.push(this._prayerType.glory);
       arr.push(this._prayerType.jaculatoria2);
       arr.push(this._prayerType.jaculatoria3);

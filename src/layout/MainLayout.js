@@ -6,7 +6,7 @@ const MainLayout = ({ children }) => {
   return (
     <div>
       <MainNavigation />
-      <Container id="container" className="pt-2">
+      <Container style={{ marginTop: "75px" }} id="container" className="pt-2">
         {children}
       </Container>
       <MainFooter />

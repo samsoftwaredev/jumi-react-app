@@ -27,7 +27,7 @@ const MainNavigation = (props) => {
   ];
 
   return (
-    <Navbar fixed color="light" light expand="md">
+    <Navbar fixed="top" color="light" light expand="md">
       <Link className="navbar-brand" to="/">
         JUMI
       </Link>
@@ -35,8 +35,8 @@ const MainNavigation = (props) => {
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto" navbar>
           {menu.map((m) => (
-            <NavItem active={location.pathname === m.path}>
-              <Link class="nav-link" to={m.path}>
+            <NavItem key={m.label} active={location.pathname === m.path}>
+              <Link className="nav-link" to={m.path}>
                 {m.label}
               </Link>
             </NavItem>

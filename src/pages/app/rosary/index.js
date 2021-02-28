@@ -33,7 +33,7 @@ const Rosary = () => {
       {/* tabs to view components */}
       <Nav tabs className="d-flex justify-content-center">
         {tabs.map((t) => (
-          <NavItem>
+          <NavItem key={t.label}>
             <Link
               className={`nav-link ${location.pathname === t.path && "active"}`}
               to={t.path}
@@ -46,7 +46,7 @@ const Rosary = () => {
       {/* routes & component */}
       <Switch>
         {tabs.map((t) => (
-          <Route exact path={t?.path} component={t.component} />
+          <Route key={t?.path} exact path={t?.path} component={t.component} />
         ))}
       </Switch>
     </MainLayout>

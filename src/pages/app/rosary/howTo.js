@@ -47,11 +47,13 @@ const menu = [
   {
     label: "Misterios del Rosario",
     path: "mysteries",
-    subMenu: Object.values(rosaryMysteries).map((p) => ({
+    subMenu: Object.values(rosaryMysteries).map((p, i) => ({
+      id: i,
       label: p.label,
       path: p.label.toLowerCase().replace(/ /g, "-"),
-      subMenu: p.mysteries.map((p) => ({
-        label: p.text,
+      subMenu: p.mysteries.map((p, index) => ({
+        id: index,
+        label: p.label,
         description: p.description.replace(/\//g, "\n"),
       })),
     })),
@@ -70,9 +72,10 @@ const menu = [
   {
     label: "Oraciones",
     path: "prayers",
-    subMenu: Object.values(prayers).map((p) => ({
-      label: p.name,
-      path: p.name.toLowerCase().replace(/ /g, "-"),
+    subMenu: Object.values(prayers).map((p, i) => ({
+      id: i,
+      label: p.label,
+      path: p.label.toLowerCase().replace(/ /g, "-"),
       description: p.text.replace(/\//g, "\n"),
     })),
     component: <>Text goes here</>,
@@ -86,7 +89,7 @@ const HowTo = (props) => {
       <Col md="4">
         <Nav vertical>
           {menu.map((m) => (
-            <NavItem>
+            <NavItem id={m.label}>
               <a className="nav-item" href={`${location.pathname}#${m.path}`}>
                 {m.label}
               </a>
@@ -94,6 +97,7 @@ const HowTo = (props) => {
                 <ul className="d-column">
                   {m.subMenu.map((s) => (
                     <a
+                      id={s.label}
                       className="nav-item d-block"
                       href={`${location.pathname}#${s.path}`}
                     >
@@ -108,18 +112,18 @@ const HowTo = (props) => {
       </Col>
       <Col md="8">
         {menu.map((m) => (
-          <>
-            <h1 id={m.path}>{m.label}</h1>
-            <p>{m.component}</p>
+          <div id={m.path}>
+            <h1>{m.label}</h1>
+            <div>{m.component}</div>
             {Array.isArray(m.subMenu) &&
               m.subMenu.map((s) => (
-                <div className="ml-1" id={s.path}>
+                <div id={s.path} className="ml-1">
                   <h5>{s.label}</h5>
                   <p className="ml-3">{s.description}</p>
                   <ol className="ml-3">
                     {Array.isArray(s.subMenu) &&
                       s.subMenu.map((ss) => (
-                        <li>
+                        <li id={ss.label}>
                           <h6>{ss.label}</h6>
                           <p>{ss.description}</p>
                         </li>
@@ -127,7 +131,7 @@ const HowTo = (props) => {
                   </ol>
                 </div>
               ))}
-          </>
+          </div>
         ))}
       </Col>
     </Row>
