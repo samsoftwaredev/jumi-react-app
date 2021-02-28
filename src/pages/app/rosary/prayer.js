@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   faBible,
   faChevronDown,
@@ -14,19 +14,19 @@ import { scroller } from "react-scroll";
 
 const getId = (str) => str.toLowerCase().replace(/ /g, "-");
 
-const setId = (p, index) => ({
-  ...p,
-  // create a unique ID for all prayers in the rosary
-  id: getId(`${p.label} ${index}`),
-});
-
 const Prayer = () => {
   let nextButtonClicked = false;
   const rosary = new RosaryPrayer();
   const todaysMystery = rosary.getMystery();
   const todaysDate = new Date();
   const prayersList = rosary.getPrayersList();
-  const masagePrayerList = prayersList.map(setId);
+  const masagePrayerList = prayersList.map((p, index) => ({
+    ...p,
+    // create a unique ID for all prayers in the rosary
+    id: getId(`${p.label} ${index}`),
+  }));
+
+  const [disabledButton, setDisabledButton] = useState(false);
 
   const scrollToPrayer = (prayer) => {
     const prayerIndex = rosary.getPrayerIndex();
@@ -49,8 +49,16 @@ const Prayer = () => {
 
     rosary.nextPrayer();
     const prayer = rosary.getPrayer();
+    const prayerIndex = rosary.getPrayerIndex();
     // check if the prayer is defined
     if (prayer) scrollToPrayer(prayer);
+
+    // button functionality
+    if (prayerIndex === prayersList.length - 1) {
+      setDisabledButton(true);
+    } else {
+      setDisabledButton(false);
+    }
   };
 
   const getIcon = (p) => {
@@ -99,7 +107,12 @@ const Prayer = () => {
         })}
       </Col>
       <Col md={1} className="text-center">
-        <Button className="fixed-bottom" block onClick={nextPrayer}>
+        <Button
+          disabled={disabledButton}
+          className="fixed-bottom"
+          block
+          onClick={nextPrayer}
+        >
           <FontAwesomeIcon icon={faChevronDown} />
         </Button>
       </Col>
