@@ -88,17 +88,26 @@ export class RosaryPrayer {
     arr.push(this._prayerType.actOfContrition);
     // 2. set all the repetitive prayers
     mysteryInfo.mysteries.forEach((mystery) => {
-      arr.push({ ...mystery, mystery: true });
+      arr.push({ ...mystery, isMystery: true });
       // Our Father
-      arr.push({ ...this._prayerType.ourFather, cross: true });
+      arr.push({
+        ...this._prayerType.ourFather,
+        mystery,
+        isCross: true,
+      });
       // 10 Hail Mary
-      new Array(10).fill(null).forEach(() => {
-        arr.push({ ...this._prayerType.hailMary, beat: true });
+      [...Array(11).keys()].slice(1).forEach((index) => {
+        arr.push({
+          ...this._prayerType.hailMary,
+          mystery,
+          index,
+          isHailMary: true,
+        });
       });
 
-      arr.push(this._prayerType.glory);
-      arr.push(this._prayerType.jaculatoria2);
-      arr.push(this._prayerType.jaculatoria3);
+      arr.push({ ...this._prayerType.glory, mystery });
+      arr.push({ ...this._prayerType.jaculatoria2, mystery });
+      arr.push({ ...this._prayerType.jaculatoria3, mystery });
     });
     // 5. set the last prayers
     arr.push(this._prayerType.pope);
