@@ -43,7 +43,7 @@ const Rosary = () => {
           </NavItem>
         ))}
       </Nav>
-      {/* routes & component */}
+      {/* routes & components */}
       <Switch>
         {tabs.map((t) => (
           <Route key={t?.path} exact path={t?.path} component={t.component} />

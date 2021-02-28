@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Jumbotron, Button } from "reactstrap";
 
-const Hero = (props) => {
+const Hero = () => {
   return (
     <div className="pt-5">
       <Jumbotron>

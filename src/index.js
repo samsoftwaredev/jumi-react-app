@@ -1,13 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Main from "./pages/main";
-import reportWebVitals from "./reportWebVitals";
+import { HashRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "moment-timezone";
+import Main from "./pages/main";
+import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Main />
+    <HashRouter>
+      <Main />
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
