@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   Collapse,
@@ -8,8 +8,9 @@ import {
   NavItem,
   NavbarText,
 } from "reactstrap";
+import { animateScroll } from "react-scroll";
 
-const MainNavigation = (props) => {
+const MainNavigation = () => {
   let location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -23,8 +24,17 @@ const MainNavigation = (props) => {
     {
       label: "Grupos Religiosos",
       path: "/app/groups",
+      disabled: true,
     },
   ];
+
+  useEffect(() => {
+    // smooth scroll to the correct prayer
+    animateScroll.scrollToTop({
+      smooth: true,
+      offset: -150,
+    });
+  }, [location.pathname]);
 
   return (
     <Navbar fixed="top" color="light" light expand="md">
@@ -36,7 +46,10 @@ const MainNavigation = (props) => {
         <Nav className="mr-auto" navbar>
           {menu.map((m) => (
             <NavItem key={m.label} active={location.pathname === m.path}>
-              <Link className="nav-link" to={m.path}>
+              <Link
+                className={`nav-link ${m.disabled && "disabled"}`}
+                to={m.path}
+              >
                 {m.label}
               </Link>
             </NavItem>

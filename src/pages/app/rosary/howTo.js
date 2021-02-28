@@ -1,11 +1,12 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import { Col, Nav, NavItem, Row } from "reactstrap";
+import { Link as ReactScrollLink } from "react-scroll";
 import { prayers } from "../../../constants/prayers";
 import { rosaryMysteries } from "../../../constants/rosary";
 
 const menu = [
   {
+    id: "overview",
     label: "Resumen",
     path: "overview",
     component: (
@@ -29,6 +30,7 @@ const menu = [
     ),
   },
   {
+    id: "how-to-pray",
     label: "¿Cómo rezar el Santo Rosario?",
     path: "how-to-pray",
     component: (
@@ -47,16 +49,20 @@ const menu = [
   {
     label: "Misterios del Rosario",
     path: "mysteries",
-    subMenu: Object.values(rosaryMysteries).map((p, i) => ({
-      id: i,
-      label: p.label,
-      path: p.label.toLowerCase().replace(/ /g, "-"),
-      subMenu: p.mysteries.map((p, index) => ({
-        id: index,
+    id: "mysteries",
+    subMenu: Object.values(rosaryMysteries).map((p) => {
+      const uniquePath = p.label.toLowerCase().replace(/ /g, "-");
+      return {
+        id: uniquePath,
         label: p.label,
-        description: p.description.replace(/\//g, "\n"),
-      })),
-    })),
+        path: uniquePath,
+        subMenu: p.mysteries.map((p, subIndex) => ({
+          id: subIndex,
+          label: p.label,
+          description: p.description.replace(/\//g, "\n"),
+        })),
+      };
+    }),
     component: (
       <>
         <p>
@@ -72,37 +78,58 @@ const menu = [
   {
     label: "Oraciones",
     path: "prayers",
-    subMenu: Object.values(prayers).map((p, i) => ({
-      id: i,
-      label: p.label,
-      path: p.label.toLowerCase().replace(/ /g, "-"),
-      description: p.description.replace(/\//g, "\n"),
-    })),
-    component: <>Text goes here</>,
+    id: "prayers",
+    subMenu: Object.values(prayers).map((p) => {
+      const unique = p.label.toLowerCase().replace(/ /g, "-");
+      return {
+        id: unique,
+        path: unique,
+        label: p.label,
+        description: p.description.replace(/\//g, "\n"),
+      };
+    }),
+    component: (
+      <>
+        <p>
+          La oración es nuestra manera de comunicarnos con Dios. Así como los
+          amigos y los miembros de la familia pasan tiempo hablando entre ellos
+          para profundizar sus relaciones, la oración profundiza nuestra
+          relación con Dios.
+        </p>
+      </>
+    ),
   },
 ];
 
-const HowTo = (props) => {
-  let location = useLocation();
+const HowTo = () => {
   return (
     <Row className="mt-4">
       <Col md="4">
+        {/* Navigation */}
         <Nav vertical>
           {menu.map((m) => (
-            <NavItem id={m.label}>
-              <a className="nav-item" href={`${location.pathname}#${m.path}`}>
+            <NavItem key={m.id}>
+              <ReactScrollLink
+                className="nav-item"
+                offset={-60}
+                to={m.path}
+                smooth
+              >
                 {m.label}
-              </a>
+              </ReactScrollLink>
               {Array.isArray(m.subMenu) && (
                 <ul className="d-column">
                   {m.subMenu.map((s) => (
-                    <a
-                      id={s.label}
-                      className="nav-item d-block"
-                      href={`${location.pathname}#${s.path}`}
-                    >
-                      {s.label}
-                    </a>
+                    <li key={s.id}>
+                      <ReactScrollLink
+                        className="nav-item d-block"
+                        to={s.path}
+                        offset={-60}
+                        smooth
+                      >
+                        {s.label}
+                      </ReactScrollLink>
+                    </li>
                   ))}
                 </ul>
               )}
@@ -110,20 +137,22 @@ const HowTo = (props) => {
           ))}
         </Nav>
       </Col>
+
       <Col md="8">
+        {/* Content */}
         {menu.map((m) => (
-          <div id={m.path}>
+          <div key={m.id} id={m.id}>
             <h1>{m.label}</h1>
             <div>{m.component}</div>
             {Array.isArray(m.subMenu) &&
               m.subMenu.map((s) => (
-                <div id={s.path} className="ml-1">
+                <div key={s.id} id={s.id} className="ml-1">
                   <h5>{s.label}</h5>
                   <p className="ml-3">{s.description}</p>
                   <ol className="ml-3">
                     {Array.isArray(s.subMenu) &&
                       s.subMenu.map((ss) => (
-                        <li id={ss.label}>
+                        <li key={ss.id} id={ss.id}>
                           <h6>{ss.label}</h6>
                           <p>{ss.description}</p>
                         </li>

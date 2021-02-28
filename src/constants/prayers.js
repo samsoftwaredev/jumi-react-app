@@ -1,7 +1,7 @@
 export const prayers = {
   start: {
     // duration: 10000, // milliseconds
-    label: "La Señal de la Santa Cruz",
+    label: "La Señal de la Cruz",
     duration: 1000,
     description:
       "Por la señal de la Santa Cruz,/ de nuestros enemigos,/ líbranos Señor Dios nuestro./ En el nombre del Padre, del Hijo y del Espíritu Santo. Amén.",
@@ -49,7 +49,7 @@ export const prayers = {
       "Creo en Dios, Padre todopoderoso,/ creador del Cielo y de la Tierra./ Creo en Jesucristo su único Hijo, Nuestro Seńor,/ que fue concebido por obra y gracia del Espíritu Santo;/ nació de Santa María Virgen;/ padeció bajo el poder de Poncio Pilato;/ fue crucificado, muerto y sepultado;/ descendió a los infiernos;/ al tercer día resucitó de entre los muertos;/ subió a los cielos y está a la diestra de Dios Padre;/ desde allí ha de venir a juzgar a los vivos y a los muertos./ Creo en el Espíritu Santo,/ en la Santa Iglesia Católica,/ la comumión de los Santos en el perdon de los pecados/ la resurrección de los muertos y la vida eterna./ Amén.",
   },
   signOfCross: {
-    label: "Fin",
+    label: "La Santísima Trinidad",
     // duration: 5000,
     duration: 1000,
     description:
@@ -60,7 +60,7 @@ export const prayers = {
     // duration: 6000,
     duration: 1000,
     description:
-      "María, Madre de Gracia y Madre de Misericordia./ En la vida y en la muerte ampáranos Gran Señora.",
+      "María, Madre de Gracia y Madre de Misericordia./ En la vida y en la muerte ampáranos Gran Señora. Amén.",
   },
   jaculatoria2: {
     label: "Jaculatoria 2",
@@ -74,7 +74,7 @@ export const prayers = {
     // duration: 8000,
     duration: 1000,
     description:
-      "Oh Jesús, perdónanos nuestros pecados,/ sálvanos del fuego del infierno/ y guía todas las almas al Cielo,/ especialmente aquellas que necesitan más de tu misericordia.",
+      "Oh Jesús, perdónanos nuestros pecados,/ sálvanos del fuego del infierno/ y guía todas las almas al Cielo,/ especialmente aquellas que necesitan más de tu misericordia. Amén.",
   },
   fatima: {
     label: "Oración de Fátima",
@@ -95,7 +95,7 @@ export const prayers = {
     // duration: 2000,
     duration: 1000,
     description:
-      "Un Padre nuestro, AveMaría y Gloria/ por las intenciones de Su Santidad el Papa/ y para ganar las indulgencias",
+      "Un Padre nuestro, AveMaría y Gloria/ por las intenciones de Su Santidad el Papa/ y para ganar las indulgencias.",
   },
   letaniasLauretanas: {
     label: "Letanias",

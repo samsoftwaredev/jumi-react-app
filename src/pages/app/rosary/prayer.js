@@ -8,9 +8,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Moment from "react-moment";
+import { scroller } from "react-scroll";
 import { Button, Col, Row } from "reactstrap";
 import { RosaryPrayer } from "../../../common/rosary/rosaryPrayer";
-import { scroller } from "react-scroll";
 
 const getId = (str) => str.toLowerCase().replace(/ /g, "-");
 
