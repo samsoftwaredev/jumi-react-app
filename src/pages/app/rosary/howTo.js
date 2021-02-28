@@ -76,7 +76,7 @@ const menu = [
       id: i,
       label: p.label,
       path: p.label.toLowerCase().replace(/ /g, "-"),
-      description: p.text.replace(/\//g, "\n"),
+      description: p.description.replace(/\//g, "\n"),
     })),
     component: <>Text goes here</>,
   },

@@ -43,9 +43,9 @@ const Prayer = () => {
               style={{ minHeight: "100vh" }}
             >
               <h6 className="text-right small">{todaysMystery.label}</h6>
-              <h5>{p?.name || p?.label}</h5>
+              <h5>{p?.label}</h5>
               <hr />
-              <p>{p?.text?.replace(/\//g, "\n")}</p>
+              <p>{p?.description?.replace(/\//g, "\n")}</p>
             </Col>
           );
         })}
