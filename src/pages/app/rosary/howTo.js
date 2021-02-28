@@ -104,9 +104,10 @@ const menu = [
 const HowTo = () => {
   return (
     <Row className="mt-4">
+      {/* Navigation */}
       <Col md="4">
-        {/* Navigation */}
         <Nav vertical>
+          {/* Nav links */}
           {menu.map((m) => (
             <NavItem key={m.id}>
               <ReactScrollLink
@@ -117,6 +118,8 @@ const HowTo = () => {
               >
                 {m.label}
               </ReactScrollLink>
+
+              {/* Sub Nav links */}
               {Array.isArray(m.subMenu) && (
                 <ul className="d-column">
                   {m.subMenu.map((s) => (
@@ -144,11 +147,15 @@ const HowTo = () => {
           <div key={m.id} id={m.id}>
             <h1>{m.label}</h1>
             <div>{m.component}</div>
+
+            {/* sub nav */}
             {Array.isArray(m.subMenu) &&
               m.subMenu.map((s) => (
                 <div key={s.id} id={s.id} className="ml-1">
                   <h5>{s.label}</h5>
                   <p className="ml-3">{s.description}</p>
+
+                  {/* sub sub nav */}
                   <ol className="ml-3">
                     {Array.isArray(s.subMenu) &&
                       s.subMenu.map((ss) => (
