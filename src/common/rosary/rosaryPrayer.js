@@ -39,7 +39,6 @@ export class RosaryPrayer {
 
   // move to the next prayer
   nextPrayer() {
-    debugger;
     const arrOfPrayers = Object.values(this._prayersList);
     if (this._prayerIndex <= arrOfPrayers.length - 1) {
       this._prayerIndex += 1;
@@ -96,11 +95,11 @@ export class RosaryPrayer {
         isCross: true,
       });
       // 10 Hail Mary
-      [...Array(11).keys()].slice(1).forEach((index) => {
+      [...Array(10).keys()].forEach((index) => {
         arr.push({
           ...this._prayerType.hailMary,
           mystery,
-          index,
+          index: index + 1,
           isHailMary: true,
         });
       });

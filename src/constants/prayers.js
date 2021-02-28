@@ -11,7 +11,7 @@ export const prayers = {
     // duration: 50000, // milliseconds
     duration: 1000,
     description:
-      "Importante: Para la religión, interceder es ponerse en lugar del otro. Los sacerdotes, en este sentido, dedican a su vida a la intercesión ya que oran por y para el prójimo. Quien intercede actúa como nexo entre el hombre y Dios.",
+      "Para la religión, interceder es ponerse en lugar del otro. Los sacerdotes, en este sentido, dedican a su vida a la intercesión ya que oran por y para el prójimo. Quien intercede actúa como nexo entre el hombre y Dios.",
   },
   actOfContrition: {
     label: "Acto de Contrición",
