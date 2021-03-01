@@ -1,5 +1,6 @@
 export const rosaryDays = {
-  sunday: "glorious", // the days of the week start with sunday
+  // the days of the week start with sunday
+  sunday: "glorious",
   monday: "joyful",
   tuesday: "sorrowful",
   wednesday: "glorious",
@@ -60,14 +61,14 @@ export const rosaryMysteries = {
           "Entonces aparece Jesús, que viene de Galilea al Jordán donde Juan, para ser bautizado por él (...). Salió luego del agua; y en esto se abrieron los cielos y vio al Espíritu de Dios que bajaba en forma de paloma y venía sobre él. Y una voz que salía de los cielos decía: Este es mi Hijo amado, en quien yo me complazco.",
       },
       {
-        label: "Su autorrevelación/ en las bodas del Caná",
+        label: "Su autorrevelación en las bodas del Caná",
         duration: 3000,
         book: "Jn 2,1-5",
         description:
           "Se celebraba una boda en Caná de Galilea y estaba allí la madre de Jesús. Fue invitado también a la boda Jesús con sus discípulos. Y, como faltara vino, porque se había acabado el vino de la boda, le dice a Jesús su madre: No tienen vino. Jesús le responde: ¿Qué tengo yo contigo, mujer? Todavía no ha llegado mi hora. Dice su madre a los sirvientes: Haced lo que él os diga.",
       },
       {
-        label: "Su Anuncio del Reino de Dios,/ invitando a la conversión",
+        label: "Su Anuncio del Reino de Dios, invitando a la conversión",
         duration: 3000,
         book: "Mc 1, 15, 21; 2,3-11; Lc 7, 47-48",
         description:
@@ -82,7 +83,7 @@ export const rosaryMysteries = {
       },
       {
         label:
-          "Institución de la Eucaristía,/ expresión sacramental del misterio pascual",
+          "Institución de la Eucaristía, expresión sacramental del misterio pascual",
         book: "Jn, 13, 1; Mt 26, 26-29",
         duration: 3000,
         description:
@@ -115,7 +116,7 @@ export const rosaryMysteries = {
           "Los soldados trenzando una corona de espinas, se la pusieron sobre su cabeza, y en su mano derecha una caña; y doblando la rodilla delante de él, le hacían burla diciendo: ¡Salve, Rey de los judíos!; y después de escupirle, cogieron la caña y le golpeaban en la cabeza.",
       },
       {
-        label: "Jesucristo, la cruz a cuestas/ y camino al Calvario.",
+        label: "Jesucristo, la cruz a cuestas y camino al Calvario.",
         duration: 3000,
         book: "Lc 23, 33-34, 44-46; Jn 19, 33-35",
         description:
@@ -148,7 +149,7 @@ export const rosaryMysteries = {
           "Jesús “los sacó hasta cerca de Betania y, alzando sus manos, los bendijo. Y sucedió que, mientras los bendecía se separó de ellos y fue llevado al cielo.” Después “salieron a predicar por todas partes, colaborando el Señor con ellos y confirmando la Palabra con las señales que la acompañaban.",
       },
       {
-        label: "La Venida del/ Espíritu Santo en Pentecostés",
+        label: "La Venida del Espíritu Santo en Pentecostés",
         duration: 3000,
         book: "Hch 1, 14; 2, 1-4",
         description:
@@ -163,7 +164,7 @@ export const rosaryMysteries = {
       },
       {
         label:
-          "La Coronación de la Virgen Santísima/ como Reina de Cielos y Tierra",
+          "La Coronación de la Virgen Santísima como Reina de Cielos y Tierra",
         duration: 3000,
         book: "Sal. 45, 14-15; Ap 11, 19;12, 1",
         description:

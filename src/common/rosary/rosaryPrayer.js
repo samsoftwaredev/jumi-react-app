@@ -86,7 +86,8 @@ export class RosaryPrayer {
     arr.push(this._prayerType.petitions);
     arr.push(this._prayerType.actOfContrition);
     // 2. set all the repetitive prayers
-    mysteryInfo.mysteries.forEach((mystery) => {
+    mysteryInfo.mysteries.forEach((m, index) => {
+      const mystery = { mysteryIndex: index + 1, ...m };
       arr.push({ ...mystery, isMystery: true });
       // Our Father
       arr.push({
@@ -95,11 +96,12 @@ export class RosaryPrayer {
         isCross: true,
       });
       // 10 Hail Mary
-      [...Array(10).keys()].forEach((index) => {
+      [...Array(10).keys()].forEach((prayerIndex) => {
+        const hailMaryIndex = prayerIndex + 1;
         arr.push({
           ...this._prayerType.hailMary,
           mystery,
-          index: index + 1,
+          hailMaryIndex,
           isHailMary: true,
         });
       });

@@ -24,15 +24,15 @@ export const prayers = {
     label: "Padre Nuestro",
     // duration: 25000,
     duration: 1000,
-    description:
-      "Padre nuestro, que estás en el cielo. Santificado sea tu nombre. Venga tu reino. Hágase tu voluntad en la tierra como en el cielo. Danos hoy nuestro pan de cada día. Perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden. No nos dejes caer en tentación y líbranos del mal. Amén.",
+    description: `Padre nuestro, que estás en el cielo. Santificado sea tu nombre. Venga tu reino. Hágase tu voluntad en la tierra como en el cielo.
+      Danos hoy nuestro pan de cada día. Perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden. No nos dejes caer en tentación y líbranos del mal. Amén.`,
   },
   hailMary: {
     label: "Ave María",
     // duration: 21000,
     duration: 1000,
-    description:
-      "Dios te salve, María. Llena eres de gracia: El Seńor es contigo. Bendita tú eres entre todas las mujeres. Y bendito es el fruto de tu vientre: Jesús. Santa María, Madre de Dios, ruega por nosotros pecadores, ahora y en la hora de nuestra muerte. Amén.",
+    description: `Dios te salve, María. Llena eres de gracia: El Seńor es contigo. Bendita tú eres entre todas las mujeres. Y bendito es el fruto de tu vientre: Jesús. 
+      Santa María, Madre de Dios, ruega por nosotros pecadores, ahora y en la hora de nuestra muerte. Amén.`,
   },
   glory: {
     label: "Gloria",
@@ -95,7 +95,7 @@ export const prayers = {
     // duration: 2000,
     duration: 1000,
     description:
-      "Un Padre nuestro, AveMaría y Gloria/ por las intenciones de Su Santidad el Papa/ y para ganar las indulgencias.",
+      "Un Padre nuestro, Ave María y Gloria por las intenciones de Su Santidad el Papa y para ganar las indulgencias.",
   },
   letaniasLauretanas: {
     label: "Letanias",

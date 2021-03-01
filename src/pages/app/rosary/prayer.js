@@ -62,11 +62,43 @@ const Prayer = () => {
     }
   };
 
+  const getMysteryPlace = (place) => {
+    // get the place of the mystery
+    switch (place) {
+      case 1:
+        return "Primer Misterio";
+      case 2:
+        return "Segundo Misterio";
+      case 3:
+        return "Tercer Misterio";
+      case 4:
+        return "Cuarto Misterio";
+      case 5:
+        return "Quinto Misterio";
+      default:
+        return "";
+    }
+  };
+
   const getIcon = (p) => {
     if (p.isMystery) return <FontAwesomeIcon icon={faBible} />;
     if (p.isCross) return <FontAwesomeIcon icon={faCross} />;
     if (p.isHailMary) return <FontAwesomeIcon icon={faPrayingHands} />;
     return <FontAwesomeIcon icon={faDotCircle} />;
+  };
+
+  const getMysteryHeader = (p) => {
+    if (p.isMystery) {
+      // if the prayer is a mystery, show label and place
+      return `${p.label} (${getMysteryPlace(p.mysteryIndex)})`;
+    } else if (p.mystery?.label) {
+      // if the mystery label is defined, show mystery label and place
+      const { label, mysteryIndex } = p.mystery;
+      return `${label} (${getMysteryPlace(mysteryIndex)})`;
+    } else {
+      // don't show anythign
+      return "";
+    }
   };
 
   return (
@@ -91,15 +123,20 @@ const Prayer = () => {
                 {todaysMystery.label}
               </h6>
               <h6 className="text-right small font-weight-bold">
-                {p?.mystery?.label}
+                {getMysteryHeader(p)}
               </h6>
               <h5 className="d-flex justify-content-between align-items-center">
                 <span>
                   {getIcon(p)} {p?.label}
                 </span>
-                <small className="text-muted">
-                  {p.isHailMary && ` ${p.index} `}
-                </small>
+                {p.isHailMary && (
+                  <small className="text-muted">{p.hailMaryIndex}</small>
+                )}
+                {p.isMystery && (
+                  <small className="text-muted">
+                    {getMysteryPlace(p.mystery?.mysteryIndex)}
+                  </small>
+                )}
               </h5>
               <hr />
               <RichTextDisplay content={p?.description} />
@@ -107,14 +144,9 @@ const Prayer = () => {
           );
         })}
       </Col>
-      <Col md={1} className="text-center">
-        <Button
-          disabled={disabledButton}
-          className="fixed-bottom"
-          block
-          onClick={nextPrayer}
-        >
-          <FontAwesomeIcon icon={faChevronDown} />
+      <Col md={2} className="text-center">
+        <Button disabled={disabledButton} onClick={nextPrayer}>
+          <FontAwesomeIcon icon={faChevronDown} /> Próximo
         </Button>
       </Col>
     </Row>
