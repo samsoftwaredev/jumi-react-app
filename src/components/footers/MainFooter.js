@@ -24,8 +24,8 @@ const MainFooter = () => {
             </p>
           </Col>
           <Col md={6}>
-            <h5>Social Media</h5>
-            <ul className="ml-4 list-group">
+            <h5>Follow us:</h5>
+            <ul className="ml-4 list-group ">
               {socialMedia.map((s) => (
                 <li>
                   <a target="social-media" href={s.url}>

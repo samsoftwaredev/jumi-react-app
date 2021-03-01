@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Nav, NavItem, Row } from "reactstrap";
+import RichTextDisplay from "interweave";
 import { Link as ReactScrollLink } from "react-scroll";
 import { prayers } from "../../../constants/prayers";
 import { rosaryMysteries } from "../../../constants/rosary";
@@ -153,7 +154,9 @@ const HowTo = () => {
               m.subMenu.map((s) => (
                 <div key={s.id} id={s.id} className="ml-1">
                   <h5>{s.label}</h5>
-                  <p className="ml-3">{s.description}</p>
+                  <div className="ml-3">
+                    <RichTextDisplay content={s.description} />
+                  </div>
 
                   {/* sub sub nav */}
                   <ol className="ml-3">
@@ -161,7 +164,9 @@ const HowTo = () => {
                       s.subMenu.map((ss) => (
                         <li key={ss.id} id={ss.id}>
                           <h6>{ss.label}</h6>
-                          <p>{ss.description}</p>
+                          <div className="ml-3">
+                            <RichTextDisplay content={ss.description} />
+                          </div>
                         </li>
                       ))}
                   </ol>

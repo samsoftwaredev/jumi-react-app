@@ -6,6 +6,7 @@ import {
   faDotCircle,
   faPrayingHands,
 } from "@fortawesome/free-solid-svg-icons";
+import RichTextDisplay from "interweave";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Moment from "react-moment";
 import { scroller } from "react-scroll";
@@ -101,7 +102,7 @@ const Prayer = () => {
                 </small>
               </h5>
               <hr />
-              <p>{p?.description?.replace(/\//g, "\n")}</p>
+              <RichTextDisplay content={p?.description} />
             </Col>
           );
         })}
