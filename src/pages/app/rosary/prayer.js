@@ -145,7 +145,13 @@ const Prayer = () => {
         })}
       </Col>
       <Col md={2} className="text-center">
-        <Button disabled={disabledButton} onClick={nextPrayer}>
+        <Button
+          disabled={disabledButton}
+          color="info"
+          block
+          className="fixed-bottom"
+          onClick={nextPrayer}
+        >
           <FontAwesomeIcon icon={faChevronDown} /> Próximo
         </Button>
       </Col>
