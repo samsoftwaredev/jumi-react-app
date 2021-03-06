@@ -8,7 +8,9 @@ const Home = () => {
     <MainLayout>
       <div className="pt-5">
         <Jumbotron>
-          <h1 className="display-3">Juventud Misionera!</h1>
+          <h1 className="display-3">
+            <Translate text="app_name_label" />
+          </h1>
           <p className="lead">
             Atraer a más jóvenes a conocer de Dios y la religión Católica
           </p>

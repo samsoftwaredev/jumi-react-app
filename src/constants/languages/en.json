@@ -1,8 +1,13 @@
 {
     "translation": {
-      "age_label": "Age" ,
-      "home_label": "Home" ,
-      "name_label": "Name" ,
-      "pray_rosary_label": "Pray Rosary"
+        "app_name_label": "Missionary Youth",
+        "app_short_name_label": "JUMI",
+        "age_label": "Age" ,
+        "home_label": "Home" ,
+        "name_label": "Name" ,
+        "pray_rosary_label": "Pray Rosary",
+        "religious_groups_label": "Religious Groups",
+        "how_to_pray_rosary_label": "How To Pray",
+        "language_label": "Language"
     }
   }

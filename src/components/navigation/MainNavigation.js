@@ -6,9 +6,13 @@ import {
   NavbarToggler,
   Nav,
   NavItem,
-  NavbarText,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
 } from "reactstrap";
 import { animateScroll } from "react-scroll";
+import Translate from "../Translate";
 
 const MainNavigation = () => {
   let location = useLocation();
@@ -18,11 +22,11 @@ const MainNavigation = () => {
 
   const menu = [
     {
-      label: "Rezar Rosario",
+      label: "pray_rosary_label",
       path: "/app/rosary",
     },
     {
-      label: "Grupos Religiosos",
+      label: "religious_groups_label",
       path: "/app/groups",
       disabled: true,
     },
@@ -39,7 +43,7 @@ const MainNavigation = () => {
   return (
     <Navbar fixed="top" color="light" light expand="md">
       <Link className="navbar-brand" to="/">
-        JUMI
+        <Translate text="app_short_name_label" />
       </Link>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
@@ -50,12 +54,20 @@ const MainNavigation = () => {
                 className={`nav-link ${m.disabled && "disabled"}`}
                 to={m.path}
               >
-                {m.label}
+                <Translate text={m.label} />
               </Link>
             </NavItem>
           ))}
+          <UncontrolledDropdown nav inNavbar>
+            <DropdownToggle nav caret>
+              <Translate text="language_label" />
+            </DropdownToggle>
+            <DropdownMenu right>
+              <DropdownItem>Español</DropdownItem>
+              <DropdownItem>English</DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
         </Nav>
-        <NavbarText>Juventud Misionera</NavbarText>
       </Collapse>
     </Navbar>
   );

@@ -7,6 +7,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { Nav, NavItem } from "reactstrap";
+import Translate from "../../../components/Translate";
 import MainLayout from "../../../layout/MainLayout";
 import HowTo from "./howTo";
 import Prayer from "./prayer";
@@ -18,12 +19,12 @@ const Rosary = () => {
   const tabs = [
     {
       path: match.path,
-      label: "Rezar Rosario",
+      label: "pray_rosary_label",
       component: Prayer,
     },
     {
       path: `${match.path}/how-to-pray`,
-      label: "Aprende a Rezar",
+      label: "how_to_pray_rosary_label",
       component: HowTo,
     },
   ];
@@ -38,7 +39,7 @@ const Rosary = () => {
               className={`nav-link ${location.pathname === t.path && "active"}`}
               to={t.path}
             >
-              {t.label}
+              <Translate text={t.label} />
             </Link>
           </NavItem>
         ))}
