@@ -90,11 +90,11 @@ const Prayer = () => {
   const getMysteryHeader = (p) => {
     if (p.isMystery) {
       // if the prayer is a mystery, show label and place
-      return `${p.label} (${getMysteryPlace(p.mysteryIndex)})`;
+      return `${p.label}\n(${getMysteryPlace(p.mysteryIndex)})`;
     } else if (p.mystery?.label) {
       // if the mystery label is defined, show mystery label and place
       const { label, mysteryIndex } = p.mystery;
-      return `${label} (${getMysteryPlace(mysteryIndex)})`;
+      return `${label}\n(${getMysteryPlace(mysteryIndex)})`;
     } else {
       // don't show anythign
       return "";
@@ -123,7 +123,7 @@ const Prayer = () => {
                 {todaysMystery.label}
               </h6>
               <h6 className="text-right small font-weight-bold">
-                {getMysteryHeader(p)}
+                <RichTextDisplay content={getMysteryHeader(p)} />
               </h6>
               <h5 className="d-flex justify-content-between align-items-center">
                 <span>

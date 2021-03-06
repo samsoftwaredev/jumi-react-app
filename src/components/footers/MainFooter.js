@@ -19,7 +19,7 @@ const MainFooter = () => {
       <Container>
         <Row className="pt-2 align-items-center">
           <Col md={6}>
-            <p class="text-center text-muted">
+            <p className="text-center text-muted">
               © Copyright {new Date().getFullYear()} JUMI
             </p>
           </Col>
@@ -27,7 +27,7 @@ const MainFooter = () => {
             <h5>Follow us:</h5>
             <ul className="ml-4 list-group ">
               {socialMedia.map((s) => (
-                <li>
+                <li key={s.label}>
                   <a target="social-media" href={s.url}>
                     {s.label}
                   </a>
