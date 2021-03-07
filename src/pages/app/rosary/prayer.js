@@ -12,6 +12,7 @@ import Moment from "react-moment";
 import { scroller } from "react-scroll";
 import { Button, Col, Row } from "reactstrap";
 import { RosaryPrayer } from "../../../common/rosary/rosaryPrayer";
+import { translate } from "../../../helpers/translate";
 
 const getId = (str) => str.toLowerCase().replace(/ /g, "-");
 
@@ -90,11 +91,11 @@ const Prayer = () => {
   const getMysteryHeader = (p) => {
     if (p.isMystery) {
       // if the prayer is a mystery, show label and place
-      return `${p.label}\n(${getMysteryPlace(p.mysteryIndex)})`;
+      return `${translate(p.label)}\n(${getMysteryPlace(p.mysteryIndex)})`;
     } else if (p.mystery?.label) {
       // if the mystery label is defined, show mystery label and place
       const { label, mysteryIndex } = p.mystery;
-      return `${label}\n(${getMysteryPlace(mysteryIndex)})`;
+      return `${translate(label)}\n(${getMysteryPlace(mysteryIndex)})`;
     } else {
       // don't show anythign
       return "";
@@ -108,7 +109,7 @@ const Prayer = () => {
           className="d-flex flex-column text-center w-100 justify-content-center"
           style={{ minHeight: "90vh" }}
         >
-          <h2>{todaysMystery.label}</h2>
+          <h2>{translate(todaysMystery.label)}</h2>
           <Moment format="DD MMMM, YYYY">{todaysDate}</Moment>
         </div>
         {masagePrayerList.map((p) => {
@@ -120,14 +121,14 @@ const Prayer = () => {
               style={{ minHeight: "100vh", borderLeft: "1px solid #e3e3e3" }}
             >
               <h6 className="text-right small mb-0 text-muted">
-                {todaysMystery.label}
+                {translate(todaysMystery.label)}
               </h6>
               <h6 className="text-right small font-weight-bold">
-                <RichTextDisplay content={getMysteryHeader(p)} />
+                <RichTextDisplay content={translate(getMysteryHeader(p))} />
               </h6>
               <h5 className="d-flex justify-content-between align-items-center">
                 <span>
-                  {getIcon(p)} {p?.label}
+                  {getIcon(p)} {translate(p?.label)}
                 </span>
                 {p.isHailMary && (
                   <small className="text-muted">{p.hailMaryIndex}</small>
@@ -139,7 +140,7 @@ const Prayer = () => {
                 )}
               </h5>
               <hr />
-              <RichTextDisplay content={p?.description} />
+              <RichTextDisplay content={translate(p?.description)} />
             </Col>
           );
         })}
