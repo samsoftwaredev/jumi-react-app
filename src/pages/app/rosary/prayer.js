@@ -17,7 +17,6 @@ import { translate } from "../../../helpers/translate";
 const getId = (str) => str.toLowerCase().replace(/ /g, "-");
 
 const Prayer = () => {
-  let nextButtonClicked = false;
   const rosary = new RosaryPrayer();
   const todaysMystery = rosary.getMystery();
   const todaysDate = new Date();
@@ -36,22 +35,17 @@ const Prayer = () => {
     // smooth scroll to the correct prayer
     scroller.scrollTo(elementId, {
       smooth: true,
-      offset: -150,
+      offset: -100,
     });
   };
 
-  const nextPrayer = () => {
-    if (nextButtonClicked === false) {
-      nextButtonClicked = true;
-      const prayer = rosary.getPrayer();
-      scrollToPrayer(prayer);
-      // exit function
-      return;
-    }
+  const startPrayer = () => {
+    const prayer = rosary.jumpToPrayer(0);
+    if (prayer) scrollToPrayer(prayer);
+  };
 
-    rosary.nextPrayer();
-    const prayer = rosary.getPrayer();
-    const prayerIndex = rosary.getPrayerIndex();
+  const nextPrayer = (prayerIndex) => {
+    const prayer = rosary.jumpToPrayer(prayerIndex + 1);
     // check if the prayer is defined
     if (prayer) scrollToPrayer(prayer);
 
@@ -111,13 +105,25 @@ const Prayer = () => {
         >
           <h2>{translate(todaysMystery.label)}</h2>
           <Moment format="DD MMMM, YYYY">{todaysDate}</Moment>
+          <div className="mt-4">
+            <Button
+              disabled={disabledButton}
+              color="info"
+              onClick={startPrayer}
+            >
+              <FontAwesomeIcon icon={faChevronDown} />
+              &nbsp;&nbsp;
+              {translate("start.label")}
+            </Button>
+          </div>
         </div>
-        {masagePrayerList.map((p) => {
+        {masagePrayerList.map((p, index) => {
           return (
             <Col
               md={6}
               id={p.id}
               key={p.id}
+              className="my-4"
               style={{ minHeight: "100vh", borderLeft: "1px solid #e3e3e3" }}
             >
               <h6 className="text-right small mb-0 text-muted">
@@ -141,20 +147,20 @@ const Prayer = () => {
               </h5>
               <hr />
               <RichTextDisplay content={translate(p?.description)} />
+              <div className="mt-4 text-right">
+                {masagePrayerList.length - 1 > index && (
+                  <Button
+                    className="btn-circle"
+                    color="info"
+                    onClick={() => nextPrayer(index)}
+                  >
+                    <FontAwesomeIcon icon={faChevronDown} />
+                  </Button>
+                )}
+              </div>
             </Col>
           );
         })}
-      </Col>
-      <Col md={2} className="text-center">
-        <Button
-          disabled={disabledButton}
-          color="info"
-          block
-          className="fixed-bottom"
-          onClick={nextPrayer}
-        >
-          <FontAwesomeIcon icon={faChevronDown} /> Próximo
-        </Button>
       </Col>
     </Row>
   );

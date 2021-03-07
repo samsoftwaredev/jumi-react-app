@@ -47,6 +47,16 @@ export class RosaryPrayer {
     return null;
   }
 
+  // go to a specific prayer in the rosary
+  jumpToPrayer(index) {
+    const arrOfPrayers = Object.values(this._prayersList);
+    if (this._prayerIndex <= arrOfPrayers.length - 1) {
+      this._prayerIndex = index;
+      return this._prayersList[this._prayerIndex];
+    }
+    return null;
+  }
+
   // get prayer index
   getPrayerIndex() {
     return this._prayerIndex;

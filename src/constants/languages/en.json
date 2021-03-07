@@ -5,6 +5,7 @@
         "age_label": "Age" ,
         "home_label": "Home" ,
         "name_label": "Name" ,
+        "start": { "label":  "Start" },
         "pray_rosary_label": "Pray Rosary",
         "religious_groups_label": "Religious Groups",
         "how_to_pray_rosary_label": "How To Pray",
