@@ -61,15 +61,15 @@ const Prayer = () => {
     // get the place of the mystery
     switch (place) {
       case 1:
-        return "Primer Misterio";
+        return "mysteries.ordinalNumbers.first";
       case 2:
-        return "Segundo Misterio";
+        return "mysteries.ordinalNumbers.second";
       case 3:
-        return "Tercer Misterio";
+        return "mysteries.ordinalNumbers.third";
       case 4:
-        return "Cuarto Misterio";
+        return "mysteries.ordinalNumbers.fourth";
       case 5:
-        return "Quinto Misterio";
+        return "mysteries.ordinalNumbers.fifth";
       default:
         return "";
     }
@@ -85,11 +85,15 @@ const Prayer = () => {
   const getMysteryHeader = (p) => {
     if (p.isMystery) {
       // if the prayer is a mystery, show label and place
-      return `${translate(p.label)}\n(${getMysteryPlace(p.mysteryIndex)})`;
+      return `${translate(p.label)}\n(${translate(
+        getMysteryPlace(p.mysteryIndex)
+      )})`;
     } else if (p.mystery?.label) {
       // if the mystery label is defined, show mystery label and place
       const { label, mysteryIndex } = p.mystery;
-      return `${translate(label)}\n(${getMysteryPlace(mysteryIndex)})`;
+      return `${translate(label)}\n(${translate(
+        getMysteryPlace(mysteryIndex)
+      )})`;
     } else {
       // don't show anythign
       return "";
@@ -104,7 +108,7 @@ const Prayer = () => {
           style={{ minHeight: "90vh" }}
         >
           <h2>{translate(todaysMystery.label)}</h2>
-          <Moment format="DD MMMM, YYYY">{todaysDate}</Moment>
+          <Moment format="D MMMM, YYYY">{todaysDate}</Moment>
           <div className="mt-4">
             <Button
               disabled={disabledButton}

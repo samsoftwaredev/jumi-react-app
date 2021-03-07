@@ -19,12 +19,12 @@ const Rosary = () => {
   const tabs = [
     {
       path: match.path,
-      label: "pray_rosary_label",
+      label: "prayRosary.label",
       component: Prayer,
     },
     {
       path: `${match.path}/how-to-pray`,
-      label: "how_to_pray_rosary_label",
+      label: "howToPrayRosary.label",
       component: HowTo,
     },
   ];

@@ -27,11 +27,11 @@ const MainNavigation = () => {
 
   const menu = [
     {
-      label: "pray_rosary_label",
+      label: "prayRosary.label",
       path: "/app/rosary",
     },
     {
-      label: "religious_groups_label",
+      label: "religiousGroups.label",
       path: "/app/groups",
       disabled: true,
     },
@@ -61,7 +61,7 @@ const MainNavigation = () => {
   return (
     <Navbar fixed="top" color="light" light expand="md">
       <Link className="navbar-brand" to="/">
-        <Translate text="app_short_name_label" />
+        <Translate text="app.shortName" />
       </Link>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>

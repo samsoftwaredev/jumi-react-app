@@ -1,74 +1,175 @@
 {
-    "translation": {
-        "app_name_label": "Missionary Youth",
-        "app_short_name_label": "JUMI",
-        "age_label": "Age" ,
-        "home_label": "Home" ,
-        "name_label": "Name" ,
-        "start": { "label":  "Start" },
-        "pray_rosary_label": "Pray Rosary",
-        "religious_groups_label": "Religious Groups",
-        "how_to_pray_rosary_label": "How To Pray",
-        "language_label": "Language",
-        "prayers_start_label": "Sign of the Cross",
-        "prayer_start_label": "In the name of the Father, and of the Son, and of the Holy Spirit. Amen.",
-        "petitions_label":"Intentions",
-        "prayer_petitions_label": "Para la religión, interceder es ponerse en lugar del otro. Los sacerdotes, en este sentido, dedican a su vida a la intercesión ya que oran por y para el prójimo. Quien intercede actúa como nexo entre el hombre y Dios.",
-        "act_of_contrition_label":"Act of Contrition",
-        "prayer_act_of_contrition_label": "O my God, I am heartily sorry for having offended You and I detest all my sins, because I dread the loss of heaven and the pains of hell, but most of all because they offend you, my God, who are all good and deserving of all my love. I firmly resolve, with the help of your grace, to confess my sins, to do penance and to amend my life. ",
-        "our_father_label":"Our Father",
-        "prayer_our_father_label": "Our Father, who art in heaven hallowed be thy name; thy kingdom come; thy will be done on earth as it is in heaven. Give us this day our daily bread and forgive us our trespasses as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen.",
-        "hail_mary_label":"Hail Mary",
-        "prayer_hail_mary_label": "Hail Mary, full of grace. The Lord is with thee. Blessed art thou amongst women, And blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, Pray for us sinners, Now and at the hour of our death. Amen.",
-        "glory_label":"Glory Be",
-        "prayer_glory_label": "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.",
-        "creed_label":"The Apostles Creed",
-        "prayer_creed_label": "I believe in God, the Father Almighty, Creator of heaven and earth. I believe in Jesus Christ his only Son, our Lord. He was conceived by the power of the Holy Spirit and born of the Virgin Mary. He suffered under Pontius Pilate, was crucified, died and was buried. He descended into hell. On the third day he rose again. He ascended into heaven, and is seated at the right hand of the FatheHe will come again to judge the living and the dead. I believe in the Holy Spirit, the holy catholic Church, the Communion of Saints, the forgiveness of sins, the Resurrection of the body and life everlasting. Amen.",
-        "sign_of_cross_label":"Sign of the Cross",
-        "prayer_sign_of_cross_label": "In the name of the Father, and of the Son, and of the Holy Spirit. Amen.",
-        "jaculatoria_2_label":"Fatima Prayer 2",
-        "prayer_jaculatoria_2_label": "My God, I believe, I adore, I hope, and I love You. I beg pardon of You for those who do not believe, do not adore, do not hope, and do not love You.",
-        "jaculatoria_3_label":"Let Us Pray",
-        "prayer_jaculatoria_3_label": "O God whose only begotten Son by His Life has purchased for us the rewards of eternal life, Grant that we beseech Thee while meditating upon these mysteries of the Most Holy Rosary of the Blessed Virgin Mary, we may both imitate what they contain and obtain what they promise, through the same Christ our Lord Amen.",
-        "fatima_label":"Fatima Prayer",
-        "prayer_fatima_label": "O my Jesus, forgive us of our sins. Save us from the fires of hell. Lead all souls into heaven, especially those in most need of thy mercy. Amen.",
-        "salve_label":"The Salve Regina (Hail Holy Queen)",
-        "prayer_salve_label": "Hail Holy Queen, Mother of Mercy, our life our sweetness and our hope. To thee do we cry, poor banished children of Eve; To thee do we send up our sighs, mourning and weeping in this valley of tears. Turn then, most gracious advocate, thine eyes of mercy toward us and after this our exile show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary!",
-        "pope_label":"For The Intentions of the Holy Father",
-        "prayer_pope_label": "Our Father, one Hail Mary, and one Glory Be for the tntentions of the Holy Father.",
-        "letanias_label": "Litany of the Blessed Virgin Mary",
-        "prayer_letanias_label":"Lord, have mercy on us.\nChrist, have mercy on us. \n\nLord, have mercy on us.\nChrist, hear us.\nChrist, graciously hear us. \n\nGod the Father of heaven,\nhave mercy on us. \n\nGod the Son, Redeemer of the world,\nhave mercy on us. \n\nGod the Holy Spirit,\nhave mercy on us. \n\nHoly Trinity, one God,\nhave mercy on us. \n\nHoly Mary, \npray for us. \n\nHoly Mother of God,\npray for us.\n\nHoly Virgin of virgins,\npray for us.\n\nMother of Christ,\npray for us.\n\nMother of the Church,\npray for us.\n\nMother of mercy,\npray for us.\n\nMother of divine grace,\npray for us.\n\nMother of hope,\npray for us.\n\nMother most pure,\npray for us.\n\nMother most chaste,\npray for us.\n\nMother inviolate,\npray for us.\n\nMother undefiled,\npray for us. \n\nMother most amiable,\npray for us. \n\nMother most admirable,\npray for us. \n\nMother of perpetual help,\npray for us. \n\nMother of good counsel,\npray for us. \n\nMother of our Creator,\npray for us. \n\nMother of our Saviour,\npray for us. \n\nVirgin most prudent,\npray for us. \n\nVirgin most venerable,\npray for us. \n\nVirgin most renowned,\npray for us. \n\nVirgin most powerful,\npray for us. \n\nVirgin most merciful,\npray for us. \n\nVirgin most faithful,\npray for us. \n\nMirror of justice,\npray for us. \n\nSeat of wisdom,\npray for us. \n\nCause of our joy,\npray for us. \n\nSpiritual vessel,\npray for us. \n\nVessel of honour,\npray for us. \n\nSingular vessel of devotion,\npray for us. \n\nMystical rose,\npray for us. \n\nTower of David,\npray for us. \n\nTower of ivory,\npray for us. \n\nHouse of gold,\npray for us. \n\nArk of the covenant,\npray for us. \n\nGate of heaven,\npray for us. \n\nMorning star,\npray for us. \n\nHealth of the sick,\npray for us. \n\nRefuge of sinners,\npray for us. \n\nSolace of migrants,\npray for us. \n\nComforter of the afflicted,\npray for us. \n\nHelp of Christians,\npray for us. \n\nQueen of Angels,\npray for us. \n\nQueen of Patriarchs,\npray for us. \n\nQueen of Prophets,\npray for us. \n\nQueen of Apostles,\npray for us. \n\nQueen of Martyrs,\npray for us. \n\nQueen of Confessors,\npray for us. \n\nQueen of Virgins,\npray for us. \n\nQueen of all Saints,\npray for us. \n\nQueen conceived without original sin,\npray for us. \n\nQueen assumed into heaven,\npray for us. \n\nQueen of the most holy Rosary,\npray for us. \n\nQueen of Families,\npray for us. \n\nQueen of Peace.\npray for us. \n\nLamb of God, who takes away the sins of the world,\nspare us, O Lord.\n\nLamb of God, who takes away the sins of the world,\ngraciously hear us, O Lord. \n\nLamb of God, who takes away the sins of the world,\nhave mercy on us. \n\nPray for us, O holy Mother of God,\nThat we may be made worthy of the promises of Christ. \n\nLet us pray\nGrant, we beseech Thee, O Lord God, that we Thy servants, may enjoy lasting health of mind and body, and by the glorious intercession of the Blessed Mary, ever Virgin, be delivered from present sorrow and enter into the joy of eternal happiness. Through Christ our Lord. Amen.",
-        "mysteries": {
-            "joyful":{"label": "Joyful Mystery",
-                "first": {"label": "The Annunciation of the Lord to Mary", "description": "The Angel Gabriel appears to Mary, announcing she is to be the Mother of God."},
-                "second": {"label": "The Visitation of Mary to Elizabeth", "description": "Elizabeth greets Mary: “Blessed art Thou amoung women and blessed is the fruit of thy womb.”"},
-                "third": {"label": "The Nativity of our Lord Jesus Christ", "description": "The Virgin Mary gives birth to the Redeemer of the World. “And this will be a sign for you: you will find an infant wrapped in swaddling clothes and lying in a manger.”"},
-                "fourth": {"label": "The Presentation of our Lord", "description": "The Blessed Mother presents the Child Jesus in the Temple."},
-                "fifth": {"label": "Finding Jesus in the Temple", "description": "The Blessed Mother finds Jesus in the Temple."}
-            },
-            "sorrowful": {
-                "label": "Sorrowful Mystery",
-                "first":  { "label": "The Agony of Jesus in the Garden", "description": "At Gethsemane, Jesus prays as He contemplates the sins of the world."},
-                "second":  { "label": "The Scourging at the Pillar", "description": "Jesus is cruelly scourged until His mortified body could bear no more."},
-                "third":  { "label": "Jesus is Crowned with Thorns", "description": "A crown of thorns is placed on the head of Jesus."},
-                "fourth":  { "label": "Jesus Carried the Cross", "description": "Jesus carries the heavy cross upon His shoulders to Calvary."},
-                "fifth":  { "label": "The Crucifixion of our Lord", "description": "Jesus is nailed to the cross and dies after hours of agony."}
-            },
-            "glorious":{
-                "label" : "Glorious Mystery",
-                "first": { "label":  "The Resurrection of Jesus Christ", "description": "Jesus rises glorious and immortal, three days after His death." } ,
-                "second": { "label":  "The Ascension of Jesus to Heaven", "description": "Jesus ascends into Heaven forty days after His Resurrection." } ,
-                "third": { "label":  "The Descent of the Holy Ghost", "description": "The Holy Spirit descends upon Mary and the Apostles." } ,
-                "fourth": { "label":  "The Assumption of Mary into Heaven", "description": "Mary is united with her Divine Son in Heaven." } ,
-                "fifth": { "label":  "Mary is Crowned as Queen of Heaven and Earth", "description": "Mary is gloriously crowned Queen of Heaven and earth." } 
-            },
-            "luminous":{ "label": "Luminous Mystery",
-                "first":{ "label" : "The Baptism in the Jordan", "description": "The heavens open wide and the voice of the Father declares Jesus the beloved Son."},
-                "second":{ "label" : "The Wedding at Cana", "description": "The first of the signs, Christ changes water into wine thanks to the intervention of Mary."},
-                "third":{ "label" : "The Proclamation of the Kingdom", "description": "Jesus proclaims the coming of the Kingdom of God."},
-                "fourth":{ "label" : "The Transfiguration", "description": "The glory of the Godhead shines forth from the face of Christ as the Father."},
-                "fifth":{ "label" : "The Institution of the Eucharist", "description": "Christ offers his body and blood as food under the signs of bread and wine."}
-            }
+  "translation": {
+    "app": {
+      "name": "Missionary Youth",
+      "shortName": "JUMI"
+    },
+    "age": { "label": "Age" },
+    "home": { "label": "Home" },
+    "name": { "label": "Name" },
+    "start": { "label": "Start" },
+    "prayRosary": { "label": "Pray the Rosary" },
+    "religiousGroups": { "label": "Religious Groups" },
+    "howToPrayRosary": { "label": "How To Pray" },
+    "language": { "label": "Language" },
+    "prayers": {
+      "start": {
+        "label": "Sign of the Cross",
+        "description": "In the name of the Father, and of the Son, and of the Holy Spirit. Amen."
+      },
+      "petitions": {
+        "label": "Intentions",
+        "description": "Offering the Rosary for some reason or person is a very old tradition, especially when it was done for the deceased. From requesting a particular grace, the success of an operation or simply giving thanks for all that we have."
+      },
+      "actOfContrition": {
+        "label": "Act of Contrition",
+        "description": "O my God, I am heartily sorry for having offended You and I detest all my sins, because I dread the loss of heaven and the pains of hell, but most of all because they offend you, my God, who are all good and deserving of all my love. I firmly resolve, with the help of your grace, to confess my sins, to do penance and to amend my life. "
+      },
+      "ourFather": {
+        "label": "Our Father",
+        "description": "Our Father, who art in heaven hallowed be thy name; thy kingdom come; thy will be done on earth as it is in heaven. Give us this day our daily bread and forgive us our trespasses as we forgive those who trespass against us; and lead us not into temptation, but deliver us from evil. Amen."
+      },
+      "hailMary": {
+        "label": "Hail Mary",
+        "description": "Hail Mary, full of grace. The Lord is with thee. Blessed art thou amongst women, And blessed is the fruit of thy womb, Jesus. Holy Mary, Mother of God, Pray for us sinners, Now and at the hour of our death. Amen."
+      },
+      "glory": {
+        "label": "Glory Be",
+        "description": "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen."
+      },
+      "creed": {
+        "label": "The Apostles Creed",
+        "description": "I believe in God, the Father Almighty, Creator of heaven and earth. I believe in Jesus Christ his only Son, our Lord. He was conceived by the power of the Holy Spirit and born of the Virgin Mary. He suffered under Pontius Pilate, was crucified, died and was buried. He descended into hell. On the third day he rose again. He ascended into heaven, and is seated at the right hand of the Father. He will come again to judge the living and the dead. I believe in the Holy Spirit, the holy catholic Church, the Communion of Saints, the forgiveness of sins, the Resurrection of the body and life everlasting. Amen."
+      },
+      "signOfCross": {
+        "label": "Sign of the Cross",
+        "description": "In the name of the Father, and of the Son, and of the Holy Spirit. Amen."
+      },
+      "jaculatoria2": {
+        "label": "Fatima Prayer 2",
+        "description": "My God, I believe, I adore, I hope, and I love You. I beg pardon of You for those who do not believe, do not adore, do not hope, and do not love You."
+      },
+      "jaculatoria3": {
+        "label": "Let Us Pray",
+        "description": "O God whose only begotten Son by His Life has purchased for us the rewards of eternal life, Grant that we beseech Thee while meditating upon these mysteries of the Most Holy Rosary of the Blessed Virgin Mary, we may both imitate what they contain and obtain what they promise, through the same Christ our Lord Amen."
+      },
+      "fatima": {
+        "label": "Fatima Prayer",
+        "description": "O my Jesus, forgive us of our sins. Save us from the fires of hell. Lead all souls into heaven, especially those in most need of thy mercy. Amen."
+      },
+      "salve": {
+        "label": "The Salve Regina (Hail Holy Queen)",
+        "description": "Hail Holy Queen, Mother of Mercy, our life our sweetness and our hope. To thee do we cry, poor banished children of Eve; To thee do we send up our sighs, mourning and weeping in this valley of tears. Turn then, most gracious advocate, thine eyes of mercy toward us and after this our exile show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet Virgin Mary!"
+      },
+      "pope": {
+        "label": "For The Intentions of the Holy Father",
+        "description": "Our Father, one Hail Mary, and one Glory Be for the tntentions of the Holy Father."
+      },
+      "letanias": {
+        "label": "Litany of the Blessed Virgin Mary",
+        "description": "Lord, have mercy on us.\nChrist, have mercy on us. \n\nLord, have mercy on us.\nChrist, hear us.\nChrist, graciously hear us. \n\nGod the Father of heaven,\nhave mercy on us. \n\nGod the Son, Redeemer of the world,\nhave mercy on us. \n\nGod the Holy Spirit,\nhave mercy on us. \n\nHoly Trinity, one God,\nhave mercy on us. \n\nHoly Mary, \npray for us. \n\nHoly Mother of God,\npray for us.\n\nHoly Virgin of virgins,\npray for us.\n\nMother of Christ,\npray for us.\n\nMother of the Church,\npray for us.\n\nMother of mercy,\npray for us.\n\nMother of divine grace,\npray for us.\n\nMother of hope,\npray for us.\n\nMother most pure,\npray for us.\n\nMother most chaste,\npray for us.\n\nMother inviolate,\npray for us.\n\nMother undefiled,\npray for us. \n\nMother most amiable,\npray for us. \n\nMother most admirable,\npray for us. \n\nMother of perpetual help,\npray for us. \n\nMother of good counsel,\npray for us. \n\nMother of our Creator,\npray for us. \n\nMother of our Saviour,\npray for us. \n\nVirgin most prudent,\npray for us. \n\nVirgin most venerable,\npray for us. \n\nVirgin most renowned,\npray for us. \n\nVirgin most powerful,\npray for us. \n\nVirgin most merciful,\npray for us. \n\nVirgin most faithful,\npray for us. \n\nMirror of justice,\npray for us. \n\nSeat of wisdom,\npray for us. \n\nCause of our joy,\npray for us. \n\nSpiritual vessel,\npray for us. \n\nVessel of honour,\npray for us. \n\nSingular vessel of devotion,\npray for us. \n\nMystical rose,\npray for us. \n\nTower of David,\npray for us. \n\nTower of ivory,\npray for us. \n\nHouse of gold,\npray for us. \n\nArk of the covenant,\npray for us. \n\nGate of heaven,\npray for us. \n\nMorning star,\npray for us. \n\nHealth of the sick,\npray for us. \n\nRefuge of sinners,\npray for us. \n\nSolace of migrants,\npray for us. \n\nComforter of the afflicted,\npray for us. \n\nHelp of Christians,\npray for us. \n\nQueen of Angels,\npray for us. \n\nQueen of Patriarchs,\npray for us. \n\nQueen of Prophets,\npray for us. \n\nQueen of Apostles,\npray for us. \n\nQueen of Martyrs,\npray for us. \n\nQueen of Confessors,\npray for us. \n\nQueen of Virgins,\npray for us. \n\nQueen of all Saints,\npray for us. \n\nQueen conceived without original sin,\npray for us. \n\nQueen assumed into heaven,\npray for us. \n\nQueen of the most holy Rosary,\npray for us. \n\nQueen of Families,\npray for us. \n\nQueen of Peace.\npray for us. \n\nLamb of God, who takes away the sins of the world,\nspare us, O Lord.\n\nLamb of God, who takes away the sins of the world,\ngraciously hear us, O Lord. \n\nLamb of God, who takes away the sins of the world,\nhave mercy on us. \n\nPray for us, O holy Mother of God,\nThat we may be made worthy of the promises of Christ. \n\nLet us pray\nGrant, we beseech Thee, O Lord God, that we Thy servants, may enjoy lasting health of mind and body, and by the glorious intercession of the Blessed Mary, ever Virgin, be delivered from present sorrow and enter into the joy of eternal happiness. Through Christ our Lord. Amen."
+      }
+    },
+    "mysteries": {
+      "ordinalNumbers": {
+        "first": "1st Mystery",
+        "second": "2nd Mystery",
+        "third": "3rd Mystery",
+        "fourth": "4th Mystery",
+        "fifth": "5th Mystery"
+      },
+      "joyful": {
+        "label": "Joyful Mystery",
+        "first": {
+          "label": "The Annunciation of the Lord to Mary",
+          "description": "The Angel Gabriel appears to Mary, announcing she is to be the Mother of God."
+        },
+        "second": {
+          "label": "The Visitation of Mary to Elizabeth",
+          "description": "Elizabeth greets Mary: “Blessed art Thou amoung women and blessed is the fruit of thy womb.”"
+        },
+        "third": {
+          "label": "The Nativity of our Lord Jesus Christ",
+          "description": "The Virgin Mary gives birth to the Redeemer of the World. “And this will be a sign for you: you will find an infant wrapped in swaddling clothes and lying in a manger.”"
+        },
+        "fourth": {
+          "label": "The Presentation of our Lord",
+          "description": "The Blessed Mother presents the Child Jesus in the Temple."
+        },
+        "fifth": {
+          "label": "Finding Jesus in the Temple",
+          "description": "The Blessed Mother finds Jesus in the Temple."
         }
+      },
+      "sorrowful": {
+        "label": "Sorrowful Mystery",
+        "first": {
+          "label": "The Agony of Jesus in the Garden",
+          "description": "At Gethsemane, Jesus prays as He contemplates the sins of the world."
+        },
+        "second": {
+          "label": "The Scourging at the Pillar",
+          "description": "Jesus is cruelly scourged until His mortified body could bear no more."
+        },
+        "third": {
+          "label": "Jesus is Crowned with Thorns",
+          "description": "A crown of thorns is placed on the head of Jesus."
+        },
+        "fourth": {
+          "label": "Jesus Carried the Cross",
+          "description": "Jesus carries the heavy cross upon His shoulders to Calvary."
+        },
+        "fifth": {
+          "label": "The Crucifixion of our Lord",
+          "description": "Jesus is nailed to the cross and dies after hours of agony."
+        }
+      },
+      "glorious": {
+        "label": "Glorious Mystery",
+        "first": {
+          "label": "The Resurrection of Jesus Christ",
+          "description": "Jesus rises glorious and immortal, three days after His death."
+        },
+        "second": {
+          "label": "The Ascension of Jesus to Heaven",
+          "description": "Jesus ascends into Heaven forty days after His Resurrection."
+        },
+        "third": {
+          "label": "The Descent of the Holy Ghost",
+          "description": "The Holy Spirit descends upon Mary and the Apostles."
+        },
+        "fourth": {
+          "label": "The Assumption of Mary into Heaven",
+          "description": "Mary is united with her Divine Son in Heaven."
+        },
+        "fifth": {
+          "label": "Mary is Crowned as Queen of Heaven and Earth",
+          "description": "Mary is gloriously crowned Queen of Heaven and earth."
+        }
+      },
+      "luminous": {
+        "label": "Luminous Mystery",
+        "first": {
+          "label": "The Baptism in the Jordan",
+          "description": "The heavens open wide and the voice of the Father declares Jesus the beloved Son."
+        },
+        "second": {
+          "label": "The Wedding at Cana",
+          "description": "The first of the signs, Christ changes water into wine thanks to the intervention of Mary."
+        },
+        "third": {
+          "label": "The Proclamation of the Kingdom",
+          "description": "Jesus proclaims the coming of the Kingdom of God."
+        },
+        "fourth": {
+          "label": "The Transfiguration",
+          "description": "The glory of the Godhead shines forth from the face of Christ as the Father."
+        },
+        "fifth": {
+          "label": "The Institution of the Eucharist",
+          "description": "Christ offers his body and blood as food under the signs of bread and wine."
+        }
+      }
     }
   }
+}
