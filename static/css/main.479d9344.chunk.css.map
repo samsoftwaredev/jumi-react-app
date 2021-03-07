@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/assets/main.scss"],"names":[],"mappings":"AAAA,WACE,6BAA8B,CAC/B,QAEC,YAAa,CACb,gBAAiB","file":"main.479d9344.chunk.css","sourcesContent":["#container {\r\n  min-height: calc(100vh - 70px);\r\n}\r\n#footer {\r\n  height: 100px;\r\n  margin-top: -50px;\r\n}\r\n"]}
