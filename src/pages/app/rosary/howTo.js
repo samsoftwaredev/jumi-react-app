@@ -4,6 +4,7 @@ import RichTextDisplay from "interweave";
 import { Link as ReactScrollLink } from "react-scroll";
 import { prayers } from "../../../constants/prayers";
 import { rosaryMysteries } from "../../../constants/rosary";
+import { translate } from "../../../helpers/translate";
 
 const menu = [
   {
@@ -131,7 +132,7 @@ const HowTo = () => {
                         offset={-60}
                         smooth
                       >
-                        {s.label}
+                        <RichTextDisplay content={translate(s.label)} />
                       </ReactScrollLink>
                     </li>
                   ))}
@@ -153,9 +154,11 @@ const HowTo = () => {
             {Array.isArray(m.subMenu) &&
               m.subMenu.map((s) => (
                 <div key={s.id} id={s.id} className="ml-1">
-                  <h5>{s.label}</h5>
+                  <h5>
+                    <RichTextDisplay content={translate(s.label)} />
+                  </h5>
                   <div className="ml-3">
-                    <RichTextDisplay content={s.description} />
+                    <RichTextDisplay content={translate(s.description)} />
                   </div>
 
                   {/* sub sub nav */}
@@ -163,9 +166,13 @@ const HowTo = () => {
                     {Array.isArray(s.subMenu) &&
                       s.subMenu.map((ss) => (
                         <li key={ss.id} id={ss.id}>
-                          <h6>{ss.label}</h6>
+                          <h6>
+                            <RichTextDisplay content={translate(ss.label)} />
+                          </h6>
                           <div className="ml-3">
-                            <RichTextDisplay content={ss.description} />
+                            <RichTextDisplay
+                              content={translate(s.description)}
+                            />
                           </div>
                         </li>
                       ))}

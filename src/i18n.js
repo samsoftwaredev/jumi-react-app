@@ -1,8 +1,9 @@
 import i18next from "i18next";
 import es from "./constants/languages/es.json";
 import en from "./constants/languages/en.json";
+import LanguageDetector from "i18next-browser-languagedetector";
 
-i18next.init({
+i18next.use(LanguageDetector).init({
   interpolation: {
     // React already does escaping
     escapeValue: false,

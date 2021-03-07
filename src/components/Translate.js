@@ -1,7 +1,7 @@
-import i18n from "../i18n";
+import { translate } from "../helpers/translate";
 
 const Translate = ({ text, ...props }) => {
-  return <span {...props}>{i18n.t(text)}</span>;
+  return <span {...props}>{translate(text)}</span>;
 };
 
 export default Translate;

@@ -13,12 +13,17 @@ import {
 } from "reactstrap";
 import { animateScroll } from "react-scroll";
 import Translate from "../Translate";
+import i18n from "../../i18n";
 
 const MainNavigation = () => {
   let location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language).then(() => {});
+  };
 
   const menu = [
     {
@@ -31,6 +36,19 @@ const MainNavigation = () => {
       disabled: true,
     },
   ];
+
+  const languages = [
+    {
+      label: "Español",
+      abbrv: "es",
+    },
+    {
+      label: "English",
+      abbrv: "en",
+    },
+  ];
+
+  const langIndex = languages.findIndex(({ abbrv }) => abbrv === i18n.language);
 
   useEffect(() => {
     // smooth scroll to the correct prayer
@@ -58,16 +76,19 @@ const MainNavigation = () => {
               </Link>
             </NavItem>
           ))}
-          <UncontrolledDropdown nav inNavbar>
-            <DropdownToggle nav caret>
-              <Translate text="language_label" />
-            </DropdownToggle>
-            <DropdownMenu right>
-              <DropdownItem>Español</DropdownItem>
-              <DropdownItem>English</DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown>
         </Nav>
+        <UncontrolledDropdown inNavbar>
+          <DropdownToggle nav caret>
+            {languages[langIndex]?.label || <Translate text="language_label" />}
+          </DropdownToggle>
+          <DropdownMenu right>
+            {languages.map(({ abbrv, label }) => (
+              <DropdownItem key={abbrv} onClick={() => changeLanguage(abbrv)}>
+                {label}
+              </DropdownItem>
+            ))}
+          </DropdownMenu>
+        </UncontrolledDropdown>
       </Collapse>
     </Navbar>
   );
