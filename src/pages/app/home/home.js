@@ -9,7 +9,7 @@ const Home = () => {
       <div className="pt-5">
         <Jumbotron>
           <h1 className="display-3">
-            <Translate text="app_name_label" />
+            <Translate text="app.name" />
           </h1>
           <p className="lead">
             Atraer a más jóvenes a conocer de Dios y la religión Católica
@@ -22,7 +22,7 @@ const Home = () => {
           <p className="lead">
             <Button color="primary">
               <Link to="/app/rosary" className="text-white">
-                <Translate text="pray_rosary_label" />
+                <Translate text="prayRosary.label" />
               </Link>
             </Button>
           </p>

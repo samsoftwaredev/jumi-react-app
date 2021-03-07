@@ -8,6 +8,7 @@
     "home": { "label": "Home" },
     "name": { "label": "Name" },
     "start": { "label": "Start" },
+    "followUs": { "label": "Follow Us" },
     "prayRosary": { "label": "Pray the Rosary" },
     "religiousGroups": { "label": "Religious Groups" },
     "howToPrayRosary": { "label": "How To Pray" },

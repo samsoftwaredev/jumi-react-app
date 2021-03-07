@@ -8,6 +8,7 @@
     "home": { "label": "Casa" },
     "name": { "label": "Nombre" },
     "start": { "label": "Comenzar" },
+    "followUs": { "label": "Siguenos" },
     "prayRosary": { "label": "Rezar el Rosario" },
     "religiousGroups": { "label": "Grupos Religiosos" },
     "howToPrayRosary": { "label": "Aprende a Rezar" },

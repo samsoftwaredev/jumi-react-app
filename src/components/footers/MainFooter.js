@@ -1,4 +1,5 @@
 import { Col, Container, Row } from "reactstrap";
+import Translate from "../Translate";
 
 const MainFooter = () => {
   const socialMedia = [
@@ -24,7 +25,9 @@ const MainFooter = () => {
             </p>
           </Col>
           <Col md={6}>
-            <h5>Follow us:</h5>
+            <h5>
+              <Translate text="followUs.label" />:
+            </h5>
             <ul className="ml-4 list-group ">
               {socialMedia.map((s) => (
                 <li key={s.label}>
