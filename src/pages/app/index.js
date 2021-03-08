@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
-import Groups from "./groups/groups";
+import Groups from "./groups";
 import Rosary from "./rosary";
 
 const App = () => {
