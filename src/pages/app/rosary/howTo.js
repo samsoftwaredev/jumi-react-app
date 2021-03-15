@@ -2,9 +2,10 @@ import React from "react";
 import { Col, Nav, NavItem, Row } from "reactstrap";
 import RichTextDisplay from "interweave";
 import { Link as ReactScrollLink } from "react-scroll";
-import { prayers } from "../../../constants/prayers";
-import { rosaryMysteries } from "../../../constants/rosary";
+import { prayers } from "./constants/prayers";
+import { rosaryMysteries } from "./constants/mysteries";
 import { translate } from "../../../helpers/translate";
+import { strToId } from "../../../helpers/transform";
 
 const menu = [
   {
@@ -52,19 +53,16 @@ const menu = [
     label: "Misterios del Rosario",
     path: "mysteries",
     id: "mysteries",
-    subMenu: Object.values(rosaryMysteries).map((p) => {
-      const uniquePath = p.label.toLowerCase().replace(/ /g, "-");
-      return {
-        id: uniquePath,
+    subMenu: Object.values(rosaryMysteries).map((p) => ({
+      id: strToId(p.label),
+      path: strToId(p.label),
+      label: p.label,
+      subMenu: p.mysteries.map((p, subIndex) => ({
+        id: subIndex,
         label: p.label,
-        path: uniquePath,
-        subMenu: p.mysteries.map((p, subIndex) => ({
-          id: subIndex,
-          label: p.label,
-          description: p.description.replace(/\//g, "\n"),
-        })),
-      };
-    }),
+        description: p.description,
+      })),
+    })),
     component: (
       <>
         <p>
@@ -81,15 +79,12 @@ const menu = [
     label: "Oraciones",
     path: "prayers",
     id: "prayers",
-    subMenu: Object.values(prayers).map((p) => {
-      const unique = p.label.toLowerCase().replace(/ /g, "-");
-      return {
-        id: unique,
-        path: unique,
-        label: p.label,
-        description: p.description.replace(/\//g, "\n"),
-      };
-    }),
+    subMenu: Object.values(prayers).map((p) => ({
+      id: strToId(p.label),
+      path: strToId(p.label),
+      label: p.label,
+      description: p.description,
+    })),
     component: (
       <>
         <p>
@@ -103,87 +98,81 @@ const menu = [
   },
 ];
 
-const HowTo = () => {
-  return (
-    <Row className="mt-4">
-      {/* Navigation */}
-      <Col md="4">
-        <Nav vertical>
-          {/* Nav links */}
-          {menu.map((m) => (
-            <NavItem key={m.id}>
-              <ReactScrollLink
-                className="nav-item"
-                offset={-60}
-                to={m.path}
-                smooth
-              >
-                {m.label}
-              </ReactScrollLink>
-
-              {/* Sub Nav links */}
-              {Array.isArray(m.subMenu) && (
-                <ul className="d-column">
-                  {m.subMenu.map((s) => (
-                    <li key={s.id}>
-                      <ReactScrollLink
-                        className="nav-item d-block"
-                        to={s.path}
-                        offset={-60}
-                        smooth
-                      >
-                        <RichTextDisplay content={translate(s.label)} />
-                      </ReactScrollLink>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </NavItem>
-          ))}
-        </Nav>
-      </Col>
-
-      <Col md="8">
-        {/* Content */}
+const HowTo = () => (
+  <Row className="mt-4">
+    {/* Navigation */}
+    <Col md="4">
+      <Nav vertical>
+        {/* Nav links */}
         {menu.map((m) => (
-          <div key={m.id} id={m.id}>
-            <h1>{m.label}</h1>
-            <div>{m.component}</div>
-
-            {/* sub nav */}
-            {Array.isArray(m.subMenu) &&
-              m.subMenu.map((s) => (
-                <div key={s.id} id={s.id} className="ml-1">
-                  <h5>
-                    <RichTextDisplay content={translate(s.label)} />
-                  </h5>
-                  <div className="ml-3">
-                    <RichTextDisplay content={translate(s.description)} />
-                  </div>
-
-                  {/* sub sub nav */}
-                  <ol className="ml-3">
-                    {Array.isArray(s.subMenu) &&
-                      s.subMenu.map((ss) => (
-                        <li key={ss.id} id={ss.id}>
-                          <h6>
-                            <RichTextDisplay content={translate(ss.label)} />
-                          </h6>
-                          <div className="ml-3">
-                            <RichTextDisplay
-                              content={translate(s.description)}
-                            />
-                          </div>
-                        </li>
-                      ))}
-                  </ol>
-                </div>
-              ))}
-          </div>
+          <NavItem key={m.id}>
+            <ReactScrollLink
+              className="nav-item"
+              offset={-60}
+              to={m.path}
+              smooth
+            >
+              {m.label}
+            </ReactScrollLink>
+            {/* Sub Nav links */}
+            {Array.isArray(m.subMenu) && (
+              <ul className="d-column">
+                {m.subMenu.map((s) => (
+                  <li key={s.id}>
+                    <ReactScrollLink
+                      className="nav-item d-block"
+                      to={s.path}
+                      offset={-60}
+                      smooth
+                    >
+                      <RichTextDisplay content={translate(s.label)} />
+                    </ReactScrollLink>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </NavItem>
         ))}
-      </Col>
-    </Row>
-  );
-};
+      </Nav>
+    </Col>
+    {/* Content */}
+    <Col md="8">
+      {menu.map((m) => (
+        <div key={m.id} id={m.id}>
+          <h1>{m.label}</h1>
+          <div>{m.component}</div>
+
+          {/* sub nav */}
+          {Array.isArray(m.subMenu) &&
+            m.subMenu.map((s) => (
+              <div key={s.id} id={s.id} className="ml-1">
+                <h5>
+                  <RichTextDisplay content={translate(s.label)} />
+                </h5>
+                <div className="ml-3">
+                  <RichTextDisplay content={translate(s.description)} />
+                </div>
+
+                {/* sub sub nav */}
+                <ol className="ml-3">
+                  {Array.isArray(s.subMenu) &&
+                    s.subMenu.map((ss) => (
+                      <li key={ss.id} id={ss.id}>
+                        <h6>
+                          <RichTextDisplay content={translate(ss.label)} />
+                        </h6>
+                        <div className="ml-3">
+                          <RichTextDisplay content={translate(s.description)} />
+                        </div>
+                      </li>
+                    ))}
+                </ol>
+              </div>
+            ))}
+        </div>
+      ))}
+    </Col>
+  </Row>
+);
 
 export default HowTo;

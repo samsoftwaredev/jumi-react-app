@@ -18,13 +18,13 @@
         "label": "Sign of the Cross",
         "description": "In the name of the Father, and of the Son, and of the Holy Spirit. Amen."
       },
-      "petitions": {
+      "intentions": {
         "label": "Intentions",
         "description": "Offering the Rosary for some reason or person is a very old tradition, especially when it was done for the deceased. From requesting a particular grace, the success of an operation or simply giving thanks for all that we have."
       },
       "actOfContrition": {
         "label": "Act of Contrition",
-        "description": "O my God, I am heartily sorry for having offended You and I detest all my sins, because I dread the loss of heaven and the pains of hell, but most of all because they offend you, my God, who are all good and deserving of all my love. I firmly resolve, with the help of your grace, to confess my sins, to do penance and to amend my life. "
+        "description": "My God, I am sorry for my sins with all my heart. In choosing to do wrong and failing to do good, I have sinned against you whom I should love above all things.\n I firmly intend, with your help, to do penance, to sin no more, and to avoid whatever leads me to sin.\n Our Savior Jesus Christ suffered and died for us. In his name, my God, have mercy."
       },
       "ourFather": {
         "label": "Our Father",
@@ -52,11 +52,11 @@
       },
       "jaculatoria3": {
         "label": "Let Us Pray",
-        "description": "O God whose only begotten Son by His Life has purchased for us the rewards of eternal life, Grant that we beseech Thee while meditating upon these mysteries of the Most Holy Rosary of the Blessed Virgin Mary, we may both imitate what they contain and obtain what they promise, through the same Christ our Lord Amen."
+        "description": "Pour forth, we beseech Thee, O Lord, Thy grace into our hearts; that, we to whom the Incarnation of Christ, Thy Son, was made known by the message of an Angel, may by His Passion and Cross, be brought to the glory of His Resurrection. Through the same Christ our Lord. Amen."
       },
       "fatima": {
         "label": "Fatima Prayer",
-        "description": "O my Jesus, forgive us of our sins. Save us from the fires of hell. Lead all souls into heaven, especially those in most need of thy mercy. Amen."
+        "description": "O My Jesus, forgive us our sins, save us from the fires of Hell and lead all souls to Heaven, especially those who are in most need of Thy mercy. Amen."
       },
       "salve": {
         "label": "The Salve Regina (Hail Holy Queen)",
@@ -66,7 +66,7 @@
         "label": "For The Intentions of the Holy Father",
         "description": "Our Father, one Hail Mary, and one Glory Be for the tntentions of the Holy Father."
       },
-      "letanias": {
+      "litanies": {
         "label": "Litany of the Blessed Virgin Mary",
         "description": "Lord, have mercy on us.\nChrist, have mercy on us. \n\nLord, have mercy on us.\nChrist, hear us.\nChrist, graciously hear us. \n\nGod the Father of heaven,\nhave mercy on us. \n\nGod the Son, Redeemer of the world,\nhave mercy on us. \n\nGod the Holy Spirit,\nhave mercy on us. \n\nHoly Trinity, one God,\nhave mercy on us. \n\nHoly Mary, \npray for us. \n\nHoly Mother of God,\npray for us.\n\nHoly Virgin of virgins,\npray for us.\n\nMother of Christ,\npray for us.\n\nMother of the Church,\npray for us.\n\nMother of mercy,\npray for us.\n\nMother of divine grace,\npray for us.\n\nMother of hope,\npray for us.\n\nMother most pure,\npray for us.\n\nMother most chaste,\npray for us.\n\nMother inviolate,\npray for us.\n\nMother undefiled,\npray for us. \n\nMother most amiable,\npray for us. \n\nMother most admirable,\npray for us. \n\nMother of perpetual help,\npray for us. \n\nMother of good counsel,\npray for us. \n\nMother of our Creator,\npray for us. \n\nMother of our Saviour,\npray for us. \n\nVirgin most prudent,\npray for us. \n\nVirgin most venerable,\npray for us. \n\nVirgin most renowned,\npray for us. \n\nVirgin most powerful,\npray for us. \n\nVirgin most merciful,\npray for us. \n\nVirgin most faithful,\npray for us. \n\nMirror of justice,\npray for us. \n\nSeat of wisdom,\npray for us. \n\nCause of our joy,\npray for us. \n\nSpiritual vessel,\npray for us. \n\nVessel of honour,\npray for us. \n\nSingular vessel of devotion,\npray for us. \n\nMystical rose,\npray for us. \n\nTower of David,\npray for us. \n\nTower of ivory,\npray for us. \n\nHouse of gold,\npray for us. \n\nArk of the covenant,\npray for us. \n\nGate of heaven,\npray for us. \n\nMorning star,\npray for us. \n\nHealth of the sick,\npray for us. \n\nRefuge of sinners,\npray for us. \n\nSolace of migrants,\npray for us. \n\nComforter of the afflicted,\npray for us. \n\nHelp of Christians,\npray for us. \n\nQueen of Angels,\npray for us. \n\nQueen of Patriarchs,\npray for us. \n\nQueen of Prophets,\npray for us. \n\nQueen of Apostles,\npray for us. \n\nQueen of Martyrs,\npray for us. \n\nQueen of Confessors,\npray for us. \n\nQueen of Virgins,\npray for us. \n\nQueen of all Saints,\npray for us. \n\nQueen conceived without original sin,\npray for us. \n\nQueen assumed into heaven,\npray for us. \n\nQueen of the most holy Rosary,\npray for us. \n\nQueen of Families,\npray for us. \n\nQueen of Peace.\npray for us. \n\nLamb of God, who takes away the sins of the world,\nspare us, O Lord.\n\nLamb of God, who takes away the sins of the world,\ngraciously hear us, O Lord. \n\nLamb of God, who takes away the sins of the world,\nhave mercy on us. \n\nPray for us, O holy Mother of God,\nThat we may be made worthy of the promises of Christ. \n\nLet us pray\nGrant, we beseech Thee, O Lord God, that we Thy servants, may enjoy lasting health of mind and body, and by the glorious intercession of the Blessed Mary, ever Virgin, be delivered from present sorrow and enter into the joy of eternal happiness. Through Christ our Lord. Amen."
       }

@@ -1,32 +1,28 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   useRouteMatch,
 } from "react-router-dom";
-import PageNotFound from "../../components/error/PageNotFound";
-import LogIn from "./login";
-import SignUp from "./signup";
+import { Spinner } from "reactstrap";
+
+const LogIn = lazy(() => import("./login"));
+const SignUp = lazy(() => import("./signup"));
+const PageNotFound = lazy(() => import("../../components/error/PageNotFound"));
 
 const Auth = () => {
   let match = useRouteMatch();
   return (
-    <Router>
-      {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-      <Switch>
-        <Route exact path={`${match.path}/log-in`}>
-          <LogIn />
-        </Route>
-        <Route exact path={`${match.path}/sign-up`}>
-          <SignUp />
-        </Route>
-        <Route path={`${match.path}`}>
-          <PageNotFound />
-        </Route>
-      </Switch>
-    </Router>
+    <Suspense fallback={<Spinner />}>
+      <Router>
+        <Switch>
+          <Route exact path={`${match.path}/log-in`} component={LogIn} />
+          <Route exact path={`${match.path}/sign-up`} component={SignUp} />
+          <Route path={`${match.path}`} component={PageNotFound} />
+        </Switch>
+      </Router>
+    </Suspense>
   );
 };
 

@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { Spinner } from "reactstrap";
-import "../assets/main.scss";
+import "../assets/styles/main.scss";
 import PageNotFound from "../components/error/PageNotFound";
 
 const Auth = lazy(() => import("./auth"));

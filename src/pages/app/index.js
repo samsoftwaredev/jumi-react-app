@@ -1,15 +1,19 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
-import Groups from "./groups";
-import Rosary from "./rosary";
+import { Spinner } from "reactstrap";
+
+const Groups = lazy(() => import("./groups"));
+const Rosary = lazy(() => import("./rosary"));
 
 const App = () => {
   let match = useRouteMatch();
   return (
-    <Switch>
-      <Route path={`${match.path}/groups`} component={Groups} />
-      <Route path={`${match.path}/rosary`} component={Rosary} />
-    </Switch>
+    <Suspense fallback={<Spinner />}>
+      <Switch>
+        <Route path={`${match.path}/groups`} component={Groups} />
+        <Route path={`${match.path}/rosary`} component={Rosary} />
+      </Switch>
+    </Suspense>
   );
 };
 

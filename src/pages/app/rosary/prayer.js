@@ -11,49 +11,51 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Moment from "react-moment";
 import { scroller } from "react-scroll";
 import { Button, Col, Row } from "reactstrap";
-import { RosaryPrayer } from "../../../common/rosary/rosaryPrayer";
+import { RosaryPrayer } from "./classes/rosaryPrayer";
 import { translate } from "../../../helpers/translate";
-
-const getId = (str) => str.toLowerCase().replace(/ /g, "-");
+import AudioPlayer from "../../../components/AudioPlayer";
+import { strToId } from "../../../helpers/transform";
 
 const Prayer = () => {
-  const rosary = new RosaryPrayer();
-  const todaysMystery = rosary.getMystery();
+  const language = "en";
   const todaysDate = new Date();
+  const rosary = new RosaryPrayer();
+
+  const [currentPrayerIndex, setCurrentPrayerIndex] = useState(null);
+
+  const todaysMystery = rosary.getMystery();
   const prayersList = rosary.getPrayersList();
+
   const masagePrayerList = prayersList.map((p, index) => ({
     ...p,
     // create a unique ID for all prayers in the rosary
-    id: getId(`${p.label} ${index}`),
+    id: strToId(`${p.label} ${index}`),
   }));
-
-  const [disabledButton, setDisabledButton] = useState(false);
 
   const scrollToPrayer = (prayer) => {
     const prayerIndex = rosary.getPrayerIndex();
-    const elementId = getId(`${prayer.label} ${prayerIndex}`);
+    const elementId = strToId(`${prayer.label} ${prayerIndex}`);
     // smooth scroll to the correct prayer
     scroller.scrollTo(elementId, {
       smooth: true,
-      offset: -100,
+      offset: -60,
     });
   };
 
   const startPrayer = () => {
     const prayer = rosary.jumpToPrayer(0);
-    if (prayer) scrollToPrayer(prayer);
+    if (prayer) {
+      scrollToPrayer(prayer);
+      setCurrentPrayerIndex(rosary.getPrayerIndex());
+    }
   };
 
   const nextPrayer = (prayerIndex) => {
     const prayer = rosary.jumpToPrayer(prayerIndex + 1);
     // check if the prayer is defined
-    if (prayer) scrollToPrayer(prayer);
-
-    // button functionality
-    if (prayerIndex === prayersList.length - 1) {
-      setDisabledButton(true);
-    } else {
-      setDisabledButton(false);
+    if (prayer) {
+      scrollToPrayer(prayer);
+      setCurrentPrayerIndex(rosary.getPrayerIndex());
     }
   };
 
@@ -89,7 +91,7 @@ const Prayer = () => {
         getMysteryPlace(p.mysteryIndex)
       )})`;
     } else if (p.mystery?.label) {
-      // if the mystery label is defined, show mystery label and place
+      // if the mystery label is defined in prayer, show mystery label and place
       const { label, mysteryIndex } = p.mystery;
       return `${translate(label)}\n(${translate(
         getMysteryPlace(mysteryIndex)
@@ -100,36 +102,38 @@ const Prayer = () => {
     }
   };
 
+  const audioPause = (audioRef) => {
+    console.log(audioRef);
+  };
+
   return (
-    <Row className="flex-column align-items-center mt-4">
+    <Row className="flex-column align-items-center">
       <Col className="d-flex flex-column align-items-center">
+        {/* the rosary welcome screen */}
         <div
           className="d-flex flex-column text-center w-100 justify-content-center"
-          style={{ minHeight: "90vh" }}
+          style={{ minHeight: "85vh" }}
         >
           <h2>{translate(todaysMystery.label)}</h2>
           <Moment format="D MMMM, YYYY">{todaysDate}</Moment>
           <div className="mt-4">
-            <Button
-              disabled={disabledButton}
-              color="info"
-              onClick={startPrayer}
-            >
+            <Button color="info" onClick={startPrayer}>
               <FontAwesomeIcon icon={faChevronDown} />
               &nbsp;&nbsp;
               {translate("start.label")}
             </Button>
           </div>
         </div>
-        {masagePrayerList.map((p, index) => {
-          return (
-            <Col
-              md={6}
-              id={p.id}
-              key={p.id}
-              className="my-4"
-              style={{ minHeight: "100vh", borderLeft: "1px solid #e3e3e3" }}
-            >
+        {/* the rosary prayers */}
+        {masagePrayerList.map((p, index) => (
+          <Col
+            md={6}
+            id={p.id}
+            key={p.id}
+            className="d-flex flex-column justify-content-between mb-3"
+            style={{ minHeight: "90vh", borderLeft: "1px solid #e3e3e3" }}
+          >
+            <div>
               <h6 className="text-right small mb-0 text-muted">
                 {translate(todaysMystery.label)}
               </h6>
@@ -151,20 +155,26 @@ const Prayer = () => {
               </h5>
               <hr />
               <RichTextDisplay content={translate(p?.description)} />
-              <div className="mt-4 text-right">
-                {masagePrayerList.length - 1 > index && (
-                  <Button
-                    className="btn-circle"
-                    color="info"
-                    onClick={() => nextPrayer(index)}
-                  >
-                    <FontAwesomeIcon icon={faChevronDown} />
-                  </Button>
-                )}
-              </div>
-            </Col>
-          );
-        })}
+            </div>
+            <div className="text-right">
+              <AudioPlayer
+                audioFile={p?.audio ? p?.audio[language] : null}
+                autoPlay={currentPrayerIndex === index}
+                audioEnded={() => nextPrayer(index)}
+                audioPause={audioPause}
+              />
+              {masagePrayerList.length - 1 > index && (
+                <Button
+                  className="btn-circle mt-4"
+                  color="info"
+                  onClick={() => nextPrayer(index)}
+                >
+                  <FontAwesomeIcon icon={faChevronDown} />
+                </Button>
+              )}
+            </div>
+          </Col>
+        ))}
       </Col>
     </Row>
   );
