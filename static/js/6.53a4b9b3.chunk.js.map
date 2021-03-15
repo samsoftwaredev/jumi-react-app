@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/app/groups/index.js"],"names":["Groups"],"mappings":"8FAAA,0BAMeA,UAJA,WACb,OAAO,cAAC,IAAD","file":"static/js/6.53a4b9b3.chunk.js","sourcesContent":["import MainLayout from \"../../../layout/MainLayout\";\r\n\r\nconst Groups = () => {\r\n  return <MainLayout>Groups</MainLayout>;\r\n};\r\n\r\nexport default Groups;\r\n"],"sourceRoot":""}
