@@ -5,13 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
 
 const AudioPlayer = ({ audioFile, audioEnded, autoPlay = false }) => {
-  // Refs
   const audioRef = useRef();
-  // const [trackIndex, setTrackIndex] = useState(0);
-  // const [trackProgress, setTrackProgress] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-
-  // Handle setup when changing tracks
 
   const onPause = () => {
     audioRef?.current?.pause();

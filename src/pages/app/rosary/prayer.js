@@ -102,10 +102,6 @@ const Prayer = () => {
     }
   };
 
-  const audioPause = (audioRef) => {
-    console.log(audioRef);
-  };
-
   return (
     <Row className="flex-column align-items-center">
       <Col className="d-flex flex-column align-items-center">
@@ -125,56 +121,58 @@ const Prayer = () => {
           </div>
         </div>
         {/* the rosary prayers */}
-        {masagePrayerList.map((p, index) => (
-          <Col
-            md={6}
-            id={p.id}
-            key={p.id}
-            className="d-flex flex-column justify-content-between mb-3"
-            style={{ minHeight: "90vh", borderLeft: "1px solid #e3e3e3" }}
-          >
-            <div>
-              <h6 className="text-right small mb-0 text-muted">
-                {translate(todaysMystery.label)}
-              </h6>
-              <h6 className="text-right small font-weight-bold">
-                <RichTextDisplay content={translate(getMysteryHeader(p))} />
-              </h6>
-              <h5 className="d-flex justify-content-between align-items-center">
-                <span>
-                  {getIcon(p)} {translate(p?.label)}
-                </span>
-                {p.isHailMary && (
-                  <small className="text-muted">{p.hailMaryIndex}</small>
+        {masagePrayerList.map((p, index) => {
+          const isCurrentPrayer = currentPrayerIndex === index;
+          return (
+            <Col
+              md={6}
+              id={p.id}
+              key={p.id}
+              className="d-flex flex-column justify-content-between mb-3"
+              style={{ minHeight: "90vh", borderLeft: "1px solid #e3e3e3" }}
+            >
+              <div>
+                <h6 className="text-right small mb-0 text-muted">
+                  {translate(todaysMystery.label)}
+                </h6>
+                <h6 className="text-right small font-weight-bold">
+                  <RichTextDisplay content={translate(getMysteryHeader(p))} />
+                </h6>
+                <h5 className="d-flex justify-content-between align-items-center">
+                  <span>
+                    {getIcon(p)} {translate(p?.label)}
+                  </span>
+                  {p.isHailMary && (
+                    <small className="text-muted">{p.hailMaryIndex}</small>
+                  )}
+                  {p.isMystery && (
+                    <small className="text-muted">
+                      {getMysteryPlace(p.mystery?.mysteryIndex)}
+                    </small>
+                  )}
+                </h5>
+                <hr />
+                <RichTextDisplay content={translate(p?.description)} />
+              </div>
+              <div className="text-right">
+                <AudioPlayer
+                  audioFile={p?.audio ? p?.audio[language] : null}
+                  autoPlay={isCurrentPrayer}
+                  audioEnded={() => nextPrayer(index)}
+                />
+                {masagePrayerList.length - 1 > index && (
+                  <Button
+                    className="btn-circle mt-4"
+                    color="info"
+                    onClick={() => nextPrayer(index)}
+                  >
+                    <FontAwesomeIcon icon={faChevronDown} />
+                  </Button>
                 )}
-                {p.isMystery && (
-                  <small className="text-muted">
-                    {getMysteryPlace(p.mystery?.mysteryIndex)}
-                  </small>
-                )}
-              </h5>
-              <hr />
-              <RichTextDisplay content={translate(p?.description)} />
-            </div>
-            <div className="text-right">
-              <AudioPlayer
-                audioFile={p?.audio ? p?.audio[language] : null}
-                autoPlay={currentPrayerIndex === index}
-                audioEnded={() => nextPrayer(index)}
-                audioPause={audioPause}
-              />
-              {masagePrayerList.length - 1 > index && (
-                <Button
-                  className="btn-circle mt-4"
-                  color="info"
-                  onClick={() => nextPrayer(index)}
-                >
-                  <FontAwesomeIcon icon={faChevronDown} />
-                </Button>
-              )}
-            </div>
-          </Col>
-        ))}
+              </div>
+            </Col>
+          );
+        })}
       </Col>
     </Row>
   );
