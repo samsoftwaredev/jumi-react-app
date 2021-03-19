@@ -9,50 +9,21 @@ import { useTranslation } from "react-i18next";
 
 const menu = [
   {
-    id: "overview",
-    label: "Resumen",
-    path: "overview",
-    component: (
-      <>
-        <p>
-          El rosario nos ayuda a contemplar la Vida de Jesús mediante los ojos
-          de Maria.
-        </p>
-        <p>
-          No honramos a Maria, sino la acompañamos en su largo caminar. Al rezar
-          el rosario, no hacemos otra cosa que pedirle a la Virgen María su
-          ayuda para permanecer en unión espiritual con Jesús, para llegar a él.
-        </p>
-        <p>
-          El rosario es un rezo cristiano que sirve para conmemorar los 20
-          misterios de la vida y obra de Jesucristo y de la Virgen María. Se
-          recitan después de anunciar cada uno de los misterios con un padre
-          nuestro, diez avemarías y un gloria al Padre.
-        </p>
-      </>
-    ),
+    id: "summary",
+    label: "summary.label",
+    path: "summary",
+    description: "summary.description",
   },
   {
     id: "how-to-pray",
-    label: "¿Cómo rezar el Santo Rosario?",
+    label: "howToPray.label",
     path: "how-to-pray",
-    component: (
-      <>
-        <p>
-          Se enuncia en cada decena el "misterio", por ejemplo, en el primer
-          misterio: "La Encarnación del Hijo de Dios". Después de una breve
-          pausa de reflexión, se rezan: un Padre nuestro, diez Avemarías y un
-          Gloria. A cada decena del "rosario" se puede añadir una invocación. A
-          la final del Rosario se recita la Letanía Lauretana, u otras oraciones
-          marianas.
-        </p>
-      </>
-    ),
+    description: "howToPray.description",
   },
   {
-    label: "Misterios del Rosario",
-    path: "mysteries",
     id: "mysteries",
+    label: "mysteries.label",
+    path: "mysteries",
     subMenu: Object.values(rosaryMysteries).map((p) => ({
       id: strToId(p.label),
       path: strToId(p.label),
@@ -63,17 +34,7 @@ const menu = [
         description: p.description,
       })),
     })),
-    component: (
-      <>
-        <p>
-          El Rosario está compuesto por veinte "misterios" (acontecimientos,
-          momentos significativos) de la vida de Jesús y de María. Comprende los
-          misterios gozosos (lunes y sábado), el segundo los luminosos (jueves),
-          el tercero los dolorosos (martes y viernes) y el cuarto los gloriosos
-          (miércoles y domingo).
-        </p>
-      </>
-    ),
+    description: "mysteries.description",
   },
   {
     label: "prayers.label",
@@ -85,16 +46,7 @@ const menu = [
       label: p.label,
       description: p.description,
     })),
-    component: (
-      <>
-        <p>
-          La oración es nuestra manera de comunicarnos con Dios. Así como los
-          amigos y los miembros de la familia pasan tiempo hablando entre ellos
-          para profundizar sus relaciones, la oración profundiza nuestra
-          relación con Dios.
-        </p>
-      </>
-    ),
+    description: "prayers.description",
   },
 ];
 
@@ -141,8 +93,11 @@ const HowTo = () => {
       <Col md="8">
         {menu.map((m) => (
           <div key={m.id} id={m.id}>
-            <h1>{m.label}</h1>
-            <div>{m.component}</div>
+            <h1>{t(m.label)}</h1>
+            <p>
+              {" "}
+              <RichTextDisplay content={t(m.description)} />
+            </p>
 
             {/* sub nav */}
             {Array.isArray(m.subMenu) &&

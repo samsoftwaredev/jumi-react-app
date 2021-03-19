@@ -13,8 +13,17 @@
     "religiousGroups": { "label": "Grupos Religiosos" },
     "howToPrayRosary": { "label": "Aprende a Rezar" },
     "language": { "label": "Lenguaje" },
+    "howToPray": {
+      "label": "¿Cómo rezar el Santo Rosario?",
+      "description": "Se enuncia en cada decena el \"misterio\", por ejemplo, en el primer misterio: \"La Encarnación del Hijo de Dios\". Después de una breve pausa de reflexión, se rezan: un Padre nuestro, diez Avemarías y un Gloria. A cada decena del \"rosario\" se puede añadir una invocación. A la final del Rosario se recita la Letanía Lauretana, u otras oraciones marianas."
+    },
+    "summary": {
+      "label": "Resumen",
+      "description": "El rosario nos ayuda a contemplar la Vida de Jesús mediante los ojos de Maria.\n\nNo honramos a Maria, sino la acompañamos en su largo caminar. Al rezar el rosario, no hacemos otra cosa que pedirle a la Virgen María su ayuda para permanecer en unión espiritual con Jesús, para llegar a él.\n\nEl rosario es un rezo cristiano que sirve para conmemorar los 20 misterios de la vida y obra de Jesucristo y de la Virgen María. Se recitan después de anunciar cada uno de los misterios con un padre nuestro, diez avemarías y un gloria al Padre."
+    },
     "prayers": {
       "label": "Oraciones",
+      "description": "La oración es nuestra manera de comunicarnos con Dios. Así como los amigos y los miembros de la familia pasan tiempo hablando entre ellos para profundizar sus relaciones, la oración profundiza nuestra relación con Dios.",
       "start": {
         "label": "La Señal de la Cruz",
         "description": "Por la señal de la Santa Cruz, de nuestros enemigos, líbranos Señor Dios nuestro. En el nombre del Padre, del Hijo y del Espíritu Santo. Amén."
@@ -73,6 +82,8 @@
       }
     },
     "mysteries": {
+      "label": "Misterios del Rosario",
+      "description": "El Rosario está compuesto por veinte \"misterios\" (acontecimientos, momentos significativos) de la vida de Jesús y de María. Comprende los misterios gozosos (lunes y sábado), el segundo los luminosos (jueves), el tercero los dolorosos (martes y viernes) y el cuarto los gloriosos (miércoles y domingo).",
       "ordinalNumbers": {
         "first": "Primer Misterio",
         "second": "Segundo Misterio",

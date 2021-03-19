@@ -13,8 +13,17 @@
     "religiousGroups": { "label": "Religious Groups" },
     "howToPrayRosary": { "label": "How To Pray" },
     "language": { "label": "Language" },
+    "howToPray": {
+      "label": "How to pray the Holy Rosary?",
+      "description": "The \"mystery\" is enunciated in each decade, for example, in the first mystery: \"The Incarnation of the Son of God.\" After a brief pause for reflection, they pray: one Our Father, ten Hail Marys and one Gloria. An invocation can be added to each ten of the \"rosary\". At the end of the Rosary, the Lauretan Litany or other Marian prayers are recited."
+    },
+    "summary": {
+      "label": "Summary",
+      "description": "The rosary helps us to contemplate the Life of Jesus through the eyes of Mary.\n\nWe do not honor Maria, but we accompany her on her long journey. When we pray the rosary, we do nothing but ask the Virgin Mary for her help to remain in spiritual union with Jesus, to reach him.\n\nThe rosary is a Christian prayer that serves to commemorate the 20 mysteries of the life and work of Jesus Christ and the Virgin Mary. They are recited after announcing each of the mysteries with an Our Father, ten Hail Marys and a glory to the Father. "
+    },
     "prayers": {
       "label": "Prayers",
+      "description": "Prayer is our way of communicating with God. Just as friends and family members spend time talking to each other to deepen their relationships, prayer deepens our relationship with God.",
       "start": {
         "label": "Sign of the Cross",
         "description": "In the name of the Father, and of the Son, and of the Holy Spirit. Amen."
@@ -73,6 +82,8 @@
       }
     },
     "mysteries": {
+      "label ": "Rosary Mysteries",
+      "description": "The Rosary is made up of twenty \"mysteries\" (events, significant moments) in the life of Jesus and Mary. It includes the joyful mysteries (Monday and Saturday), the second the luminous ones (Thursday), the third the painful ones (Tuesday and Friday) and the fourth the glorious ones (Wednesday and Sunday).",
       "ordinalNumbers": {
         "first": "1st Mystery",
         "second": "2nd Mystery",
