@@ -1,2 +1,0 @@
-(this.webpackJsonpjumi=this.webpackJsonpjumi||[]).push([[6],{108:function(s,t,u){"use strict";u.r(t);var i=u(59),n=u(4);t.default=function(){return Object(n.jsx)(i.a,{children:"Groups"})}}}]);
-//# sourceMappingURL=6.53a4b9b3.chunk.js.map

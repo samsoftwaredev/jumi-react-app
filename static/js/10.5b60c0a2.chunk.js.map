@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/auth/login/index.js"],"names":["LogIn"],"mappings":"iHAIeA,UAJD,WACZ,OAAO","file":"static/js/10.5b60c0a2.chunk.js","sourcesContent":["const LogIn = () => {\r\n  return <h2>Log In</h2>;\r\n};\r\n\r\nexport default LogIn;\r\n"],"sourceRoot":""}
