@@ -14,6 +14,7 @@
     "howToPrayRosary": { "label": "Aprende a Rezar" },
     "language": { "label": "Lenguaje" },
     "prayers": {
+      "label": "Oraciones",
       "start": {
         "label": "La Señal de la Cruz",
         "description": "Por la señal de la Santa Cruz, de nuestros enemigos, líbranos Señor Dios nuestro. En el nombre del Padre, del Hijo y del Espíritu Santo. Amén."

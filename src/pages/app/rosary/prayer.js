@@ -126,8 +126,8 @@ const Prayer = () => {
               md={6}
               id={p.id}
               key={p.id}
-              className="d-flex flex-column justify-content-between mb-3"
-              style={{ minHeight: "90vh", borderLeft: "1px solid #e3e3e3" }}
+              className="d-flex flex-column justify-content-between"
+              style={{ minHeight: "95vh", borderLeft: "1px solid #e3e3e3" }}
             >
               <div>
                 <h6 className="text-right small mb-0 text-muted">
@@ -152,7 +152,7 @@ const Prayer = () => {
                 <hr />
                 <RichTextDisplay content={t(p?.description)} />
               </div>
-              <div className="text-right">
+              <div className="text-right mb-5">
                 <AudioPlayer
                   audioFile={p?.audio ? p?.audio[language] : null}
                   autoPlay={isCurrentPrayer}
@@ -160,7 +160,7 @@ const Prayer = () => {
                 />
                 {masagePrayerList.length - 1 > index && (
                   <Button
-                    className="btn-circle mt-4"
+                    className="btn-circle ml-1"
                     color="info"
                     onClick={() => nextPrayer(index)}
                   >

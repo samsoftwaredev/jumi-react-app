@@ -24,7 +24,9 @@ const MainNavigation = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   const changeLanguage = (language) => {
-    i18n.changeLanguage(language).then(() => {});
+    i18n
+      .changeLanguage(language)
+      .catch(console.error("Unable to change language"));
   };
 
   const menu = [

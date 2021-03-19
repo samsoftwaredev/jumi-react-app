@@ -26,34 +26,32 @@ const AudioPlayer = ({ audioFile, audioEnded, autoPlay = false }) => {
     }
   }, [autoPlay]);
 
-  if (audioFile) {
-    // if audio file is set, display controls
-    return (
-      <div>
-        <audio
-          onEnded={audioEnded}
-          id="myAudio"
-          controls
-          ref={audioRef}
-          className="d-none"
-        >
-          <source src={audioFile} type="audio/ogg" />
-          <source src={audioFile} type="audio/mpeg" />
-          Your browser does not support the audio element.
-        </audio>
-        {isPlaying ? (
-          <Button color="light" className="btn-circle" onClick={onPause}>
-            <FontAwesomeIcon icon={faPause} />
-          </Button>
-        ) : (
-          <Button color="light" className="btn-circle" onClick={onPlay}>
-            <FontAwesomeIcon icon={faPlay} />
-          </Button>
-        )}
-      </div>
-    );
-  }
-  return null;
+  if (!audioFile) return null;
+  // if audio file is set, display controls
+  return (
+    <>
+      <audio
+        onEnded={audioEnded}
+        id="myAudio"
+        controls
+        ref={audioRef}
+        className="d-none"
+      >
+        <source src={audioFile} type="audio/ogg" />
+        <source src={audioFile} type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      {isPlaying ? (
+        <Button color="light" className="ml-1 btn-circle" onClick={onPause}>
+          <FontAwesomeIcon icon={faPause} />
+        </Button>
+      ) : (
+        <Button color="light" className="ml-1 btn-circle" onClick={onPlay}>
+          <FontAwesomeIcon icon={faPlay} />
+        </Button>
+      )}
+    </>
+  );
 };
 
 AudioPlayer.propTypes = {
