@@ -4,6 +4,10 @@
       "name": "Missionary Youth",
       "shortName": "JUMI"
     },
+    "objective": {
+      "label": "Our mission is to help close the gap between the youth and God, and the Catholic church",
+      "description": "Join us in prayers!"
+    },
     "age": { "label": "Age" },
     "home": { "label": "Home" },
     "name": { "label": "Name" },
