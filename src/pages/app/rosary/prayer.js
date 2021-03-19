@@ -17,8 +17,9 @@ import { strToId } from "../../../helpers/transform";
 import { useTranslation } from "react-i18next";
 
 const Prayer = () => {
-  const { t } = useTranslation();
-  const language = "en";
+  const { t, i18n } = useTranslation();
+
+  const language = i18n.language;
   const todaysDate = new Date();
   const rosary = new RosaryPrayer();
 
