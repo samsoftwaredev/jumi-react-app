@@ -1,7 +1,8 @@
-import { translate } from "../../helpers/translate";
+import { useTranslation } from "react-i18next";
 
 const Translate = ({ text, ...props }) => {
-  return <span {...props}>{translate(text)}</span>;
+  const { t } = useTranslation();
+  return <span {...props}>{t(text)}</span>;
 };
 
 export default Translate;

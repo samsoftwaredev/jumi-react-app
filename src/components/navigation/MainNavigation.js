@@ -13,10 +13,12 @@ import {
 } from "reactstrap";
 import { animateScroll } from "react-scroll";
 import Translate from "../Translate";
-import i18n from "../../i18n";
+import { useTranslation } from "react-i18next";
 
 const MainNavigation = () => {
   let location = useLocation();
+
+  const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);

@@ -12,11 +12,12 @@ import Moment from "react-moment";
 import { scroller } from "react-scroll";
 import { Button, Col, Row } from "reactstrap";
 import { RosaryPrayer } from "./classes/rosaryPrayer";
-import { translate } from "../../../helpers/translate";
 import AudioPlayer from "../../../components/AudioPlayer";
 import { strToId } from "../../../helpers/transform";
+import { useTranslation } from "react-i18next";
 
 const Prayer = () => {
+  const { t } = useTranslation();
   const language = "en";
   const todaysDate = new Date();
   const rosary = new RosaryPrayer();
@@ -87,15 +88,11 @@ const Prayer = () => {
   const getMysteryHeader = (p) => {
     if (p.isMystery) {
       // if the prayer is a mystery, show label and place
-      return `${translate(p.label)}\n(${translate(
-        getMysteryPlace(p.mysteryIndex)
-      )})`;
+      return `${t(p.label)}\n(${t(getMysteryPlace(p.mysteryIndex))})`;
     } else if (p.mystery?.label) {
       // if the mystery label is defined in prayer, show mystery label and place
       const { label, mysteryIndex } = p.mystery;
-      return `${translate(label)}\n(${translate(
-        getMysteryPlace(mysteryIndex)
-      )})`;
+      return `${t(label)}\n(${t(getMysteryPlace(mysteryIndex))})`;
     } else {
       // don't show anythign
       return "";
@@ -110,13 +107,13 @@ const Prayer = () => {
           className="d-flex flex-column text-center w-100 justify-content-center"
           style={{ minHeight: "85vh" }}
         >
-          <h2>{translate(todaysMystery.label)}</h2>
+          <h2>{t(todaysMystery.label)}</h2>
           <Moment format="D MMMM, YYYY">{todaysDate}</Moment>
           <div className="mt-4">
             <Button color="info" onClick={startPrayer}>
               <FontAwesomeIcon icon={faChevronDown} />
               &nbsp;&nbsp;
-              {translate("start.label")}
+              {t("start.label")}
             </Button>
           </div>
         </div>
@@ -133,14 +130,14 @@ const Prayer = () => {
             >
               <div>
                 <h6 className="text-right small mb-0 text-muted">
-                  {translate(todaysMystery.label)}
+                  {t(todaysMystery.label)}
                 </h6>
                 <h6 className="text-right small font-weight-bold">
-                  <RichTextDisplay content={translate(getMysteryHeader(p))} />
+                  <RichTextDisplay content={t(getMysteryHeader(p))} />
                 </h6>
                 <h5 className="d-flex justify-content-between align-items-center">
                   <span>
-                    {getIcon(p)} {translate(p?.label)}
+                    {getIcon(p)} {t(p?.label)}
                   </span>
                   {p.isHailMary && (
                     <small className="text-muted">{p.hailMaryIndex}</small>
@@ -152,7 +149,7 @@ const Prayer = () => {
                   )}
                 </h5>
                 <hr />
-                <RichTextDisplay content={translate(p?.description)} />
+                <RichTextDisplay content={t(p?.description)} />
               </div>
               <div className="text-right">
                 <AudioPlayer
