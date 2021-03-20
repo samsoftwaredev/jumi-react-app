@@ -43,24 +43,26 @@ const EditRosary = ({
   const getSpeaker = () => {
     switch (i18n.language) {
       case "en":
-        return <UserCard name="Dalia" text="United States" />;
+        return <UserCard name="Dalia" text="Woman's Voice" />;
       case "es":
-        return <UserCard name="Belkys" text="República Dominicana" />;
+        return <UserCard name="Belkys" text="Voz de Mujer" />;
       default:
         return null;
     }
   };
 
   return (
-    <div>
+    <div className="fixed-top mt-5 pt-2 ml-2">
       <Button className="my-2" color="dark" onClick={toggle}>
         <FontAwesomeIcon icon={faCog} />
       </Button>
       <Modal isOpen={modal} size="lg" toggle={toggle}>
         <ModalHeader toggle={toggle}>{t("settings.label")}</ModalHeader>
         <ModalBody>
-          <Row>
-            <Col md={4}>Change Language:</Col>
+          <Row className="align-items-center">
+            <Col md={4} className="my-3 font-weight-bold">
+              Language:
+            </Col>
             <Col md={8} className="d-flex justify-content-between">
               <UncontrolledButtonDropdown>
                 <ChangeLanguage />
@@ -69,7 +71,9 @@ const EditRosary = ({
             </Col>
             <hr />
             {/* Audio Settings */}
-            <Col md={4}>Audio:</Col>
+            <Col md={4} className="my-3 font-weight-bold">
+              Audio:
+            </Col>
             <Col md={8}>
               <FormGroup check>
                 <Label check>
@@ -89,19 +93,29 @@ const EditRosary = ({
                   <span className="text-muted">Mute Audio</span>
                 </Label>
               </FormGroup>
+            </Col>
+            <hr />
+            <Col md={4} className="my-3 font-weight-bold">
+              Music:
+            </Col>
+            <Col md={8}>
               <FormGroup check>
                 <Label check>
                   <Checkbox
                     checked={backgroundMusic}
                     onChange={onToggleBackgroundMusic}
                   />{" "}
-                  <span className="text-muted">Background Music - Ave</span>
+                  <span className="text-muted">
+                    Background Music - Ave Maria
+                  </span>
                 </Label>
               </FormGroup>
             </Col>
             <hr />
             {/* user can select the mystery the will like to pray */}
-            <Col md={4}>Mystery:</Col>
+            <Col md={4} className="my-3 font-weight-bold">
+              Mystery:
+            </Col>
             <Col md={8}>
               <FormGroup>
                 <Input
@@ -120,7 +134,7 @@ const EditRosary = ({
               </FormGroup>
             </Col>
             {/* Rosary, organize the prayers */}
-            {/* <Col md={4}>Rosary Prayers:</Col>
+            {/* <Col md={4} className="my-3 font-weight-bold">Rosary Prayers:</Col>
             <Col md={8}>
               <SortableList items={rosaryPrayers} onSortEnd={onSortEnd} />
             </Col> */}
