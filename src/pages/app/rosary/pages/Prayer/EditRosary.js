@@ -29,6 +29,7 @@ const EditRosary = ({
   onToggleAudioVolume,
   onUpdateMystery,
   currentMystery,
+  onResetSettings,
 }) => {
   const { i18n, t } = useTranslation();
 
@@ -115,11 +116,11 @@ const EditRosary = ({
           </Row>
         </ModalBody>
         <ModalFooter className="d-flex justify-content-between">
-          <Button color="light" onClick={toggle}>
-            Reset
+          <Button color="light" onClick={onResetSettings}>
+            {t("reset.label")}
           </Button>
           <Button color="primary" onClick={toggle}>
-            Save
+            {t("save.label")}
           </Button>
         </ModalFooter>
       </Modal>
@@ -131,6 +132,11 @@ EditRosary.propTypes = {
   rosary: PropTypes.shape(),
   onToggleAudioAutoplay: PropTypes.func,
   autoplayAudio: PropTypes.bool,
+  audioMute: PropTypes.bool,
+  onToggleAudioVolume: PropTypes.func,
+  onUpdateMystery: PropTypes.func,
+  currentMystery: PropTypes.shape(),
+  onResetSettings: PropTypes.func,
 };
 
 export default EditRosary;

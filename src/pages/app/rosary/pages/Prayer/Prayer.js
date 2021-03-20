@@ -63,6 +63,13 @@ const Prayer = () => {
     setListOfPrayers(rosary.getPrayersList());
   };
 
+  const onResetSettings = () => {
+    setAutoplayAudio(true);
+    setAudioMute(false);
+    onUpdateMystery();
+    // TODO: save it to the localstorage
+  };
+
   const nextPrayer = (prayerIndex) => {
     const prayer = rosary.jumpToPrayer(prayerIndex + 1);
     // check if the prayer is defined
@@ -82,6 +89,7 @@ const Prayer = () => {
         onToggleAudioVolume={onToggleAudioVolume}
         onUpdateMystery={onUpdateMystery}
         currentMystery={currentMystery}
+        onResetSettings={onResetSettings}
       />
       <Row className="flex-column align-items-center">
         <Col className="d-flex flex-column align-items-center">
