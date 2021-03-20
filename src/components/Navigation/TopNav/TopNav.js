@@ -9,10 +9,10 @@ import {
   UncontrolledDropdown,
 } from "reactstrap";
 import { animateScroll } from "react-scroll";
-import Translate from "../Translate";
-import ChangeLanguage from "../Translate/ChangeLanguage";
+import Translate from "../../Translate";
+import ChangeLanguage from "../../Translate/ChangeLanguage";
 
-const MainNavigation = () => {
+const TopNav = () => {
   let location = useLocation();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +27,6 @@ const MainNavigation = () => {
     {
       label: "religiousGroups.label",
       path: "/app/groups",
-      disabled: true,
     },
   ];
 
@@ -66,4 +65,4 @@ const MainNavigation = () => {
   );
 };
 
-export default MainNavigation;
+export default TopNav;
