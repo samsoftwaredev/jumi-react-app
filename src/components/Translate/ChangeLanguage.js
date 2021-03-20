@@ -24,6 +24,9 @@ const ChangeLanguage = ({ props }) => {
   const changeLanguage = (language) => {
     i18n
       .changeLanguage(language)
+      .then(() => {
+        // TODO: save it to the localstorage
+      })
       .catch(console.error("Unable to change language"));
   };
 

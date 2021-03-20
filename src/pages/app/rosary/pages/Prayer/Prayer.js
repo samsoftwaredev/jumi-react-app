@@ -19,6 +19,7 @@ const Prayer = () => {
 
   const [currentPrayerIndex, setCurrentPrayerIndex] = useState(null);
   const [autoplayAudio, setAutoplayAudio] = useState(true);
+  const [audioMute, setAudioMute] = useState(false);
 
   const todaysMystery = rosary.getMystery();
   const prayersList = rosary.getPrayersList();
@@ -49,6 +50,12 @@ const Prayer = () => {
 
   const onToggleAudioAutoplay = () => {
     setAutoplayAudio(!autoplayAudio);
+    // TODO: save it to the localstorage
+  };
+
+  const onToggleAudioVolume = () => {
+    setAudioMute(!audioMute);
+    // TODO: save it to the localstorage
   };
 
   const nextPrayer = (prayerIndex) => {
@@ -66,6 +73,8 @@ const Prayer = () => {
         rosary={rosary}
         autoplayAudio={autoplayAudio}
         onToggleAudioAutoplay={onToggleAudioAutoplay}
+        audioMute={audioMute}
+        onToggleAudioVolume={onToggleAudioVolume}
       />
       <Row className="flex-column align-items-center">
         <Col className="d-flex flex-column align-items-center">
@@ -98,6 +107,8 @@ const Prayer = () => {
                     audioFile={p?.audio ? p?.audio[language] : null}
                     autoplay={autoplayAudio && isCurrentPrayer}
                     audioEnded={() => nextPrayer(index)}
+                    audioMute={audioMute}
+                    onToggleAudioVolume={onToggleAudioVolume}
                   />
                   {masagePrayerList.length - 1 > index && (
                     <Button

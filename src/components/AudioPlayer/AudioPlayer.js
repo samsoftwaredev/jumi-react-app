@@ -2,9 +2,20 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "reactstrap";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPause, faPlay } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPause,
+  faPlay,
+  faVolumeMute,
+  faVolumeUp,
+} from "@fortawesome/free-solid-svg-icons";
 
-const AudioPlayer = ({ audioFile, audioEnded, autoplay = false }) => {
+const AudioPlayer = ({
+  audioFile,
+  audioEnded,
+  autoplay = false,
+  audioMute,
+  onToggleAudioVolume,
+}) => {
   const audioRef = useRef();
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -18,6 +29,20 @@ const AudioPlayer = ({ audioFile, audioEnded, autoplay = false }) => {
     setIsPlaying(true);
   };
 
+  const onMute = () => {
+    if (audioRef) {
+      audioRef.current.volume = 0;
+      onToggleAudioVolume();
+    }
+  };
+
+  const onUnmute = () => {
+    if (audioRef) {
+      audioRef.current.volume = 1;
+      onToggleAudioVolume();
+    }
+  };
+
   useEffect(() => {
     if (autoplay) {
       onPlay();
@@ -25,6 +50,12 @@ const AudioPlayer = ({ audioFile, audioEnded, autoplay = false }) => {
       onPause();
     }
   }, [autoplay]);
+
+  useEffect(() => {
+    if (audioRef?.current?.volume) {
+      audioRef.current.volume = audioMute ? 0 : 1;
+    }
+  }, [audioMute]);
 
   if (!audioFile) return null;
   // if audio file is set, display controls
@@ -41,6 +72,15 @@ const AudioPlayer = ({ audioFile, audioEnded, autoplay = false }) => {
         <source src={audioFile} type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
+      {audioMute ? (
+        <Button color="light" className="ml-1 btn-circle" onClick={onUnmute}>
+          <FontAwesomeIcon icon={faVolumeMute} />
+        </Button>
+      ) : (
+        <Button color="light" className="ml-1 btn-circle" onClick={onMute}>
+          <FontAwesomeIcon icon={faVolumeUp} />
+        </Button>
+      )}
       {isPlaying ? (
         <Button color="light" className="ml-1 btn-circle" onClick={onPause}>
           <FontAwesomeIcon icon={faPause} />

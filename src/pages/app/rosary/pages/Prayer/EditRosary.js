@@ -19,9 +19,15 @@ import ChangeLanguage from "../../../../../components/Translate/ChangeLanguage";
 import { Checkbox } from "../../../../../components/Fields";
 import { UserCard } from "../../../../../components/Users";
 
-const EditRosary = ({ rosary, onToggleAudioAutoplay, autoplayAudio }) => {
+const EditRosary = ({
+  rosary,
+  onToggleAudioAutoplay,
+  autoplayAudio,
+  audioMute,
+  onToggleAudioVolume,
+}) => {
   const { i18n } = useTranslation();
-  console.log(autoplayAudio);
+
   const [modal, setModal] = useState(false);
   // const [rosaryPrayers, setRosaryPrayers] = useState(rosary.getPrayersList());
 
@@ -39,7 +45,7 @@ const EditRosary = ({ rosary, onToggleAudioAutoplay, autoplayAudio }) => {
       case "es":
         return <UserCard name="Belkys" text="República Dominicana" />;
       default:
-        break;
+        return null;
     }
   };
 
@@ -49,7 +55,7 @@ const EditRosary = ({ rosary, onToggleAudioAutoplay, autoplayAudio }) => {
         <FontAwesomeIcon icon={faCog} />
       </Button>
       <Modal isOpen={modal} size="lg" toggle={toggle}>
-        <ModalHeader toggle={toggle}>Settings</ModalHeader>
+        <ModalHeader toggle={toggle}>Rosary Settings</ModalHeader>
         <ModalBody>
           <Row>
             <Col md={4}>Change Language:</Col>
@@ -69,11 +75,23 @@ const EditRosary = ({ rosary, onToggleAudioAutoplay, autoplayAudio }) => {
                     checked={autoplayAudio}
                     onChange={onToggleAudioAutoplay}
                   />{" "}
-                  <span>Autoplay audio</span>
+                  <span>Autoplay Audio</span>
+                </Label>
+              </FormGroup>
+              <FormGroup check>
+                <Label check>
+                  <Checkbox
+                    checked={audioMute}
+                    onChange={onToggleAudioVolume}
+                  />{" "}
+                  <span>Mute Audio</span>
                 </Label>
               </FormGroup>
             </Col>
             <hr />
+            {/* Rosary */}
+            <Col md={4}>Mysteries:</Col>
+            <Col md={8}></Col>
             {/* Rosary */}
             {/* <Col md={4}>Rosary Prayers:</Col>
             <Col md={8}>
