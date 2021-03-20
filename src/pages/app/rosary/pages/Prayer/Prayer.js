@@ -10,6 +10,8 @@ import { strToId } from "../../../../../helpers/transform";
 import StartView from "./StartView";
 import PrayerInfo from "./PrayerInfo";
 import EditRosary from "./EditRosary";
+import AudioBackground from "../../../../../components/AudioPlayer/AudioBackground";
+import aveAudioFile from "../../audio/ave.mp3";
 
 const Prayer = () => {
   const { i18n } = useTranslation();
@@ -19,6 +21,8 @@ const Prayer = () => {
 
   const [currentPrayerIndex, setCurrentPrayerIndex] = useState(null);
   const [currentMystery, setCurrentMysetry] = useState(rosary.getMystery());
+  const [prayerStarted, setPrayerStarted] = useState(false);
+  const [backgroundMusic, setBackgroundMusic] = useState(false);
   const [autoplayAudio, setAutoplayAudio] = useState(true);
   const [audioMute, setAudioMute] = useState(false);
   const [listOfPrayers, setListOfPrayers] = useState(rosary.getPrayersList());
@@ -43,6 +47,7 @@ const Prayer = () => {
     const prayer = rosary.jumpToPrayer(0);
     if (prayer) {
       scrollToPrayer(prayer);
+      setPrayerStarted(true);
       setCurrentPrayerIndex(rosary.getPrayerIndex());
     }
   };
@@ -57,6 +62,11 @@ const Prayer = () => {
     // TODO: save it to the localstorage
   };
 
+  const onToggleBackgroundMusic = () => {
+    setBackgroundMusic(!backgroundMusic);
+    // TODO: save it to the localstorage
+  };
+
   const onUpdateMystery = (mysteryName) => {
     rosary.setMystery(mysteryName);
     setCurrentMysetry(rosary.getMystery());
@@ -66,6 +76,7 @@ const Prayer = () => {
   const onResetSettings = () => {
     setAutoplayAudio(true);
     setAudioMute(false);
+    setBackgroundMusic(false);
     onUpdateMystery();
     // TODO: save it to the localstorage
   };
@@ -81,6 +92,9 @@ const Prayer = () => {
 
   return (
     <div>
+      {backgroundMusic && (
+        <AudioBackground audioFile={aveAudioFile} autoplay={prayerStarted} />
+      )}
       <EditRosary
         rosary={rosary}
         autoplayAudio={autoplayAudio}
@@ -90,6 +104,8 @@ const Prayer = () => {
         onUpdateMystery={onUpdateMystery}
         currentMystery={currentMystery}
         onResetSettings={onResetSettings}
+        backgroundMusic={backgroundMusic}
+        onToggleBackgroundMusic={onToggleBackgroundMusic}
       />
       <Row className="flex-column align-items-center">
         <Col className="d-flex flex-column align-items-center">

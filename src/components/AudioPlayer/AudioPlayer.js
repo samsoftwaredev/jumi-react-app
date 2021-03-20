@@ -70,6 +70,7 @@ const AudioPlayer = ({
       >
         <source src={audioFile} type="audio/ogg" />
         <source src={audioFile} type="audio/mpeg" />
+        <source src={audioFile} type="audio/mp3" />
         Your browser does not support the audio element.
       </audio>
       {audioMute ? (

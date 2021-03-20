@@ -30,6 +30,8 @@ const EditRosary = ({
   onUpdateMystery,
   currentMystery,
   onResetSettings,
+  backgroundMusic,
+  onToggleBackgroundMusic,
 }) => {
   const { i18n, t } = useTranslation();
 
@@ -51,11 +53,11 @@ const EditRosary = ({
 
   return (
     <div>
-      <Button className="my-2" color="light" onClick={toggle}>
+      <Button className="my-2" color="dark" onClick={toggle}>
         <FontAwesomeIcon icon={faCog} />
       </Button>
       <Modal isOpen={modal} size="lg" toggle={toggle}>
-        <ModalHeader toggle={toggle}>Rosary Settings</ModalHeader>
+        <ModalHeader toggle={toggle}>{t("settings.label")}</ModalHeader>
         <ModalBody>
           <Row>
             <Col md={4}>Change Language:</Col>
@@ -75,7 +77,7 @@ const EditRosary = ({
                     checked={autoplayAudio}
                     onChange={onToggleAudioAutoplay}
                   />{" "}
-                  <span>Autoplay Audio</span>
+                  <span className="text-muted">Autoplay Audio</span>
                 </Label>
               </FormGroup>
               <FormGroup check>
@@ -84,7 +86,16 @@ const EditRosary = ({
                     checked={audioMute}
                     onChange={onToggleAudioVolume}
                   />{" "}
-                  <span>Mute Audio</span>
+                  <span className="text-muted">Mute Audio</span>
+                </Label>
+              </FormGroup>
+              <FormGroup check>
+                <Label check>
+                  <Checkbox
+                    checked={backgroundMusic}
+                    onChange={onToggleBackgroundMusic}
+                  />{" "}
+                  <span className="text-muted">Background Music - Ave</span>
                 </Label>
               </FormGroup>
             </Col>
@@ -137,6 +148,8 @@ EditRosary.propTypes = {
   onUpdateMystery: PropTypes.func,
   currentMystery: PropTypes.shape(),
   onResetSettings: PropTypes.func,
+  backgroundMusic: PropTypes.bool,
+  onToggleBackgroundMusic: PropTypes.func,
 };
 
 export default EditRosary;

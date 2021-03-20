@@ -19,6 +19,7 @@
     "language": { "label": "Lenguaje" },
     "save": { "label": "Salvar" },
     "reset": { "label": "Reinicializar" },
+    "settings": { "label": "Configuración" },
     "howToPray": {
       "label": "¿Cómo rezar el Santo Rosario?",
       "description": "Se enuncia en cada decena el \"misterio\", por ejemplo, en el primer misterio: \"La Encarnación del Hijo de Dios\". Después de una breve pausa de reflexión, se rezan: un Padre nuestro, diez Avemarías y un Gloria. A cada decena del \"rosario\" se puede añadir una invocación. A la final del Rosario se recita la Letanía Lauretana, u otras oraciones marianas."
