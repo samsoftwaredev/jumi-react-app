@@ -8,7 +8,7 @@ const AudioBackground = ({ audioFile, autoplay }) => {
   };
 
   const onPlay = () => {
-    if (audioRef.current) {
+    if (audioRef?.current) {
       audioRef.current.play();
       audioRef.current.volume = 0.1;
     }

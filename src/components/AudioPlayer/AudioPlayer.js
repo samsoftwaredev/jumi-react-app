@@ -45,9 +45,11 @@ const AudioPlayer = ({
     }
   }, [autoplay]);
 
-  if (audioRef?.current) {
-    audioRef.current.volume = audioMute ? 0 : 1;
-  }
+  useEffect(() => {
+    if (audioRef?.current) {
+      audioRef.current.volume = audioMute ? 0 : 1;
+    }
+  }, [audioMute]);
 
   if (!audioFile) return null;
   // if audio file is set, display controls

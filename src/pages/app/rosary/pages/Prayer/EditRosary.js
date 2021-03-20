@@ -52,8 +52,8 @@ const EditRosary = ({
   };
 
   return (
-    <div className="fixed-top mt-5 pt-2 ml-2">
-      <Button className="my-2" color="dark" onClick={toggle}>
+    <div>
+      <Button className="my-2" color="light" onClick={toggle}>
         <FontAwesomeIcon icon={faCog} />
       </Button>
       <Modal isOpen={modal} size="lg" toggle={toggle}>
