@@ -5,7 +5,7 @@ import {
   Route,
   useRouteMatch,
 } from "react-router-dom";
-import { Spinner } from "reactstrap";
+import { LoadingPage } from "../../components/Loading";
 
 const LogIn = lazy(() => import("./login"));
 const SignUp = lazy(() => import("./signup"));
@@ -14,7 +14,7 @@ const PageNotFound = lazy(() => import("../../components/error/PageNotFound"));
 const Auth = () => {
   let match = useRouteMatch();
   return (
-    <Suspense fallback={<Spinner />}>
+    <Suspense fallback={<LoadingPage />}>
       <Router>
         <Switch>
           <Route exact path={`${match.path}/log-in`} component={LogIn} />

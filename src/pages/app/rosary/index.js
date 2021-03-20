@@ -9,8 +9,8 @@ import {
 import { Nav, NavItem } from "reactstrap";
 import Translate from "../../../components/Translate";
 import MainLayout from "../../../layout/MainLayout";
-import HowTo from "./howTo";
-import Prayer from "./prayer";
+import HowTo from "./pages/HowTo";
+import Prayer from "./pages/Prayer";
 
 const Rosary = () => {
   let match = useRouteMatch();

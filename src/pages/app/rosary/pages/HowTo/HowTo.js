@@ -1,11 +1,11 @@
 import React from "react";
 import { Col, Nav, NavItem, Row } from "reactstrap";
-import RichTextDisplay from "interweave";
 import { Link as ReactScrollLink } from "react-scroll";
-import { prayers } from "./constants/prayers";
-import { rosaryMysteries } from "./constants/mysteries";
-import { strToId } from "../../../helpers/transform";
 import { useTranslation } from "react-i18next";
+import RichTextDisplay from "interweave";
+import { prayers } from "../../constants/prayers";
+import { rosaryMysteries } from "../../constants/mysteries";
+import { strToId } from "../../../../../helpers/transform";
 
 const menu = [
   {
@@ -95,7 +95,6 @@ const HowTo = () => {
           <div key={m.id} id={m.id}>
             <h1>{t(m.label)}</h1>
             <p>
-              {" "}
               <RichTextDisplay content={t(m.description)} />
             </p>
 

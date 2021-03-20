@@ -7,27 +7,17 @@ import {
   Nav,
   NavItem,
   UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
 } from "reactstrap";
 import { animateScroll } from "react-scroll";
 import Translate from "../Translate";
-import { useTranslation } from "react-i18next";
+import ChangeLanguage from "../Translate/ChangeLanguage";
 
 const MainNavigation = () => {
   let location = useLocation();
 
-  const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
-
-  const changeLanguage = (language) => {
-    i18n
-      .changeLanguage(language)
-      .catch(console.error("Unable to change language"));
-  };
 
   const menu = [
     {
@@ -40,19 +30,6 @@ const MainNavigation = () => {
       disabled: true,
     },
   ];
-
-  const languages = [
-    {
-      label: "Español",
-      abbrv: "es",
-    },
-    {
-      label: "English",
-      abbrv: "en",
-    },
-  ];
-
-  const langIndex = languages.findIndex(({ abbrv }) => abbrv === i18n.language);
 
   useEffect(() => {
     // smooth scroll to the correct prayer
@@ -82,16 +59,7 @@ const MainNavigation = () => {
           ))}
         </Nav>
         <UncontrolledDropdown inNavbar>
-          <DropdownToggle nav caret>
-            {languages[langIndex]?.label || <Translate text="language_label" />}
-          </DropdownToggle>
-          <DropdownMenu right>
-            {languages.map(({ abbrv, label }) => (
-              <DropdownItem key={abbrv} onClick={() => changeLanguage(abbrv)}>
-                {label}
-              </DropdownItem>
-            ))}
-          </DropdownMenu>
+          <ChangeLanguage />
         </UncontrolledDropdown>
       </Collapse>
     </Navbar>

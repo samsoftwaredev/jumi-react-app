@@ -1,8 +1,8 @@
 import React, { lazy, Suspense } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import { Spinner } from "reactstrap";
 import "../assets/styles/main.scss";
 import PageNotFound from "../components/error/PageNotFound";
+import { LoadingPage } from "../components/Loading";
 
 const Auth = lazy(() => import("./auth"));
 const App = lazy(() => import("./app"));
@@ -10,7 +10,7 @@ const Home = lazy(() => import("./app/home"));
 
 const Main = () => {
   return (
-    <Suspense fallback={<Spinner />}>
+    <Suspense fallback={<LoadingPage />}>
       <Switch>
         <Route path="/app" component={App} />
         <Route path="/auth" component={Auth} />
