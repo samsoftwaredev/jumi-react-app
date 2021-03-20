@@ -3,10 +3,10 @@
     "static/js/0.a5f46066.chunk.js": "/jumi-react-app/static/js/0.a5f46066.chunk.js",
     "static/js/0.a5f46066.chunk.js.map": "/jumi-react-app/static/js/0.a5f46066.chunk.js.map",
     "main.css": "/jumi-react-app/static/css/main.87a4db3e.chunk.css",
-    "main.js": "/jumi-react-app/static/js/main.7aabc84a.chunk.js",
-    "main.js.map": "/jumi-react-app/static/js/main.7aabc84a.chunk.js.map",
-    "runtime-main.js": "/jumi-react-app/static/js/runtime-main.5e4514b5.js",
-    "runtime-main.js.map": "/jumi-react-app/static/js/runtime-main.5e4514b5.js.map",
+    "main.js": "/jumi-react-app/static/js/main.0fee1889.chunk.js",
+    "main.js.map": "/jumi-react-app/static/js/main.0fee1889.chunk.js.map",
+    "runtime-main.js": "/jumi-react-app/static/js/runtime-main.23dfa174.js",
+    "runtime-main.js.map": "/jumi-react-app/static/js/runtime-main.23dfa174.js.map",
     "static/css/3.150d169a.chunk.css": "/jumi-react-app/static/css/3.150d169a.chunk.css",
     "static/js/3.92791e7c.chunk.js": "/jumi-react-app/static/js/3.92791e7c.chunk.js",
     "static/js/3.92791e7c.chunk.js.map": "/jumi-react-app/static/js/3.92791e7c.chunk.js.map",
@@ -16,8 +16,8 @@
     "static/js/5.1ec607f9.chunk.js.map": "/jumi-react-app/static/js/5.1ec607f9.chunk.js.map",
     "static/js/6.6560aa20.chunk.js": "/jumi-react-app/static/js/6.6560aa20.chunk.js",
     "static/js/6.6560aa20.chunk.js.map": "/jumi-react-app/static/js/6.6560aa20.chunk.js.map",
-    "static/js/7.e3e959a0.chunk.js": "/jumi-react-app/static/js/7.e3e959a0.chunk.js",
-    "static/js/7.e3e959a0.chunk.js.map": "/jumi-react-app/static/js/7.e3e959a0.chunk.js.map",
+    "static/js/7.f8d254f3.chunk.js": "/jumi-react-app/static/js/7.f8d254f3.chunk.js",
+    "static/js/7.f8d254f3.chunk.js.map": "/jumi-react-app/static/js/7.f8d254f3.chunk.js.map",
     "static/js/8.84ed4467.chunk.js": "/jumi-react-app/static/js/8.84ed4467.chunk.js",
     "static/js/8.84ed4467.chunk.js.map": "/jumi-react-app/static/js/8.84ed4467.chunk.js.map",
     "static/js/9.6739c8a8.chunk.js": "/jumi-react-app/static/js/9.6739c8a8.chunk.js",
@@ -107,10 +107,10 @@
     "static/media/thirdSorrowfulMysteryDescription.f0f4b6b4.ogg": "/jumi-react-app/static/media/thirdSorrowfulMysteryDescription.f0f4b6b4.ogg"
   },
   "entrypoints": [
-    "static/js/runtime-main.5e4514b5.js",
+    "static/js/runtime-main.23dfa174.js",
     "static/css/3.150d169a.chunk.css",
     "static/js/3.92791e7c.chunk.js",
     "static/css/main.87a4db3e.chunk.css",
-    "static/js/main.7aabc84a.chunk.js"
+    "static/js/main.0fee1889.chunk.js"
   ]
 }
