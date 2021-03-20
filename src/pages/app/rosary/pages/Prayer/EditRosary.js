@@ -28,16 +28,12 @@ const EditRosary = ({
   audioMute,
   onToggleAudioVolume,
   onUpdateMystery,
+  currentMystery,
 }) => {
   const { i18n, t } = useTranslation();
 
   const [modal, setModal] = useState(false);
   // const [rosaryPrayers, setRosaryPrayers] = useState(rosary.getPrayersList());
-
-  const onSortEnd = (e) => {
-    // var newTodos = arrayMove(todos, e.oldIndex, e.newIndex )
-    // setTodos(newTodos)
-  };
 
   const toggle = () => setModal(!modal);
 
@@ -92,7 +88,7 @@ const EditRosary = ({
               </FormGroup>
             </Col>
             <hr />
-            {/* Mysteries */}
+            {/* user can select the mystery the will like to pray */}
             <Col md={4}>Mystery:</Col>
             <Col md={8}>
               <FormGroup>
@@ -101,6 +97,7 @@ const EditRosary = ({
                   type="select"
                   name="select"
                   id="exampleSelect"
+                  value={currentMystery?.id}
                 >
                   {mysteries.map((name) => (
                     <option value={name}>
@@ -110,7 +107,7 @@ const EditRosary = ({
                 </Input>
               </FormGroup>
             </Col>
-            {/* Rosary */}
+            {/* Rosary, organize the prayers */}
             {/* <Col md={4}>Rosary Prayers:</Col>
             <Col md={8}>
               <SortableList items={rosaryPrayers} onSortEnd={onSortEnd} />

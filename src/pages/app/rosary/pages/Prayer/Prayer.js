@@ -21,10 +21,9 @@ const Prayer = () => {
   const [currentMystery, setCurrentMysetry] = useState(rosary.getMystery());
   const [autoplayAudio, setAutoplayAudio] = useState(true);
   const [audioMute, setAudioMute] = useState(false);
+  const [listOfPrayers, setListOfPrayers] = useState(rosary.getPrayersList());
 
-  const prayersList = rosary.getPrayersList();
-
-  const masagePrayerList = prayersList.map((p, index) => ({
+  const masagePrayerList = listOfPrayers.map((p, index) => ({
     ...p,
     // create a unique ID for all prayers in the rosary
     id: strToId(`${p.label} ${index}`),
@@ -61,6 +60,7 @@ const Prayer = () => {
   const onUpdateMystery = (mysteryName) => {
     rosary.setMystery(mysteryName);
     setCurrentMysetry(rosary.getMystery());
+    setListOfPrayers(rosary.getPrayersList());
   };
 
   const nextPrayer = (prayerIndex) => {
@@ -81,6 +81,7 @@ const Prayer = () => {
         audioMute={audioMute}
         onToggleAudioVolume={onToggleAudioVolume}
         onUpdateMystery={onUpdateMystery}
+        currentMystery={currentMystery}
       />
       <Row className="flex-column align-items-center">
         <Col className="d-flex flex-column align-items-center">

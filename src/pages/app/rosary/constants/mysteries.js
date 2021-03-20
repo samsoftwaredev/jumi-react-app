@@ -80,6 +80,7 @@ export const mysteries = ["glorious", "sorrowful", "joyful", "luminous"];
 export const rosaryMysteries = {
   joyful: {
     label: "mysteries.joyful.label",
+    id: "joyful",
     mysteries: [
       {
         label: "mysteries.joyful.first.label",
@@ -140,6 +141,7 @@ export const rosaryMysteries = {
   },
   luminous: {
     label: "mysteries.luminous.label",
+    id: "luminous",
     mysteries: [
       {
         label: "mysteries.luminous.first.label",
@@ -200,6 +202,7 @@ export const rosaryMysteries = {
   },
   sorrowful: {
     label: "mysteries.sorrowful.label",
+    id: "sorrowful",
     mysteries: [
       {
         label: "mysteries.sorrowful.first.label",
@@ -260,6 +263,7 @@ export const rosaryMysteries = {
   },
   glorious: {
     label: "mysteries.glorious.label",
+    id: "glorious",
     mysteries: [
       {
         label: "mysteries.glorious.first.label",
