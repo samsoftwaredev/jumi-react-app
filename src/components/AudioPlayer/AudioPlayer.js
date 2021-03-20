@@ -30,17 +30,11 @@ const AudioPlayer = ({
   };
 
   const onMute = () => {
-    if (audioRef) {
-      audioRef.current.volume = 0;
-      onToggleAudioVolume();
-    }
+    onToggleAudioVolume();
   };
 
   const onUnmute = () => {
-    if (audioRef) {
-      audioRef.current.volume = 1;
-      onToggleAudioVolume();
-    }
+    onToggleAudioVolume();
   };
 
   useEffect(() => {
@@ -51,11 +45,9 @@ const AudioPlayer = ({
     }
   }, [autoplay]);
 
-  useEffect(() => {
-    if (audioRef?.current?.volume) {
-      audioRef.current.volume = audioMute ? 0 : 1;
-    }
-  }, [audioMute]);
+  if (audioRef?.current) {
+    audioRef.current.volume = audioMute ? 0 : 1;
+  }
 
   if (!audioFile) return null;
   // if audio file is set, display controls
