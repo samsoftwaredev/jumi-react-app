@@ -18,10 +18,10 @@ const Prayer = () => {
   const rosary = new RosaryPrayer();
 
   const [currentPrayerIndex, setCurrentPrayerIndex] = useState(null);
+  const [currentMystery, setCurrentMysetry] = useState(rosary.getMystery());
   const [autoplayAudio, setAutoplayAudio] = useState(true);
   const [audioMute, setAudioMute] = useState(false);
 
-  const todaysMystery = rosary.getMystery();
   const prayersList = rosary.getPrayersList();
 
   const masagePrayerList = prayersList.map((p, index) => ({
@@ -58,6 +58,11 @@ const Prayer = () => {
     // TODO: save it to the localstorage
   };
 
+  const onUpdateMystery = (mysteryName) => {
+    rosary.setMystery(mysteryName);
+    setCurrentMysetry(rosary.getMystery());
+  };
+
   const nextPrayer = (prayerIndex) => {
     const prayer = rosary.jumpToPrayer(prayerIndex + 1);
     // check if the prayer is defined
@@ -75,6 +80,7 @@ const Prayer = () => {
         onToggleAudioAutoplay={onToggleAudioAutoplay}
         audioMute={audioMute}
         onToggleAudioVolume={onToggleAudioVolume}
+        onUpdateMystery={onUpdateMystery}
       />
       <Row className="flex-column align-items-center">
         <Col className="d-flex flex-column align-items-center">
@@ -85,7 +91,7 @@ const Prayer = () => {
           >
             <StartView
               onStartPrayer={onStartPrayer}
-              todaysMystery={todaysMystery}
+              currentMystery={currentMystery}
             />
           </div>
           {/* the rosary prayers */}
@@ -97,10 +103,10 @@ const Prayer = () => {
                 id={p.id}
                 key={p.id}
                 className="d-flex flex-column justify-content-between"
-                style={{ minHeight: "95vh", borderLeft: "1px solid #e3e3e3" }}
+                style={{ minHeight: "90vh", borderLeft: "1px solid #e3e3e3" }}
               >
                 <div>
-                  <PrayerInfo todaysMystery={todaysMystery} prayer={p} />
+                  <PrayerInfo currentMystery={currentMystery} prayer={p} />
                 </div>
                 <div className="text-right mb-5">
                   <AudioPlayer

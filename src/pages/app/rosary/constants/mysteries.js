@@ -75,6 +75,8 @@ export const rosaryDays = {
   saturday: "joyful",
 };
 
+export const mysteries = ["glorious", "sorrowful", "joyful", "luminous"];
+
 export const rosaryMysteries = {
   joyful: {
     label: "mysteries.joyful.label",

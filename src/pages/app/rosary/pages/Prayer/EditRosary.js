@@ -11,6 +11,7 @@ import {
   UncontrolledButtonDropdown,
   FormGroup,
   Label,
+  Input,
 } from "reactstrap";
 import { faCog } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
@@ -18,6 +19,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ChangeLanguage from "../../../../../components/Translate/ChangeLanguage";
 import { Checkbox } from "../../../../../components/Fields";
 import { UserCard } from "../../../../../components/Users";
+import { mysteries, rosaryMysteries } from "../../constants/mysteries";
 
 const EditRosary = ({
   rosary,
@@ -25,8 +27,9 @@ const EditRosary = ({
   autoplayAudio,
   audioMute,
   onToggleAudioVolume,
+  onUpdateMystery,
 }) => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const [modal, setModal] = useState(false);
   // const [rosaryPrayers, setRosaryPrayers] = useState(rosary.getPrayersList());
@@ -89,9 +92,24 @@ const EditRosary = ({
               </FormGroup>
             </Col>
             <hr />
-            {/* Rosary */}
-            <Col md={4}>Mysteries:</Col>
-            <Col md={8}></Col>
+            {/* Mysteries */}
+            <Col md={4}>Mystery:</Col>
+            <Col md={8}>
+              <FormGroup>
+                <Input
+                  onChange={(e) => onUpdateMystery(e.target.value)}
+                  type="select"
+                  name="select"
+                  id="exampleSelect"
+                >
+                  {mysteries.map((name) => (
+                    <option value={name}>
+                      {t(rosaryMysteries[name].label)}
+                    </option>
+                  ))}
+                </Input>
+              </FormGroup>
+            </Col>
             {/* Rosary */}
             {/* <Col md={4}>Rosary Prayers:</Col>
             <Col md={8}>

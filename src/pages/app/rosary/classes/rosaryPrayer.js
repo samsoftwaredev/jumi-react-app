@@ -8,11 +8,13 @@ export class RosaryPrayer {
   _prayerType = prayers;
   _rosaryDays = rosaryDays;
   _rosaryMysteries = rosaryMysteries;
+  _mysterySelected = rosaryMysteries;
   _prayersList = [];
   _prayerIndex = 0;
 
   constructor() {
     // initilize the prayer by setting the rosary
+    this.setMystery();
     this._prayersList = this.getPrayersList();
   }
 
@@ -77,18 +79,25 @@ export class RosaryPrayer {
   }
 
   // the mystery of the day
-  getMystery(daySelected) {
-    // if no date is passed it will set today's date
-    const dayOfTheWeek = isNaN(daySelected) ? new Date().getDay() : daySelected;
-    const arrOfPrayersDays = Object.values(this._rosaryDays);
-    const mysteryName = arrOfPrayersDays[dayOfTheWeek];
-    const mystery = this._rosaryMysteries[mysteryName];
-    return mystery;
+  getMystery() {
+    return this._mysterySelected;
+  }
+
+  setMystery(mysteryName) {
+    if (!mysteryName) {
+      // if no mysteryName was passed, it will set the mystery to today's date
+      const dayOfTheWeek = new Date().getDay();
+      const arrOfPrayersDays = Object.values(this._rosaryDays);
+      const name = arrOfPrayersDays[dayOfTheWeek];
+      this._mysterySelected = this._rosaryMysteries[name];
+    } else {
+      this._mysterySelected = this._rosaryMysteries[mysteryName];
+    }
   }
 
   // built the list of all the prayers that the rosary needs
   getPrayersList() {
-    const mysteryInfo = this.getMystery();
+    const mysteryInfo = this._mysterySelected;
     const arr = [];
     // 1. set the intial prayers
     arr.push(this._prayerType.start);

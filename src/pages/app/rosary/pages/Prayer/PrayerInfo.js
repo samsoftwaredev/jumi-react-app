@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import RichTextDisplay from "interweave";
 import { useTranslation } from "react-i18next";
 
-const PrayerInfo = ({ prayer, todaysMystery }) => {
+const PrayerInfo = ({ prayer, currentMystery }) => {
   const { t } = useTranslation();
 
   const getIcon = (p) => {
@@ -55,7 +55,7 @@ const PrayerInfo = ({ prayer, todaysMystery }) => {
   return (
     <>
       <h6 className="text-right small mb-0 text-muted">
-        {t(todaysMystery.label)}
+        {t(currentMystery.label)}
       </h6>
       <h6 className="text-right small font-weight-bold">
         <RichTextDisplay content={t(getMysteryHeader(prayer))} />
@@ -81,7 +81,7 @@ const PrayerInfo = ({ prayer, todaysMystery }) => {
 
 PrayerInfo.propTypes = {
   p: PropTypes.shape().isRequired,
-  todaysMystery: PropTypes.shape().isRequired,
+  currentMystery: PropTypes.shape().isRequired,
 };
 
 export default PrayerInfo;
