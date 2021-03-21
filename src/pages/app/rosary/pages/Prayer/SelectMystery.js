@@ -8,7 +8,7 @@ const SelectMystery = ({ currentMystery, onUpdateMystery, todaysMystery }) => {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <div className="d-none d-md-block">
       {mysteries.map((mysteryName) => {
         const active = currentMystery.id === mysteryName;
         const forToday = todaysMystery === mysteryName;
