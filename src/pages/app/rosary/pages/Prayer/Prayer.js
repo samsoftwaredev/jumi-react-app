@@ -12,6 +12,7 @@ import PrayerInfo from "./PrayerInfo";
 import EditRosary from "./EditRosary";
 import AudioBackground from "../../../../../components/AudioPlayer/AudioBackground";
 import aveAudioFile from "../../audio/ave.mp3";
+import SelectMystery from "./SelectMystery";
 
 const Prayer = () => {
   const { i18n } = useTranslation();
@@ -19,6 +20,7 @@ const Prayer = () => {
   const language = i18n.language;
   const rosary = new RosaryPrayer();
 
+  const todaysMystery = rosary.getTodaysMystery();
   const [currentPrayerIndex, setCurrentPrayerIndex] = useState(null);
   const [currentMystery, setCurrentMysetry] = useState(rosary.getMystery());
   const [prayerStarted, setPrayerStarted] = useState(false);
@@ -95,18 +97,25 @@ const Prayer = () => {
       {backgroundMusic && (
         <AudioBackground audioFile={aveAudioFile} autoplay={prayerStarted} />
       )}
-      <EditRosary
-        rosary={rosary}
-        autoplayAudio={autoplayAudio}
-        onToggleAudioAutoplay={onToggleAudioAutoplay}
-        audioMute={audioMute}
-        onToggleAudioVolume={onToggleAudioVolume}
-        onUpdateMystery={onUpdateMystery}
-        currentMystery={currentMystery}
-        onResetSettings={onResetSettings}
-        backgroundMusic={backgroundMusic}
-        onToggleBackgroundMusic={onToggleBackgroundMusic}
-      />
+      <div className="d-flex justify-content-center">
+        <EditRosary
+          rosary={rosary}
+          autoplayAudio={autoplayAudio}
+          onToggleAudioAutoplay={onToggleAudioAutoplay}
+          audioMute={audioMute}
+          onToggleAudioVolume={onToggleAudioVolume}
+          onUpdateMystery={onUpdateMystery}
+          currentMystery={currentMystery}
+          onResetSettings={onResetSettings}
+          backgroundMusic={backgroundMusic}
+          onToggleBackgroundMusic={onToggleBackgroundMusic}
+        />
+        <SelectMystery
+          currentMystery={currentMystery}
+          onUpdateMystery={onUpdateMystery}
+          todaysMystery={todaysMystery}
+        />
+      </div>
       <Row className="flex-column align-items-center">
         <Col className="d-flex flex-column align-items-center">
           {/* the rosary welcome screen */}

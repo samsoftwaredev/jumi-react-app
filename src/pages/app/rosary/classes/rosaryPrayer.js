@@ -83,12 +83,17 @@ export class RosaryPrayer {
     return this._mysterySelected;
   }
 
+  getTodaysMystery() {
+    const dayOfTheWeek = new Date().getDay();
+    const arrOfPrayersDays = Object.values(this._rosaryDays);
+    const mysteryName = arrOfPrayersDays[dayOfTheWeek];
+    return mysteryName;
+  }
+
   setMystery(mysteryName) {
     if (!mysteryName) {
       // if no mysteryName was passed, it will set the mystery to today's date
-      const dayOfTheWeek = new Date().getDay();
-      const arrOfPrayersDays = Object.values(this._rosaryDays);
-      const name = arrOfPrayersDays[dayOfTheWeek];
+      const name = this.getTodaysMystery();
       this._mysterySelected = this._rosaryMysteries[name];
     } else {
       this._mysterySelected = this._rosaryMysteries[mysteryName];

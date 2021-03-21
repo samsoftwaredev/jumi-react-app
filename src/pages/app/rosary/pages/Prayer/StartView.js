@@ -14,7 +14,7 @@ const StartView = ({ currentMystery, onStartPrayer }) => {
       <h2>{t(currentMystery.label)}</h2>
       <Moment format="D MMMM, YYYY">{todaysDate}</Moment>
       <div className="mt-4">
-        <Button color="info" onClick={onStartPrayer}>
+        <Button size="lg" color="info" onClick={onStartPrayer}>
           {t("start.label")}
         </Button>
       </div>
