@@ -62,7 +62,7 @@ export const prayers = {
   jaculatoria3: {
     label: "prayers.jaculatoria3.label",
     description: "prayers.jaculatoria3.description",
-    audio: { en: fatimaPrayer201, es: "" },
+    audio: { en: letUsPray01, es: "" },
   },
   fatima: {
     label: "prayers.fatima.label",
@@ -72,6 +72,7 @@ export const prayers = {
   salve: {
     label: "prayers.salve.label",
     description: "prayers.salve.description",
+    // audio: { en: salvePrayer, es: "" }, TODO: record audio
   },
   pope: {
     label: "prayers.pope.label",
