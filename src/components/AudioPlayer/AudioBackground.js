@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-const AudioBackground = ({ audioFile, autoplay }) => {
+const AudioBackground = ({ audioFile, autoplay, auidoLoop = true }) => {
   const audioRef = useRef();
 
   const onPause = () => {
@@ -23,7 +23,13 @@ const AudioBackground = ({ audioFile, autoplay }) => {
   }, [autoplay]);
 
   return (
-    <audio id="myAudio" controls className="d-none" ref={audioRef}>
+    <audio
+      id="myAudio"
+      controls
+      className="d-none"
+      ref={audioRef}
+      loop={auidoLoop}
+    >
       <source src={audioFile} type="audio/ogg" />
       <source src={audioFile} type="audio/mpeg" />
       <source src={audioFile} type="audio/mp3" />
