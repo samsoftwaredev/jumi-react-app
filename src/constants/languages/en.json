@@ -63,11 +63,19 @@
         "label": "Sign of the Cross",
         "description": "In the name of the Father, and of the Son, and of the Holy Spirit. Amen."
       },
+      "jaculatoria": {
+        "label": "Fatima Prayer",
+        "description": "My God, I believe, I adore, I hope, and I love You. I beg pardon of You for those who do not believe, do not adore, do not hope, and do not love You."
+      },
       "jaculatoria2": {
         "label": "Fatima Prayer 2",
         "description": "O My Jesus, forgive us our sins, save us from the fires of Hell and lead all souls to Heaven, especially those who are in most need of Thy mercy."
       },
       "jaculatoria3": {
+        "label": "Let Us Pray",
+        "description": "O God, whose only begotten Son, by His life, death, and resurrection, has purchased for us the rewards of eternal life, grant, we beseech Thee, that meditating upon these mysteries of the Most Holy Rosary of the Blessed Virgin Mary, we may imitate what they contain and obtain what they promise, through the same Christ Our Lord. Amen."
+      },
+      "letUsPray": {
         "label": "Let Us Pray",
         "description": "O God, whose only begotten Son, by His life, death, and resurrection, has purchased for us the rewards of eternal life, grant, we beseech Thee, that meditating upon these mysteries of the Most Holy Rosary of the Blessed Virgin Mary, we may imitate what they contain and obtain what they promise, through the same Christ Our Lord. Amen."
       },

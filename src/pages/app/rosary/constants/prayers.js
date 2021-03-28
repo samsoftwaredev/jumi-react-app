@@ -62,6 +62,11 @@ export const prayers = {
   jaculatoria3: {
     label: "prayers.jaculatoria3.label",
     description: "prayers.jaculatoria3.description",
+    // audio: { en: letUsPray01, es: "" },
+  },
+  letUsPray: {
+    label: "prayers.letUsPray.label",
+    description: "prayers.letUsPray.description",
     audio: { en: letUsPray01, es: "" },
   },
   fatima: {
