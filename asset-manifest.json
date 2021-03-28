@@ -3,10 +3,10 @@
     "static/js/0.a5f46066.chunk.js": "/jumi-react-app/static/js/0.a5f46066.chunk.js",
     "static/js/0.a5f46066.chunk.js.map": "/jumi-react-app/static/js/0.a5f46066.chunk.js.map",
     "main.css": "/jumi-react-app/static/css/main.87a4db3e.chunk.css",
-    "main.js": "/jumi-react-app/static/js/main.6896ce8f.chunk.js",
-    "main.js.map": "/jumi-react-app/static/js/main.6896ce8f.chunk.js.map",
-    "runtime-main.js": "/jumi-react-app/static/js/runtime-main.c4f540ad.js",
-    "runtime-main.js.map": "/jumi-react-app/static/js/runtime-main.c4f540ad.js.map",
+    "main.js": "/jumi-react-app/static/js/main.df666351.chunk.js",
+    "main.js.map": "/jumi-react-app/static/js/main.df666351.chunk.js.map",
+    "runtime-main.js": "/jumi-react-app/static/js/runtime-main.5bae3d91.js",
+    "runtime-main.js.map": "/jumi-react-app/static/js/runtime-main.5bae3d91.js.map",
     "static/css/3.150d169a.chunk.css": "/jumi-react-app/static/css/3.150d169a.chunk.css",
     "static/js/3.92791e7c.chunk.js": "/jumi-react-app/static/js/3.92791e7c.chunk.js",
     "static/js/3.92791e7c.chunk.js.map": "/jumi-react-app/static/js/3.92791e7c.chunk.js.map",
@@ -16,8 +16,8 @@
     "static/js/5.34452aac.chunk.js.map": "/jumi-react-app/static/js/5.34452aac.chunk.js.map",
     "static/js/6.3dcae300.chunk.js": "/jumi-react-app/static/js/6.3dcae300.chunk.js",
     "static/js/6.3dcae300.chunk.js.map": "/jumi-react-app/static/js/6.3dcae300.chunk.js.map",
-    "static/js/7.52a60877.chunk.js": "/jumi-react-app/static/js/7.52a60877.chunk.js",
-    "static/js/7.52a60877.chunk.js.map": "/jumi-react-app/static/js/7.52a60877.chunk.js.map",
+    "static/js/7.b4a3b994.chunk.js": "/jumi-react-app/static/js/7.b4a3b994.chunk.js",
+    "static/js/7.b4a3b994.chunk.js.map": "/jumi-react-app/static/js/7.b4a3b994.chunk.js.map",
     "static/js/8.84ed4467.chunk.js": "/jumi-react-app/static/js/8.84ed4467.chunk.js",
     "static/js/8.84ed4467.chunk.js.map": "/jumi-react-app/static/js/8.84ed4467.chunk.js.map",
     "static/js/9.6739c8a8.chunk.js": "/jumi-react-app/static/js/9.6739c8a8.chunk.js",
@@ -43,6 +43,8 @@
     "static/media/fifthGloriousMystery.2a042a1d.ogg": "/jumi-react-app/static/media/fifthGloriousMystery.2a042a1d.ogg",
     "static/media/fifthGloriousMysteryDescription.c95388d2.ogg": "/jumi-react-app/static/media/fifthGloriousMysteryDescription.c95388d2.ogg",
     "static/media/fifthJoyful.5f74cc72.jpg": "/jumi-react-app/static/media/fifthJoyful.5f74cc72.jpg",
+    "static/media/fifthJoyfulMystery.ac357310.ogg": "/jumi-react-app/static/media/fifthJoyfulMystery.ac357310.ogg",
+    "static/media/fifthJoyfulMysteryDescription.6a1cab17.ogg": "/jumi-react-app/static/media/fifthJoyfulMysteryDescription.6a1cab17.ogg",
     "static/media/fifthLuminous.5f74cc72.jpg": "/jumi-react-app/static/media/fifthLuminous.5f74cc72.jpg",
     "static/media/fifthLuminousMystery.74965f04.ogg": "/jumi-react-app/static/media/fifthLuminousMystery.74965f04.ogg",
     "static/media/fifthLuminousMysteryDescription.bc1c070f.ogg": "/jumi-react-app/static/media/fifthLuminousMysteryDescription.bc1c070f.ogg",
@@ -108,10 +110,10 @@
     "static/media/thirdSorrowfulMysteryDescription.f0f4b6b4.ogg": "/jumi-react-app/static/media/thirdSorrowfulMysteryDescription.f0f4b6b4.ogg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c4f540ad.js",
+    "static/js/runtime-main.5bae3d91.js",
     "static/css/3.150d169a.chunk.css",
     "static/js/3.92791e7c.chunk.js",
     "static/css/main.87a4db3e.chunk.css",
-    "static/js/main.6896ce8f.chunk.js"
+    "static/js/main.df666351.chunk.js"
   ]
 }
