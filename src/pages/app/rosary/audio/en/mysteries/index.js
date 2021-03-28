@@ -20,8 +20,8 @@ import {
   thirdJoyfulMysteryDescription,
   fourthJoyfulMystery,
   fourthJoyfulMysteryDescription,
-  // fifthJoyfulMystery,
-  // fifthJoyfulMysteryDescription,
+  fifthJoyfulMystery,
+  fifthJoyfulMysteryDescription,
 } from "./joyful";
 
 import {
@@ -69,8 +69,8 @@ export {
   thirdJoyfulMysteryDescription,
   fourthJoyfulMystery,
   fourthJoyfulMysteryDescription,
-  // fifthJoyfulMystery,
-  // fifthJoyfulMysteryDescription,
+  fifthJoyfulMystery,
+  fifthJoyfulMysteryDescription,
   secondLuminousMystery,
   secondLuminousMysteryDescription,
   firstLuminousMystery,

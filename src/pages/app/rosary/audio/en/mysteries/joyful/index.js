@@ -6,8 +6,8 @@ import thirdJoyfulMystery from "./thirdJoyfulMystery.ogg";
 import thirdJoyfulMysteryDescription from "./thirdJoyfulMysteryDescription.ogg";
 import fourthJoyfulMystery from "./fourthJoyfulMystery.ogg";
 import fourthJoyfulMysteryDescription from "./fourthJoyfulMysteryDescription.ogg";
-// import fifthJoyfulMystery from "./fifthJoyfulMystery.ogg";
-// import fifthJoyfulMysteryDescription from "./fifthJoyfulMysteryDescription.ogg";
+import fifthJoyfulMystery from "./fifthJoyfulMystery.ogg";
+import fifthJoyfulMysteryDescription from "./fifthJoyfulMysteryDescription.ogg";
 
 export {
   secondJoyfulMystery,
@@ -18,6 +18,6 @@ export {
   thirdJoyfulMysteryDescription,
   fourthJoyfulMystery,
   fourthJoyfulMysteryDescription,
-  //   fifthJoyfulMystery,
-  //   fifthJoyfulMysteryDescription,
+  fifthJoyfulMystery,
+  fifthJoyfulMysteryDescription,
 };
