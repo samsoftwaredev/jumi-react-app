@@ -1,7 +1,7 @@
 import {
   actOfContrition,
   fatimaPrayer,
-  fatimaPrayer201,
+  fatimaPrayer2,
   gloryBe,
   hailMary,
   signOfTheCross,
@@ -9,7 +9,6 @@ import {
   ourFather,
   letUsPray01,
   prayerAfterRosary,
-  fatimaPrayer202,
   litanies,
   popePrayers,
 } from "../audio/en/prayers";
@@ -54,10 +53,15 @@ export const prayers = {
     description: "prayers.signOfCross.description",
     audio: { en: signOfTheCross, es: "" },
   },
+  jaculatoria: {
+    label: "prayers.jaculatoria.label",
+    description: "prayers.jaculatoria.description",
+    audio: { en: fatimaPrayer, es: "" },
+  },
   jaculatoria2: {
     label: "prayers.jaculatoria2.label",
     description: "prayers.jaculatoria2.description",
-    audio: { en: fatimaPrayer, es: "" },
+    audio: { en: fatimaPrayer2, es: "" },
   },
   jaculatoria3: {
     label: "prayers.jaculatoria3.label",
