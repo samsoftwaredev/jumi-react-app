@@ -6,10 +6,10 @@ import hailMary from "./hailMary.ogg";
 import signOfTheCross from "./signOfTheCross.ogg";
 import theApostelsCreed from "./theApostelsCreed.ogg";
 import ourFather from "./ourFather.ogg";
-import letUsPray01 from "./letUsPray01.ogg";
 import prayerAfterRosary from "./prayerAfterRosary.ogg";
 import popePrayers from "./popePrayers.ogg";
 import litanies from "./litanies.ogg";
+import hailHolyQueen from "./hailHolyQueen.ogg";
 
 export {
   actOfContrition,
@@ -20,8 +20,8 @@ export {
   signOfTheCross,
   theApostelsCreed,
   ourFather,
-  letUsPray01,
   prayerAfterRosary,
   litanies,
   popePrayers,
+  hailHolyQueen,
 };

@@ -20,6 +20,7 @@ import ChangeLanguage from "../../../../../components/Translate/ChangeLanguage";
 import { Checkbox } from "../../../../../components/Fields";
 import { UserCard } from "../../../../../components/Users";
 import { mysteries, rosaryMysteries } from "../../constants/mysteries";
+import { prayers } from "../../constants/prayers";
 
 const EditRosary = ({
   rosary,
@@ -36,7 +37,6 @@ const EditRosary = ({
   const { i18n, t } = useTranslation();
 
   const [modal, setModal] = useState(false);
-  // const [rosaryPrayers, setRosaryPrayers] = useState(rosary.getPrayersList());
 
   const toggle = () => setModal(!modal);
 
@@ -133,10 +133,59 @@ const EditRosary = ({
                 </Input>
               </FormGroup>
             </Col>
-            {/* Rosary, organize the prayers */}
-            {/* <Col md={4} className="my-3 font-weight-bold">Rosary Prayers:</Col>
-            <Col md={8}>
-              <SortableList items={rosaryPrayers} onSortEnd={onSortEnd} />
+            {/* <hr /> */}
+            {/* Rosary, starting prayers that user can select */}
+            {/* <Col md={4} className="my-3 font-weight-bold">
+              Beginnig prayers:
+            </Col>
+            <Col md={8} className="my-3">
+              {Object.values(prayers).map((p) => (
+                <FormGroup check>
+                  <Label check>
+                    <Checkbox
+                      checked={audioMute}
+                      onChange={onToggleAudioVolume}
+                    />{" "}
+                    <span className="text-muted">{t(p.label)}</span>
+                  </Label>
+                </FormGroup>
+              ))}
+            </Col>
+            <hr /> */}
+            {/* Rosary, last prayers that user can select */}
+            {/* <Col md={4} className="my-3 font-weight-bold">
+              Prayers after each mystery:
+            </Col>
+            <Col md={8} className="my-3">
+              {Object.values(prayers).map((p) => (
+                <FormGroup check>
+                  <Label check>
+                    <Checkbox
+                      checked={audioMute}
+                      onChange={onToggleAudioVolume}
+                    />{" "}
+                    <span className="text-muted">{t(p.label)}</span>
+                  </Label>
+                </FormGroup>
+              ))}
+            </Col>
+            <hr /> */}
+            {/* Rosary, last prayers that user can select */}
+            {/* <Col md={4} className="my-3 font-weight-bold">
+              Last prayers:
+            </Col>
+            <Col md={8} className="my-3">
+              {Object.values(prayers).map((p) => (
+                <FormGroup check>
+                  <Label check>
+                    <Checkbox
+                      checked={audioMute}
+                      onChange={onToggleAudioVolume}
+                    />{" "}
+                    <span className="text-muted">{t(p.label)}</span>
+                  </Label>
+                </FormGroup>
+              ))}
             </Col> */}
           </Row>
         </ModalBody>

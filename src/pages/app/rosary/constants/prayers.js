@@ -7,10 +7,10 @@ import {
   signOfTheCross,
   theApostelsCreed,
   ourFather,
-  letUsPray01,
   prayerAfterRosary,
   litanies,
   popePrayers,
+  hailHolyQueen,
 } from "../audio/en/prayers";
 
 export const prayers = {
@@ -66,12 +66,12 @@ export const prayers = {
   jaculatoria3: {
     label: "prayers.jaculatoria3.label",
     description: "prayers.jaculatoria3.description",
-    // audio: { en: letUsPray01, es: "" },
+    audio: { en: prayerAfterRosary, es: "" },
   },
   letUsPray: {
     label: "prayers.letUsPray.label",
     description: "prayers.letUsPray.description",
-    audio: { en: letUsPray01, es: "" },
+    audio: { en: prayerAfterRosary, es: "" },
   },
   fatima: {
     label: "prayers.fatima.label",
@@ -81,7 +81,7 @@ export const prayers = {
   salve: {
     label: "prayers.salve.label",
     description: "prayers.salve.description",
-    // audio: { en: salvePrayer, es: "" }, TODO: record audio
+    audio: { en: hailHolyQueen, es: "" },
   },
   pope: {
     label: "prayers.pope.label",
