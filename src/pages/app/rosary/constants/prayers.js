@@ -94,3 +94,22 @@ export const prayers = {
     audio: { en: litanies, es: "" },
   },
 };
+
+export const defaultStartingPrayers = [
+  prayers.start,
+  prayers.creed,
+  prayers.actOfContrition,
+];
+
+export const defaultEndOfMysteryPrayers = [
+  prayers.glory,
+  prayers.jaculatoria2,
+  prayers.jaculatoria3,
+];
+
+export const defaultEndingPrayers = [
+  prayers.pope,
+  prayers.salve,
+  prayers.litanies,
+  prayers.signOfCross,
+];

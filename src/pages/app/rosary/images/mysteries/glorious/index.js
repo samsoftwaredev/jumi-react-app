@@ -1,8 +1,8 @@
-import firstGlorious from "./firstGlorious.jpg";
-import secondGlorious from "./secondGlorious.jpg";
-import thirdGlorious from "./thirdGlorious.jpg";
-import fourthGlorious from "./fourthGlorious.jpg";
-import fifthGlorious from "./fifthGlorious.jpg";
+import firstGlorious from "./firstGlorious.svg";
+import secondGlorious from "./secondGlorious.svg";
+import thirdGlorious from "./thirdGlorious.svg";
+import fourthGlorious from "./fourthGlorious.svg";
+import fifthGlorious from "./fifthGlorious.svg";
 
 export {
   firstGlorious,

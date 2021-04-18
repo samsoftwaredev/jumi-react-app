@@ -1,3 +1,4 @@
 import Checkbox from "./Checkbox";
+import CheckboxContainer from "./CheckboxContainer";
 
-export default Checkbox;
+export { Checkbox as default, CheckboxContainer };

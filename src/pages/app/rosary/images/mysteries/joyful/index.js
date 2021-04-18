@@ -1,7 +1,7 @@
-import firstJoyful from "./firstJoyful.jpg";
-import secondJoyful from "./secondJoyful.jpg";
-import thirdJoyful from "./thirdJoyful.jpg";
-import fourthJoyful from "./fourthJoyful.jpg";
-import fifthJoyful from "./fifthJoyful.jpg";
+import firstJoyful from "./firstJoyful.svg";
+import secondJoyful from "./secondJoyful.svg";
+import thirdJoyful from "./thirdJoyful.svg";
+import fourthJoyful from "./fourthJoyful.svg";
+import fifthJoyful from "./fifthJoyful.svg";
 
 export { firstJoyful, secondJoyful, thirdJoyful, fourthJoyful, fifthJoyful };

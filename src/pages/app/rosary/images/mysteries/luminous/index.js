@@ -1,8 +1,8 @@
-import firstLuminous from "./firstLuminous.jpg";
-import secondLuminous from "./secondLuminous.jpg";
-import thirdLuminous from "./thirdLuminous.jpg";
-import fourthLuminous from "./fourthLuminous.jpg";
-import fifthLuminous from "./fifthLuminous.jpg";
+import firstLuminous from "./firstLuminous.svg";
+import secondLuminous from "./secondLuminous.svg";
+import thirdLuminous from "./thirdLuminous.svg";
+import fourthLuminous from "./fourthLuminous.svg";
+import fifthLuminous from "./fifthLuminous.svg";
 
 export {
   firstLuminous,

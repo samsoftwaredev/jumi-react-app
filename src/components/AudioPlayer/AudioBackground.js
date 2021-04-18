@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 
-const AudioBackground = ({ audioFile, autoplay, auidoLoop = true }) => {
+const AudioBackground = ({ audioFile, autoPlay = false, audioLoop = true }) => {
   const audioRef = useRef();
 
   const onPause = () => {
@@ -15,21 +16,15 @@ const AudioBackground = ({ audioFile, autoplay, auidoLoop = true }) => {
   };
 
   useEffect(() => {
-    if (autoplay) {
+    if (autoPlay) {
       onPlay();
     } else {
       onPause();
     }
-  }, [autoplay]);
+  }, [autoPlay]);
 
   return (
-    <audio
-      id="myAudio"
-      controls
-      className="d-none"
-      ref={audioRef}
-      loop={auidoLoop}
-    >
+    <audio controls className="d-none" ref={audioRef} loop={audioLoop}>
       <source src={audioFile} type="audio/ogg" />
       <source src={audioFile} type="audio/mpeg" />
       <source src={audioFile} type="audio/mp3" />
@@ -38,6 +33,10 @@ const AudioBackground = ({ audioFile, autoplay, auidoLoop = true }) => {
   );
 };
 
-AudioBackground.propTypes = {};
+AudioBackground.propTypes = {
+  audioFile: PropTypes.string,
+  autoPlay: PropTypes.bool,
+  audioLoop: PropTypes.bool,
+};
 
 export default AudioBackground;

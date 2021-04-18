@@ -12,7 +12,7 @@ import { animateScroll } from "react-scroll";
 import Translate from "../../Translate";
 import ChangeLanguage from "../../Translate/ChangeLanguage";
 
-const TopNav = () => {
+const TopNav = ({ darkMode = false }) => {
   let location = useLocation();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +39,15 @@ const TopNav = () => {
   }, [location.pathname]);
 
   return (
-    <Navbar fixed="top" color="light" light expand="md">
+    <Navbar
+      // background color
+      dark={darkMode}
+      light={!darkMode}
+      // color of text
+      color={!darkMode && "light"}
+      fixed="top"
+      expand="md"
+    >
       <Link className="navbar-brand" to="/">
         <Translate text="app.shortName" />
       </Link>

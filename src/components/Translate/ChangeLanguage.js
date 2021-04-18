@@ -3,7 +3,7 @@ import { DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
 import Translate from "./Translate";
 import { useTranslation } from "react-i18next";
 
-const ChangeLanguage = ({ props }) => {
+const ChangeLanguage = () => {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const languages = [

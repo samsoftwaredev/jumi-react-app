@@ -1,8 +1,8 @@
-import firstSorrowful from "./firstSorrowful.jpg";
-import secondSorrowful from "./secondSorrowful.jpg";
-import thirdSorrowful from "./thirdSorrowful.jpg";
-import fourthSorrowful from "./fourthSorrowful.jpg";
-import fifthSorrowful from "./fifthSorrowful.jpg";
+import firstSorrowful from "./firstSorrowful.svg";
+import secondSorrowful from "./secondSorrowful.svg";
+import thirdSorrowful from "./thirdSorrowful.svg";
+import fourthSorrowful from "./fourthSorrowful.svg";
+import fifthSorrowful from "./fifthSorrowful.svg";
 
 export {
   firstSorrowful,

@@ -7,12 +7,14 @@ import { Button, Col, Row } from "reactstrap";
 import { RosaryPrayer } from "../../classes/rosaryPrayer";
 import AudioPlayer from "../../../../../components/AudioPlayer";
 import { strToId } from "../../../../../helpers/transform";
-import StartView from "./StartView";
-import PrayerInfo from "./PrayerInfo";
-import EditRosary from "./EditRosary";
+import StartView from "./containers/StartView";
+import PrayerInfo from "./containers/PrayerInfo";
+import EditRosary from "./containers/EditRosary";
 import AudioBackground from "../../../../../components/AudioPlayer/AudioBackground";
-import aveAudioFile from "../../audio/ave.mp3";
-import SelectMystery from "./SelectMystery";
+import { aveAudio } from "../../audio";
+// import SelectMystery from "./SelectMystery";
+// import VideoBackground from "../../../../../components/Video/VideoBackground";
+// import { sunriseVideo } from "../../video";
 
 const Prayer = () => {
   const { i18n } = useTranslation();
@@ -20,12 +22,11 @@ const Prayer = () => {
   const language = i18n.language;
   const rosary = new RosaryPrayer();
 
-  const todaysMystery = rosary.getTodaysMystery();
   const [currentPrayerIndex, setCurrentPrayerIndex] = useState(null);
   const [currentMystery, setCurrentMysetry] = useState(rosary.getMystery());
   const [prayerStarted, setPrayerStarted] = useState(false);
   const [backgroundMusic, setBackgroundMusic] = useState(false);
-  const [autoplayAudio, setAutoplayAudio] = useState(true);
+  const [autoPlayAudio, setAutoplayAudio] = useState(true);
   const [audioMute, setAudioMute] = useState(false);
   const [listOfPrayers, setListOfPrayers] = useState(rosary.getPrayersList());
 
@@ -55,7 +56,7 @@ const Prayer = () => {
   };
 
   const onToggleAudioAutoplay = () => {
-    setAutoplayAudio(!autoplayAudio);
+    setAutoplayAudio(!autoPlayAudio);
     // TODO: save it to the localstorage
   };
 
@@ -69,8 +70,8 @@ const Prayer = () => {
     // TODO: save it to the localstorage
   };
 
-  const onUpdateMystery = (mysteryName) => {
-    rosary.setMystery(mysteryName);
+  const onUpdateMystery = ({ value }) => {
+    rosary.setMystery(value);
     setCurrentMysetry(rosary.getMystery());
     setListOfPrayers(rosary.getPrayersList());
   };
@@ -94,13 +95,14 @@ const Prayer = () => {
 
   return (
     <div>
+      {/* <VideoBackground videoFile={sunriseVideo} autoPlay videoLoop /> */}
       {backgroundMusic && (
-        <AudioBackground audioFile={aveAudioFile} autoplay={prayerStarted} />
+        <AudioBackground audioFile={aveAudio} autoPlay={prayerStarted} />
       )}
       <div className="d-flex justify-content-center">
         <EditRosary
           rosary={rosary}
-          autoplayAudio={autoplayAudio}
+          autoPlayAudio={autoPlayAudio}
           onToggleAudioAutoplay={onToggleAudioAutoplay}
           audioMute={audioMute}
           onToggleAudioVolume={onToggleAudioVolume}
@@ -110,11 +112,11 @@ const Prayer = () => {
           backgroundMusic={backgroundMusic}
           onToggleBackgroundMusic={onToggleBackgroundMusic}
         />
-        <SelectMystery
+        {/* <SelectMystery
           currentMystery={currentMystery}
           onUpdateMystery={onUpdateMystery}
           todaysMystery={todaysMystery}
-        />
+        /> */}
       </div>
       <Row className="flex-column align-items-center">
         <Col className="d-flex flex-column align-items-center">
@@ -137,7 +139,7 @@ const Prayer = () => {
                 id={p.id}
                 key={p.id}
                 className="d-flex flex-column justify-content-between"
-                style={{ minHeight: "90vh", borderLeft: "1px solid #e3e3e3" }}
+                style={{ minHeight: "95vh", borderLeft: "1px solid #e3e3e3" }}
               >
                 <div>
                   <PrayerInfo currentMystery={currentMystery} prayer={p} />
@@ -145,7 +147,7 @@ const Prayer = () => {
                 <div className="text-right mb-5">
                   <AudioPlayer
                     audioFile={p?.audio ? p?.audio[language] : null}
-                    autoplay={autoplayAudio && isCurrentPrayer}
+                    autoPlay={autoPlayAudio && isCurrentPrayer}
                     audioEnded={() => nextPrayer(index)}
                     audioMute={audioMute}
                     onToggleAudioVolume={onToggleAudioVolume}

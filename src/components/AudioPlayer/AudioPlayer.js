@@ -12,7 +12,7 @@ import {
 const AudioPlayer = ({
   audioFile,
   audioEnded,
-  autoplay = false,
+  autoPlay = false,
   audioMute,
   onToggleAudioVolume,
 }) => {
@@ -38,12 +38,12 @@ const AudioPlayer = ({
   };
 
   useEffect(() => {
-    if (autoplay) {
+    if (autoPlay) {
       onPlay();
     } else {
       onPause();
     }
-  }, [autoplay]);
+  }, [autoPlay]);
 
   useEffect(() => {
     if (audioRef?.current) {
@@ -92,7 +92,7 @@ const AudioPlayer = ({
 AudioPlayer.propTypes = {
   audioFile: PropTypes.string,
   audioEnded: PropTypes.func,
-  autoplay: PropTypes.bool,
+  autoPlay: PropTypes.bool,
 };
 
 export default AudioPlayer;
