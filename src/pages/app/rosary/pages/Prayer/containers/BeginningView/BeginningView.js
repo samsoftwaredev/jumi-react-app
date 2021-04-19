@@ -4,7 +4,7 @@ import Moment from "react-moment";
 import { Button } from "reactstrap";
 import { useTranslation } from "react-i18next";
 
-const StartView = ({ currentMystery, onStartPrayer }) => {
+const BeginningView = ({ currentMystery, onStartPrayer }) => {
   const { t } = useTranslation();
 
   const todaysDate = new Date();
@@ -22,9 +22,9 @@ const StartView = ({ currentMystery, onStartPrayer }) => {
   );
 };
 
-StartView.propTypes = {
+BeginningView.propTypes = {
   currentMystery: PropTypes.shape().isRequired,
   onStartPrayer: PropTypes.func.isRequired,
 };
 
-export default StartView;
+export default BeginningView;

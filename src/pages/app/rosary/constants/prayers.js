@@ -95,7 +95,7 @@ export const prayers = {
   },
 };
 
-export const defaultStartingPrayers = [
+export const defaultBeginningPrayers = [
   prayers.start,
   prayers.creed,
   prayers.actOfContrition,

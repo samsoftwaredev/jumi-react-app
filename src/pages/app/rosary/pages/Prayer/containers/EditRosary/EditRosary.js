@@ -14,14 +14,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   defaultEndingPrayers,
   defaultEndOfMysteryPrayers,
-  defaultStartingPrayers,
-  prayers,
-} from "../../../constants/prayers";
-import SortableAddList from "../../../../../../components/SortableAddList/SortableAddList";
-import SideBySide from "../../../../../../components/Layouts";
-import UpdateLangauge from "./UpdateLangauge";
-import { ChangeMystery } from "./SelectMystery";
-import { CheckboxContainer } from "../../../../../../components/Fields/Checkbox";
+  defaultBeginningPrayers,
+} from "../../../../constants/prayers";
+import { SideBySide } from "../../../../../../../components/Layouts";
+import UpdateLangauge from "../UpdateLangauge";
+import { ChangeMystery } from "../SelectMystery";
+import { CheckboxContainer } from "../../../../../../../components/Fields/Checkbox";
+import PrayerEditList from "../PrayerEditList";
 
 const EditRosary = ({
   rosary,
@@ -34,19 +33,13 @@ const EditRosary = ({
   onResetSettings,
   backgroundMusic,
   onToggleBackgroundMusic,
+  onDefaultPrayersUpdate,
 }) => {
   const { t } = useTranslation();
 
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
-
-  const getPrayers = () => {
-    return Object.values(prayers).map((p) => ({
-      label: t(p.label),
-      value: p.label,
-    }));
-  };
 
   return (
     <div>
@@ -57,12 +50,18 @@ const EditRosary = ({
         <ModalHeader toggle={toggle}>{t("settings.label")}</ModalHeader>
         <ModalBody>
           <Row className="align-items-center">
-            <SideBySide title="Language:">
+            <SideBySide
+              title="Language:"
+              description="You can change the language of the rosary. The audio will also update depending on the language you select."
+            >
               <UpdateLangauge />
             </SideBySide>
             <hr />
             {/* Audio Settings */}
-            <SideBySide title="Audio:">
+            <SideBySide
+              title="Audio:"
+              description="You can mute the audio if prefer to read the prayers."
+            >
               <>
                 <CheckboxContainer
                   value={autoPlayAudio}
@@ -79,7 +78,10 @@ const EditRosary = ({
               </>
             </SideBySide>
             <hr />
-            <SideBySide title="Music:">
+            <SideBySide
+              title="Music:"
+              description="You can add background music while you pray the rosary. Once you start the rosary the music will autoplay."
+            >
               <CheckboxContainer
                 value={backgroundMusic}
                 onChange={onToggleBackgroundMusic}
@@ -89,7 +91,10 @@ const EditRosary = ({
             </SideBySide>
             <hr />
             {/* user can select the mystery the will like to pray */}
-            <SideBySide title="Mystery:">
+            <SideBySide
+              title="Mystery:"
+              description="Select the mystery you would like meditate today."
+            >
               <ChangeMystery
                 currentMystery={currentMystery}
                 onUpdateMystery={onUpdateMystery}
@@ -97,38 +102,41 @@ const EditRosary = ({
             </SideBySide>
             <hr />
             {/* Rosary, starting prayers that user can select */}
-            <SideBySide title="Beginnig prayers:">
-              <SortableAddList
-                placeholder="Add prayer..."
-                defaultList={Object.values(defaultStartingPrayers)}
-                onRemove={() => {}}
-                onUpdate={() => {}}
-                onSelect={() => {}}
-                list={getPrayers()}
+            <SideBySide
+              title="Beginnig prayers:"
+              description="List of prayers that you would like to pray at the beginning of the rosary."
+            >
+              <PrayerEditList
+                defaultList={Object.values(defaultBeginningPrayers) || []}
+                onChange={(newList) =>
+                  onDefaultPrayersUpdate(newList, defaultBeginningPrayers)
+                }
               />
             </SideBySide>
             <hr />
             {/* Rosary, last prayers that user can select */}
-            <SideBySide title="Prayers after each mystery:">
-              <SortableAddList
-                placeholder="Add prayer..."
-                defaultList={Object.values(defaultEndOfMysteryPrayers)}
-                onRemove={() => {}}
-                onUpdate={() => {}}
-                onSelect={() => {}}
-                list={getPrayers()}
+            <SideBySide
+              title="Prayers after each mystery:"
+              description="List of prayers that you would like to pray at the end of each of the mysteries."
+            >
+              <PrayerEditList
+                defaultList={Object.values(defaultEndOfMysteryPrayers) || []}
+                onChange={(newList) =>
+                  onDefaultPrayersUpdate(newList, defaultEndOfMysteryPrayers)
+                }
               />
             </SideBySide>
             <hr />
             {/* Rosary, last prayers that user can select */}
-            <SideBySide title="Ending prayers:">
-              <SortableAddList
-                defaultList={Object.values(defaultEndingPrayers)}
-                placeholder="Add prayer..."
-                onRemove={() => {}}
-                onUpdate={() => {}}
-                onSelect={() => {}}
-                list={getPrayers()}
+            <SideBySide
+              title="Ending prayers:"
+              description="List of prayers that you would like to pray at the end of the rosary."
+            >
+              <PrayerEditList
+                defaultList={Object.values(defaultEndingPrayers) || []}
+                onChange={(newList) =>
+                  onDefaultPrayersUpdate(newList, defaultEndingPrayers)
+                }
               />
             </SideBySide>
           </Row>
@@ -157,6 +165,7 @@ EditRosary.propTypes = {
   onResetSettings: PropTypes.func,
   backgroundMusic: PropTypes.bool,
   onToggleBackgroundMusic: PropTypes.func,
+  onDefaultPrayersUpdate: PropTypes.func,
 };
 
 export default EditRosary;

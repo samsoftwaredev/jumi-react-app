@@ -1,4 +1,9 @@
-import { prayers } from "../constants/prayers";
+import {
+  defaultBeginningPrayers,
+  defaultEndingPrayers,
+  defaultEndOfMysteryPrayers,
+  prayers,
+} from "../constants/prayers";
 import { rosaryDays, rosaryMysteries } from "../constants/mysteries";
 
 export class RosaryPrayer {
@@ -101,13 +106,16 @@ export class RosaryPrayer {
   }
 
   // built the list of all the prayers that the rosary needs
-  getPrayersList() {
+  getPrayersList(
+    beginningPrayers = defaultBeginningPrayers,
+    afterEachMysteryPrayers = defaultEndOfMysteryPrayers,
+    endingPrayers = defaultEndingPrayers
+  ) {
     const mysteryInfo = this._mysterySelected;
     const arr = [];
-    // 1. set the intial prayers
-    arr.push(this._prayerType.start);
-    arr.push(this._prayerType.creed);
-    arr.push(this._prayerType.actOfContrition);
+    // 1. set the beginning prayers
+    arr.push(...beginningPrayers);
+
     // 2. set all the repetitive prayers
     mysteryInfo.mysteries.forEach((m, index) => {
       const mystery = { mysteryIndex: index + 1, ...m };
@@ -128,16 +136,11 @@ export class RosaryPrayer {
           isHailMary: true,
         });
       });
-
-      arr.push({ ...this._prayerType.glory, mystery });
-      arr.push({ ...this._prayerType.jaculatoria2, mystery });
-      arr.push({ ...this._prayerType.jaculatoria3, mystery });
+      // 4. prayers after each mystery
+      arr.push(...afterEachMysteryPrayers);
     });
-    // 5. set the last prayers
-    arr.push(this._prayerType.pope);
-    arr.push(this._prayerType.salve);
-    arr.push(this._prayerType.litanies);
-    arr.push(this._prayerType.signOfCross);
+    // 5. set the ending prayers
+    arr.push(...endingPrayers);
 
     return arr;
   }

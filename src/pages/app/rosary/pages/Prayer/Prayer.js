@@ -7,14 +7,13 @@ import { Button, Col, Row } from "reactstrap";
 import { RosaryPrayer } from "../../classes/rosaryPrayer";
 import AudioPlayer from "../../../../../components/AudioPlayer";
 import { strToId } from "../../../../../helpers/transform";
-import StartView from "./containers/StartView";
-import PrayerInfo from "./containers/PrayerInfo";
-import EditRosary from "./containers/EditRosary";
+import BeginningView from "./containers/BeginningView";
+import PrayerInfo from "./containers/PrayerInfo/PrayerInfo";
+import EditRosary from "./containers/EditRosary/EditRosary";
 import AudioBackground from "../../../../../components/AudioPlayer/AudioBackground";
 import { aveAudio } from "../../audio";
-// import SelectMystery from "./SelectMystery";
-// import VideoBackground from "../../../../../components/Video/VideoBackground";
-// import { sunriseVideo } from "../../video";
+import VideoPlayer from "../../../../../components/VideoPlayer";
+import { sunriseVideo } from "../../video";
 
 const Prayer = () => {
   const { i18n } = useTranslation();
@@ -84,6 +83,11 @@ const Prayer = () => {
     // TODO: save it to the localstorage
   };
 
+  const onDefaultPrayersUpdate = (newList, defaultList) => {
+    console.log(newList, defaultList);
+    // TODO: save it to the localstorage
+  };
+
   const nextPrayer = (prayerIndex) => {
     const prayer = rosary.jumpToPrayer(prayerIndex + 1);
     // check if the prayer is defined
@@ -95,7 +99,7 @@ const Prayer = () => {
 
   return (
     <div>
-      {/* <VideoBackground videoFile={sunriseVideo} autoPlay videoLoop /> */}
+      <VideoPlayer videoFile={sunriseVideo} autoPlay videoLoop={false} />
       {backgroundMusic && (
         <AudioBackground audioFile={aveAudio} autoPlay={prayerStarted} />
       )}
@@ -111,12 +115,8 @@ const Prayer = () => {
           onResetSettings={onResetSettings}
           backgroundMusic={backgroundMusic}
           onToggleBackgroundMusic={onToggleBackgroundMusic}
+          onDefaultPrayersUpdate={onDefaultPrayersUpdate}
         />
-        {/* <SelectMystery
-          currentMystery={currentMystery}
-          onUpdateMystery={onUpdateMystery}
-          todaysMystery={todaysMystery}
-        /> */}
       </div>
       <Row className="flex-column align-items-center">
         <Col className="d-flex flex-column align-items-center">
@@ -125,7 +125,7 @@ const Prayer = () => {
             className="d-flex flex-column text-center w-100 justify-content-center"
             style={{ minHeight: "85vh" }}
           >
-            <StartView
+            <BeginningView
               onStartPrayer={onStartPrayer}
               currentMystery={currentMystery}
             />

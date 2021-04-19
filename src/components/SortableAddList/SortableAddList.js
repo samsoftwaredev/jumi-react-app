@@ -24,8 +24,18 @@ const SortableAddList = ({
 };
 
 SortableAddList.propTypes = {
-  defaultList: PropTypes.arrayOf(),
-  list: PropTypes.arrayOf(),
+  defaultList: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      label: PropTypes.string,
+    })
+  ),
+  list: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      label: PropTypes.string,
+    })
+  ),
   placeholder: PropTypes.string,
   onRemove: PropTypes.func,
   onUpdate: PropTypes.func,

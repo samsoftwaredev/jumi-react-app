@@ -91,7 +91,7 @@ const PrayerInfo = ({ prayer, currentMystery }) => {
 };
 
 PrayerInfo.propTypes = {
-  p: PropTypes.shape().isRequired,
+  prayer: PropTypes.shape().isRequired,
   currentMystery: PropTypes.shape().isRequired,
 };
 

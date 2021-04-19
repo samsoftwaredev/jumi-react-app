@@ -18,7 +18,7 @@ const UpdateLangauge = () => {
     }
   };
   return (
-    <div>
+    <div className="d-flex justify-content-between">
       <UncontrolledButtonDropdown>
         <ChangeLanguage />
       </UncontrolledButtonDropdown>
