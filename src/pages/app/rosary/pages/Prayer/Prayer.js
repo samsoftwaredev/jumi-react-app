@@ -13,12 +13,6 @@ import EditRosary from "./containers/EditRosary";
 import AudioBackground from "../../../../../components/AudioPlayer/AudioBackground";
 import { aveAudio } from "../../audio";
 import VideoPlayer from "../../../../../components/VideoPlayer";
-import { sunriseVideo } from "../../video";
-import {
-  beginningPrayersKey,
-  endingPrayersKey,
-  endMysteryPrayersKey,
-} from "../../constants/prayers";
 
 const Prayer = () => {
   const { i18n } = useTranslation();
@@ -88,7 +82,11 @@ const Prayer = () => {
 
   return (
     <div>
-      <VideoPlayer videoFile={sunriseVideo} autoPlay videoLoop={false} />
+      <VideoPlayer
+        videoFile={currentMystery.video}
+        autoPlay
+        videoLoop={false}
+      />
       {backgroundMusic && (
         <AudioBackground audioFile={aveAudio} autoPlay={prayerStarted} />
       )}

@@ -64,6 +64,8 @@ import {
   fifthLuminous,
 } from "../images/mysteries";
 
+import { moonVideo, skyVideo, oceanVideo, sunriseVideo } from "../video";
+
 export const rosaryDays = {
   // the days of the week start with sunday
   sunday: "glorious",
@@ -81,6 +83,9 @@ export const rosaryMysteries = {
   joyful: {
     label: "mysteries.joyful.label",
     id: "joyful",
+    video: sunriseVideo,
+    image: "",
+    theme: "dark",
     mysteries: [
       {
         label: "mysteries.joyful.first.label",
@@ -142,6 +147,9 @@ export const rosaryMysteries = {
   luminous: {
     label: "mysteries.luminous.label",
     id: "luminous",
+    video: oceanVideo,
+    image: "",
+    theme: "light",
     mysteries: [
       {
         label: "mysteries.luminous.first.label",
@@ -203,6 +211,9 @@ export const rosaryMysteries = {
   sorrowful: {
     label: "mysteries.sorrowful.label",
     id: "sorrowful",
+    video: moonVideo,
+    image: "",
+    theme: "light",
     mysteries: [
       {
         label: "mysteries.sorrowful.first.label",
@@ -264,6 +275,9 @@ export const rosaryMysteries = {
   glorious: {
     label: "mysteries.glorious.label",
     id: "glorious",
+    video: skyVideo,
+    image: "",
+    theme: "light",
     mysteries: [
       {
         label: "mysteries.glorious.first.label",

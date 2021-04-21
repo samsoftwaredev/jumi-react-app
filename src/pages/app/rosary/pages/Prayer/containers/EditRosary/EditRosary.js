@@ -71,19 +71,19 @@ const EditRosary = ({
     setMystery(rosary.getMystery());
   };
 
-  const onUpdateListOfPrayers = (objList = listOfDefaultPrayers) => {
+  const updatePrayersList = (objList = listOfDefaultPrayers) => {
     setListOfPrayers(objList);
   };
 
-  const onDefaultPrayersUpdate = (newList, key) => {
-    onUpdateListOfPrayers({ ...listOfPrayers, [key]: newList });
+  const onUpdatePrayers = (newList, key) => {
+    updatePrayersList({ ...listOfPrayers, [key]: newList });
   };
 
   const onResetSettings = () => {
     onToggleAudioAutoplay(true);
     onToggleAudioVolume(false);
     onToggleBackgroundMusic(false);
-    onUpdateListOfPrayers();
+    updatePrayersList();
     onUpdateMystery();
   };
 
@@ -169,7 +169,7 @@ const EditRosary = ({
               <PrayerEditList
                 defaultList={manipulateList(listOfPrayers[beginningPrayersKey])}
                 onChange={(newList) =>
-                  onDefaultPrayersUpdate(newList, beginningPrayersKey)
+                  onUpdatePrayers(newList, beginningPrayersKey)
                 }
               />
             </SideBySide>
@@ -184,7 +184,7 @@ const EditRosary = ({
                   listOfPrayers[endMysteryPrayersKey]
                 )}
                 onChange={(newList) =>
-                  onDefaultPrayersUpdate(newList, endMysteryPrayersKey)
+                  onUpdatePrayers(newList, endMysteryPrayersKey)
                 }
               />
             </SideBySide>
@@ -197,7 +197,7 @@ const EditRosary = ({
               <PrayerEditList
                 defaultList={manipulateList(listOfPrayers[endingPrayersKey])}
                 onChange={(newList) =>
-                  onDefaultPrayersUpdate(newList, endingPrayersKey)
+                  onUpdatePrayers(newList, endingPrayersKey)
                 }
               />
             </SideBySide>
