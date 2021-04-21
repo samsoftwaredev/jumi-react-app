@@ -12,6 +12,11 @@ import {
   popePrayers,
   hailHolyQueen,
 } from "../audio/en/prayers";
+import {
+  getLocalStorage,
+  removeLocalStorage,
+  setLocalStorage,
+} from "../storage/localStorage";
 
 export const prayers = {
   start: {
@@ -95,6 +100,10 @@ export const prayers = {
   },
 };
 
+export const beginningPrayersKey = "beginningPrayers";
+export const endOfMysteryPrayersKey = "endOfMysteryPrayers";
+export const endingPrayersKey = "endingPrayers";
+
 export const defaultBeginningPrayers = [
   prayers.start,
   prayers.creed,
@@ -113,3 +122,42 @@ export const defaultEndingPrayers = [
   prayers.litanies,
   prayers.signOfCross,
 ];
+
+// get default prayers
+export const getBeginningPrayers = () => {
+  return getLocalStorage(beginningPrayersKey) || defaultBeginningPrayers;
+};
+
+export const getEndOfMysteryPrayers = () => {
+  return getLocalStorage(endOfMysteryPrayersKey) || defaultEndOfMysteryPrayers;
+};
+
+export const getEndingPrayers = () => {
+  return getLocalStorage(endOfMysteryPrayersKey) || defaultEndingPrayers;
+};
+
+// set default prayers
+export const setBeginningPrayers = (data) => {
+  setLocalStorage(beginningPrayersKey, JSON.stringify(data));
+};
+
+export const setEndOfMysteryPrayers = (data) => {
+  setLocalStorage(endOfMysteryPrayersKey, JSON.stringify(data));
+};
+
+export const setEndingPrayers = (data) => {
+  setLocalStorage(endOfMysteryPrayersKey, JSON.stringify(data));
+};
+
+// remove default prayers
+export const removeBeginningPrayers = () => {
+  removeLocalStorage(beginningPrayersKey);
+};
+
+export const removeEndOfMysteryPrayers = () => {
+  removeLocalStorage(endOfMysteryPrayersKey);
+};
+
+export const removeEndingPrayers = () => {
+  removeLocalStorage(endOfMysteryPrayersKey);
+};

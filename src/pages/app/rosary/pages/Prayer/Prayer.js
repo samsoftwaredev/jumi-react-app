@@ -9,11 +9,16 @@ import AudioPlayer from "../../../../../components/AudioPlayer";
 import { strToId } from "../../../../../helpers/transform";
 import BeginningView from "./containers/BeginningView";
 import PrayerInfo from "./containers/PrayerInfo/PrayerInfo";
-import EditRosary from "./containers/EditRosary/EditRosary";
+import EditRosary from "./containers/EditRosary";
 import AudioBackground from "../../../../../components/AudioPlayer/AudioBackground";
 import { aveAudio } from "../../audio";
 import VideoPlayer from "../../../../../components/VideoPlayer";
 import { sunriseVideo } from "../../video";
+import {
+  beginningPrayersKey,
+  endingPrayersKey,
+  endOfMysteryPrayersKey,
+} from "../../constants/prayers";
 
 const Prayer = () => {
   const { i18n } = useTranslation();
@@ -22,14 +27,14 @@ const Prayer = () => {
   const rosary = new RosaryPrayer();
 
   const [currentPrayerIndex, setCurrentPrayerIndex] = useState(null);
-  const [currentMystery, setCurrentMysetry] = useState(rosary.getMystery());
   const [prayerStarted, setPrayerStarted] = useState(false);
+  const [currentMystery, setCurrentMysetry] = useState(rosary.getMystery());
   const [backgroundMusic, setBackgroundMusic] = useState(false);
   const [autoPlayAudio, setAutoplayAudio] = useState(true);
   const [audioMute, setAudioMute] = useState(false);
   const [listOfPrayers, setListOfPrayers] = useState(rosary.getPrayersList());
 
-  const masagePrayerList = listOfPrayers.map((p, index) => ({
+  const manipulatePrayerList = listOfPrayers.map((p, index) => ({
     ...p,
     // create a unique ID for all prayers in the rosary
     id: strToId(`${p.label} ${index}`),
@@ -54,40 +59,6 @@ const Prayer = () => {
     }
   };
 
-  const onToggleAudioAutoplay = () => {
-    setAutoplayAudio(!autoPlayAudio);
-    // TODO: save it to the localstorage
-  };
-
-  const onToggleAudioVolume = () => {
-    setAudioMute(!audioMute);
-    // TODO: save it to the localstorage
-  };
-
-  const onToggleBackgroundMusic = () => {
-    setBackgroundMusic(!backgroundMusic);
-    // TODO: save it to the localstorage
-  };
-
-  const onUpdateMystery = ({ value }) => {
-    rosary.setMystery(value);
-    setCurrentMysetry(rosary.getMystery());
-    setListOfPrayers(rosary.getPrayersList());
-  };
-
-  const onResetSettings = () => {
-    setAutoplayAudio(true);
-    setAudioMute(false);
-    setBackgroundMusic(false);
-    onUpdateMystery();
-    // TODO: save it to the localstorage
-  };
-
-  const onDefaultPrayersUpdate = (newList, defaultList) => {
-    console.log(newList, defaultList);
-    // TODO: save it to the localstorage
-  };
-
   const nextPrayer = (prayerIndex) => {
     const prayer = rosary.jumpToPrayer(prayerIndex + 1);
     // check if the prayer is defined
@@ -95,6 +66,20 @@ const Prayer = () => {
       scrollToPrayer(prayer);
       setCurrentPrayerIndex(rosary.getPrayerIndex());
     }
+  };
+
+  const onSave = ({ mystery, music, mute, play, defaultPrayers }) => {
+    setCurrentMysetry(mystery);
+    setAutoplayAudio(play);
+    setBackgroundMusic(music);
+    setAudioMute(mute);
+    setListOfPrayers(
+      rosary.getPrayersList(
+        defaultPrayers[beginningPrayersKey],
+        defaultPrayers[endOfMysteryPrayersKey],
+        defaultPrayers[endingPrayersKey]
+      )
+    );
   };
 
   return (
@@ -106,16 +91,11 @@ const Prayer = () => {
       <div className="d-flex justify-content-center">
         <EditRosary
           rosary={rosary}
-          autoPlayAudio={autoPlayAudio}
-          onToggleAudioAutoplay={onToggleAudioAutoplay}
-          audioMute={audioMute}
-          onToggleAudioVolume={onToggleAudioVolume}
-          onUpdateMystery={onUpdateMystery}
           currentMystery={currentMystery}
-          onResetSettings={onResetSettings}
-          backgroundMusic={backgroundMusic}
-          onToggleBackgroundMusic={onToggleBackgroundMusic}
-          onDefaultPrayersUpdate={onDefaultPrayersUpdate}
+          isMusicEnable={backgroundMusic}
+          isAutoPlayAudio={autoPlayAudio}
+          isAudioMute={audioMute}
+          save={onSave}
         />
       </div>
       <Row className="flex-column align-items-center">
@@ -131,7 +111,7 @@ const Prayer = () => {
             />
           </div>
           {/* the rosary prayers */}
-          {masagePrayerList.map((p, index) => {
+          {manipulatePrayerList.map((p, index) => {
             const isCurrentPrayer = currentPrayerIndex === index;
             return (
               <Col
@@ -150,9 +130,11 @@ const Prayer = () => {
                     autoPlay={autoPlayAudio && isCurrentPrayer}
                     audioEnded={() => nextPrayer(index)}
                     audioMute={audioMute}
-                    onToggleAudioVolume={onToggleAudioVolume}
+                    onToggleAudioVolume={() =>
+                      setBackgroundMusic(!backgroundMusic)
+                    }
                   />
-                  {masagePrayerList.length - 1 > index && (
+                  {manipulatePrayerList.length - 1 > index && (
                     <Button
                       className="btn-circle ml-1"
                       color="info"

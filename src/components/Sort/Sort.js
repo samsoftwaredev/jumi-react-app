@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Card, Button } from "reactstrap";
 import { useTranslation } from "react-i18next";
@@ -9,24 +9,9 @@ import { faEllipsisV, faTimes } from "@fortawesome/free-solid-svg-icons";
 const Sort = ({ list = [], onRemove, onUpdate }) => {
   const { t } = useTranslation();
 
-  const [options, setOptions] = useState(list);
-
-  useEffect(() => {
-    if (Array.isArray(list)) setOptions(list);
-  }, [list]);
-
-  useEffect(() => {
-    onUpdate(options);
-  }, [options]);
-
   return (
-    <ReactSortable
-      animation={200}
-      delay={2}
-      list={options}
-      setList={setOptions}
-    >
-      {options.map((p, index) => (
+    <ReactSortable animation={200} delay={2} list={list} setList={onUpdate}>
+      {list.map((p, index) => (
         <Card
           key={index}
           className="px-2 py-2 mb-1"

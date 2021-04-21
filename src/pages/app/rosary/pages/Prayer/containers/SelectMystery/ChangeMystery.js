@@ -4,20 +4,19 @@ import SelectableList from "../../../../../../../components/List";
 import { mysteries, rosaryMysteries } from "../../../../constants/mysteries";
 import { useTranslation } from "react-i18next";
 
-const ChangeMystery = ({ currentMystery, onUpdateMystery }) => {
+const ChangeMystery = ({ mystery, onUpdateMystery }) => {
   const { t } = useTranslation();
 
   const initValue = {
-    label: t(currentMystery.label),
-    value: currentMystery.id,
+    label: t(mystery.label),
+    value: mystery.id,
   };
 
-  const getMysteries = () => {
-    return mysteries.map((name) => ({
+  const getMysteries = () =>
+    mysteries.map((name) => ({
       label: t(rosaryMysteries[name].label),
       value: rosaryMysteries[name].id,
     }));
-  };
 
   return (
     <SelectableList
@@ -30,7 +29,7 @@ const ChangeMystery = ({ currentMystery, onUpdateMystery }) => {
 
 ChangeMystery.propTypes = {
   onUpdateMystery: PropTypes.func,
-  currentMystery: PropTypes.shape(),
+  mystery: PropTypes.shape(),
 };
 
 export default ChangeMystery;

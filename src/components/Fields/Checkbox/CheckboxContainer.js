@@ -15,7 +15,10 @@ const CheckboxContainer = ({ value, onChange, children }) => (
 CheckboxContainer.propTypes = {
   onChange: PropTypes.func,
   value: PropTypes.bool,
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
 };
 
 export default CheckboxContainer;

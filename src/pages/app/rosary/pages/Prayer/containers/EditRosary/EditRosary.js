@@ -15,6 +15,9 @@ import {
   defaultEndingPrayers,
   defaultEndOfMysteryPrayers,
   defaultBeginningPrayers,
+  beginningPrayersKey,
+  endOfMysteryPrayersKey,
+  endingPrayersKey,
 } from "../../../../constants/prayers";
 import { SideBySide } from "../../../../../../../components/Layouts";
 import UpdateLangauge from "../UpdateLangauge";
@@ -22,24 +25,79 @@ import { ChangeMystery } from "../SelectMystery";
 import { CheckboxContainer } from "../../../../../../../components/Fields/Checkbox";
 import PrayerEditList from "../PrayerEditList";
 
+const listOfDefaultPrayers = {
+  [beginningPrayersKey]: defaultBeginningPrayers,
+  [endOfMysteryPrayersKey]: defaultEndOfMysteryPrayers,
+  [endingPrayersKey]: defaultEndingPrayers,
+};
+
 const EditRosary = ({
   rosary,
-  onToggleAudioAutoplay,
-  autoPlayAudio,
-  audioMute,
-  onToggleAudioVolume,
-  onUpdateMystery,
-  currentMystery,
-  onResetSettings,
-  backgroundMusic,
-  onToggleBackgroundMusic,
-  onDefaultPrayersUpdate,
+  currentMystery = {},
+  isMusicEnable = false,
+  isAutoPlayAudio = true,
+  isAudioMute = false,
+  currentListOfPrayers = listOfDefaultPrayers,
+  save,
 }) => {
   const { t } = useTranslation();
+
+  const [mystery, setMystery] = useState(currentMystery);
+  const [bgMusic, setBgMusic] = useState(isMusicEnable);
+  const [autoPlayAudio, setAutoplayAudio] = useState(isAutoPlayAudio);
+  const [audioMute, setAudioMute] = useState(isAudioMute);
+  const [listOfPrayers, setListOfPrayers] = useState(currentListOfPrayers);
 
   const [modal, setModal] = useState(false);
 
   const toggle = () => setModal(!modal);
+
+  const manipulateList = (obj) => Object.values(obj);
+
+  const onToggleAudioAutoplay = (val = autoPlayAudio) => {
+    setAutoplayAudio(val !== undefined ? val : !val);
+  };
+
+  const onToggleAudioVolume = (val = audioMute) => {
+    setAudioMute(val !== undefined ? val : !val);
+  };
+
+  const onToggleBackgroundMusic = (val = bgMusic) => {
+    setBgMusic(val !== undefined ? val : !val);
+  };
+
+  const onUpdateMystery = ({ value: name = "" } = { name: "" }) => {
+    rosary.setMystery(name);
+    setMystery(rosary.getMystery());
+  };
+
+  const onUpdateListOfPrayers = (objList = listOfDefaultPrayers) => {
+    setListOfPrayers(objList);
+  };
+
+  const onDefaultPrayersUpdate = (newList, key) => {
+    onUpdateListOfPrayers({ ...listOfPrayers, [key]: newList });
+  };
+
+  const onResetSettings = () => {
+    onToggleAudioAutoplay(true);
+    onToggleAudioVolume(false);
+    onToggleBackgroundMusic(false);
+    onUpdateListOfPrayers();
+    onUpdateMystery();
+  };
+
+  const onSaveSettings = () => {
+    save({
+      mystery: mystery,
+      music: bgMusic,
+      mute: audioMute,
+      play: audioMute,
+      defaultPrayers: listOfPrayers,
+    });
+    // close modal
+    toggle();
+  };
 
   return (
     <div>
@@ -83,7 +141,7 @@ const EditRosary = ({
               description="You can add background music while you pray the rosary. Once you start the rosary the music will autoplay."
             >
               <CheckboxContainer
-                value={backgroundMusic}
+                value={bgMusic}
                 onChange={onToggleBackgroundMusic}
               >
                 Background Music
@@ -96,7 +154,7 @@ const EditRosary = ({
               description="Select the mystery you would like meditate today."
             >
               <ChangeMystery
-                currentMystery={currentMystery}
+                mystery={mystery}
                 onUpdateMystery={onUpdateMystery}
               />
             </SideBySide>
@@ -107,9 +165,9 @@ const EditRosary = ({
               description="List of prayers that you would like to pray at the beginning of the rosary."
             >
               <PrayerEditList
-                defaultList={Object.values(defaultBeginningPrayers) || []}
+                defaultList={manipulateList(listOfPrayers[beginningPrayersKey])}
                 onChange={(newList) =>
-                  onDefaultPrayersUpdate(newList, defaultBeginningPrayers)
+                  onDefaultPrayersUpdate(newList, beginningPrayersKey)
                 }
               />
             </SideBySide>
@@ -120,9 +178,11 @@ const EditRosary = ({
               description="List of prayers that you would like to pray at the end of each of the mysteries."
             >
               <PrayerEditList
-                defaultList={Object.values(defaultEndOfMysteryPrayers) || []}
+                defaultList={manipulateList(
+                  listOfPrayers[endOfMysteryPrayersKey]
+                )}
                 onChange={(newList) =>
-                  onDefaultPrayersUpdate(newList, defaultEndOfMysteryPrayers)
+                  onDefaultPrayersUpdate(newList, endOfMysteryPrayersKey)
                 }
               />
             </SideBySide>
@@ -133,9 +193,9 @@ const EditRosary = ({
               description="List of prayers that you would like to pray at the end of the rosary."
             >
               <PrayerEditList
-                defaultList={Object.values(defaultEndingPrayers) || []}
+                defaultList={manipulateList(listOfPrayers[endingPrayersKey])}
                 onChange={(newList) =>
-                  onDefaultPrayersUpdate(newList, defaultEndingPrayers)
+                  onDefaultPrayersUpdate(newList, endingPrayersKey)
                 }
               />
             </SideBySide>
@@ -145,7 +205,7 @@ const EditRosary = ({
           <Button color="light" onClick={onResetSettings}>
             {t("reset.label")}
           </Button>
-          <Button color="primary" onClick={toggle}>
+          <Button color="primary" onClick={onSaveSettings}>
             {t("save.label")}
           </Button>
         </ModalFooter>
@@ -156,16 +216,12 @@ const EditRosary = ({
 
 EditRosary.propTypes = {
   rosary: PropTypes.shape(),
-  onToggleAudioAutoplay: PropTypes.func,
-  autoPlayAudio: PropTypes.bool,
-  audioMute: PropTypes.bool,
-  onToggleAudioVolume: PropTypes.func,
-  onUpdateMystery: PropTypes.func,
   currentMystery: PropTypes.shape(),
-  onResetSettings: PropTypes.func,
-  backgroundMusic: PropTypes.bool,
-  onToggleBackgroundMusic: PropTypes.func,
-  onDefaultPrayersUpdate: PropTypes.func,
+  isMusicEnable: PropTypes.bool,
+  isAutoPlayAudio: PropTypes.bool,
+  isAudioMute: PropTypes.bool,
+  currentListOfPrayers: PropTypes.shape(),
+  save: PropTypes.func,
 };
 
 export default EditRosary;

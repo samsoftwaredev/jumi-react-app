@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import SortableAddList from "../../../../../../../components/SortableAddList/SortableAddList";
 import { prayers } from "../../../../constants/prayers";
@@ -8,15 +8,10 @@ const PrayerEditList = ({ defaultList = [], onChange }) => {
   const { t } = useTranslation();
   const [options, setOptions] = useState(defaultList);
 
-  useEffect(() => {
-    // each time the defaultList is update, update the options list
-    if (Array.isArray(defaultList)) setOptions(defaultList);
-  }, [defaultList]);
-
   const getPrayers = (arr) =>
-    Object.values(arr).map((p) => ({
+    Object.values(arr).map((p, index) => ({
       label: t(p.label),
-      value: p.label,
+      value: index,
     }));
 
   const onRemove = ({ value }) => {
@@ -26,12 +21,14 @@ const PrayerEditList = ({ defaultList = [], onChange }) => {
     if (index >= 0) {
       arr.splice(index, 1);
       setOptions(arr);
+      onChange(arr);
     }
   };
 
   const onUpdate = (prayerList) => {
     // if the order of the prayer list is changed
     onChange(prayerList);
+    setOptions(prayerList);
   };
 
   const onSelect = ({ label, value }) => {
