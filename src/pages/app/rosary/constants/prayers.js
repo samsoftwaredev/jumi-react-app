@@ -110,7 +110,7 @@ export const defaultBeginningPrayers = [
   prayers.actOfContrition,
 ];
 
-export const defaultEndOfMysteryPrayers = [
+export const defaultEndMysteryPrayers = [
   prayers.glory,
   prayers.jaculatoria2,
   prayers.jaculatoria3,
@@ -129,7 +129,7 @@ export const getBeginningPrayers = () => {
 };
 
 export const getEndOfMysteryPrayers = () => {
-  return getLocalStorage(endOfMysteryPrayersKey) || defaultEndOfMysteryPrayers;
+  return getLocalStorage(endOfMysteryPrayersKey) || defaultEndMysteryPrayers;
 };
 
 export const getEndingPrayers = () => {

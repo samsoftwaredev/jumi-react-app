@@ -13,7 +13,7 @@ import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   defaultEndingPrayers,
-  defaultEndOfMysteryPrayers,
+  defaultEndMysteryPrayers,
   defaultBeginningPrayers,
   beginningPrayersKey,
   endOfMysteryPrayersKey,
@@ -27,7 +27,7 @@ import PrayerEditList from "../PrayerEditList";
 
 const listOfDefaultPrayers = {
   [beginningPrayersKey]: defaultBeginningPrayers,
-  [endOfMysteryPrayersKey]: defaultEndOfMysteryPrayers,
+  [endOfMysteryPrayersKey]: defaultEndMysteryPrayers,
   [endingPrayersKey]: defaultEndingPrayers,
 };
 

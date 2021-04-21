@@ -1,7 +1,7 @@
 import {
   defaultBeginningPrayers,
   defaultEndingPrayers,
-  defaultEndOfMysteryPrayers,
+  defaultEndMysteryPrayers,
   prayers,
 } from "../constants/prayers";
 import { rosaryDays, rosaryMysteries } from "../constants/mysteries";
@@ -108,7 +108,7 @@ export class RosaryPrayer {
   // built the list of all the prayers that the rosary needs
   getPrayersList(
     beginningPrayers = defaultBeginningPrayers,
-    afterEachMysteryPrayers = defaultEndOfMysteryPrayers,
+    afterEachMysteryPrayers = defaultEndMysteryPrayers,
     endingPrayers = defaultEndingPrayers
   ) {
     const mysteryInfo = this._mysterySelected;
