@@ -17,7 +17,7 @@ import { sunriseVideo } from "../../video";
 import {
   beginningPrayersKey,
   endingPrayersKey,
-  endOfMysteryPrayersKey,
+  endMysteryPrayersKey,
 } from "../../constants/prayers";
 
 const Prayer = () => {
@@ -37,7 +37,7 @@ const Prayer = () => {
   const manipulatePrayerList = listOfPrayers.map((p, index) => ({
     ...p,
     // create a unique ID for all prayers in the rosary
-    id: strToId(`${p.label} ${index}`),
+    id: strToId(`${p.label}_${index}`),
   }));
 
   const scrollToPrayer = (prayer) => {
@@ -68,17 +68,21 @@ const Prayer = () => {
     }
   };
 
-  const onSave = ({ mystery, music, mute, play, defaultPrayers }) => {
+  const onSave = ({
+    mystery,
+    music,
+    mute,
+    play,
+    beginningPrayers,
+    endMysteryPrayers,
+    endingPrayers,
+  }) => {
     setCurrentMysetry(mystery);
     setAutoplayAudio(play);
     setBackgroundMusic(music);
     setAudioMute(mute);
     setListOfPrayers(
-      rosary.getPrayersList(
-        defaultPrayers[beginningPrayersKey],
-        defaultPrayers[endOfMysteryPrayersKey],
-        defaultPrayers[endingPrayersKey]
-      )
+      rosary.getPrayersList(beginningPrayers, endMysteryPrayers, endingPrayers)
     );
   };
 

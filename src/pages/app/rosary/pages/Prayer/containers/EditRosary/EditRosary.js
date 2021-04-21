@@ -16,7 +16,7 @@ import {
   defaultEndMysteryPrayers,
   defaultBeginningPrayers,
   beginningPrayersKey,
-  endOfMysteryPrayersKey,
+  endMysteryPrayersKey,
   endingPrayersKey,
 } from "../../../../constants/prayers";
 import { SideBySide } from "../../../../../../../components/Layouts";
@@ -27,7 +27,7 @@ import PrayerEditList from "../PrayerEditList";
 
 const listOfDefaultPrayers = {
   [beginningPrayersKey]: defaultBeginningPrayers,
-  [endOfMysteryPrayersKey]: defaultEndMysteryPrayers,
+  [endMysteryPrayersKey]: defaultEndMysteryPrayers,
   [endingPrayersKey]: defaultEndingPrayers,
 };
 
@@ -93,7 +93,9 @@ const EditRosary = ({
       music: bgMusic,
       mute: audioMute,
       play: audioMute,
-      defaultPrayers: listOfPrayers,
+      beginningPrayers: listOfPrayers[beginningPrayersKey],
+      endMysteryPrayers: listOfPrayers[endMysteryPrayersKey],
+      endingPrayers: listOfPrayers[endingPrayersKey],
     });
     // close modal
     toggle();
@@ -179,10 +181,10 @@ const EditRosary = ({
             >
               <PrayerEditList
                 defaultList={manipulateList(
-                  listOfPrayers[endOfMysteryPrayersKey]
+                  listOfPrayers[endMysteryPrayersKey]
                 )}
                 onChange={(newList) =>
-                  onDefaultPrayersUpdate(newList, endOfMysteryPrayersKey)
+                  onDefaultPrayersUpdate(newList, endMysteryPrayersKey)
                 }
               />
             </SideBySide>

@@ -101,7 +101,7 @@ export const prayers = {
 };
 
 export const beginningPrayersKey = "beginningPrayers";
-export const endOfMysteryPrayersKey = "endOfMysteryPrayers";
+export const endMysteryPrayersKey = "endMysteryPrayers";
 export const endingPrayersKey = "endingPrayers";
 
 export const defaultBeginningPrayers = [
@@ -129,11 +129,11 @@ export const getBeginningPrayers = () => {
 };
 
 export const getEndOfMysteryPrayers = () => {
-  return getLocalStorage(endOfMysteryPrayersKey) || defaultEndMysteryPrayers;
+  return getLocalStorage(endMysteryPrayersKey) || defaultEndMysteryPrayers;
 };
 
 export const getEndingPrayers = () => {
-  return getLocalStorage(endOfMysteryPrayersKey) || defaultEndingPrayers;
+  return getLocalStorage(endMysteryPrayersKey) || defaultEndingPrayers;
 };
 
 // set default prayers
@@ -142,11 +142,11 @@ export const setBeginningPrayers = (data) => {
 };
 
 export const setEndOfMysteryPrayers = (data) => {
-  setLocalStorage(endOfMysteryPrayersKey, JSON.stringify(data));
+  setLocalStorage(endMysteryPrayersKey, JSON.stringify(data));
 };
 
 export const setEndingPrayers = (data) => {
-  setLocalStorage(endOfMysteryPrayersKey, JSON.stringify(data));
+  setLocalStorage(endMysteryPrayersKey, JSON.stringify(data));
 };
 
 // remove default prayers
@@ -155,9 +155,9 @@ export const removeBeginningPrayers = () => {
 };
 
 export const removeEndOfMysteryPrayers = () => {
-  removeLocalStorage(endOfMysteryPrayersKey);
+  removeLocalStorage(endMysteryPrayersKey);
 };
 
 export const removeEndingPrayers = () => {
-  removeLocalStorage(endOfMysteryPrayersKey);
+  removeLocalStorage(endMysteryPrayersKey);
 };
