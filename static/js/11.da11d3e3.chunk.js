@@ -1,2 +1,0 @@
-(this.webpackJsonpjumi=this.webpackJsonpjumi||[]).push([[11],{134:function(i,n,t){"use strict";t.r(n);var s=t(4);n.default=function(){return Object(s.jsx)("h2",{children:"Sign Up"})}}}]);
-//# sourceMappingURL=11.da11d3e3.chunk.js.map
