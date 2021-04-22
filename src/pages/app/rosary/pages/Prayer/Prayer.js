@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { scroller } from "react-scroll";
@@ -12,10 +12,12 @@ import PrayerInfo from "./containers/PrayerInfo/PrayerInfo";
 import EditRosary from "./containers/EditRosary";
 import AudioBackground from "../../../../../components/AudioPlayer/AudioBackground";
 import { aveAudio } from "../../audio";
-import VideoPlayer from "../../../../../components/VideoPlayer";
+// import VideoPlayer from "../../../../../components/VideoPlayer";
+import { useThemeContext } from "../../../../../context/ThemeContext";
 
 const Prayer = () => {
   const { i18n } = useTranslation();
+  const { setLightTheme, setDarkTheme, themes } = useThemeContext();
 
   const language = i18n.language;
   const rosary = new RosaryPrayer();
@@ -28,15 +30,17 @@ const Prayer = () => {
   const [audioMute, setAudioMute] = useState(false);
   const [listOfPrayers, setListOfPrayers] = useState(rosary.getPrayersList());
 
+  const setId = (a, b) => `${a}_${b}`;
+
   const manipulatePrayerList = listOfPrayers.map((p, index) => ({
     ...p,
     // create a unique ID for all prayers in the rosary
-    id: strToId(`${p.label}_${index}`),
+    id: strToId(setId(p.label, index)),
   }));
 
   const scrollToPrayer = (prayer) => {
     const prayerIndex = rosary.getPrayerIndex();
-    const elementId = strToId(`${prayer.label} ${prayerIndex}`);
+    const elementId = strToId(setId(prayer.label, prayerIndex));
     // smooth scroll to the correct prayer
     scroller.scrollTo(elementId, {
       smooth: true,
@@ -64,29 +68,34 @@ const Prayer = () => {
 
   const onSave = ({
     mystery,
-    music,
-    mute,
-    play,
+    bgMusic,
+    audioMute,
+    autoPlayAudio,
     beginningPrayers,
     endMysteryPrayers,
     endingPrayers,
   }) => {
     setCurrentMysetry(mystery);
-    setAutoplayAudio(play);
-    setBackgroundMusic(music);
-    setAudioMute(mute);
+    setAutoplayAudio(autoPlayAudio);
+    setBackgroundMusic(bgMusic);
+    setAudioMute(audioMute);
     setListOfPrayers(
       rosary.getPrayersList(beginningPrayers, endMysteryPrayers, endingPrayers)
     );
   };
 
+  useEffect(() => {
+    if (currentMystery.theme === themes.dark) setDarkTheme();
+    if (currentMystery.theme === themes.light) setLightTheme();
+  }, [currentMystery, setDarkTheme, setLightTheme, themes]);
+
   return (
     <div>
-      <VideoPlayer
+      {/* <VideoPlayer
         videoFile={currentMystery.video}
         autoPlay
         videoLoop={false}
-      />
+      /> */}
       {backgroundMusic && (
         <AudioBackground audioFile={aveAudio} autoPlay={prayerStarted} />
       )}
@@ -132,9 +141,7 @@ const Prayer = () => {
                     autoPlay={autoPlayAudio && isCurrentPrayer}
                     audioEnded={() => nextPrayer(index)}
                     audioMute={audioMute}
-                    onToggleAudioVolume={() =>
-                      setBackgroundMusic(!backgroundMusic)
-                    }
+                    onToggleAudioVolume={() => setAudioMute(!audioMute)}
                   />
                   {manipulatePrayerList.length - 1 > index && (
                     <Button

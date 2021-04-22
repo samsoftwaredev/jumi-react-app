@@ -8,18 +8,16 @@ const Auth = lazy(() => import("./auth"));
 const App = lazy(() => import("./app"));
 const Home = lazy(() => import("./app/home"));
 
-const Main = () => {
-  return (
-    <Suspense fallback={<LoadingPage />}>
-      <Switch>
-        <Route path="/app" component={App} />
-        <Route path="/auth" component={Auth} />
-        <Route exact path="/" component={Home} />
-        <Route path="/error" component={PageNotFound} />
-        <Redirect to="/" />
-      </Switch>
-    </Suspense>
-  );
-};
+const Main = () => (
+  <Suspense fallback={<LoadingPage />}>
+    <Switch>
+      <Route path="/app" component={App} />
+      <Route path="/auth" component={Auth} />
+      <Route exact path="/" component={Home} />
+      <Route path="/error" component={PageNotFound} />
+      <Redirect to="/" />
+    </Switch>
+  </Suspense>
+);
 
 export default Main;

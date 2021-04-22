@@ -1,7 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
-const AudioBackground = ({ audioFile, autoPlay = false, audioLoop = true }) => {
+const AudioBackground = ({
+  audioFile,
+  autoPlay = false,
+  audioLoop = true,
+  volume = 0.3,
+}) => {
   const audioRef = useRef();
 
   const onPause = () => {
@@ -11,7 +16,7 @@ const AudioBackground = ({ audioFile, autoPlay = false, audioLoop = true }) => {
   const onPlay = () => {
     if (audioRef?.current) {
       audioRef.current.play();
-      audioRef.current.volume = 0.1;
+      audioRef.current.volume = volume;
     }
   };
 

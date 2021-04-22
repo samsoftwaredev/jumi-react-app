@@ -85,7 +85,7 @@ export const rosaryMysteries = {
     id: "joyful",
     video: sunriseVideo,
     image: "",
-    theme: "dark",
+    theme: "light",
     mysteries: [
       {
         label: "mysteries.joyful.first.label",
@@ -213,7 +213,7 @@ export const rosaryMysteries = {
     id: "sorrowful",
     video: moonVideo,
     image: "",
-    theme: "light",
+    theme: "dark",
     mysteries: [
       {
         label: "mysteries.sorrowful.first.label",

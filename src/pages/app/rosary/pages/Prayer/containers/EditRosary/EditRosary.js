@@ -54,16 +54,16 @@ const EditRosary = ({
 
   const manipulateList = (obj) => Object.values(obj);
 
-  const onToggleAudioAutoplay = (val = autoPlayAudio) => {
-    setAutoplayAudio(val !== undefined ? val : !val);
+  const onToggleAudioAutoplay = () => {
+    setAutoplayAudio(!autoPlayAudio);
   };
 
-  const onToggleAudioVolume = (val = audioMute) => {
-    setAudioMute(val !== undefined ? val : !val);
+  const onToggleAudioVolume = () => {
+    setAudioMute(!audioMute);
   };
 
-  const onToggleBackgroundMusic = (val = bgMusic) => {
-    setBgMusic(val !== undefined ? val : !val);
+  const onToggleBackgroundMusic = () => {
+    setBgMusic(!bgMusic);
   };
 
   const onUpdateMystery = ({ value: name = "" } = { name: "" }) => {
@@ -80,19 +80,19 @@ const EditRosary = ({
   };
 
   const onResetSettings = () => {
-    onToggleAudioAutoplay(true);
-    onToggleAudioVolume(false);
-    onToggleBackgroundMusic(false);
+    setAutoplayAudio(true);
+    setAudioMute(false);
+    setBgMusic(false);
     updatePrayersList();
     onUpdateMystery();
   };
 
   const onSaveSettings = () => {
     save({
-      mystery: mystery,
-      music: bgMusic,
-      mute: audioMute,
-      play: audioMute,
+      mystery,
+      bgMusic,
+      audioMute,
+      autoPlayAudio,
       beginningPrayers: listOfPrayers[beginningPrayersKey],
       endMysteryPrayers: listOfPrayers[endMysteryPrayersKey],
       endingPrayers: listOfPrayers[endingPrayersKey],

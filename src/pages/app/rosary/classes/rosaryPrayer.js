@@ -13,7 +13,7 @@ export class RosaryPrayer {
   _prayerType = prayers;
   _rosaryDays = rosaryDays;
   _rosaryMysteries = rosaryMysteries;
-  _mysterySelected = rosaryMysteries;
+  _mysterySelected = null;
   _prayersList = [];
   _prayerIndex = 0;
 

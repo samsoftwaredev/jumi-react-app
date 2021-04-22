@@ -9,6 +9,7 @@ import i18next from "i18next";
 import es from "./constants/languages/es.json";
 import en from "./constants/languages/en.json";
 import { initReactI18next } from "react-i18next";
+import ThemeContextProvider from "./context/ThemeContext";
 
 i18next.use(initReactI18next).init({
   interpolation: {
@@ -27,7 +28,9 @@ i18next.use(initReactI18next).init({
 ReactDOM.render(
   <React.StrictMode>
     <HashRouter>
-      <Main />
+      <ThemeContextProvider>
+        <Main />
+      </ThemeContextProvider>
     </HashRouter>
   </React.StrictMode>,
   document.getElementById("root")
