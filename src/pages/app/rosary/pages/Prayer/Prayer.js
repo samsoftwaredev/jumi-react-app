@@ -9,7 +9,7 @@ import AudioPlayer from "../../../../../components/AudioPlayer";
 import { strToId } from "../../../../../helpers/transform";
 import BeginningView from "./containers/BeginningView";
 import PrayerInfo from "./containers/PrayerInfo/PrayerInfo";
-import EditRosary from "./containers/EditRosary";
+import RosaryButtons from "./containers/RosaryButtons";
 import AudioBackground from "../../../../../components/AudioPlayer/AudioBackground";
 import { aveAudio } from "../../audio";
 // import VideoPlayer from "../../../../../components/VideoPlayer";
@@ -99,16 +99,6 @@ const Prayer = () => {
       {backgroundMusic && (
         <AudioBackground audioFile={aveAudio} autoPlay={prayerStarted} />
       )}
-      <div className="d-flex justify-content-center">
-        <EditRosary
-          rosary={rosary}
-          currentMystery={currentMystery}
-          isMusicEnable={backgroundMusic}
-          isAutoPlayAudio={autoPlayAudio}
-          isAudioMute={audioMute}
-          save={onSave}
-        />
-      </div>
       <Row className="flex-column align-items-center">
         <Col className="d-flex flex-column align-items-center">
           {/* the rosary welcome screen */}
@@ -116,9 +106,15 @@ const Prayer = () => {
             className="d-flex flex-column text-center w-100 justify-content-center"
             style={{ minHeight: "85vh" }}
           >
-            <BeginningView
+            <BeginningView currentMystery={currentMystery} />
+            <RosaryButtons
               onStartPrayer={onStartPrayer}
+              rosary={rosary}
               currentMystery={currentMystery}
+              isMusicEnable={backgroundMusic}
+              isAutoPlayAudio={autoPlayAudio}
+              isAudioMute={audioMute}
+              save={onSave}
             />
           </div>
           {/* the rosary prayers */}

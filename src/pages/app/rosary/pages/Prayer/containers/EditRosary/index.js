@@ -1,3 +1,4 @@
 import EditRosary from "./EditRosary";
+import EditRosaryModal from "./EditRosaryModal";
 
-export default EditRosary;
+export { EditRosary, EditRosaryModal };
