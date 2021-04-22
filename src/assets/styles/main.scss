@@ -33,14 +33,38 @@
 }
 
 /* elements that change color */
-h1,
-p {
-  color: var(--text);
-}
+// body {
+//   background-color: var(--background);
+// }
 
-h2 {
-  color: var(--heading);
-}
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// p {
+//   color: var(--text);
+// }
+
+// a {
+//   &:hover {
+//     color: var(--textAlt);
+//   }
+//   color: var(--textAlt);
+// }
+
+// h2 {
+//   color: var(--heading);
+// }
+
+// time {
+//   color: var(--text);
+// }
+
+// .text-muted {
+//   color: var(--inactive) !important;
+// }
 
 #container {
   min-height: calc(100vh - 70px);

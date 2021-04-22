@@ -24,7 +24,7 @@ const BeginningView = ({
   return (
     <>
       <ButtonGroup className="mt-4 d-block">
-        <Button color="info" onClick={onStartPrayer}>
+        <Button color="primary" onClick={onStartPrayer}>
           {t("start.label")}
         </Button>
         <Button color="dark" onClick={toggle}>

@@ -24,7 +24,7 @@ const ThemeContext = React.createContext({
 });
 
 const ThemeContextProvider = ({ children }) => {
-  const [currentTheme, setCurrentTheme] = useState(themes.light);
+  const [currentTheme, setCurrentTheme] = useState(themes.dark);
 
   const setTheme = (label, values) => {
     setCurrentTheme(label);

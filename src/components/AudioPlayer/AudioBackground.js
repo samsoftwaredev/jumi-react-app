@@ -5,7 +5,7 @@ const AudioBackground = ({
   audioFile,
   autoPlay = false,
   audioLoop = true,
-  volume = 0.3,
+  volume = 0.2,
 }) => {
   const audioRef = useRef();
 
@@ -21,11 +21,8 @@ const AudioBackground = ({
   };
 
   useEffect(() => {
-    if (autoPlay) {
-      onPlay();
-    } else {
-      onPause();
-    }
+    if (autoPlay) onPlay();
+    else onPause();
   }, [autoPlay]);
 
   return (

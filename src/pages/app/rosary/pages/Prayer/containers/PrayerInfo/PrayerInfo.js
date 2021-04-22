@@ -82,7 +82,9 @@ const PrayerInfo = ({ prayer, currentMystery }) => {
         )}
       </h5>
       <hr />
-      <RichTextDisplay content={t(prayer?.description)} />
+      <p>
+        <RichTextDisplay content={t(prayer?.description)} />
+      </p>
       <div className="text-center" style={{ maxHeight: "200" }}>
         {getImage(prayer)}
       </div>

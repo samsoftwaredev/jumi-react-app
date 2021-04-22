@@ -18,7 +18,7 @@ import { useThemeContext } from "../../../../../context/ThemeContext";
 const Prayer = () => {
   const { i18n } = useTranslation();
   const { setLightTheme, setDarkTheme, themes } = useThemeContext();
-
+  setDarkTheme();
   const language = i18n.language;
   const rosary = new RosaryPrayer();
 
@@ -84,10 +84,11 @@ const Prayer = () => {
     );
   };
 
-  useEffect(() => {
-    if (currentMystery.theme === themes.dark) setDarkTheme();
-    if (currentMystery.theme === themes.light) setLightTheme();
-  }, [currentMystery, setDarkTheme, setLightTheme, themes]);
+  // change theme based on prayer
+  // useEffect(() => {
+  //   if (currentMystery.theme === themes.dark) setDarkTheme();
+  //   if (currentMystery.theme === themes.light) setLightTheme();
+  // }, [currentMystery, setDarkTheme, setLightTheme, themes]);
 
   return (
     <div>

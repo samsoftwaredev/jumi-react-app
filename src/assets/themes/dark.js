@@ -1,20 +1,14 @@
 const obj = {
   "--primary": "#bc6ff1",
-  "--secondary": "#892cdc",
-  "--success": "#a7d129",
-  "--info": "#acdbdf",
-  "--warning": "#ffd700",
-  "--danger": "#dc3545",
-  "--light": "#eeeeee",
-  "--dark": "#000000",
   // dark theme
-  "--border": " rgba(0,0,0,.2)",
-  "--shadow": " #000",
-  "--heading": " rgba(255,100,0,1)",
-  "--main": " #1d8f13",
-  "--text": " #fff",
-  "--textAlt": " #fff",
-  "--inactive": " rgba(0,0,0,.3)",
-  "--background": " #000",
+  "--border": "rgba(0,0,0,.2)",
+  "--shadow": "#000",
+  "--heading": "#bc6ff1",
+  "--main": "#52057b",
+  "--text": "#fff",
+  "--textAlt": " #bc6ff1",
+  "--inactive": "rgba(255,255,255, 0.6)",
+  "--background": "#000000",
 };
+
 export default obj;
