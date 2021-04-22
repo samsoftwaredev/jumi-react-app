@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/auth/signup/index.js"],"names":["SignUp"],"mappings":"iHAIeA,UAJA,WACb,OAAO","file":"static/js/11.e38a808b.chunk.js","sourcesContent":["const SignUp = () => {\r\n  return <h2>Sign Up</h2>;\r\n};\r\n\r\nexport default SignUp;\r\n"],"sourceRoot":""}
