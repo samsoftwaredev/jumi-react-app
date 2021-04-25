@@ -45,19 +45,19 @@
       },
       "ourFather": {
         "label": "Padre Nuestro",
-        "description": "Padre nuestro, que estás en el cielo. Santificado sea tu nombre. Venga tu reino. Hágase tu voluntad en la tierra como en el cielo.\nDanos hoy nuestro pan de cada día. Perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden. No nos dejes caer en tentación y líbranos del mal. Amén."
+        "description": "Padre nuestro, que estás en el cielo. Santificado sea Tu nombre. Venga a nosotros Tu reino. Hágase Tu voluntad en la tierra como en el cielo.\nDanos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación y líbranos del mal. Amén."
       },
       "hailMary": {
         "label": "Ave María",
-        "description": "Dios te salve, María. Llena eres de gracia: El Seńor es contigo. Bendita tú eres entre todas las mujeres. Y bendito es el fruto de tu vientre: Jesús.\nSanta María, Madre de Dios, ruega por nosotros pecadores, ahora y en la hora de nuestra muerte. Amén."
+        "description": "Dios te salve, María. Llena eres de gracia: El Señor es contigo. Bendita tú eres entre todas las mujeres. Y bendito es el fruto de tu vientre, Jesús.\nSanta María, Madre de Dios, ruega por nosotros pecadores, ahora y en la hora de nuestra muerte. Amén."
       },
       "glory": {
         "label": "El Gloria",
         "description": "Gloria al Padre, al Hijo y al Espíritu Santo. Como era en el principio, ahora y siempre, por los siglos de los siglos. Amén."
       },
       "creed": {
-        "label": "Credo",
-        "description": "Creo en Dios, Padre todopoderoso, creador del Cielo y de la Tierra. Creo en Jesucristo su único Hijo, Nuestro Seńor, que fue concebido por obra y gracia del Espíritu Santo; nació de Santa María Virgen; padeció bajo el poder de Poncio Pilato; fue crucificado, muerto y sepultado; descendió a los infiernos; al tercer día resucitó de entre los muertos; subió a los cielos y está a la diestra de Dios Padre; desde allí ha de venir a juzgar a los vivos y a los muertos. Creo en el Espíritu Santo, en la Santa Iglesia Católica, la comumión de los Santos en el perdon de los pecados la resurrección de los muertos y la vida eterna. Amén."
+        "label": "Credo de los Apóstoles",
+        "description": "Creo en Dios, Padre todopoderoso, Creador del cielo y de la tierra. Creo en Jesucristo su único Hijo, Nuestro Señor, que fue concebido por obra y gracia del Espíritu Santo, nació de Santa María Virgen, padeció bajo el poder de Poncio Pilato, fue crucificado, muerto y sepultado. Descendió a los infiernos. Al tercer día resucitó de entre los muertos, subió a los cielos y está sentado a la derecha de Dios Padre todopoderoso. Desde allí ha de venir a juzgar a vivos y muertos. \nCreo en el Espíritu Santo, la Santa Iglesia católica, la comumión de los santos, en el perdón de los pecados, la resurrección de la carne y la vida eterna. Amén."
       },
       "signOfCross": {
         "label": "La Señal de la Cruz",
@@ -65,19 +65,19 @@
       },
       "jaculatoria": {
         "label": "Oración de Fátima",
-        "description": "Dios Mío, yo creo, te adoro, espero, y te amo. Pido tu perdón para aquellos que no creen, que no te adoran, no esperan y no te aman."
+        "description": "¡Dios mío, yo creo, adoro, espero y te amo! ¡Te pido perdón por los que no creen, no adoran, no esperan y no te aman!"
       },
       "jaculatoria2": {
-        "label": "Jaculatoria 3",
-        "description": "Oh Jesús, perdónanos nuestros pecados, sálvanos del fuego del infierno y guía todas las almas al Cielo, especialmente aquellas que necesitan más de tu misericordia. Amén."
+        "label": "Jaculatoria 2",
+        "description": "Oh Jesús mio, perdona nuestros pecados, libranos del fuego del infierno, lleva todas las almas al cielo, especialmente a las más necesitadas de Tu misericordia. Amén."
       },
       "jaculatoria3": {
-        "label": "Jaculatoria 2",
+        "label": "Jaculatoria 3",
         "description": "María, Madre de gracia, Madre de misericordia, defiéndenos de nuestros enemigos y ampáranos ahora y en la hora de nuestra muerte. Amén."
       },
       "letUsPray": {
         "label": "Suplicas",
-        "description": "Oh Dios de quién Único Hijo nos ha otorgado los beneficios de la vida eterna, concédenos la gracia que te pedimos mientras meditamos los Misterios del Mas Santo Rosario de la Bienaventurada Virgen María, debemos imitar lo que contienen y obtener lo que prometen, a través del mismo Cristo Nuestro Señor. Amén."
+        "description": "Oh Dios de quién su único Hijo nos ha otorgado los beneficios de la vida eterna, concédenos la gracia que te pedimos mientras meditamos los Misterios del Santo Rosario de la Bienaventurada Virgen María, debemos imitar lo que contienen y obtener lo que prometen, a través del mismo Cristo Nuestro Señor. Amén."
       },
       "fatima": {
         "label": "Oración de Fátima",
@@ -85,15 +85,15 @@
       },
       "salve": {
         "label": "La Salve",
-        "description": "Dios te salve, Reina y Madre de misericordia, vida, dulzura y esperanza nuestra; Dios te salve. A Ti llamamos los desterrados hijos de Eva; a Ti suspiramos, gimiendo y llorando, en este valle de lágrimas. Ea, pues, Señora, abogada nuestra, vuelve a nosotros esos tus ojos misericordiosos; y después de este destierro muéstranos a Jesús, fruto bendito de tu vientre. ¡Oh clementísima, oh piadosa, oh dulce siempre Virgen María! Ruega por nosotros, Santa Madre de Dios, para que seamos dignos de alcanzar las promesas de Nuestro Señor Jesucristo."
+        "description": "Dios te salve, Reina y Madre de misericordia, vida, dulzura y esperanza nuestra; Dios te salve. A Ti llamamos los desterrados hijos de Eva; a Ti suspiramos, gimiendo y llorando, en este valle de lágrimas. Ea, pues, Señora, abogada nuestra, vuelve a nosotros esos tus ojos misericordiosos; y después de este destierro muéstranos a Jesús, fruto bendito de tu vientre. ¡Oh clementísima, oh piadosa, oh dulce siempre Virgen María! Ruega por nosotros, Santa Madre de Dios, para que seamos dignos de alcanzar las promesas de Nuestro Señor Jesucristo. Amén"
       },
       "pope": {
         "label": "Intenciones del Papa",
         "description": "Un Padre nuestro, Ave María y Gloria por las intenciones de Su Santidad el Papa y para ganar las indulgencias."
       },
       "litanies": {
-        "label": "Letanías de la Virgen María",
-        "description": "Señor, ten piedad\nCristo, ten piedad\nSeñor, ten piedad.\nCristo, óyenos.\nCristo, escúchanos.\n\nDios, Padre celestial,\nten piedad de nosotros.\n\nDios, Hijo, Redentor del mundo,\nten piedad de nosotros.\n\nDios, Espíritu Santo, \nten piedad de nosotros.\n\nSantísima Trinidad, un solo Dios,\nten piedad de nosotros.\n\nSanta María,\nruega por nosotros.\n\nSanta Madre de Dios,\nruega por nosotros.\n\nSanta Virgen de las Vírgenes,\nruega por nosotros.\n\nMadre de Cristo,\nruega por nosotros.\n\nMadre de la Iglesia,\nruega por nosotros.\n\nMadre de la misericordia,\nruega por nosotros.\n\nMadre de la divina gracia,\nruega por nosotros.\n\nMadre de la esperanza,\nruega por nosotros.\n\nMadre purísima,\nruega por nosotros.\n\nMadre castísima,\nruega por nosotros.\n\nMadre siempre virgen,\nruega por nosotros.\n\nMadre inmaculada,\nruega por nosotros.\n\nMadre amable,\nruega por nosotros.\n\nMadre admirable,\nruega por nosotros.\n\nMadre del buen consejo,\nruega por nosotros.\n\nMadre del Creador,\nruega por nosotros.\n\nMadre del Salvador,\nruega por nosotros.\n\nVirgen prudentísima,\nruega por nosotros.\n\nVirgen digna de veneración,\nruega por nosotros.\n\nVirgen digna de alabanza,\nruega por nosotros.\n\nVirgen poderosa,\nruega por nosotros.\n\nVirgen clemente,\nruega por nosotros.\n\nVirgen fiel,\nruega por nosotros.\n\nEspejo de justicia,\nruega por nosotros.\n\nTrono de la sabiduría,\nruega por nosotros.\n\nCausa de nuestra alegría,\nruega por nosotros.\n\nVaso espiritual,\nruega por nosotros.\n\nVaso digno de honor,\nruega por nosotros.\n\nVaso de insigne devoción,\nruega por nosotros.\n\nRosa mística,\nruega por nosotros.\n\nTorre de David,\nruega por nosotros.\n\nTorre de marfil,\nruega por nosotros.\n\nCasa de oro,\nruega por nosotros.\n\nArca de la Alianza,\nruega por nosotros.\n\nPuerta del cielo,\nruega por nosotros.\n\nEstrella de la mañana,\nruega por nosotros.\n\nSalud de los enfermos,\nruega por nosotros.\n\nRefugio de los pecadores,\nruega por nosotros.\n\nConsuelo de los migrantes,\nruega por nosotros.\n\nConsoladora de los afligidos,\nruega por nosotros.\n\nAuxilio de los cristianos,\nruega por nosotros.\n\nReina de los Ángeles,\nruega por nosotros.\n\nReina de los Patriarcas,\nruega por nosotros.\n\nReina de los Profetas,\nruega por nosotros.\n\nReina de los Apóstoles,\nruega por nosotros.\n\nReina de los Mártires,\nruega por nosotros.\n\nReina de los Confesores,\nruega por nosotros.\n\nReina de las Vírgenes,\nruega por nosotros.\n\nReina de todos los Santos,\nruega por nosotros.\n\nReina concebida sin pecado original,\nruega por nosotros.\n\nReina asunta a los Cielos,\nruega por nosotros.\n\nReina del Santísimo Rosario,\nruega por nosotros.\n\nReina de la familia,\nruega por nosotros.\n\nReina de la paz.\nruega por nosotros.\n\nCordero de Dios, que quitas el pecado del mundo,\nperdónanos, Señor.\n\nCordero de Dios, que quitas el pecado del mundo,\nescúchanos, Señor.\n\nCordero de Dios, que quitas el pecado del mundo,\nten misericordia de nosotros.\n\nRuega por nosotros, Santa Madre de Dios.\nPara que seamos dignos de las promesas de Cristo.\n\nOración\nTe rogamos nos concedas,\nSeñor Dios nuestro,\ngozar de continua salud de alma y cuerpo,\ny por la gloriosa intercesión\nde la bienaventurada siempre Virgen María,\nvernos libres de las tristezas de la vida presente\ny disfrutar de las alegrías eternas.\nPor Cristo nuestro Señor.\nAmén."
+        "label": "Letanías Lauretanas",
+        "description": "Señor, ten piedad\nSeñor, ten piedad\n\nCristo, ten piedad\nCristo, ten piedad\n\nSeñor, ten piedad.\nSeñor, ten piedad.\n\nCristo, óyenos.\nCristo, óyenos.\n\nCristo, escúchanos.\nCristo, escúchanos.\n\nDios, Padre celestial,\nten piedad de nosotros.\n\nDios, Hijo, Redentor del mundo,\nten piedad de nosotros.\n\nDios, Espíritu Santo, \nten piedad de nosotros.\n\nSantísima Trinidad, un solo Dios,\nten piedad de nosotros.\n\nSanta María,\nruega por nosotros.\n\nSanta Madre de Dios,\nruega por nosotros.\n\nSanta Virgen de las Vírgenes,\nruega por nosotros.\n\nMadre de Cristo,\nruega por nosotros.\n\nMadre de la Iglesia,\nruega por nosotros.\n\nMadre de la misericordia,\nruega por nosotros.\n\nMadre de la divina gracia,\nruega por nosotros.\n\nMadre de la esperanza,\nruega por nosotros.\n\nMadre purísima,\nruega por nosotros.\n\nMadre castísima,\nruega por nosotros.\n\nMadre siempre virgen,\nruega por nosotros.\n\nMadre inmaculada,\nruega por nosotros.\n\nMadre amable,\nruega por nosotros.\n\nMadre admirable,\nruega por nosotros.\n\nMadre del buen consejo,\nruega por nosotros.\n\nMadre del Creador,\nruega por nosotros.\n\nMadre del Salvador,\nruega por nosotros.\n\nVirgen prudentísima,\nruega por nosotros.\n\nVirgen digna de veneración,\nruega por nosotros.\n\nVirgen digna de alabanza,\nruega por nosotros.\n\nVirgen poderosa,\nruega por nosotros.\n\nVirgen clemente,\nruega por nosotros.\n\nVirgen fiel,\nruega por nosotros.\n\nEspejo de justicia,\nruega por nosotros.\n\nTrono de la sabiduría,\nruega por nosotros.\n\nCausa de nuestra alegría,\nruega por nosotros.\n\nVaso espiritual,\nruega por nosotros.\n\nVaso digno de honor,\nruega por nosotros.\n\nVaso de insigne devoción,\nruega por nosotros.\n\nRosa mística,\nruega por nosotros.\n\nTorre de David,\nruega por nosotros.\n\nTorre de marfil,\nruega por nosotros.\n\nCasa de oro,\nruega por nosotros.\n\nArca de la Alianza,\nruega por nosotros.\n\nPuerta del cielo,\nruega por nosotros.\n\nEstrella de la mañana,\nruega por nosotros.\n\nSalud de los enfermos,\nruega por nosotros.\n\nRefugio de los pecadores,\nruega por nosotros.\n\nConsoladora de los afligidos,\nruega por nosotros.\n\nAuxilio de los cristianos,\nruega por nosotros.\n\nReina de los Ángeles,\nruega por nosotros.\n\nReina de los Patriarcas,\nruega por nosotros.\n\nReina de los Profetas,\nruega por nosotros.\n\nReina de los Apóstoles,\nruega por nosotros.\n\nReina de los Mártires,\nruega por nosotros.\n\nReina de los Justos,\nruega por nosotros.\n\nReina de las Vírgenes,\nruega por nosotros.\n\nReina de todos los Santos,\nruega por nosotros.\n\nReina Concebida sin Pecado Original,\nruega por nosotros.\n\nReina Asunta al Cielos,\nruega por nosotros.\n\nReina del Santísimo Rosario,\nruega por nosotros.\n\nReina de la Familia,\nruega por nosotros.\n\nReina de la Paz.\nruega por nosotros.\n\nCordero de Dios, que quitas el pecado del mundo,\nperdónanos, Señor.\n\nCordero de Dios, que quitas el pecado del mundo,\nescúchanos, Señor.\n\nCordero de Dios, que quitas el pecado del mundo,\nten misericordia de nosotros.\n\nRuega por nosotros, Santa Madre de Dios.\nPara que seamos dignos de alcanzar las promesas de Nuestro Señor Cristo. Amén.\n\nOración\nTe rogamos nos concedas,\nSeñor Dios nuestro,\ngozar de continua salud de alma y cuerpo,\ny por la gloriosa intercesión\nde la bienaventurada siempre Virgen María,\nvernos libres de las tristezas de la vida presente\ny disfrutar de las alegrías eternas.\nPor Cristo nuestro Señor.\nAmén."
       }
     },
     "mysteries": {
@@ -109,7 +109,7 @@
       "joyful": {
         "label": "Los Misterios Gozosos",
         "first": {
-          "label": "La Anunciación",
+          "label": "La Encarnación",
           "description": "El ángel le dijo: No temas, María, porque has hallado gracia delante de Dios, vas a concebir en el seno y vas a dar a luz un hijo, a quien pondrás por nombre Jesús. El será grande y será llamado Hijo del Altísimo (...). Dijo María: He aquí la esclava del Señor; hágase en mí según tú palabra."
         },
         "second": {
