@@ -70,7 +70,6 @@ const RosaryMystery = () => {
     endMysteryPrayers,
     endingPrayers,
   }) => {
-    console.log(mystery);
     setCurrentMystery(mystery);
     setAutoplayAudio(autoPlayAudio);
     setBackgroundMusic(bgMusic);
