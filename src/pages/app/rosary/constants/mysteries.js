@@ -277,7 +277,7 @@ export const rosaryMysteries = {
         audio: { en: secondSorrowfulMystery, es: segundoMisterioDoloroso },
         audioDescription: {
           en: secondSorrowfulMysteryDescription,
-          es: segundoMisterioDoloroso,
+          es: segundoMisterioDolorosoDescripcion,
         },
       },
       {

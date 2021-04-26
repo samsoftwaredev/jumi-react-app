@@ -99,6 +99,10 @@ export default class RosaryPrayer {
     this._mysterySelected = mystery;
   }
 
+  getMysteryInfo(mysteryName) {
+    return this._rosaryMysteries[mysteryName];
+  }
+
   setTodaysMystery() {
     // if no mysteryName was passed, it will set the mystery to today's date
     const name = this.getTodaysMystery();

@@ -13,7 +13,7 @@ import AudioBackground from "../../../../../../../components/AudioPlayer/AudioBa
 import { aveAudio } from "../../../../audio";
 import RosaryPrayer from "../../../../classes/rosaryPrayer";
 
-const RosaryMystery = ({ changeCurrentMysetry }) => {
+const RosaryMystery = () => {
   const rosary = new RosaryPrayer();
   const { i18n } = useTranslation();
   const language = i18n.language;
@@ -70,7 +70,8 @@ const RosaryMystery = ({ changeCurrentMysetry }) => {
     endMysteryPrayers,
     endingPrayers,
   }) => {
-    changeCurrentMysetry(mystery);
+    console.log(mystery);
+    setCurrentMystery(mystery);
     setAutoplayAudio(autoPlayAudio);
     setBackgroundMusic(bgMusic);
     setAudioMute(audioMute);

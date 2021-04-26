@@ -50,7 +50,7 @@ const EditRosaryModal = ({
   };
 
   const onUpdateMystery = ({ value: name = "" } = { name: "" }) => {
-    rosary.setMystery(name);
+    rosary.setMystery(rosary.getMysteryInfo(name));
     setMystery(rosary.getMystery());
   };
 
