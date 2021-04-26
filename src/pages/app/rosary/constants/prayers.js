@@ -34,7 +34,7 @@ export const prayers = {
     audioId: "start",
     label: "prayers.start.label",
     description: "prayers.start.description",
-    audio: { en: signOfTheCross, es: senalDeLaCruz },
+    audio: { en: signOfTheCross, es: final },
   },
   intentions: {
     audioId: "intentions",
