@@ -12,91 +12,119 @@ import {
   popePrayers,
   hailHolyQueen,
 } from "../audio/en/prayers";
+
 import {
-  getLocalStorage,
-  removeLocalStorage,
-  setLocalStorage,
-} from "../storage/localStorage";
+  actoDeContriccion,
+  oracionDeFatima,
+  jaculatoria2,
+  jaculatoria3,
+  gloria,
+  aveMaria,
+  senalDeLaCruz,
+  credoDeLosAposteles,
+  padreNuestro,
+  final,
+  letaniasLauretanas,
+  intencionesDelPapa,
+  laSalve,
+} from "../audio/es/prayers";
 
 export const prayers = {
   start: {
+    audioId: "start",
     label: "prayers.start.label",
     description: "prayers.start.description",
-    audio: { en: signOfTheCross, es: "" },
+    audio: { en: signOfTheCross, es: senalDeLaCruz },
   },
   intentions: {
+    audioId: "intentions",
     label: "prayers.intentions.label",
     description: "prayers.intentions.description",
+    audio: null,
   },
   actOfContrition: {
+    audioId: "actOfContrition",
     label: "prayers.actOfContrition.label",
     description: "prayers.actOfContrition.description",
-    audio: { en: actOfContrition, es: "" },
+    audio: { en: actOfContrition, es: actoDeContriccion },
   },
   ourFather: {
+    audioId: "ourFather",
     label: "prayers.ourFather.label",
     description: "prayers.ourFather.description",
-    audio: { en: ourFather, es: "" },
+    audio: { en: ourFather, es: padreNuestro },
   },
   hailMary: {
+    audioId: "hailMary",
     label: "prayers.hailMary.label",
     description: "prayers.hailMary.description",
-    audio: { en: hailMary, es: "" },
+    audio: { en: hailMary, es: aveMaria },
   },
   glory: {
+    audioId: "glory",
     label: "prayers.glory.label",
     description: "prayers.glory.description",
-    audio: { en: gloryBe, es: "" },
+    audio: { en: gloryBe, es: gloria },
   },
   creed: {
+    audioId: "creed",
     label: "prayers.creed.label",
     description: "prayers.creed.description",
-    audio: { en: theApostelsCreed, es: "" },
+    audio: { en: theApostelsCreed, es: credoDeLosAposteles },
   },
   signOfCross: {
+    audioId: "signOfCross",
     label: "prayers.signOfCross.label",
     description: "prayers.signOfCross.description",
-    audio: { en: signOfTheCross, es: "" },
+    audio: { en: signOfTheCross, es: senalDeLaCruz },
   },
   jaculatoria: {
+    audioId: "jaculatoria",
     label: "prayers.jaculatoria.label",
     description: "prayers.jaculatoria.description",
-    audio: { en: fatimaPrayer, es: "" },
+    audio: { en: fatimaPrayer, es: oracionDeFatima },
   },
   jaculatoria2: {
+    audioId: "jaculatoria2",
     label: "prayers.jaculatoria2.label",
     description: "prayers.jaculatoria2.description",
-    audio: { en: fatimaPrayer2, es: "" },
+    audio: { en: fatimaPrayer2, es: jaculatoria2 },
   },
   jaculatoria3: {
+    audioId: "jaculatoria3",
     label: "prayers.jaculatoria3.label",
     description: "prayers.jaculatoria3.description",
-    audio: { en: prayerAfterRosary, es: "" },
+    audio: { en: prayerAfterRosary, es: jaculatoria3 },
   },
   letUsPray: {
+    audioId: "letUsPray",
     label: "prayers.letUsPray.label",
     description: "prayers.letUsPray.description",
-    audio: { en: prayerAfterRosary, es: "" },
+    audio: { en: prayerAfterRosary, es: final },
   },
   fatima: {
+    audioId: "fatima",
     label: "prayers.fatima.label",
     description: "prayers.fatima.description",
-    audio: { en: fatimaPrayer, es: "" },
+    audio: { en: fatimaPrayer, es: oracionDeFatima },
   },
   salve: {
+    audioId: "salve",
     label: "prayers.salve.label",
     description: "prayers.salve.description",
-    audio: { en: hailHolyQueen, es: "" },
+    audio: { en: hailHolyQueen, es: laSalve },
   },
   pope: {
+    audioId: "pope",
     label: "prayers.pope.label",
     description: "prayers.pope.description",
-    audio: { en: popePrayers, es: "" },
+    audio: { en: popePrayers, es: intencionesDelPapa },
   },
   litanies: {
+    audioId: "litanies",
     label: "prayers.litanies.label",
     description: "prayers.litanies.description",
-    audio: { en: litanies, es: "" },
+    audio: { en: litanies, es: letaniasLauretanas },
   },
 };
 
@@ -122,42 +150,3 @@ export const defaultEndingPrayers = [
   prayers.litanies,
   prayers.signOfCross,
 ];
-
-// get default prayers
-export const getBeginningPrayers = () => {
-  return getLocalStorage(beginningPrayersKey) || defaultBeginningPrayers;
-};
-
-export const getEndOfMysteryPrayers = () => {
-  return getLocalStorage(endMysteryPrayersKey) || defaultEndMysteryPrayers;
-};
-
-export const getEndingPrayers = () => {
-  return getLocalStorage(endMysteryPrayersKey) || defaultEndingPrayers;
-};
-
-// set default prayers
-export const setBeginningPrayers = (data) => {
-  setLocalStorage(beginningPrayersKey, JSON.stringify(data));
-};
-
-export const setEndOfMysteryPrayers = (data) => {
-  setLocalStorage(endMysteryPrayersKey, JSON.stringify(data));
-};
-
-export const setEndingPrayers = (data) => {
-  setLocalStorage(endMysteryPrayersKey, JSON.stringify(data));
-};
-
-// remove default prayers
-export const removeBeginningPrayers = () => {
-  removeLocalStorage(beginningPrayersKey);
-};
-
-export const removeEndOfMysteryPrayers = () => {
-  removeLocalStorage(endMysteryPrayersKey);
-};
-
-export const removeEndingPrayers = () => {
-  removeLocalStorage(endMysteryPrayersKey);
-};

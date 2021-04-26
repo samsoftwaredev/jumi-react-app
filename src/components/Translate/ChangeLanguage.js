@@ -2,20 +2,12 @@ import React from "react";
 import { DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
 import Translate from "./Translate";
 import { useTranslation } from "react-i18next";
+import { setLocalStorage } from "../../storage/localStorage";
+import languages from "../../constants/languages/options";
 
 const ChangeLanguage = () => {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const languages = [
-    {
-      label: "Español",
-      abbrv: "es",
-    },
-    {
-      label: "English",
-      abbrv: "en",
-    },
-  ];
 
   const langIndex = languages.findIndex(
     ({ abbrv }) => abbrv === currentLanguage
@@ -25,7 +17,8 @@ const ChangeLanguage = () => {
     i18n
       .changeLanguage(language)
       .then(() => {
-        // TODO: save it to the localstorage
+        // remember user language - storage value in local storage
+        setLocalStorage("language", language);
       })
       .catch(console.error("Unable to change language"));
   };

@@ -6,7 +6,7 @@ import {
 } from "../constants/prayers";
 import { rosaryDays, rosaryMysteries } from "../constants/mysteries";
 
-export class RosaryPrayer {
+export default class RosaryPrayer {
   // private properties
   _observers = [];
   _endDateOfPrayer = null;
@@ -19,7 +19,7 @@ export class RosaryPrayer {
 
   constructor() {
     // initilize the prayer by setting the rosary
-    this.setMystery();
+    this.setTodaysMystery();
     this._prayersList = this.getPrayersList();
   }
 
@@ -95,14 +95,14 @@ export class RosaryPrayer {
     return mysteryName;
   }
 
-  setMystery(mysteryName) {
-    if (!mysteryName) {
-      // if no mysteryName was passed, it will set the mystery to today's date
-      const name = this.getTodaysMystery();
-      this._mysterySelected = this._rosaryMysteries[name];
-    } else {
-      this._mysterySelected = this._rosaryMysteries[mysteryName];
-    }
+  setMystery(mystery) {
+    this._mysterySelected = mystery;
+  }
+
+  setTodaysMystery() {
+    // if no mysteryName was passed, it will set the mystery to today's date
+    const name = this.getTodaysMystery();
+    this.setMystery(this._rosaryMysteries[name]);
   }
 
   // built the list of all the prayers that the rosary needs

@@ -42,6 +42,49 @@ import {
 } from "../audio/en/mysteries";
 
 import {
+  cuartoMisterioDoloroso,
+  cuartoMisterioDolorosoDescripcion,
+  primerMisterioDoloroso,
+  primerMisterioDolorosoDescripcion,
+  segundoMisterioDoloroso,
+  segundoMisterioDolorosoDescripcion,
+  tercerMisterioDoloroso,
+  tercerMisterioDolorosoDescripcion,
+  quintoMisterioDoloroso,
+  quintoMisterioDolorosoDescripcion,
+  cuartoMisterioGlorioso,
+  cuartoMisterioGloriosoDescripcion,
+  primerMisterioGlorioso,
+  primerMisterioGloriosoDescripcion,
+  segundoMisterioGlorioso,
+  segundoMisterioGloriosoDescripcion,
+  tercerMisterioGlorioso,
+  tercerMisterioGloriosoDescripcion,
+  quintoMisterioGlorioso,
+  quintoMisterioGloriosoDescripcion,
+  cuartoMisterioGozoso,
+  cuartoMisterioGozosoDescripcion,
+  primerMisterioGozoso,
+  primerMisterioGozosoDescripcion,
+  segundoMisterioGozoso,
+  segundoMisterioGozosoDescripcion,
+  tercerMisterioGozoso,
+  tercerMisterioGozosoDescripcion,
+  quintoMisterioGozoso,
+  quintoMisterioGozosoDescripcion,
+  cuartoMisterioLuminoso,
+  cuartoMisterioLuminosoDescripcion,
+  primerMisterioLuminoso,
+  primerMisterioLuminosoDescripcion,
+  segundoMisterioLuminoso,
+  segundoMisterioLuminosoDescripcion,
+  tercerMisterioLuminoso,
+  tercerMisterioLuminosoDescripcion,
+  quintoMisterioLuminoso,
+  quintoMisterioLuminosoDescripcion,
+} from "../audio/es/mysteries";
+
+import {
   firstSorrowful,
   secondSorrowful,
   thirdSorrowful,
@@ -92,10 +135,10 @@ export const rosaryMysteries = {
         book: "Lucas 1, 30-32, 38",
         description: "mysteries.joyful.first.description",
         image: firstJoyful,
-        audio: { en: firstJoyfulMystery, es: "" },
+        audio: { en: firstJoyfulMystery, es: primerMisterioGozoso },
         audioDescription: {
           en: firstJoyfulMysteryDescription,
-          es: "",
+          es: primerMisterioGozosoDescripcion,
         },
       },
       {
@@ -103,10 +146,10 @@ export const rosaryMysteries = {
         book: "Lucas 1, 39-43",
         description: "mysteries.joyful.second.description",
         image: secondJoyful,
-        audio: { en: secondJoyfulMystery, es: "" },
+        audio: { en: secondJoyfulMystery, es: segundoMisterioGozoso },
         audioDescription: {
           en: secondJoyfulMysteryDescription,
-          es: "",
+          es: segundoMisterioGozosoDescripcion,
         },
       },
       {
@@ -114,10 +157,10 @@ export const rosaryMysteries = {
         book: "Lucas 2, 6-11",
         description: "mysteries.joyful.third.description",
         image: thirdJoyful,
-        audio: { en: thirdJoyfulMystery, es: "" },
+        audio: { en: thirdJoyfulMystery, es: tercerMisterioGozoso },
         audioDescription: {
           en: thirdJoyfulMysteryDescription,
-          es: "",
+          es: tercerMisterioGozosoDescripcion,
         },
       },
       {
@@ -125,10 +168,10 @@ export const rosaryMysteries = {
         book: "Lc 2, 22-25, 34-35",
         description: "mysteries.joyful.fourth.description",
         image: fourthJoyful,
-        audio: { en: fourthJoyfulMystery, es: "" },
+        audio: { en: fourthJoyfulMystery, es: cuartoMisterioGozoso },
         audioDescription: {
           en: fourthJoyfulMysteryDescription,
-          es: "",
+          es: cuartoMisterioGozosoDescripcion,
         },
       },
       {
@@ -136,10 +179,10 @@ export const rosaryMysteries = {
         book: "Lc 2, 41-47",
         description: "mysteries.joyful.fifth.description",
         image: fifthJoyful,
-        audio: { en: fifthJoyfulMystery, es: "" },
+        audio: { en: fifthJoyfulMystery, es: quintoMisterioGozoso },
         audioDescription: {
           en: fifthJoyfulMysteryDescription,
-          es: "",
+          es: quintoMisterioGozosoDescripcion,
         },
       },
     ],
@@ -156,10 +199,10 @@ export const rosaryMysteries = {
         book: "Mt 3, 13, 16-17",
         description: "mysteries.luminous.first.description",
         image: firstLuminous,
-        audio: { en: firstLuminousMystery, es: "" },
+        audio: { en: firstLuminousMystery, es: primerMisterioLuminoso },
         audioDescription: {
           en: firstLuminousMysteryDescription,
-          es: "",
+          es: primerMisterioLuminosoDescripcion,
         },
       },
       {
@@ -167,10 +210,10 @@ export const rosaryMysteries = {
         book: "Jn 2,1-5",
         description: "mysteries.luminous.second.description",
         image: secondLuminous,
-        audio: { en: secondLuminousMystery, es: "" },
+        audio: { en: secondLuminousMystery, es: segundoMisterioLuminoso },
         audioDescription: {
           en: secondLuminousMysteryDescription,
-          es: "",
+          es: segundoMisterioLuminosoDescripcion,
         },
       },
       {
@@ -178,10 +221,10 @@ export const rosaryMysteries = {
         book: "Mc 1, 15, 21; 2,3-11; Lc 7, 47-48",
         description: "mysteries.luminous.third.description",
         image: thirdLuminous,
-        audio: { en: thirdLuminousMystery, es: "" },
+        audio: { en: thirdLuminousMystery, es: tercerMisterioLuminoso },
         audioDescription: {
           en: thirdLuminousMysteryDescription,
-          es: "",
+          es: tercerMisterioLuminosoDescripcion,
         },
       },
       {
@@ -189,10 +232,10 @@ export const rosaryMysteries = {
         book: "Mt 17, 1-3, 5",
         description: "mysteries.luminous.fourth.description",
         image: fourthLuminous,
-        audio: { en: fourthLuminousMystery, es: "" },
+        audio: { en: fourthLuminousMystery, es: cuartoMisterioLuminoso },
         audioDescription: {
           en: fourthLuminousMysteryDescription,
-          es: "",
+          es: cuartoMisterioLuminosoDescripcion,
         },
       },
       {
@@ -200,10 +243,10 @@ export const rosaryMysteries = {
         book: "Jn, 13, 1; Mt 26, 26-29",
         description: "mysteries.luminous.fifth.description",
         image: fifthLuminous,
-        audio: { en: fifthLuminousMystery, es: "" },
+        audio: { en: fifthLuminousMystery, es: quintoMisterioLuminoso },
         audioDescription: {
           en: fifthLuminousMysteryDescription,
-          es: "",
+          es: quintoMisterioLuminosoDescripcion,
         },
       },
     ],
@@ -220,10 +263,10 @@ export const rosaryMysteries = {
         book: "Lc 22, 39-46",
         description: "mysteries.sorrowful.first.description",
         image: firstSorrowful,
-        audio: { en: firstSorrowfulMystery, es: "" },
+        audio: { en: firstSorrowfulMystery, es: primerMisterioDoloroso },
         audioDescription: {
           en: firstSorrowfulMysteryDescription,
-          es: "",
+          es: primerMisterioDolorosoDescripcion,
         },
       },
       {
@@ -231,10 +274,10 @@ export const rosaryMysteries = {
         book: "Jn 18, 33, 19;1",
         description: "mysteries.sorrowful.second.description",
         image: secondSorrowful,
-        audio: { en: secondSorrowfulMystery, es: "" },
+        audio: { en: secondSorrowfulMystery, es: segundoMisterioDoloroso },
         audioDescription: {
           en: secondSorrowfulMysteryDescription,
-          es: "",
+          es: segundoMisterioDoloroso,
         },
       },
       {
@@ -242,10 +285,10 @@ export const rosaryMysteries = {
         book: "Mt 27, 29-30",
         description: "mysteries.sorrowful.third.description",
         image: thirdSorrowful,
-        audio: { en: thirdSorrowfulMystery, es: "" },
+        audio: { en: thirdSorrowfulMystery, es: tercerMisterioDoloroso },
         audioDescription: {
           en: thirdSorrowfulMysteryDescription,
-          es: "",
+          es: tercerMisterioDolorosoDescripcion,
         },
       },
       {
@@ -253,10 +296,10 @@ export const rosaryMysteries = {
         book: "Lc 23, 33-34, 44-46; Jn 19, 33-35",
         description: "mysteries.sorrowful.fourth.description",
         image: fourthSorrowful,
-        audio: { en: fourthSorrowfulMystery, es: "" },
+        audio: { en: fourthSorrowfulMystery, es: cuartoMisterioDoloroso },
         audioDescription: {
           en: fourthSorrowfulMysteryDescription,
-          es: "",
+          es: cuartoMisterioDolorosoDescripcion,
         },
       },
       {
@@ -264,10 +307,10 @@ export const rosaryMysteries = {
         book: "Lc 23, 33-34, 44-46; Jn 19, 33-35",
         description: "mysteries.sorrowful.fifth.description",
         image: fifthSorrowful,
-        audio: { en: fifthSorrowfulMystery, es: "" },
+        audio: { en: fifthSorrowfulMystery, es: quintoMisterioDoloroso },
         audioDescription: {
           en: fifthSorrowfulMysteryDescription,
-          es: "",
+          es: quintoMisterioDolorosoDescripcion,
         },
       },
     ],
@@ -284,10 +327,10 @@ export const rosaryMysteries = {
         book: "Mt 28, 5-6",
         description: "mysteries.glorious.first.description",
         image: firstGlorious,
-        audio: { en: firstGloriousMystery, es: "" },
+        audio: { en: firstGloriousMystery, es: primerMisterioGlorioso },
         audioDescription: {
           en: firstGloriousMysteryDescription,
-          es: "",
+          es: primerMisterioGloriosoDescripcion,
         },
       },
       {
@@ -295,10 +338,10 @@ export const rosaryMysteries = {
         book: "Lc 24, 50-51; Mc 16, 20",
         description: "mysteries.glorious.second.description",
         image: secondGlorious,
-        audio: { en: secondGloriousMystery, es: "" },
+        audio: { en: secondGloriousMystery, es: segundoMisterioGlorioso },
         audioDescription: {
           en: secondGloriousMysteryDescription,
-          es: "",
+          es: segundoMisterioGloriosoDescripcion,
         },
       },
       {
@@ -306,10 +349,10 @@ export const rosaryMysteries = {
         book: "Hch 1, 14; 2, 1-4",
         description: "mysteries.glorious.third.description",
         image: thirdGlorious,
-        audio: { en: thirdGloriousMystery, es: "" },
+        audio: { en: thirdGloriousMystery, es: tercerMisterioGlorioso },
         audioDescription: {
           en: thirdGloriousMysteryDescription,
-          es: "",
+          es: tercerMisterioGloriosoDescripcion,
         },
       },
       {
@@ -317,10 +360,10 @@ export const rosaryMysteries = {
         book: "Ct 2, 10-11, 14",
         description: "mysteries.glorious.fourth.description",
         image: fourthGlorious,
-        audio: { en: fourthGloriousMystery, es: "" },
+        audio: { en: fourthGloriousMystery, es: cuartoMisterioGlorioso },
         audioDescription: {
           en: fourthGloriousMysteryDescription,
-          es: "",
+          es: cuartoMisterioGloriosoDescripcion,
         },
       },
       {
@@ -328,10 +371,10 @@ export const rosaryMysteries = {
         book: "Sal. 45, 14-15; Ap 11, 19;12, 1",
         description: "mysteries.glorious.fifth.description",
         image: fifthGlorious,
-        audio: { en: fifthGloriousMystery, es: "" },
+        audio: { en: fifthGloriousMystery, es: quintoMisterioGlorioso },
         audioDescription: {
           en: fifthGloriousMysteryDescription,
-          es: "",
+          es: quintoMisterioGloriosoDescripcion,
         },
       },
     ],

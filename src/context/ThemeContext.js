@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
-import { setLocalStorage } from "../pages/app/rosary/storage/localStorage";
 import darkTheme from "../assets/themes/dark";
 import lightTheme from "../assets/themes/light";
 
@@ -28,7 +27,6 @@ const ThemeContextProvider = ({ children }) => {
 
   const setTheme = (label, values) => {
     setCurrentTheme(label);
-    setLocalStorage("theme", label);
     applyTheme(values);
   };
 
