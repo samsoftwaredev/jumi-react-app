@@ -20,6 +20,7 @@ export default class RosaryPrayer {
   constructor() {
     // initilize the prayer by setting the rosary
     this.setTodaysMystery();
+    this.setPrayersList();
     this._prayersList = this.getPrayersList();
   }
 
@@ -109,8 +110,7 @@ export default class RosaryPrayer {
     this.setMystery(this._rosaryMysteries[name]);
   }
 
-  // built the list of all the prayers that the rosary needs
-  getPrayersList(
+  setPrayersList(
     beginningPrayers = defaultBeginningPrayers,
     afterEachMysteryPrayers = defaultEndMysteryPrayers,
     endingPrayers = defaultEndingPrayers
@@ -146,7 +146,12 @@ export default class RosaryPrayer {
     // 5. set the ending prayers
     arr.push(...endingPrayers);
 
-    return arr;
+    this._prayersList = arr;
+  }
+
+  // built the list of all the prayers that the rosary needs
+  getPrayersList() {
+    return this._prayersList;
   }
 
   // the duration of the rosary

@@ -16,22 +16,20 @@ const RosaryList = ({ rosary, language }) => {
   const [currentMystery, setCurrentMystery] = useState(mystery);
   const [currentPrayerIndex, setCurrentPrayerIndex] = useState(null);
   const [prayerStarted, setPrayerStarted] = useState(false);
-  const [backgroundMusic, setBackgroundMusic] = useState(false);
+  const [backgroundMusic, setBackgroundMusic] = useState(true);
   const [autoPlayAudio, setAutoplayAudio] = useState(true);
   const [audioMute, setAudioMute] = useState(false);
   const [listOfPrayers, setListOfPrayers] = useState(rosary.getPrayersList());
 
-  const setId = (a, b) => `${a}_${b}`;
-
   const manipulatePrayerList = listOfPrayers.map((p, index) => ({
     ...p,
     // create a unique ID for all prayers in the rosary
-    id: strToId(setId(p.label, index)),
+    id: strToId(p.label, index),
   }));
 
   const scrollToPrayer = (prayer) => {
     const prayerIndex = rosary.getPrayerIndex();
-    const elementId = strToId(setId(prayer.label, prayerIndex));
+    const elementId = strToId(prayer.label, prayerIndex);
     // smooth scroll to the correct prayer
     scroller.scrollTo(elementId, {
       smooth: true,
@@ -48,10 +46,8 @@ const RosaryList = ({ rosary, language }) => {
       // after all the prayers have been loaded in the page
       // navigate user to the first prayer
       const prayer = rosary.jumpToPrayer(0);
-      if (prayer) {
-        scrollToPrayer(prayer);
-        setCurrentPrayerIndex(rosary.getPrayerIndex());
-      }
+      scrollToPrayer(prayer);
+      setCurrentPrayerIndex(rosary.getPrayerIndex());
     }, 1000);
   };
 
@@ -79,9 +75,8 @@ const RosaryList = ({ rosary, language }) => {
     setAutoplayAudio(autoPlayAudio);
     setBackgroundMusic(bgMusic);
     setAudioMute(audioMute);
-    setListOfPrayers(
-      rosary.getPrayersList(beginningPrayers, endMysteryPrayers, endingPrayers)
-    );
+    rosary.setPrayersList(beginningPrayers, endMysteryPrayers, endingPrayers);
+    setListOfPrayers(rosary.getPrayersList());
   };
 
   // change theme based on prayer

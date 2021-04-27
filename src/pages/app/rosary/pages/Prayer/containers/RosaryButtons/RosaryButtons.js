@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Button, ButtonGroup } from "reactstrap";
 import { useTranslation } from "react-i18next";
 import { EditRosaryModal } from "../EditRosary";
-import { faCog } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faCog } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const BeginningView = ({
@@ -25,10 +25,13 @@ const BeginningView = ({
     <>
       <ButtonGroup className="mt-4 d-block">
         <Button color="primary" onClick={onStartPrayer}>
-          {t("start.label")}
+          <FontAwesomeIcon icon={faChevronDown} />
+          &nbsp;{t("start.label")}
         </Button>
         <Button color="dark" onClick={toggle}>
           <FontAwesomeIcon icon={faCog} />
+          &nbsp;
+          {t("settings.label")}
         </Button>
       </ButtonGroup>
       <EditRosaryModal

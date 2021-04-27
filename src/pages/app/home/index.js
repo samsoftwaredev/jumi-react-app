@@ -17,11 +17,9 @@ const Home = () => {
           <hr className="my-2" />
           <p>{t("objective.description")}</p>
           <p className="lead">
-            <Button color="primary">
-              <Link to="/app/rosary" className="text-white">
-                <Translate text="prayRosary.label" />
-              </Link>
-            </Button>
+            <Link to="/app/rosary" className="btn btn-primary">
+              <Translate text="prayRosary.label" />
+            </Link>
           </p>
         </Jumbotron>
       </div>
