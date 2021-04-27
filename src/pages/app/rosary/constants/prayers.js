@@ -33,7 +33,7 @@ export const prayers = {
   start: {
     label: "prayers.start.label",
     description: "prayers.start.description",
-    audio: { en: signOfTheCross, es: final },
+    audio: { en: signOfTheCross, es: senalDeLaCruz },
   },
   intentions: {
     label: "prayers.intentions.label",
@@ -68,7 +68,7 @@ export const prayers = {
   signOfCross: {
     label: "prayers.signOfCross.label",
     description: "prayers.signOfCross.description",
-    audio: { en: signOfTheCross, es: senalDeLaCruz },
+    audio: { en: signOfTheCross, es: final },
   },
   jaculatoria: {
     label: "prayers.jaculatoria.label",
@@ -88,7 +88,7 @@ export const prayers = {
   letUsPray: {
     label: "prayers.letUsPray.label",
     description: "prayers.letUsPray.description",
-    audio: { en: prayerAfterRosary, es: final },
+    audio: { en: prayerAfterRosary, es: jaculatoria3 },
   },
   fatima: {
     label: "prayers.fatima.label",
