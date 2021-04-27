@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Moment from "react-moment";
 import { useTranslation } from "react-i18next";
 
-const BeginningView = ({ currentMystery }) => {
+const BeginningSection = ({ currentMystery }) => {
   const { t } = useTranslation();
 
   const todaysDate = new Date();
@@ -16,8 +16,8 @@ const BeginningView = ({ currentMystery }) => {
   );
 };
 
-BeginningView.propTypes = {
+BeginningSection.propTypes = {
   currentMystery: PropTypes.shape().isRequired,
 };
 
-export default BeginningView;
+export default BeginningSection;

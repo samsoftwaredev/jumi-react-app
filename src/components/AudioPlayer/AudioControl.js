@@ -1,5 +1,4 @@
-const AudioControl = (props) => {
-  const { audioFile } = props;
+const AudioControl = ({ audioFile, ...props }) => {
   // if audio file is set, display controls
   return (
     <audio {...props}>
