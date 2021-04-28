@@ -3,8 +3,8 @@
     "static/js/0.46b923e4.chunk.js": "/jumi-react-app/static/js/0.46b923e4.chunk.js",
     "static/js/0.46b923e4.chunk.js.map": "/jumi-react-app/static/js/0.46b923e4.chunk.js.map",
     "main.css": "/jumi-react-app/static/css/main.3c76c177.chunk.css",
-    "main.js": "/jumi-react-app/static/js/main.a049e189.chunk.js",
-    "main.js.map": "/jumi-react-app/static/js/main.a049e189.chunk.js.map",
+    "main.js": "/jumi-react-app/static/js/main.06b39e06.chunk.js",
+    "main.js.map": "/jumi-react-app/static/js/main.06b39e06.chunk.js.map",
     "runtime-main.js": "/jumi-react-app/static/js/runtime-main.76d06ebb.js",
     "runtime-main.js.map": "/jumi-react-app/static/js/runtime-main.76d06ebb.js.map",
     "static/css/3.150d169a.chunk.css": "/jumi-react-app/static/css/3.150d169a.chunk.css",
@@ -173,6 +173,6 @@
     "static/css/3.150d169a.chunk.css",
     "static/js/3.0b7b9574.chunk.js",
     "static/css/main.3c76c177.chunk.css",
-    "static/js/main.a049e189.chunk.js"
+    "static/js/main.06b39e06.chunk.js"
   ]
 }
