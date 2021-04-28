@@ -60,7 +60,7 @@ RosarySection.propTypes = {
   language: PropTypes.string,
   currentMystery: PropTypes.shape(),
   autoPlayAudio: PropTypes.bool,
-  currentPrayerIndex: PropTypes.string,
+  currentPrayerIndex: PropTypes.number,
   index: PropTypes.number,
   audioMute: PropTypes.bool,
   setAudioMute: PropTypes.func,

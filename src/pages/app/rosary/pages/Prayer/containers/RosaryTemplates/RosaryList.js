@@ -19,7 +19,10 @@ const RosaryList = ({ rosary, language }) => {
   const [backgroundMusic, setBackgroundMusic] = useState(true);
   const [autoPlayAudio, setAutoplayAudio] = useState(true);
   const [audioMute, setAudioMute] = useState(false);
-  const [listOfPrayers, setListOfPrayers] = useState(rosary.getPrayersList());
+  const [listOfPrayers, setListOfPrayers] = useState([
+    rosary.getPrayersList()[0],
+    rosary.getPrayersList()[1],
+  ]);
 
   const manipulatePrayerList = listOfPrayers.map((p, index) => ({
     ...p,
@@ -56,6 +59,10 @@ const RosaryList = ({ rosary, language }) => {
     // check if the prayer is defined
     if (prayer) {
       scrollToPrayer(prayer);
+      setListOfPrayers([
+        ...listOfPrayers,
+        rosary.getPrayersList()[prayerIndex + 2],
+      ]);
       setCurrentPrayerIndex(rosary.getPrayerIndex());
     }
   };

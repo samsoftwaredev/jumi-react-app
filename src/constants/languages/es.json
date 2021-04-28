@@ -111,96 +111,111 @@
         "first": {
           "label": "La Encarnación",
           "description": "El ángel entró en el lugar donde ella estaba, y le dijo: “Salve, llena de gracia, el Señor es contigo.”",
-          "cita": "San Lucas 1, 28"
+          "cita": "Lucas 1, 28"
         },
         "second": {
           "label": "La Visitación",
           "description": "Cuando Isabel oyó el saludo de María, el infante saltó en su seno... y ella dijo a grandes voces: “¡Bendita tú entre las mujeres, y bendito el fruto de tu vientre!”",
-          "cita": "San Lucas 1, 41-42"
+          "cita": "Lucas 1, 41-42"
         },
         "third": {
           "label": "El Nacimiento de Jesús",
           "description": "Y dio a luz a su hijo primogénito, lo envolvió en pañales y lo reclinó en un pesebre, porque no había sitio para ellos en la posada.",
-          "cita": "San Lucas 2, 7"
+          "cita": "Lucas 2, 7"
         },
         "fourth": {
           "label": "La Presentación",
           "description": "Cuando se cumplieron los días de la purificación de ellos, segun la Ley de Moisés, llevaron a Jesús a Jerusalén para presentarle al Señor, como está escrito en la Ley del Señor: “Todo varón primogénito será consagrado al Señor",
-          "cita": "San Lucas 2, 22-23"
+          "cita": "Lucas 2, 22-23"
         },
         "fifth": {
           "label": "El Niño Perdido y Hallado en el Templo",
           "description": "A los tres días lo encontraron en el Templo sentado en medio de los doctores, oyéndolos y preguntándoles.",
-          "cita": "San Lucas 2, 46"
+          "cita": "Lucas 2, 46"
         }
       },
       "sorrowful": {
         "label": "Los Misterios Dolorosos",
         "first": {
           "label": "La Oración en el Huerto",
-          "description": "Va Jesús con ellos a una propiedad llamada Getsemaní, y dice a los discípulos: Sentaos aquí, mientras voy allá a orar. Y tomando consigo a Pedro y a los dos hijos de Zebedeo, comenzó a sentir tristeza y angustia. Y adelantándose un poco, cayó rostro en tierra,” y dijo: “Padre si quieres aparta de mí esta copa, pero no se haga mi voluntad sino la tuya. “Y sumido                     en agonía, insistía más en su oración. Su sudor se hizo como gotas espesas de sangre que caían en tierra."
+          "description": "Entró en agonía y oraba más intensamente; sudaba como gotas de sangre que corrían por el suelo. Se levantó de la oración, fue a sus discípulos y los encontró dormidos por la tristeza.",
+          "cita": "Lucas 22, 44-45"
         },
         "second": {
           "label": "La Flagelación",
-          "description": "(Pilato) volvió a salir donde los judíos y les dijo: Yo no encuentro ningún delito en él (...). ¿Queréis, pues, que os ponga en libertad al Rey de los judíos? Ellos volvieron a gritar diciendo: ¡A ése, no; a Barrabás! (...) Pilato entonces tomó a Jesús y mandó azotarle."
+          "description": "Entonces Pilato tomó a Jesús y lo azotó.",
+          "cita": "Juan 19, 1"
         },
         "third": {
           "label": "La Coronación de Espinas",
-          "description": "Los soldados trenzando una corona de espinas, se la pusieron sobre su cabeza, y en su mano derecha una caña; y doblando la rodilla delante de él, le hacían burla diciendo: ¡Salve, Rey de los judíos!; y después de escupirle, cogieron la caña y le golpeaban en la cabeza."
+          "description": "Lo desnudaron, lo vistieron con una túnica de púrpura, trenzaron una corona de espinas, y se la pusieron en la cabeza, y una caña en su mano derecha; y arrodillándose delante, se burlaban de Él, diciendo: “¡Salve, Rey de los Judíos!”",
+          "cita": "Mateo 27, 28-29"
         },
         "fourth": {
           "label": "Jesús con la Cruz a Cuestas",
-          "description": "Cuando se hubieron burlado de él, le quitaron el manto, le pusieron sus ropas y le llevaron a crucificarle. Y él cargando con su cruz, salió hacia el lugar llamado Calvario. Y obligaron a uno que pasaba, a Simón de Cirene, (...) a que llevara su cruz."
+          "description": "…cargando Él la Cruz, salió hacia el lugar llamado Calvario, en hebreo Gólgota…",
+          "cita": "Juan 19, 17"
         },
         "fifth": {
           "label": "La Crucifixión",
-          "description": "Llegados al lugar llamado Calvario, le crucificaron. (...) Jesús decía: Padre, perdónales, porque no saben lo que hacen (...). Era ya cerca de la hora sexta cuando, al eclipsarse el sol, hubo oscuridad sobre toda la tierra hasta la hora nona (...). Jesús, dando un fuerte grito, dijo: Padre, en tus manos encomiendo mi espíritu y, dicho esto, expiró.” “Como le vieron muerto, no le quebraron las piernas, sino que uno de los soldados le traspasó el costado con una lanza y al instante salió sangre y agua."
+          "description": "Y Jesús, con fuerte voz dijo: “Padre, en tus manos encomiendo mi espíritu.” Y al decir esto, expiró.",
+          "cita": "Lucas 23, 46"
         }
       },
       "glorious": {
         "label": "Los Misterios Gloriosos",
         "first": {
           "label": "La Resurrección",
-          "description": "El Ángel se dirigió a las mujeres y les dijo: Vosotras no temáis, pues sé que buscáis a Jesús, el Crucificado; no está aquí, ha resucitado, como lo había dicho. Venid, ved el lugar donde estaba. Y ahora id en seguida a decir a sus discípulos: Ha resucitado de entre los muertos"
+          "description": "Pero él les dijo: “No se turbe, El que buscan, Jesús Nazareno, el crucificado, resucito: no está aquí, Vean el lugar en que lo pusieron.”",
+          "cita": "Marcos 16, 6"
         },
         "second": {
           "label": "La Ascensión",
-          "description": "Jesús “los sacó hasta cerca de Betania y, alzando sus manos, los bendijo. Y sucedió que, mientras los bendecía se separó de ellos y fue llevado al cielo.” Después “salieron a predicar por todas partes, colaborando el Señor con ellos y confirmando la Palabra con las señales que la acompañaban."
+          "description": "El Señor Jesús, después de haber hablado con ellos fue elevado al cielo, y se sentó a la diestra de Dios. ",
+          "cita": "Marcos 16, 19"
         },
         "third": {
           "label": "La Venida del Espíritu Santo",
-          "description": "Todos ellos perseveraban en la oración, con un mismo espíritu en compañía de algunas mujeres, de María, la madre de Jesús, y de sus hermanos. (...) Al llegar el día de Pentecostés, estaban todos reunidos en un mismo lugar. De repente vino del cielo un ruido (...) que llenó toda la casa en la que se encontraban. Se les aparecieron unas lenguas como de fuego que se repartieron y se posaron sobre cada uno de ellos; quedaron todos llenos del Espíritu Santo y se pusieron a hablar en otras lenguas, según el Espíritu les concedía expresarse."
+          "description": "… todos quedaron llenos del Espíritu Santo, y comenzaron a hablar en lenguas extrañas, según el Espíritu Santo les movía a expresarse.",
+          "cita": "Hechos de los Apóstoles 2, 4"
         },
         "fourth": {
           "label": "La Asunción de la Virgen María",
-          "description": "¡Levántate, amada mía, hermosa mía, y vente! Porque, mira, ha pasado ya el invierno, han cesado las lluvias y se han ido. (...) Muéstrame tu semblante, déjame oír tu voz; porque tu voz es dulce, y bello tu semblante."
+          "description": "Una gran señal apareció en el cielo: Una mujer revestida de sol con la luna bajo sus pies y una corona de doce estrellas sobre la cabeza.",
+          "cita": "Apocalipsis 12, 1"
         },
         "fifth": {
           "label": "La Coronación de Nuestra Señora",
-          "description": "Toda espléndida, la hija del rey, va adentro, con vestidos en oro recamados; con sus brocados es llevada ante el rey.” Y “una gran señal apareció en el cielo; una mujer, vestida del sol, con la luna bajo sus pies, y una corona de doce estrellas sobre su cabeza."
+          "description": "¡Tú eres el orgullo de Jerusalén, la mayor gloria de Israel, el más grande honor de nuestra nación! … el Señor te ha mostrado su favor. ¡Que el Señor todopoderoso te bendiga eternamente!",
+          "cita": "Judit 15, 9-10"
         }
       },
       "luminous": {
         "label": "Los Misterios Luminosos",
         "first": {
           "label": "El Bautizo de Jesús",
-          "description": "Entonces aparece Jesús, que viene de Galilea al Jordán donde Juan, para ser bautizado por él (...). Salió luego del agua; y en esto se abrieron los cielos y vio al Espíritu de Dios que bajaba en forma de paloma y venía sobre él. Y una voz que salía de los cielos decía: Este es mi Hijo amado, en quien yo me complazco."
+          "description": "Una vez bautizado, ... se abrieron los Cielos y vio al Espíritu de Dios que bajaba como una paloma y se posaba sobre él. Al mismo tiempo se oyó una voz del cielo que decía: “Este es mi Hijo, el Amado; este es mi Elegido.”",
+          "cita": "Mateo 3, 16-17"
         },
         "second": {
           "label": "El Matrimonio en Caná",
-          "description": "Se celebraba una boda en Caná de Galilea y estaba allí la madre de Jesús. Fue invitado también a la boda Jesús con sus discípulos. Y, como faltara vino, porque se había acabado el vino de la boda, le dice a Jesús su madre: No tienen vino. Jesús le responde: ¿Qué tengo yo contigo, mujer? Todavía no ha llegado mi hora. Dice su madre a los sirvientes: Haced lo que él os diga."
+          "description": "Pero su madre dijo a los sirvientes: “Hagan lo que les diga.” Jesús dijo: “Llenen de agua esos recipientes.” Y los llenaron hasta el borde.",
+          "cita": "Juan 2, 5-7"
         },
         "third": {
           "label": "La Proclamación del Reino",
-          "description": "Marchó Jesús a Galilea; y proclamaba la Buena Nueva de Dios: El tiempo se ha cumplido y el Reino de Dios está cerca; convertíos y creed en la Buena Nueva (...). [Luego] llegan a Cafarnaúm (...) y le vienen a traer a un paralítico. (...) Al no poder presentárselo a causa de la multitud, abrieron el techo (...) y a través de la abertura que hicieron, descolgaron la camilla donde yacía el paralítico. Viendo Jesús la fe de ellos, dice al paralítico: Hijo, tus pecados te son perdonados (...), a ti te digo, levántate, toma tu camilla y vete a tu casa."
+          "description": "A lo largo del camino proclamen: ¡El Reino de los cielos esta ahora cerca! Sanen enfermos, resuciten muertos, limpien leprosos y echen los demonios. Ustedes lo recibieron sin paga, denlo sin cobrar.",
+          "cita": "Mateo 10, 7-8"
         },
         "fourth": {
           "label": "La Transfiguración",
-          "description": "Seis días después, toma Jesús consigo a Pedro, a Santiago y a su hermano Juan, y los lleva aparte, a un monte alto. Y se transfiguró delante de ellos: su rostro se puso brillante como el sol y sus vestidos se volvieron blancos como la luz. En esto, se les aparecieron Moisés y Elías que conversaban con él. (...) [Y] una nube luminosa los cubrió con su sombra y de la nube salía una voz que decía: Este es mi Hijo amado, en quien me complazco; escuchadle."
+          "description": "Y mientras estaba orando, su cara cambió de aspecto y su ropa se volvió de una blancura fulgurante. Pero de la nube llegó una voz que decía: “Éste es mi Hijo, mi Elegido; escúchenlo.”",
+          "cita": "Lucas 9, 29-35"
         },
         "fifth": {
           "label": "La Institución de la Eucaristía",
-          "description": "Seis días después, toma Jesús consigo a Pedro, a Santiago y a su hermano Juan, y los lleva aparte, a un monte alto. Y se transfiguró delante de ellos: su rostro se puso brillante como el sol y sus vestidos se volvieron blancos como la luz. En esto, se les aparecieron Moisés y Elías que conversaban con él. (...) [Y] una nube luminosa los cubrió con su sombra y de la nube salía una voz que decía: Este es mi Hijo amado, en quien me complazco; escuchadle."
+          "description": "Después tomó pan y, dando gracias, lo partió y se lo dio diciendo: “Esto es mi cuerpo, que es entregado por ustedes.” … Hizo lo mismo con la copa después de cenar, diciendo “Esta copa es la alianza nueva sellada con mi sangre, que es derramada por ustedes.”",
+          "cita": "Lucas 22, 19-20"
         }
       }
     }
