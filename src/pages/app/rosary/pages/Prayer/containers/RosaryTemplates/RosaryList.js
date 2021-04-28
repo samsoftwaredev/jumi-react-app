@@ -61,20 +61,21 @@ const RosaryList = ({ rosary, language }) => {
   };
 
   const onSave = ({
-    mystery,
-    bgMusic,
-    audioMute,
-    autoPlayAudio,
+    mystery = currentMystery,
+    bgMusic = backgroundMusic,
+    mute = audioMute,
+    autoPlay = autoPlayAudio,
     beginningPrayers,
     endMysteryPrayers,
     endingPrayers,
   }) => {
+    console.log("saved");
     // when the user click the save button
     // update all the parameters
     setCurrentMystery(mystery);
-    setAutoplayAudio(autoPlayAudio);
+    setAutoplayAudio(mute);
     setBackgroundMusic(bgMusic);
-    setAudioMute(audioMute);
+    setAudioMute(autoPlay);
     rosary.setPrayersList(beginningPrayers, endMysteryPrayers, endingPrayers);
     setListOfPrayers(rosary.getPrayersList());
   };

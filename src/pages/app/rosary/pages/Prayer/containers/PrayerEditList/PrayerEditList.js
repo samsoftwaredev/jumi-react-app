@@ -6,13 +6,14 @@ import { useTranslation } from "react-i18next";
 
 const PrayerEditList = ({ defaultList = [], onChange }) => {
   const { t } = useTranslation();
-  const [options, setOptions] = useState(defaultList);
 
   const getPrayers = (arr) =>
     Object.values(arr).map((p, index) => ({
       label: t(p.label),
       value: index,
     }));
+
+  const [options, setOptions] = useState(getPrayers(defaultList));
 
   const onRemove = ({ value }) => {
     // if a prayer is removed from list
@@ -25,10 +26,21 @@ const PrayerEditList = ({ defaultList = [], onChange }) => {
     }
   };
 
+  const checkComparison = ({ value, label }, index, array2) =>
+    value === array2[index].value && label === array2[index].label;
+
+  const compareArrays = (array1, array2) =>
+    array1.length === array2.length &&
+    array1.every((obj, index) => checkComparison(obj, index, array2));
+
   const onUpdate = (prayerList) => {
-    // if the order of the prayer list is changed
-    onChange(prayerList);
-    setOptions(prayerList);
+    // check if prayerList was updated
+    console.log(compareArrays(prayerList, options), prayerList, options);
+    if (!compareArrays(prayerList, options)) {
+      // if the order of the prayer list is changed
+      onChange(prayerList);
+      setOptions(prayerList);
+    }
   };
 
   const onSelect = ({ label, value }) => {

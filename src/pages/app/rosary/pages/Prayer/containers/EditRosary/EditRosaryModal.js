@@ -33,29 +33,38 @@ const EditRosaryModal = ({
 
   const [mystery, setMystery] = useState(currentMystery);
   const [bgMusic, setBgMusic] = useState(isMusicEnable);
-  const [autoPlayAudio, setAutoplayAudio] = useState(isAutoPlayAudio);
-  const [audioMute, setAudioMute] = useState(isAudioMute);
+  const [autoPlay, setAutoplay] = useState(isAutoPlayAudio);
+  const [mute, setMute] = useState(isAudioMute);
   const [listOfPrayers, setListOfPrayers] = useState(currentListOfPrayers);
 
   const onToggleAudioAutoplay = () => {
-    setAutoplayAudio(!autoPlayAudio);
+    setAutoplay(!autoPlay);
+    save({ autoPlay: !autoPlay });
   };
 
   const onToggleAudioVolume = () => {
-    setAudioMute(!audioMute);
+    setMute(!mute);
+    save({ mute: !mute });
   };
 
   const onToggleBackgroundMusic = () => {
     setBgMusic(!bgMusic);
+    save({ bgMusic: !bgMusic });
   };
 
   const onUpdateMystery = ({ value: name = "" } = { name: "" }) => {
     rosary.setMystery(rosary.getMysteryInfo(name));
     setMystery(rosary.getMystery());
+    save({ mystery: rosary.getMystery() });
   };
 
   const updatePrayersList = (objList = listOfDefaultPrayers) => {
     setListOfPrayers(objList);
+    save({
+      beginningPrayers: objList[beginningPrayersKey],
+      endMysteryPrayers: objList[endMysteryPrayersKey],
+      endingPrayers: objList[endingPrayersKey],
+    });
   };
 
   const onUpdatePrayers = (newList, key) => {
@@ -63,8 +72,8 @@ const EditRosaryModal = ({
   };
 
   const onResetSettings = () => {
-    setAutoplayAudio(true);
-    setAudioMute(false);
+    setAutoplay(true);
+    setMute(false);
     setBgMusic(false);
     updatePrayersList();
     onUpdateMystery();
@@ -74,8 +83,8 @@ const EditRosaryModal = ({
     save({
       mystery,
       bgMusic,
-      audioMute,
-      autoPlayAudio,
+      mute,
+      autoPlay,
       beginningPrayers: listOfPrayers[beginningPrayersKey],
       endMysteryPrayers: listOfPrayers[endMysteryPrayersKey],
       endingPrayers: listOfPrayers[endingPrayersKey],
@@ -89,9 +98,9 @@ const EditRosaryModal = ({
       <ModalHeader toggle={toggle}>{t("settings.label")}</ModalHeader>
       <ModalBody>
         <EditRosary
-          autoPlayAudio={autoPlayAudio}
+          autoPlayAudio={autoPlay}
           onToggleAudioAutoplay={onToggleAudioAutoplay}
-          audioMute={audioMute}
+          audioMute={mute}
           onToggleAudioVolume={onToggleAudioVolume}
           bgMusic={bgMusic}
           onToggleBackgroundMusic={onToggleBackgroundMusic}
