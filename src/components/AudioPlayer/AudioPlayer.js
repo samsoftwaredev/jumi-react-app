@@ -10,7 +10,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const AudioPlayer = ({
-  audioFile,
+  audioSrc,
   audioEnded,
   autoPlay = false,
   audioMute,
@@ -57,7 +57,7 @@ const AudioPlayer = ({
     }
   }, [audioMute]);
 
-  if (!audioFile) return null;
+  if (!audioSrc) return null;
   // if audio file is set, display controls
   return (
     <>
@@ -68,9 +68,9 @@ const AudioPlayer = ({
         ref={audioRef}
         className="d-none"
       >
-        <source src={audioFile} type="audio/ogg" />
-        <source src={audioFile} type="audio/mpeg" />
-        <source src={audioFile} type="audio/mp3" />
+        <source src={audioSrc} type="audio/ogg" />
+        <source src={audioSrc} type="audio/mpeg" />
+        <source src={audioSrc} type="audio/mp3" />
         Your browser does not support the audio element.
       </audio>
       {audioMute ? (
@@ -96,7 +96,7 @@ const AudioPlayer = ({
 };
 
 AudioPlayer.propTypes = {
-  audioFile: PropTypes.string,
+  audioSrc: PropTypes.string,
   audioEnded: PropTypes.func,
   autoPlay: PropTypes.bool,
 };

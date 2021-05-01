@@ -107,7 +107,7 @@ const RosaryList = ({ rosary, language }) => {
         videoLoop={false}
       /> */}
       {backgroundMusic && (
-        <AudioBackground audioFile={aveAudio} autoPlay={prayerStarted} />
+        <AudioBackground audioSrc={aveAudio} autoPlay={prayerStarted} />
       )}
       <Row className="flex-column align-items-center">
         <Col className="d-flex flex-column align-items-center">

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
 const AudioBackground = ({
-  audioFile,
+  audioSrc,
   autoPlay = false,
   audioLoop = true,
   volume = 0.2,
@@ -27,16 +27,16 @@ const AudioBackground = ({
 
   return (
     <audio controls className="d-none" ref={audioRef} loop={audioLoop}>
-      <source src={audioFile} type="audio/ogg" />
-      <source src={audioFile} type="audio/mpeg" />
-      <source src={audioFile} type="audio/mp3" />
+      <source src={audioSrc} type="audio/ogg" />
+      <source src={audioSrc} type="audio/mpeg" />
+      <source src={audioSrc} type="audio/mp3" />
       Your browser does not support the audio element.
     </audio>
   );
 };
 
 AudioBackground.propTypes = {
-  audioFile: PropTypes.string,
+  audioSrc: PropTypes.string,
   autoPlay: PropTypes.bool,
   audioLoop: PropTypes.bool,
 };

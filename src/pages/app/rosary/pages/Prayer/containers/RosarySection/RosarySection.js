@@ -33,7 +33,7 @@ const RosarySection = ({
       </div>
       <div className="text-right mb-5">
         <AudioPlayer
-          audioFile={audio}
+          audioSrc={audio}
           autoPlay={autoPlayAudio && isCurrentPrayer}
           audioEnded={() => nextPrayer(index)}
           audioMute={audioMute}
