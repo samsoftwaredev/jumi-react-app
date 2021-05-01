@@ -37,10 +37,16 @@ const AudioPlayer = ({
     onToggleAudioVolume();
   };
 
+  const resetAudioToStart = () => {
+    // set the current time of the audio to the beggining
+    if (audioRef?.current) audioRef.current.currentTime = 0;
+  };
+
   useEffect(() => {
     if (autoPlay) {
       onPlay();
     } else {
+      resetAudioToStart();
       onPause();
     }
   }, [autoPlay]);
