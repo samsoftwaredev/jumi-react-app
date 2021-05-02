@@ -38,14 +38,12 @@ export default class RosaryPrayer {
 
   // move to the previous prayer
   prevPrayer() {
-    this._prayerIndex -= 1;
-    return this.jumpToPrayer(this._prayerIndex);
+    return this.jumpToPrayer(this._prayerIndex - 1);
   }
 
   // move to the next prayer
   nextPrayer() {
-    this._prayerIndex += 1;
-    return this.jumpToPrayer(this._prayerIndex);
+    return this.jumpToPrayer(this._prayerIndex + 1);
   }
 
   // go to a specific prayer in the rosary

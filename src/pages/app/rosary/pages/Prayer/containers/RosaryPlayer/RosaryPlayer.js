@@ -11,7 +11,6 @@ const RosaryPlayer = ({ rosary, language }) => {
   const [track, setTrack] = useState(rosary.getPrayersList()[trackIndex]);
 
   const nextPrayer = () => {
-    console.log("next");
     // set prayerIndex
     const nextPrayerIndex = trackIndex + 1;
     const prayer = rosary.jumpToPrayer(nextPrayerIndex);
