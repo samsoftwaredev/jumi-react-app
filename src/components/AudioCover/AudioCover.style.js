@@ -5,8 +5,8 @@ const AudioCoverStyle = styled.div`
     border-radius: 120px;
     display: block;
     margin: auto;
-    height: 200px;
-    width: 200px;
+    max-height: 300px;
+    max-width: 300px;
   }
 
   .title {
@@ -14,7 +14,9 @@ const AudioCoverStyle = styled.div`
     margin-bottom: 4px;
   }
 
-  .artist {
+  .description {
+    text-align: left;
+    font-size: 1.5em;
     font-weight: 300;
     margin-top: 0;
   }

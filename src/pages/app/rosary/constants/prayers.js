@@ -13,6 +13,8 @@ import {
   hailHolyQueen,
 } from "../audio/en/prayers";
 
+import crucifixion from "../images/crucifixion.svg";
+
 import {
   actoDeContriccion,
   oracionDeFatima,
@@ -32,6 +34,7 @@ import {
 export const prayers = {
   start: {
     label: "prayers.start.label",
+    image: crucifixion,
     description: "prayers.start.description",
     audio: { en: signOfTheCross, es: senalDeLaCruz },
   },

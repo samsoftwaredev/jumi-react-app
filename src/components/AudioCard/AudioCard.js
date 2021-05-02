@@ -9,6 +9,7 @@ const AudioCard = ({
   artist = "",
   image = "",
   audioSrc = "",
+  description = "",
   id = "",
   toPrevTrack = null,
   toNextTrack = null,
@@ -81,7 +82,13 @@ const AudioCard = ({
     <AudioCardStyle>
       <div className="audio-player">
         <div className="track-info">
-          <AudioCover title={title} artist={artist} image={image} />
+          {/* <AudioHeader /> */}
+          <AudioCover
+            title={title}
+            artist={artist}
+            image={image}
+            description={description}
+          />
           <AudioControls
             isPlaying={isPlaying}
             onPlayPauseClick={playPause}

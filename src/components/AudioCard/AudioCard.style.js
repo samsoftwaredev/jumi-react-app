@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const AudioCardStyle = styled.div`
   .audio-player {
-    max-width: 350px;
+    max-width: 550px;
     border-radius: 20px;
     padding: 24px;
     box-shadow: 0 28px 28px rgba(0, 0, 0, 0.2);

@@ -6,7 +6,7 @@ import {
 } from "../constants/prayers";
 import { rosaryDays, rosaryMysteries } from "../constants/mysteries";
 
-export default class RosaryPrayer {
+export default class Rosary {
   // private properties
   _observers = [];
   _endDateOfPrayer = null;

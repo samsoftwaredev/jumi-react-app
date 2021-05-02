@@ -37,6 +37,7 @@ const RosaryPlayer = ({ rosary, language }) => {
       <AudioCard
         title={track.label}
         artist={track.artist}
+        description={track.description}
         image={track.image}
         id={strToId(track.label, trackIndex)}
         audioSrc={track.audio ? track.audio[language] : null}
