@@ -8,6 +8,8 @@ import RosaryButtons from "../RosaryButtons";
 import AudioBackground from "../../../../../../../components/AudioPlayer/AudioBackground";
 import { aveAudio } from "../../../../audio";
 import RosarySection from "../RosarySection";
+import AudioPlayer from "../../../../../../../components/AudioPlayer";
+import BottomPlayer from "../RosaryPlayer/BottomPlayer";
 
 const RosaryList = ({ rosary, language }) => {
   const mystery = rosary.getMystery();
@@ -64,12 +66,13 @@ const RosaryList = ({ rosary, language }) => {
   };
 
   const nextPrayer = (prayerIndex) => {
+    getNextPrayer(prayerIndex);
+    console.log("next", prayerIndex);
     const prayer = rosary.jumpToPrayer(prayerIndex + 1);
     // check if the prayer is defined
     if (prayer) {
       scrollToPrayer(prayer);
-      setCurrentPrayerIndex(rosary.getPrayerIndex());
-      getNextPrayer(prayerIndex);
+      setCurrentPrayerIndex(prayerIndex + 1);
     }
   };
 
@@ -146,13 +149,22 @@ const RosaryList = ({ rosary, language }) => {
             ))}
         </Col>
       </Row>
+      <BottomPlayer
+        prayer={manipulatePrayerList[currentPrayerIndex]}
+        language={language}
+        index={currentPrayerIndex}
+        nextPrayer={nextPrayer}
+        audioMute={audioMute}
+        setAudioMute={setAudioMute}
+        autoPlayAudio={autoPlayAudio}
+      />
     </div>
   );
 };
 
 RosaryList.propTypes = {
-  currentMystery: PropTypes.shape().isRequired,
-  onStartPrayer: PropTypes.func.isRequired,
+  rosary: PropTypes.shape(),
+  language: PropTypes.string,
 };
 
 export default RosaryList;

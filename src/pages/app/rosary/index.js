@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import { Nav, NavItem } from "reactstrap";
 import Translate from "../../../components/Translate";
-import MainLayout from "../../../layout/MainLayout";
+import MainLayout from "../../../layout/MainLayout/MainLayout";
 import RosaryContextProvider from "./context/RosaryContext";
 import HowTo from "./pages/HowTo";
 import Prayer from "./pages/Prayer";
@@ -32,7 +32,7 @@ const Rosary = () => {
 
   return (
     <RosaryContextProvider>
-      <MainLayout>
+      <MainLayout showFooter={location.pathname.includes("how-to-pray")}>
         {/* tabs to view components */}
         <Nav tabs className="d-flex justify-content-center">
           {tabs.map((t) => (

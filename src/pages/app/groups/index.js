@@ -1,4 +1,4 @@
-import MainLayout from "../../../layout/MainLayout";
+import MainLayout from "../../../layout/MainLayout/MainLayout";
 
 const Groups = () => {
   return <MainLayout>Groups</MainLayout>;

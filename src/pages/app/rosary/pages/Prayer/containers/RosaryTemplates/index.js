@@ -1,3 +1,1 @@
-import RosaryList from "./RosaryList";
-
-export { RosaryList };
+export { default } from "./RosaryList";

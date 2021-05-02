@@ -38,28 +38,23 @@ export default class RosaryPrayer {
 
   // move to the previous prayer
   prevPrayer() {
-    if (this._prayerIndex > 0) {
-      this._prayerIndex -= 1;
-      return this._prayersList[this._prayerIndex];
-    }
-    return null;
+    this._prayerIndex -= 1;
+    return this.jumpToPrayer(this._prayerIndex);
   }
 
   // move to the next prayer
   nextPrayer() {
-    const arrOfPrayers = Object.values(this._prayersList);
-    if (this._prayerIndex <= arrOfPrayers.length - 1) {
-      this._prayerIndex += 1;
-      return this._prayersList[this._prayerIndex];
-    }
-    return null;
+    this._prayerIndex += 1;
+    return this.jumpToPrayer(this._prayerIndex);
   }
 
   // go to a specific prayer in the rosary
   jumpToPrayer(index) {
-    const arrOfPrayers = Object.values(this._prayersList);
-    if (this._prayerIndex <= arrOfPrayers.length - 1) {
+    const arrOfPrayers = this.getPrayersList();
+    // check if index in between the range
+    if (index >= 0 && index <= arrOfPrayers.length - 1) {
       this._prayerIndex = index;
+      // return prayer
       return this._prayersList[this._prayerIndex];
     }
     return null;

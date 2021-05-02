@@ -32,17 +32,17 @@ const RosarySection = ({
         <PrayerInfo currentMystery={currentMystery} prayer={prayer} />
       </div>
       <div className="text-right mb-5">
-        <AudioPlayer
+        {/* <AudioPlayer
           audioSrc={audio}
           autoPlay={autoPlayAudio && isCurrentPrayer}
           audioEnded={() => nextPrayer(index)}
           audioMute={audioMute}
           onToggleAudioVolume={() => setAudioMute(!audioMute)}
-        />
+        /> */}
         {size - 1 > index && (
           <Button
             className="btn-circle ml-1"
-            color="info"
+            color="primary"
             onClick={() => nextPrayer(index)}
           >
             <FontAwesomeIcon icon={faChevronDown} />

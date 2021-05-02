@@ -10,28 +10,10 @@ const AudioCardStyle = styled.div`
     color: var(--white);
   }
 
-  .artwork {
-    border-radius: 120px;
-    display: block;
-    margin: auto;
-    height: 200px;
-    width: 200px;
-  }
-
   .track-info {
     text-align: center;
     z-index: 1;
     position: relative;
-  }
-
-  .title {
-    font-weight: 700;
-    margin-bottom: 4px;
-  }
-
-  .artist {
-    font-weight: 300;
-    margin-top: 0;
   }
 `;
 

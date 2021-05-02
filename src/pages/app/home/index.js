@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Button, Jumbotron } from "reactstrap";
 import Translate from "../../../components/Translate";
-import MainLayout from "../../../layout/MainLayout";
+import MainLayout from "../../../layout/MainLayout/MainLayout";
 
 const Home = () => {
   const { t } = useTranslation();

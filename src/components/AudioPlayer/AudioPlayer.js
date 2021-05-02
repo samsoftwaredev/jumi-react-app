@@ -18,7 +18,7 @@ const AudioPlayer = ({
 }) => {
   const audioRef = useRef();
   const [isPlaying, setIsPlaying] = useState(false);
-
+  console.log(audioSrc);
   const onPause = () => {
     audioRef?.current?.pause();
     setIsPlaying(false);

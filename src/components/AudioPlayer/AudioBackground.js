@@ -21,8 +21,11 @@ const AudioBackground = ({
   };
 
   useEffect(() => {
-    if (autoPlay) onPlay();
-    else onPause();
+    if (autoPlay) {
+      onPlay();
+    } else {
+      onPause();
+    }
   }, [autoPlay]);
 
   return (
