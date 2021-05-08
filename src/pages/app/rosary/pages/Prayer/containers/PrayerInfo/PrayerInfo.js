@@ -9,6 +9,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import RichTextDisplay from "interweave";
 import { useTranslation } from "react-i18next";
+import { getOrdinalNumbers } from "../../helpers/transform";
 
 const PrayerInfo = ({ prayer, currentMystery }) => {
   const { t } = useTranslation();
@@ -23,11 +24,11 @@ const PrayerInfo = ({ prayer, currentMystery }) => {
   const getMysteryHeader = (p) => {
     if (p.isMystery) {
       // if the prayer is a mystery, show label and place
-      return `${t(p.label)}\n(${t(getMysteryPlace(p.mysteryIndex))})`;
+      return `${t(p.label)}\n(${t(getOrdinalNumbers(p.mysteryIndex))})`;
     } else if (p.mystery?.label) {
       // if the mystery label is defined in prayer, show mystery label and place
       const { label, mysteryIndex } = p.mystery;
-      return `${t(label)}\n(${t(getMysteryPlace(mysteryIndex))})`;
+      return `${t(label)}\n(${t(getOrdinalNumbers(mysteryIndex))})`;
     } else {
       // don't show anythign
       return "";
@@ -40,24 +41,6 @@ const PrayerInfo = ({ prayer, currentMystery }) => {
       return <img height="400" src={p.image} alt={p.mystery?.label} />;
     }
     return null;
-  };
-
-  const getMysteryPlace = (place) => {
-    // get the place of the mystery
-    switch (place) {
-      case 1:
-        return "mysteries.ordinalNumbers.first";
-      case 2:
-        return "mysteries.ordinalNumbers.second";
-      case 3:
-        return "mysteries.ordinalNumbers.third";
-      case 4:
-        return "mysteries.ordinalNumbers.fourth";
-      case 5:
-        return "mysteries.ordinalNumbers.fifth";
-      default:
-        return "";
-    }
   };
 
   return (
@@ -77,7 +60,7 @@ const PrayerInfo = ({ prayer, currentMystery }) => {
         )}
         {prayer.isMystery && (
           <small className="text-muted">
-            {getMysteryPlace(prayer.mystery?.mysteryIndex)}
+            {getOrdinalNumbers(prayer.mystery?.mysteryIndex)}
           </small>
         )}
       </h5>

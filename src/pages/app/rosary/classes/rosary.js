@@ -134,7 +134,7 @@ export default class Rosary {
         });
       });
       // 4. prayers after each mystery
-      arr.push(...afterEachMysteryPrayers);
+      arr.push(...afterEachMysteryPrayers.map((p) => ({ mystery, ...p })));
     });
     // 5. set the ending prayers
     arr.push(...endingPrayers);

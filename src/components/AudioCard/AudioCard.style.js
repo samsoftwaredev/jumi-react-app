@@ -5,7 +5,7 @@ const AudioCardStyle = styled.div`
   justify-content: center;
   flex-direction: column;
 
-  min-height: 500px;
+  min-height: 700px;
   max-width: 550px;
   border-radius: 20px;
   padding: 24px;

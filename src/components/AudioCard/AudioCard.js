@@ -3,13 +3,17 @@ import PropTypes from "prop-types";
 import { AudioCardStyle } from "./AudioCard.style";
 import AudioControls from "../AudioControls";
 import AudioCover from "../AudioCover";
+import AudioHeader from "../AudioHeader/AudioHeader";
 
 const AudioCard = ({
-  title = "",
-  artist = "",
-  image = "",
+  audioTitle = "",
+  audioArtist = "",
+  audioImage = "",
   audioSrc = "",
+  audioDescription = "",
+  title = "",
   description = "",
+  subTitle = "",
   id = "",
   toPrevTrack = null,
   toNextTrack = null,
@@ -80,13 +84,17 @@ const AudioCard = ({
 
   return (
     <AudioCardStyle>
+      <AudioHeader
+        title={title}
+        subTitle={subTitle}
+        description={description}
+      />
       <div className="track-info">
-        {/* <AudioHeader /> */}
         <AudioCover
-          title={title}
-          artist={artist}
-          image={image}
-          description={description}
+          title={audioTitle}
+          artist={audioArtist}
+          image={audioImage}
+          description={audioDescription}
         />
         <AudioControls
           isPlaying={isPlaying}
@@ -100,6 +108,11 @@ const AudioCard = ({
 };
 
 AudioCard.propTypes = {
+  audioTitle: PropTypes.string,
+  audioArtist: PropTypes.string,
+  audioImage: PropTypes.string,
+  audioSrc: PropTypes.string,
+  audioDescription: PropTypes.string,
   title: PropTypes.string,
   artist: PropTypes.string,
   image: PropTypes.string,

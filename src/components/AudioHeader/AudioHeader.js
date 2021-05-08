@@ -6,8 +6,8 @@ const AudioHeader = ({ title = "", subTitle = "", description = "" }) => {
   const { t } = useTranslation();
   return (
     <div className="text-right">
-      <h2 className="title">{t(title)}</h2>
-      <h2 className="sub-title">{t(subTitle)}</h2>
+      <small className="sub-title">{t(subTitle)}</small>
+      <h5 className="title">{t(title)}</h5>
       <h3 className="description">{t(description)}</h3>
     </div>
   );
