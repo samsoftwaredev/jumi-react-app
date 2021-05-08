@@ -16,39 +16,37 @@ const AudioControls = ({
   onNextClick,
 }) => (
   <AudioControlsStyle>
-    <div className="audio-controls">
+    <Button
+      className="prev btn-clear rounded-circle"
+      aria-label="Previous"
+      onClick={onPrevClick}
+    >
+      <FontAwesomeIcon icon={faBackward} />
+    </Button>
+    {isPlaying ? (
       <Button
-        className="prev btn-clear rounded-circle"
-        aria-label="Previous"
-        onClick={onPrevClick}
+        className="pause btn-clear rounded-circle"
+        onClick={() => onPlayPauseClick(false)}
+        aria-label="Pause"
       >
-        <FontAwesomeIcon icon={faBackward} />
+        <FontAwesomeIcon icon={faPause} />
       </Button>
-      {isPlaying ? (
-        <Button
-          className="pause btn-clear rounded-circle"
-          onClick={() => onPlayPauseClick(false)}
-          aria-label="Pause"
-        >
-          <FontAwesomeIcon icon={faPause} />
-        </Button>
-      ) : (
-        <Button
-          className="play btn-clear rounded-circle"
-          onClick={() => onPlayPauseClick(true)}
-          aria-label="Play"
-        >
-          <FontAwesomeIcon icon={faPlay} />
-        </Button>
-      )}
+    ) : (
       <Button
-        className="next btn-clear rounded-circle"
-        aria-label="Next"
-        onClick={onNextClick}
+        className="play btn-clear rounded-circle"
+        onClick={() => onPlayPauseClick(true)}
+        aria-label="Play"
       >
-        <FontAwesomeIcon icon={faForward} />
+        <FontAwesomeIcon icon={faPlay} />
       </Button>
-    </div>
+    )}
+    <Button
+      className="next btn-clear rounded-circle"
+      aria-label="Next"
+      onClick={onNextClick}
+    >
+      <FontAwesomeIcon icon={faForward} />
+    </Button>
   </AudioControlsStyle>
 );
 

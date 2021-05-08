@@ -1,27 +1,28 @@
 import styled from "styled-components";
 
 const AudioControlsStyle = styled.div`
-  .audio-controls {
-    display: flex;
-    justify-content: space-between;
-    width: 75%;
-    margin: 0 auto 15px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 20px;
+
+  .btn {
+    margin: 0 20px;
   }
 
-  .audio-controls .prev svg,
-  .audio-controls .next svg {
-    width: 35px;
-    height: 35px;
+  .prev svg,
+  .next svg {
+    min-width: 35px;
+    min-height: 35px;
   }
 
-  .audio-controls .play svg,
-  .audio-controls .pause svg {
-    height: 40px;
-    width: 40px;
+  .play svg,
+  .pause svg {
+    min-height: 40px;
+    min-width: 40px;
   }
 
-  .audio-controls path {
-    fill: var(--white);
+  path {
+    fill: white;
   }
 `;
 

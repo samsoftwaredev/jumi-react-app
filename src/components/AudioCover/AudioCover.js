@@ -1,3 +1,4 @@
+import RichTextDisplay from "interweave";
 import React from "react";
 import PropTypes from "prop-types";
 import { AudioCoverStyle } from "./AudioCover.style";
@@ -20,7 +21,9 @@ const AudioCover = ({
         />
       )}
       <h2 className="title">{t(title)}</h2>
-      <h3 className="description">{t(description)}</h3>
+      <h3 className="description">
+        <RichTextDisplay content={t(description)} />
+      </h3>
     </AudioCoverStyle>
   );
 };

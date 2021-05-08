@@ -70,6 +70,7 @@ export const prayers = {
   },
   signOfCross: {
     label: "prayers.signOfCross.label",
+    image: crucifixion,
     description: "prayers.signOfCross.description",
     audio: { en: signOfTheCross, es: final },
   },

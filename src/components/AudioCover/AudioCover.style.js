@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const AudioCoverStyle = styled.div`
+  margin-bottom: 50px;
   .artwork {
     border-radius: 120px;
     display: block;

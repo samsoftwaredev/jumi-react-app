@@ -80,22 +80,20 @@ const AudioCard = ({
 
   return (
     <AudioCardStyle>
-      <div className="audio-player">
-        <div className="track-info">
-          {/* <AudioHeader /> */}
-          <AudioCover
-            title={title}
-            artist={artist}
-            image={image}
-            description={description}
-          />
-          <AudioControls
-            isPlaying={isPlaying}
-            onPlayPauseClick={playPause}
-            onPrevClick={toPrevTrack}
-            onNextClick={toNextTrack}
-          />
-        </div>
+      <div className="track-info">
+        {/* <AudioHeader /> */}
+        <AudioCover
+          title={title}
+          artist={artist}
+          image={image}
+          description={description}
+        />
+        <AudioControls
+          isPlaying={isPlaying}
+          onPlayPauseClick={playPause}
+          onPrevClick={toPrevTrack}
+          onNextClick={toNextTrack}
+        />
       </div>
     </AudioCardStyle>
   );
