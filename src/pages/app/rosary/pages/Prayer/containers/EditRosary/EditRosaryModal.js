@@ -11,6 +11,7 @@ import {
   endingPrayersKey,
 } from "../../../../constants/prayers";
 import EditRosary from "./EditRosary";
+import { useRosaryContext } from "../../../../context/RosaryContext";
 
 const listOfDefaultPrayers = {
   [beginningPrayersKey]: defaultBeginningPrayers,
@@ -21,56 +22,37 @@ const listOfDefaultPrayers = {
 const EditRosaryModal = ({
   modal,
   toggle,
-  rosary,
-  currentMystery = {},
-  isMusicEnable = false,
-  isAudioMute = false,
   currentListOfPrayers = listOfDefaultPrayers,
-  save,
 }) => {
-  // const {
-  //   trackIndex,
-  //   setTrackIndex,
-  //   track,
-  //   setTrack,
-  //   currentMystery,
-  //   setCurrentMystery,
-  //   backgroundMusic,
-  //   setBackgroundMusic,
-  //   audioMute,
-  //   setAudioMute,
-  // } = useRosaryContext();
+  const {
+    rosary,
+    currentMystery,
+    setCurrentMystery,
+    backgroundMusic,
+    setBackgroundMusic,
+    audioMute,
+    setAudioMute,
+  } = useRosaryContext();
 
   const { t } = useTranslation();
 
-  const [mystery, setMystery] = useState(currentMystery);
-  const [bgMusic, setBgMusic] = useState(isMusicEnable);
-  const [mute, setMute] = useState(isAudioMute);
   const [listOfPrayers, setListOfPrayers] = useState(currentListOfPrayers);
 
   const onToggleAudioVolume = () => {
-    setMute(!mute);
-    save({ mute: !mute });
+    setAudioMute(!audioMute);
   };
 
   const onToggleBackgroundMusic = () => {
-    setBgMusic(!bgMusic);
-    save({ bgMusic: !bgMusic });
+    setBackgroundMusic(!backgroundMusic);
   };
 
   const onUpdateMystery = ({ value: name = "" } = { name: "" }) => {
     rosary.setMystery(rosary.getMysteryInfo(name));
-    setMystery(rosary.getMystery());
-    save({ mystery: rosary.getMystery() });
+    setCurrentMystery(rosary.getMystery());
   };
 
   const updatePrayersList = (objList = listOfDefaultPrayers) => {
     setListOfPrayers(objList);
-    save({
-      beginningPrayers: objList[beginningPrayersKey],
-      endMysteryPrayers: objList[endMysteryPrayersKey],
-      endingPrayers: objList[endingPrayersKey],
-    });
   };
 
   const onUpdatePrayers = (newList, key) => {
@@ -78,23 +60,10 @@ const EditRosaryModal = ({
   };
 
   const onResetSettings = () => {
-    setMute(false);
-    setBgMusic(false);
+    setAudioMute(false);
+    setBackgroundMusic(false);
     updatePrayersList();
     onUpdateMystery();
-  };
-
-  const onSaveSettings = () => {
-    save({
-      mystery,
-      bgMusic,
-      mute,
-      beginningPrayers: listOfPrayers[beginningPrayersKey],
-      endMysteryPrayers: listOfPrayers[endMysteryPrayersKey],
-      endingPrayers: listOfPrayers[endingPrayersKey],
-    });
-    // close modal
-    toggle();
   };
 
   // const onSave = (options) => {
@@ -103,7 +72,7 @@ const EditRosaryModal = ({
 
   //   const {
   //     mystery = currentMystery,
-  //     bgMusic = backgroundMusic,
+  //     backgroundMusic = backgroundMusic,
   //     mute = audioMute,
   //     beginningPrayers,
   //     endMysteryPrayers,
@@ -111,7 +80,7 @@ const EditRosaryModal = ({
   //   } = options;
 
   //   setCurrentMystery(mystery);
-  //   setBackgroundMusic(bgMusic);
+  //   setBackgroundMusic(backgroundMusic);
   //   setAudioMute(mute);
   //   rosary.setPrayersList(beginningPrayers, endMysteryPrayers, endingPrayers);
   //   setTrack(rosary.getPrayersList()[trackIndex]);
@@ -122,11 +91,11 @@ const EditRosaryModal = ({
       <ModalHeader toggle={toggle}>{t("settings.label")}</ModalHeader>
       <ModalBody>
         <EditRosary
-          audioMute={mute}
+          audioMute={audioMute}
           onToggleAudioVolume={onToggleAudioVolume}
-          bgMusic={bgMusic}
+          backgroundMusic={backgroundMusic}
           onToggleBackgroundMusic={onToggleBackgroundMusic}
-          mystery={mystery}
+          currentMystery={currentMystery}
           onUpdateMystery={onUpdateMystery}
           listOfPrayers={listOfPrayers}
           onUpdatePrayers={onUpdatePrayers}
@@ -136,7 +105,7 @@ const EditRosaryModal = ({
         <Button color="light" onClick={onResetSettings}>
           {t("reset.label")}
         </Button>
-        <Button color="primary" onClick={onSaveSettings}>
+        <Button color="primary" onClick={() => {}}>
           {t("save.label")}
         </Button>
       </ModalFooter>

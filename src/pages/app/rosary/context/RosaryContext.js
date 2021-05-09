@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 const RosaryContext = React.createContext();
 
 const RosaryContextProvider = ({ children }) => {
+  const [rosary, setRosary] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [trackIndex, setTrackIndex] = useState(null);
   const [track, setTrack] = useState(null);
@@ -12,6 +13,8 @@ const RosaryContextProvider = ({ children }) => {
   const [audioMute, setAudioMute] = useState(false);
 
   const store = {
+    rosary,
+    setRosary,
     isPlaying,
     setIsPlaying,
     trackIndex,

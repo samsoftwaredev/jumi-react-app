@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 import AudioCard from "../../../../../../../components/AudioCard";
@@ -9,8 +9,9 @@ import AudioBackground from "../../../../../../../components/AudioPlayer/AudioBa
 import aveMaria from "../../../../audio/ave.mp3";
 import { useRosaryContext } from "../../../../context/RosaryContext";
 
-const RosaryPlayer = ({ rosary, language }) => {
+const RosaryPlayer = ({ language }) => {
   const {
+    rosary,
     isPlaying,
     trackIndex,
     setTrackIndex,
@@ -61,13 +62,7 @@ const RosaryPlayer = ({ rosary, language }) => {
         audioLoop
         audioMute={audioMute}
       />
-      {/* <RosaryModalButton
-        rosary={rosary}
-        currentMystery={currentMystery}
-        isMusicEnable={backgroundMusic}
-        isAudioMute={audioMute}
-        save={onSave}
-      /> */}
+      <RosaryModalButton />
       <div className="mt-4">
         <AudioCard
           title={track?.mystery?.label}

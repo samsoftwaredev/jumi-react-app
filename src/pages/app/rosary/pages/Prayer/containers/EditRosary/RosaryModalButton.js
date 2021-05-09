@@ -6,14 +6,7 @@ import { EditRosaryModal } from ".";
 import { faCog } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const RosaryModalButton = ({
-  rosary,
-  currentMystery,
-  isMusicEnable,
-  isAutoPlayAudio,
-  isAudioMute,
-  save,
-}) => {
+const RosaryModalButton = () => {
   const { t } = useTranslation();
 
   const [modal, setModal] = useState(false);
@@ -27,23 +20,9 @@ const RosaryModalButton = ({
         &nbsp;
         {t("settings.label")}
       </Button>
-      <EditRosaryModal
-        modal={modal}
-        toggle={toggle}
-        rosary={rosary}
-        currentMystery={currentMystery}
-        isMusicEnable={isMusicEnable}
-        isAutoPlayAudio={isAutoPlayAudio}
-        isAudioMute={isAudioMute}
-        save={save}
-      />
+      <EditRosaryModal modal={modal} toggle={toggle} />
     </>
   );
-};
-
-RosaryModalButton.propTypes = {
-  currentMystery: PropTypes.shape().isRequired,
-  onStartPrayer: PropTypes.func.isRequired,
 };
 
 export default RosaryModalButton;

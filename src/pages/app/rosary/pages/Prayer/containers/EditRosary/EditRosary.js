@@ -15,9 +15,9 @@ import PrayerEditList from "../PrayerEditList";
 const EditRosary = ({
   audioMute,
   onToggleAudioVolume,
-  bgMusic,
+  backgroundMusic,
   onToggleBackgroundMusic,
-  mystery,
+  currentMystery,
   onUpdateMystery,
   listOfPrayers,
   onUpdatePrayers,
@@ -49,7 +49,10 @@ const EditRosary = ({
         title="Music:"
         description="You can add background music while you pray the rosary. Once you start the rosary the music will autoplay."
       >
-        <CheckboxContainer value={bgMusic} onChange={onToggleBackgroundMusic}>
+        <CheckboxContainer
+          value={backgroundMusic}
+          onChange={onToggleBackgroundMusic}
+        >
           Background Music
         </CheckboxContainer>
       </SideBySide>
@@ -59,7 +62,10 @@ const EditRosary = ({
         title="Mystery:"
         description="Select the mystery you would like meditate today."
       >
-        <ChangeMystery mystery={mystery} onUpdateMystery={onUpdateMystery} />
+        <ChangeMystery
+          mystery={currentMystery}
+          onUpdateMystery={onUpdateMystery}
+        />
       </SideBySide>
       <hr />
       {/* Rosary, starting prayers that user can select */}
