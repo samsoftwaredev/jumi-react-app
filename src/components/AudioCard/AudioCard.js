@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Input } from "reactstrap";
 import PropTypes from "prop-types";
 import AudioControls from "../AudioControls";
 import AudioCover from "../AudioCover";
@@ -34,9 +35,9 @@ const AudioCard = ({
     setIsPlaying(!isPlaying);
   };
 
-  const toogleAudioMute = () => {
-    audioRef.current.volume = !mute ? 0 : 1;
-    setMute(!mute);
+  const toggleAudioMute = (bool) => {
+    audioRef.current.volume = bool ? 0 : 1;
+    setMute(bool);
   };
 
   const startTimer = () => {
@@ -106,7 +107,7 @@ const AudioCard = ({
         />
         <AudioControls
           mute={mute}
-          onMute={toogleAudioMute}
+          onMute={toggleAudioMute}
           isPlaying={isPlaying}
           onPlayPauseClick={playPause}
           // disabledPrev
