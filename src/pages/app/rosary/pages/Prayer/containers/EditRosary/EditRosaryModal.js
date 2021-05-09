@@ -28,6 +28,19 @@ const EditRosaryModal = ({
   currentListOfPrayers = listOfDefaultPrayers,
   save,
 }) => {
+  // const {
+  //   trackIndex,
+  //   setTrackIndex,
+  //   track,
+  //   setTrack,
+  //   currentMystery,
+  //   setCurrentMystery,
+  //   backgroundMusic,
+  //   setBackgroundMusic,
+  //   audioMute,
+  //   setAudioMute,
+  // } = useRosaryContext();
+
   const { t } = useTranslation();
 
   const [mystery, setMystery] = useState(currentMystery);
@@ -83,6 +96,26 @@ const EditRosaryModal = ({
     // close modal
     toggle();
   };
+
+  // const onSave = (options) => {
+  //   // when the user click the save button
+  //   // update all the parameters
+
+  //   const {
+  //     mystery = currentMystery,
+  //     bgMusic = backgroundMusic,
+  //     mute = audioMute,
+  //     beginningPrayers,
+  //     endMysteryPrayers,
+  //     endingPrayers,
+  //   } = options;
+
+  //   setCurrentMystery(mystery);
+  //   setBackgroundMusic(bgMusic);
+  //   setAudioMute(mute);
+  //   rosary.setPrayersList(beginningPrayers, endMysteryPrayers, endingPrayers);
+  //   setTrack(rosary.getPrayersList()[trackIndex]);
+  // };
 
   return (
     <Modal isOpen={modal} size="lg" toggle={toggle}>

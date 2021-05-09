@@ -1,17 +1,29 @@
 import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 
-const RosaryContext = React.createContext({
-  prayersSubList: [],
-  setPrayerSubList: () => {},
-});
+const RosaryContext = React.createContext();
 
 const RosaryContextProvider = ({ children }) => {
-  const [prayersSubList, setPrayerSubList] = useState([]);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [trackIndex, setTrackIndex] = useState(null);
+  const [track, setTrack] = useState(null);
+  const [currentMystery, setCurrentMystery] = useState(null);
+  const [backgroundMusic, setBackgroundMusic] = useState(false);
+  const [audioMute, setAudioMute] = useState(false);
 
   const store = {
-    prayersSubList,
-    setPrayerSubList,
+    isPlaying,
+    setIsPlaying,
+    trackIndex,
+    setTrackIndex,
+    track,
+    setTrack,
+    currentMystery,
+    setCurrentMystery,
+    backgroundMusic,
+    setBackgroundMusic,
+    audioMute,
+    setAudioMute,
   };
 
   return (

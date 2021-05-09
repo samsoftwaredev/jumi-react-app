@@ -1,13 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
 const AudioBackground = ({
   audioSrc,
-  autoPlay = false,
-  audioLoop = true,
+  isPlaying = false,
   volume = 0.2,
+  audioMute,
 }) => {
-  const audioRef = useRef();
+  const audioRef = useRef(new Audio(audioSrc));
 
   const onPause = () => {
     audioRef?.current?.pause();
@@ -16,32 +16,28 @@ const AudioBackground = ({
   const onPlay = () => {
     if (audioRef?.current) {
       audioRef.current.play();
-      audioRef.current.volume = volume;
     }
   };
 
   useEffect(() => {
-    if (autoPlay) {
+    if (isPlaying) {
       onPlay();
     } else {
       onPause();
     }
-  }, [autoPlay]);
+  }, [isPlaying]);
 
-  return (
-    <audio controls className="d-none" ref={audioRef} loop={audioLoop}>
-      <source src={audioSrc} type="audio/ogg" />
-      <source src={audioSrc} type="audio/mpeg" />
-      <source src={audioSrc} type="audio/mp3" />
-      Your browser does not support the audio element.
-    </audio>
-  );
+  useEffect(() => {
+    audioRef.current.volume = audioMute ? 0 : volume;
+  }, [audioMute]);
+
+  return null;
 };
 
 AudioBackground.propTypes = {
   audioSrc: PropTypes.string,
-  autoPlay: PropTypes.bool,
-  audioLoop: PropTypes.bool,
+  isPlaying: PropTypes.bool,
+  audioMute: PropTypes.bool,
 };
 
 export default AudioBackground;

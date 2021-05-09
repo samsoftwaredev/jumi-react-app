@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Input } from "reactstrap";
 import PropTypes from "prop-types";
 import AudioControls from "../AudioControls";
 import AudioCover from "../AudioCover";
@@ -15,14 +14,14 @@ const AudioCard = ({
   description = "",
   subTitle = "",
   id = "",
-  audioMute = false,
   toPrevTrack = null,
   toNextTrack = null,
-  setIsPlaying = null,
-  isPlaying = false,
+  audioMute,
+  setAudioMute,
+  isPlaying,
+  setIsPlaying,
 }) => {
   const [trackProgress, setTrackProgress] = useState(null);
-  const [mute, setMute] = useState(audioMute);
   // Refs
   const audioRef = useRef(new Audio(audioSrc));
   const intervalRef = useRef();
@@ -37,7 +36,7 @@ const AudioCard = ({
 
   const toggleAudioMute = (bool) => {
     audioRef.current.volume = bool ? 0 : 1;
-    setMute(bool);
+    setAudioMute(bool);
   };
 
   const startTimer = () => {
@@ -79,7 +78,7 @@ const AudioCard = ({
     setTrackProgress(audioRef.current.currentTime);
 
     if (isReady.current) {
-      audioRef.current.volume = mute ? 0 : 1;
+      audioRef.current.volume = audioMute ? 0 : 1;
       audioRef.current.play();
       setIsPlaying(true);
       startTimer();
@@ -106,7 +105,7 @@ const AudioCard = ({
           description={audioDescription}
         />
         <AudioControls
-          mute={mute}
+          mute={audioMute}
           onMute={toggleAudioMute}
           isPlaying={isPlaying}
           onPlayPauseClick={playPause}
@@ -129,7 +128,7 @@ AudioCard.propTypes = {
   title: PropTypes.string,
   artist: PropTypes.string,
   image: PropTypes.string,
-  isPlaying: PropTypes.func,
+  isPlaying: PropTypes.bool,
   toPrevTrack: PropTypes.func,
   toNextTrack: PropTypes.func,
 };

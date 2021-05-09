@@ -35,7 +35,6 @@ const PrayerEditList = ({ defaultList = [], onChange }) => {
 
   const onUpdate = (prayerList) => {
     // check if prayerList was updated
-    console.log(compareArrays(prayerList, options), prayerList, options);
     if (!compareArrays(prayerList, options)) {
       // if the order of the prayer list is changed
       onChange(prayerList);

@@ -5,19 +5,23 @@ import AudioCard from "../../../../../../../components/AudioCard";
 import { strToId } from "../../../../../../../helpers/transform";
 import { getOrdinalNumbers } from "../../helpers/transform";
 import RosaryModalButton from "../EditRosary";
+import AudioBackground from "../../../../../../../components/AudioPlayer/AudioBackground";
+import aveMaria from "../../../../audio/ave.mp3";
+import { useRosaryContext } from "../../../../context/RosaryContext";
 
 const RosaryPlayer = ({ rosary, language }) => {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const {
+    isPlaying,
+    trackIndex,
+    setTrackIndex,
+    track,
+    setTrack,
+    audioMute,
+    setAudioMute,
+    setIsPlaying,
+  } = useRosaryContext();
 
   const { t } = useTranslation();
-  const mystery = rosary.getMystery();
-  rosary.setMystery(mystery);
-
-  const [trackIndex, setTrackIndex] = useState(0);
-  const [track, setTrack] = useState(rosary.getPrayersList()[trackIndex]);
-  const [currentMystery, setCurrentMystery] = useState(mystery);
-  const [backgroundMusic, setBackgroundMusic] = useState(false);
-  const [audioMute, setAudioMute] = useState(false);
 
   const nextPrayer = () => {
     // set prayerIndex
@@ -42,61 +46,48 @@ const RosaryPlayer = ({ rosary, language }) => {
   };
 
   const getAudio = (track) => {
-    if (track.isMystery) {
-      return track.audioDescription[language];
+    if (track?.isMystery) {
+      return track?.audioDescription[language];
     } else {
-      return track.audio ? track.audio[language] : null;
+      return track?.audio ? track?.audio[language] : null;
     }
-  };
-
-  const onSave = (options) => {
-    // when the user click the save button
-    // update all the parameters
-
-    const {
-      mystery = currentMystery,
-      bgMusic = backgroundMusic,
-      mute = audioMute,
-      beginningPrayers,
-      endMysteryPrayers,
-      endingPrayers,
-    } = options;
-
-    setCurrentMystery(mystery);
-    setBackgroundMusic(bgMusic);
-    setAudioMute(mute);
-    rosary.setPrayersList(beginningPrayers, endMysteryPrayers, endingPrayers);
-    // setListOfPrayers(rosary.getPrayersList());
   };
 
   return (
     <>
-      <RosaryModalButton
+      <AudioBackground
+        audioSrc={aveMaria}
+        isPlaying={isPlaying}
+        audioLoop
+        audioMute={audioMute}
+      />
+      {/* <RosaryModalButton
         rosary={rosary}
         currentMystery={currentMystery}
         isMusicEnable={backgroundMusic}
         isAudioMute={audioMute}
         save={onSave}
-      />
+      /> */}
       <div className="mt-4">
         <AudioCard
-          title={track.mystery?.label}
-          subTitle={getOrdinalNumbers(track.mystery?.mysteryIndex)}
+          title={track?.mystery?.label}
+          subTitle={getOrdinalNumbers(track?.mystery?.mysteryIndex)}
           audioTitle={
-            track.isHailMary
-              ? `${track.hailMaryIndex}. ${t(track.label)}`
-              : track.label
+            track?.isHailMary
+              ? `${track?.hailMaryIndex}. ${t(track?.label)}`
+              : track?.label
           }
-          audioArtist={track.artist}
-          audioDescription={track.description}
-          audioImage={track.mystery?.image || track.image}
-          id={strToId(track.label, trackIndex)}
+          audioArtist={track?.artist}
+          audioDescription={track?.description}
+          audioImage={track?.mystery?.image || track?.image}
+          id={strToId(track?.label, trackIndex)}
           audioSrc={getAudio(track)}
           toPrevTrack={prevPrayer}
           toNextTrack={nextPrayer}
+          audioMute={audioMute}
+          setAudioMute={setAudioMute}
           isPlaying={isPlaying}
           setIsPlaying={setIsPlaying}
-          audioMute={audioMute}
         />
       </div>
     </>
