@@ -1,2 +1,0 @@
-(this.webpackJsonpjumi=this.webpackJsonpjumi||[]).push([[10],{121:function(n,t,i){"use strict";i.r(t);var s=i(2);t.default=function(){return Object(s.jsx)("h2",{children:"Log In"})}}}]);
-//# sourceMappingURL=10.e047fa52.chunk.js.map
