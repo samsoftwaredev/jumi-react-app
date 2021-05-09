@@ -24,7 +24,6 @@ const EditRosaryModal = ({
   rosary,
   currentMystery = {},
   isMusicEnable = false,
-  isAutoPlayAudio = true,
   isAudioMute = false,
   currentListOfPrayers = listOfDefaultPrayers,
   save,
@@ -33,14 +32,8 @@ const EditRosaryModal = ({
 
   const [mystery, setMystery] = useState(currentMystery);
   const [bgMusic, setBgMusic] = useState(isMusicEnable);
-  const [autoPlay, setAutoplay] = useState(isAutoPlayAudio);
   const [mute, setMute] = useState(isAudioMute);
   const [listOfPrayers, setListOfPrayers] = useState(currentListOfPrayers);
-
-  const onToggleAudioAutoplay = () => {
-    setAutoplay(!autoPlay);
-    save({ autoPlay: !autoPlay });
-  };
 
   const onToggleAudioVolume = () => {
     setMute(!mute);
@@ -72,7 +65,6 @@ const EditRosaryModal = ({
   };
 
   const onResetSettings = () => {
-    setAutoplay(true);
     setMute(false);
     setBgMusic(false);
     updatePrayersList();
@@ -84,7 +76,6 @@ const EditRosaryModal = ({
       mystery,
       bgMusic,
       mute,
-      autoPlay,
       beginningPrayers: listOfPrayers[beginningPrayersKey],
       endMysteryPrayers: listOfPrayers[endMysteryPrayersKey],
       endingPrayers: listOfPrayers[endingPrayersKey],
@@ -98,8 +89,6 @@ const EditRosaryModal = ({
       <ModalHeader toggle={toggle}>{t("settings.label")}</ModalHeader>
       <ModalBody>
         <EditRosary
-          autoPlayAudio={autoPlay}
-          onToggleAudioAutoplay={onToggleAudioAutoplay}
           audioMute={mute}
           onToggleAudioVolume={onToggleAudioVolume}
           bgMusic={bgMusic}
@@ -126,7 +115,6 @@ EditRosaryModal.propTypes = {
   rosary: PropTypes.shape(),
   currentMystery: PropTypes.shape(),
   isMusicEnable: PropTypes.bool,
-  isAutoPlayAudio: PropTypes.bool,
   isAudioMute: PropTypes.bool,
   currentListOfPrayers: PropTypes.shape(),
   save: PropTypes.func,

@@ -14,6 +14,7 @@ import {
 } from "../audio/en/prayers";
 
 import crucifixion from "../images/crucifixion.svg";
+import rosary from "../images/rosary.svg";
 
 import {
   actoDeContriccion,
@@ -34,7 +35,7 @@ import {
 export const prayers = {
   start: {
     label: "prayers.start.label",
-    image: crucifixion,
+    image: rosary,
     description: "prayers.start.description",
     audio: { en: signOfTheCross, es: senalDeLaCruz },
   },

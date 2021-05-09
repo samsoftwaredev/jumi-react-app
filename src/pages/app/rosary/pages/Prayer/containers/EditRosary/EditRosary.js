@@ -13,8 +13,6 @@ import { CheckboxContainer } from "../../../../../../../components/Fields/Checkb
 import PrayerEditList from "../PrayerEditList";
 
 const EditRosary = ({
-  autoPlayAudio,
-  onToggleAudioAutoplay,
   audioMute,
   onToggleAudioVolume,
   bgMusic,
@@ -41,12 +39,6 @@ const EditRosary = ({
         description="You can mute the audio if prefer to read the prayers."
       >
         <>
-          <CheckboxContainer
-            value={autoPlayAudio}
-            onChange={onToggleAudioAutoplay}
-          >
-            Autoplay Audio
-          </CheckboxContainer>
           <CheckboxContainer value={audioMute} onChange={onToggleAudioVolume}>
             Mute Audio
           </CheckboxContainer>
@@ -110,7 +102,6 @@ EditRosary.propTypes = {
   rosary: PropTypes.shape(),
   currentMystery: PropTypes.shape(),
   isMusicEnable: PropTypes.bool,
-  isAutoPlayAudio: PropTypes.bool,
   isAudioMute: PropTypes.bool,
   currentListOfPrayers: PropTypes.shape(),
   save: PropTypes.func,

@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Button, ButtonGroup } from "reactstrap";
+import { Button } from "reactstrap";
 import { useTranslation } from "react-i18next";
-import { EditRosaryModal } from "../EditRosary";
-import { faChevronDown, faCog } from "@fortawesome/free-solid-svg-icons";
+import { EditRosaryModal } from ".";
+import { faCog } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const BeginningView = ({
-  onStartPrayer,
+const RosaryModalButton = ({
   rosary,
   currentMystery,
   isMusicEnable,
@@ -23,17 +22,11 @@ const BeginningView = ({
 
   return (
     <>
-      <ButtonGroup className="mt-4 d-block">
-        <Button color="primary" onClick={onStartPrayer}>
-          <FontAwesomeIcon icon={faChevronDown} />
-          &nbsp;{t("start.label")}
-        </Button>
-        <Button color="dark" onClick={toggle}>
-          <FontAwesomeIcon icon={faCog} />
-          &nbsp;
-          {t("settings.label")}
-        </Button>
-      </ButtonGroup>
+      <Button color="dark" onClick={toggle}>
+        <FontAwesomeIcon icon={faCog} />
+        &nbsp;
+        {t("settings.label")}
+      </Button>
       <EditRosaryModal
         modal={modal}
         toggle={toggle}
@@ -48,9 +41,9 @@ const BeginningView = ({
   );
 };
 
-BeginningView.propTypes = {
+RosaryModalButton.propTypes = {
   currentMystery: PropTypes.shape().isRequired,
   onStartPrayer: PropTypes.func.isRequired,
 };
 
-export default BeginningView;
+export default RosaryModalButton;

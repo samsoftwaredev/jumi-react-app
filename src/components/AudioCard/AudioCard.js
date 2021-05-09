@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
-import { AudioCardStyle } from "./AudioCard.style";
 import AudioControls from "../AudioControls";
 import AudioCover from "../AudioCover";
 import AudioHeader from "../AudioHeader/AudioHeader";
@@ -15,11 +14,14 @@ const AudioCard = ({
   description = "",
   subTitle = "",
   id = "",
+  audioMute = false,
   toPrevTrack = null,
   toNextTrack = null,
+  setIsPlaying = null,
+  isPlaying = false,
 }) => {
-  const [isPlaying, setIsPlaying] = useState(false);
   const [trackProgress, setTrackProgress] = useState(null);
+  const [mute, setMute] = useState(audioMute);
   // Refs
   const audioRef = useRef(new Audio(audioSrc));
   const intervalRef = useRef();
@@ -30,6 +32,11 @@ const AudioCard = ({
 
   const playPause = () => {
     setIsPlaying(!isPlaying);
+  };
+
+  const toogleAudioMute = () => {
+    audioRef.current.volume = !mute ? 0 : 1;
+    setMute(!mute);
   };
 
   const startTimer = () => {
@@ -71,6 +78,7 @@ const AudioCard = ({
     setTrackProgress(audioRef.current.currentTime);
 
     if (isReady.current) {
+      audioRef.current.volume = mute ? 0 : 1;
       audioRef.current.play();
       setIsPlaying(true);
       startTimer();
@@ -83,7 +91,7 @@ const AudioCard = ({
   if (!audioSrc) return null;
 
   return (
-    <AudioCardStyle>
+    <div className="track-card">
       <AudioHeader
         title={title}
         subTitle={subTitle}
@@ -97,13 +105,17 @@ const AudioCard = ({
           description={audioDescription}
         />
         <AudioControls
+          mute={mute}
+          onMute={toogleAudioMute}
           isPlaying={isPlaying}
           onPlayPauseClick={playPause}
+          // disabledPrev
+          // disabledNext
           onPrevClick={toPrevTrack}
           onNextClick={toNextTrack}
         />
       </div>
-    </AudioCardStyle>
+    </div>
   );
 };
 
