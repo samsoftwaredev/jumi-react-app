@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 const AudioCoverStyle = styled.div`
   margin-bottom: 50px;
+  width: 100%;
   max-width: 100%;
+
   .artwork {
     border-radius: 120px;
     display: block;
@@ -25,7 +27,7 @@ const AudioCoverStyle = styled.div`
   .height-sm {
     padding: 10px 0;
     max-height: 120px;
-    box-shadow: inset 0px -7px 10px -11px #000000;
+    overflow-y: hidden;
   }
 `;
 

@@ -33,6 +33,8 @@ const EditRosaryModal = ({ modal, toggle, rosary }) => {
 
   const onUpdatePrayers = (newList, key) => {
     updatePrayersList({ ...listOfPrayers, [key]: newList });
+    // TODO: update the rosary instance once you has update the prayers list
+    // rosary.setPrayersList(...listOfPrayers, ...newList);
   };
 
   const onResetSettings = () => {
