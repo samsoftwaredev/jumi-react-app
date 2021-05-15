@@ -100,8 +100,11 @@ export default class Rosary {
     return mysteryName;
   }
 
-  setMystery(mystery) {
-    this._mysterySelected = mystery;
+  setMystery(name) {
+    // names such as "glorious", "sorrowful", "joyful", "luminous"
+    this._mysterySelected = this._rosaryMysteries[name];
+    // update the list of prayers when the mystery is updated
+    this.setPrayersList();
   }
 
   getMysteryInfo(mysteryName) {
@@ -111,7 +114,7 @@ export default class Rosary {
   setTodaysMystery() {
     // if no mysteryName was passed, it will set the mystery to today's date
     const name = this.getTodaysMystery();
-    this.setMystery(this._rosaryMysteries[name]);
+    this.setMystery(name);
   }
 
   setPrayersList(

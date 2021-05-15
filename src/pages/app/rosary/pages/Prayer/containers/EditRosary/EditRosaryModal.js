@@ -23,8 +23,8 @@ const EditRosaryModal = ({ modal, toggle, rosary }) => {
   const { t } = useTranslation();
 
   const onUpdateMystery = ({ value: name = "" } = { name: "" }) => {
-    rosary.setMystery(rosary.getMysteryInfo(name));
-    setCurrentMystery(rosary.getMystery());
+    rosary.setMystery(name);
+    setCurrentMystery(rosary.getMysteryInfo(name));
   };
 
   const updatePrayersList = (objList = listOfPrayers) => {

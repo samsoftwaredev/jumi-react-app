@@ -16,20 +16,12 @@ const AudioBackground = ({ audioRef, volume = 0.2 }) => {
   };
 
   useEffect(() => {
-    if (isPlaying) {
+    if (isPlaying && backgroundMusic) {
       onPlay();
     } else {
       onPause();
     }
-  }, [isPlaying]);
-
-  useEffect(() => {
-    if (backgroundMusic) {
-      onPlay();
-    } else {
-      onPause();
-    }
-  }, [backgroundMusic]);
+  }, [isPlaying, backgroundMusic]);
 
   useEffect(() => {
     audioRef.current.volume = audioMute ? 0 : volume;
