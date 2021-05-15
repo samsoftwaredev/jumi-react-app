@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 const AudioCoverStyle = styled.div`
   margin-bottom: 50px;
+  max-width: 100%;
+
   .artwork {
     border-radius: 120px;
     display: block;

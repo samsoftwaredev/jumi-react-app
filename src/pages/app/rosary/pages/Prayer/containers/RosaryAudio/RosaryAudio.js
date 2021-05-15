@@ -18,6 +18,7 @@ const RosaryAudio = ({ audioRef, rosary }) => {
     togglePlayPause,
     toggleAudioMute,
     listOfPrayers,
+    currentMystery,
   } = useRosaryContext();
 
   const { t } = useTranslation();
@@ -33,6 +34,7 @@ const RosaryAudio = ({ audioRef, rosary }) => {
   const audioImage = track?.mystery?.image || track?.image;
   const id = strToId(track?.label, trackIndex);
   const audioSrc = rosary?.getAudio(trackIndex);
+  const mystery = t(currentMystery?.label);
 
   const [trackProgress, setTrackProgress] = useState(null);
   // Refs
@@ -115,7 +117,7 @@ const RosaryAudio = ({ audioRef, rosary }) => {
 
   return (
     <div className="track-card">
-      <AudioHeader title={title} subTitle={subTitle} />
+      <AudioHeader title={mystery} subTitle={title} description={subTitle} />
       <div className="track-info">
         <AudioCover
           title={audioTitle}

@@ -1,8 +1,9 @@
 import RichTextDisplay from "interweave";
-import React from "react";
+import React, { useState } from "react";
+import { Button } from "reactstrap";
 import PropTypes from "prop-types";
-import { AudioCoverStyle } from "./AudioCover.style";
 import { useTranslation } from "react-i18next";
+import { AudioCoverStyle } from "./AudioCover.style";
 
 const AudioCover = ({
   title = "",
@@ -11,6 +12,12 @@ const AudioCover = ({
   description = "",
 }) => {
   const { t } = useTranslation();
+  const [hide, setHide] = useState(true);
+
+  const toggle = () => {
+    setHide(!hide);
+  };
+
   return (
     <AudioCoverStyle>
       {image && (
@@ -21,9 +28,12 @@ const AudioCover = ({
         />
       )}
       <p className="title">{t(title)}</p>
-      <div className="description">
+      <div className={`description ${hide && "text-truncate"}`}>
         <RichTextDisplay content={t(description)} />
       </div>
+      <Button onClick={toggle} color="link">
+        Show {hide ? "More" : "Less"}
+      </Button>
     </AudioCoverStyle>
   );
 };
