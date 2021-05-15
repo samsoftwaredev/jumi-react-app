@@ -28,10 +28,10 @@ const AudioCover = ({
         />
       )}
       <p className="title">{t(title)}</p>
-      <div className={`description ${hide && "text-truncate"}`}>
+      <div className={`description ${hide && "text-truncate height-sm"}`}>
         <RichTextDisplay content={t(description)} />
       </div>
-      <Button onClick={toggle} color="link">
+      <Button className="mt-3" onClick={toggle} color="link">
         Show {hide ? "More" : "Less"}
       </Button>
     </AudioCoverStyle>
