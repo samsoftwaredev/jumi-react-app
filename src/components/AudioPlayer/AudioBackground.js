@@ -1,13 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import PropTypes from "prop-types";
+import { useRosaryContext } from "../../pages/app/rosary/context/RosaryContext";
 
-const AudioBackground = ({
-  audioSrc,
-  isPlaying = false,
-  volume = 0.2,
-  audioMute,
-}) => {
-  const audioRef = useRef(new Audio(audioSrc));
+const AudioBackground = ({ audioRef, volume = 0.2 }) => {
+  const { isPlaying, audioMute } = useRosaryContext();
 
   const onPause = () => {
     audioRef?.current?.pause();

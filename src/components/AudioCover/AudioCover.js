@@ -20,10 +20,10 @@ const AudioCover = ({
           alt={`Track artwork for ${t(title)} by ${t(artist)}`}
         />
       )}
-      <h2 className="title">{t(title)}</h2>
-      <h3 className="description">
+      <p className="title">{t(title)}</p>
+      <div className="description">
         <RichTextDisplay content={t(description)} />
-      </h3>
+      </div>
     </AudioCoverStyle>
   );
 };

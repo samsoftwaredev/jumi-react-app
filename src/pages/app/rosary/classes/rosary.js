@@ -16,12 +16,14 @@ export default class Rosary {
   _mysterySelected = null;
   _prayersList = [];
   _prayerIndex = 0;
+  _language = null;
 
-  constructor() {
+  constructor(lang) {
     // initilize the prayer by setting the rosary
     this.setTodaysMystery();
     this.setPrayersList();
     this._prayersList = this.getPrayersList();
+    this._language = lang;
   }
 
   // private methods property
@@ -35,6 +37,15 @@ export default class Rosary {
   }
 
   // public methods property
+
+  getAudio(index = this._prayerIndex) {
+    const track = this._prayersList[index];
+    if (track?.isMystery) {
+      return track?.audioDescription[this._language];
+    } else {
+      return track?.audio ? track?.audio[this._language] : null;
+    }
+  }
 
   // move to the previous prayer
   prevPrayer() {

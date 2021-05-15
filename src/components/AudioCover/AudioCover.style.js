@@ -6,7 +6,7 @@ const AudioCoverStyle = styled.div`
     border-radius: 120px;
     display: block;
     margin: auto;
-    max-height: 300px;
+    max-height: 200px;
     max-width: 300px;
   }
 
@@ -17,7 +17,6 @@ const AudioCoverStyle = styled.div`
 
   .description {
     text-align: left;
-    font-size: 1.5em;
     font-weight: 300;
     margin-top: 0;
   }

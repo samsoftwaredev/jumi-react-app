@@ -1,13 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
-import AudioControls from "../AudioControls";
-import AudioCover from "../AudioCover";
-import AudioHeader from "../AudioHeader/AudioHeader";
-import { useRosaryContext } from "../../pages/app/rosary/context/RosaryContext";
-import { strToId } from "../../helpers/transform";
+import AudioCover from "../../../../../../../components/AudioCover";
+import AudioHeader from "../../../../../../../components/AudioHeader/AudioHeader";
+import { useRosaryContext } from "../../../../context/RosaryContext";
+import { strToId } from "../../../../../../../helpers/transform";
+import { getOrdinalNumbers } from "../../helpers/transform";
+import AudioControls from "../../../../../../../components/AudioControls";
 
-const AudioCard = ({ getOrdinalNumbers, audioRef, rosary }) => {
+const RosaryAudio = ({ audioRef, rosary }) => {
   const {
     isPlaying,
     trackIndex,
@@ -15,8 +16,8 @@ const AudioCard = ({ getOrdinalNumbers, audioRef, rosary }) => {
     track,
     setTrack,
     audioMute,
-    setAudioMute,
     setIsPlaying,
+    setAudioMute,
   } = useRosaryContext();
   const { t } = useTranslation();
 
@@ -39,15 +40,6 @@ const AudioCard = ({ getOrdinalNumbers, audioRef, rosary }) => {
   // Destructure for conciseness
   const { duration } = audioRef.current;
 
-  const playPause = () => {
-    setIsPlaying(!isPlaying);
-  };
-
-  const toggleAudioMute = (bool) => {
-    audioRef.current.volume = bool ? 0 : 1;
-    setAudioMute(bool);
-  };
-
   const startTimer = () => {
     // Clear any timers already running
     clearInterval(intervalRef.current);
@@ -63,11 +55,13 @@ const AudioCard = ({ getOrdinalNumbers, audioRef, rosary }) => {
 
   useEffect(() => {
     if (isPlaying) {
+      // play track and set timer
       audioRef.current.play();
       startTimer();
     } else {
-      clearInterval(intervalRef.current);
+      // pause track and clear timer
       audioRef.current.pause();
+      clearInterval(intervalRef.current);
     }
   }, [isPlaying]);
 
@@ -83,15 +77,20 @@ const AudioCard = ({ getOrdinalNumbers, audioRef, rosary }) => {
 
   // Handle setup when changing tracks
   useEffect(() => {
+    // exit block if track id is falsy
+    if (!id) return;
+
     audioRef.current.pause();
-
-    audioRef.current = new Audio(audioSrc);
-    setTrackProgress(audioRef.current.currentTime);
-
     if (isReady.current) {
+      // makes a request to get the audio
+      audioRef.current = new Audio(audioSrc);
+      // mute audio if audioMute was set by the user
       audioRef.current.volume = audioMute ? 0 : 1;
+      // play the track automatically
       audioRef.current.play();
       setIsPlaying(true);
+      // set timer of track
+      setTrackProgress(audioRef.current.currentTime);
       startTimer();
     } else {
       // Set the isReady ref as true for the next pass
@@ -107,6 +106,15 @@ const AudioCard = ({ getOrdinalNumbers, audioRef, rosary }) => {
       setTrackIndex(index);
       setTrack(prayer);
     }
+  };
+
+  const toggleAudioMute = (bool) => {
+    audioRef.current.volume = bool ? 0 : 1;
+    setAudioMute(bool);
+  };
+
+  const playPause = () => {
+    setIsPlaying(!isPlaying);
   };
 
   if (!audioSrc) return null;
@@ -134,4 +142,4 @@ const AudioCard = ({ getOrdinalNumbers, audioRef, rosary }) => {
   );
 };
 
-export default AudioCard;
+export default RosaryAudio;
