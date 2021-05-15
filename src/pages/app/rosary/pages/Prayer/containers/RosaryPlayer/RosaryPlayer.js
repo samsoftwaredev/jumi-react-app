@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import PropTypes from "prop-types";
-import RosaryModalButton from "../EditRosary";
 import AudioBackground from "../../../../../../../components/AudioPlayer/AudioBackground";
 import aveMaria from "../../../../audio/ave.mp3";
 import RosaryAudio from "../RosaryAudio";
@@ -12,7 +11,6 @@ const RosaryPlayer = ({ rosary }) => {
   return (
     <>
       <AudioBackground audioRef={audioBgRef} />
-      <RosaryModalButton rosary={rosary} />
       <div className="mt-4">
         <RosaryAudio audioRef={audioRef} rosary={rosary} />
       </div>

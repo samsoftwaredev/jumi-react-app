@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Button } from "reactstrap";
-import { useTranslation } from "react-i18next";
+import { Button, UncontrolledTooltip } from "reactstrap";
 import { EditRosaryModal } from ".";
-import { faCog } from "@fortawesome/free-solid-svg-icons";
+import { faCogs } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTranslation } from "react-i18next";
 
 const RosaryModalButton = ({ rosary }) => {
   const { t } = useTranslation();
@@ -15,11 +15,17 @@ const RosaryModalButton = ({ rosary }) => {
 
   return (
     <>
-      <Button color="dark" onClick={toggle}>
-        <FontAwesomeIcon icon={faCog} />
-        &nbsp;
-        {t("settings.label")}
+      <Button
+        id="rosary-settings"
+        color="light"
+        className="btn-clear"
+        onClick={toggle}
+      >
+        <FontAwesomeIcon icon={faCogs} />
       </Button>
+      <UncontrolledTooltip placement="top" target="rosary-settings">
+        {t("settings.label")}
+      </UncontrolledTooltip>
       <EditRosaryModal modal={modal} toggle={toggle} rosary={rosary} />
     </>
   );

@@ -7,6 +7,13 @@ import { useRosaryContext } from "../../../../context/RosaryContext";
 import { strToId } from "../../../../../../../helpers/transform";
 import { getOrdinalNumbers } from "../../helpers/transform";
 import AudioControls from "../../../../../../../components/AudioControls";
+import RosaryModalButton from "../EditRosary";
+import {
+  NextButton,
+  PlayPauseButton,
+  PrevButton,
+  VolumeButton,
+} from "../../../../../../../components/AudioControls/Buttons";
 
 const RosaryAudio = ({ audioRef, rosary }) => {
   const {
@@ -125,14 +132,16 @@ const RosaryAudio = ({ audioRef, rosary }) => {
           image={audioImage}
           description={audioDescription}
         />
-        <AudioControls
-          mute={audioMute}
-          onMute={toggleMute}
-          isPlaying={isPlaying}
-          onPlayPauseClick={togglePlayPause}
-          onPrevClick={() => moveToTrack(trackIndex - 1)}
-          onNextClick={() => moveToTrack(trackIndex + 1)}
-        />
+        <AudioControls>
+          <RosaryModalButton rosary={rosary} />
+          <PrevButton onPrevClick={() => moveToTrack(trackIndex - 1)} />
+          <PlayPauseButton
+            isPlaying={isPlaying}
+            onPlayPauseClick={togglePlayPause}
+          />
+          <NextButton onNextClick={() => moveToTrack(trackIndex + 1)} />
+          <VolumeButton mute={audioMute} onMute={toggleMute} />
+        </AudioControls>
       </div>
     </div>
   );

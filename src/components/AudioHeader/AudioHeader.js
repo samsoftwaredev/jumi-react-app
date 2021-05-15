@@ -7,8 +7,12 @@ const AudioHeader = ({ title = "", subTitle = "", description = "" }) => {
   return (
     <div className="text-right">
       <h5 className="title">{t(title)}</h5>
-      <small className="mb-1 d-block sub-title">{t(subTitle)}</small>
-      <small className="mb-1 d-block description">{t(description)}</small>
+      <small className="font-weight-bold d-block sub-title">
+        {t(subTitle)}
+      </small>
+      <small className="font-weight-bold d-block description">
+        {t(description)}
+      </small>
     </div>
   );
 };

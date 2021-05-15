@@ -103,7 +103,8 @@ export default class Rosary {
   setMystery(name) {
     // names such as "glorious", "sorrowful", "joyful", "luminous"
     this._mysterySelected = this._rosaryMysteries[name];
-    // update the list of prayers when the mystery is updated
+    // update the list of prayers when the mystery changes
+    // get all the prayers audio and images
     this.setPrayersList();
   }
 
