@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useRosaryContext } from "../../pages/app/rosary/context/RosaryContext";
 
 const AudioBackground = ({ audioRef, volume = 0.2 }) => {
-  const { isPlaying, audioMute } = useRosaryContext();
+  const { isPlaying, audioMute, backgroundMusic } = useRosaryContext();
 
   const onPause = () => {
     audioRef?.current?.pause();
@@ -22,6 +22,14 @@ const AudioBackground = ({ audioRef, volume = 0.2 }) => {
       onPause();
     }
   }, [isPlaying]);
+
+  useEffect(() => {
+    if (backgroundMusic) {
+      onPlay();
+    } else {
+      onPause();
+    }
+  }, [backgroundMusic]);
 
   useEffect(() => {
     audioRef.current.volume = audioMute ? 0 : volume;
