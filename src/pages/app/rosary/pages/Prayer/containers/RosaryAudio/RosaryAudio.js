@@ -13,14 +13,16 @@ const RosaryAudio = ({ audioRef, rosary }) => {
     isPlaying,
     trackIndex,
     setTrackIndex,
-    track,
-    setTrack,
     audioMute,
     setIsPlaying,
-    setAudioMute,
+    togglePlayPause,
+    toggleAudioMute,
+    listOfPrayers,
   } = useRosaryContext();
+
   const { t } = useTranslation();
 
+  const track = rosary.jumpToPrayer(trackIndex);
   const title = track?.mystery?.label;
   const subTitle = getOrdinalNumbers(track?.mystery?.mysteryIndex);
   const audioTitle = track?.isHailMary
@@ -67,7 +69,6 @@ const RosaryAudio = ({ audioRef, rosary }) => {
 
   useEffect(() => {
     setTrackIndex(0);
-    setTrack(rosary.getPrayersList()[0]);
     // Pause and clean up on unmount
     return () => {
       audioRef.current.pause();
@@ -102,19 +103,12 @@ const RosaryAudio = ({ audioRef, rosary }) => {
     // set prayerIndex
     const prayer = rosary.jumpToPrayer(index);
     // check if the prayer is defined
-    if (prayer) {
-      setTrackIndex(index);
-      setTrack(prayer);
-    }
+    if (prayer) setTrackIndex(index);
   };
 
-  const toggleAudioMute = (bool) => {
+  const toggleMute = (bool) => {
     audioRef.current.volume = bool ? 0 : 1;
-    setAudioMute(bool);
-  };
-
-  const playPause = () => {
-    setIsPlaying(!isPlaying);
+    toggleAudioMute(bool);
   };
 
   if (!audioSrc) return null;
@@ -131,9 +125,9 @@ const RosaryAudio = ({ audioRef, rosary }) => {
         />
         <AudioControls
           mute={audioMute}
-          onMute={toggleAudioMute}
+          onMute={toggleMute}
           isPlaying={isPlaying}
-          onPlayPauseClick={playPause}
+          onPlayPauseClick={togglePlayPause}
           onPrevClick={() => moveToTrack(trackIndex - 1)}
           onNextClick={() => moveToTrack(trackIndex + 1)}
         />

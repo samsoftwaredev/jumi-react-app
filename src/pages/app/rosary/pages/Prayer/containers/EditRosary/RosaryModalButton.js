@@ -6,7 +6,7 @@ import { EditRosaryModal } from ".";
 import { faCog } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const RosaryModalButton = () => {
+const RosaryModalButton = ({ rosary }) => {
   const { t } = useTranslation();
 
   const [modal, setModal] = useState(false);
@@ -20,7 +20,7 @@ const RosaryModalButton = () => {
         &nbsp;
         {t("settings.label")}
       </Button>
-      <EditRosaryModal modal={modal} toggle={toggle} />
+      <EditRosaryModal modal={modal} toggle={toggle} rosary={rosary} />
     </>
   );
 };

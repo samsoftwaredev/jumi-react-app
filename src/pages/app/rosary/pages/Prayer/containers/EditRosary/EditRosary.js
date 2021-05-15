@@ -11,6 +11,7 @@ import UpdateLangauge from "../UpdateLangauge";
 import { ChangeMystery } from "../SelectMystery";
 import { CheckboxContainer } from "../../../../../../../components/Fields/Checkbox";
 import PrayerEditList from "../PrayerEditList";
+import { useTranslation } from "react-i18next";
 
 const EditRosary = ({
   audioMute,
@@ -22,6 +23,7 @@ const EditRosary = ({
   listOfPrayers,
   onUpdatePrayers,
 }) => {
+  const { t } = useTranslation();
   const manipulateList = (obj) => Object.values(obj);
 
   return (
@@ -63,7 +65,7 @@ const EditRosary = ({
         description="Select the mystery you would like meditate today."
       >
         <ChangeMystery
-          mystery={currentMystery}
+          mysteryLabel={t(currentMystery.label)}
           onUpdateMystery={onUpdateMystery}
         />
       </SideBySide>

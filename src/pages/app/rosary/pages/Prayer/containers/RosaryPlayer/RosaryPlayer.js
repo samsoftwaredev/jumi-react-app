@@ -12,7 +12,7 @@ const RosaryPlayer = ({ rosary }) => {
   return (
     <>
       <AudioBackground audioRef={audioBgRef} />
-      <RosaryModalButton />
+      <RosaryModalButton rosary={rosary} />
       <div className="mt-4">
         <RosaryAudio audioRef={audioRef} rosary={rosary} />
       </div>

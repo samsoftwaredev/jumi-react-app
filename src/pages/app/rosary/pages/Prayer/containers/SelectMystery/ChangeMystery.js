@@ -4,13 +4,8 @@ import SelectableList from "../../../../../../../components/List";
 import { mysteries, rosaryMysteries } from "../../../../constants/mysteries";
 import { useTranslation } from "react-i18next";
 
-const ChangeMystery = ({ mystery, onUpdateMystery }) => {
+const ChangeMystery = ({ mysteryLabel, onUpdateMystery }) => {
   const { t } = useTranslation();
-
-  const initValue = {
-    label: t(mystery.label),
-    value: mystery.id,
-  };
 
   const getMysteries = () =>
     mysteries.map((name) => ({
@@ -20,7 +15,7 @@ const ChangeMystery = ({ mystery, onUpdateMystery }) => {
 
   return (
     <SelectableList
-      value={initValue}
+      value={{ label: mysteryLabel, value: rosaryMysteries[mysteryLabel] }}
       onChange={onUpdateMystery}
       options={getMysteries()}
     />
