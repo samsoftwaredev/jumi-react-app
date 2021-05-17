@@ -62,7 +62,7 @@ const EditRosary = ({
       {/* user can select the mystery the will like to pray */}
       <SideBySide
         title="Mystery:"
-        description="Select the mystery you would like meditate today."
+        description="Select the mystery you would like to meditate today."
       >
         <ChangeMystery
           mysteryLabel={t(currentMystery.label)}

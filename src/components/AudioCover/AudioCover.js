@@ -31,9 +31,11 @@ const AudioCover = ({
       <div className={`description ${hide && "text-truncate height-sm"}`}>
         <RichTextDisplay content={t(description)} />
       </div>
-      <Button className="mt-3" onClick={toggle} color="link">
-        Show {hide ? "More" : "Less"}
-      </Button>
+      <div className="text-center mt-3">
+        <Button onClick={toggle} color="link">
+          Show {hide ? "More" : "Less"}
+        </Button>
+      </div>
     </AudioCoverStyle>
   );
 };
