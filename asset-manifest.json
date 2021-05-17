@@ -2,11 +2,11 @@
   "files": {
     "static/js/0.2998024b.chunk.js": "/jumi-react-app/static/js/0.2998024b.chunk.js",
     "static/js/0.2998024b.chunk.js.map": "/jumi-react-app/static/js/0.2998024b.chunk.js.map",
-    "main.css": "/jumi-react-app/static/css/main.a3e5e653.chunk.css",
-    "main.js": "/jumi-react-app/static/js/main.ecb56bd0.chunk.js",
-    "main.js.map": "/jumi-react-app/static/js/main.ecb56bd0.chunk.js.map",
-    "runtime-main.js": "/jumi-react-app/static/js/runtime-main.a62e994f.js",
-    "runtime-main.js.map": "/jumi-react-app/static/js/runtime-main.a62e994f.js.map",
+    "main.css": "/jumi-react-app/static/css/main.6d74c7d8.chunk.css",
+    "main.js": "/jumi-react-app/static/js/main.fce5f971.chunk.js",
+    "main.js.map": "/jumi-react-app/static/js/main.fce5f971.chunk.js.map",
+    "runtime-main.js": "/jumi-react-app/static/js/runtime-main.ea82097d.js",
+    "runtime-main.js.map": "/jumi-react-app/static/js/runtime-main.ea82097d.js.map",
     "static/css/3.150d169a.chunk.css": "/jumi-react-app/static/css/3.150d169a.chunk.css",
     "static/js/3.ca3ef821.chunk.js": "/jumi-react-app/static/js/3.ca3ef821.chunk.js",
     "static/js/3.ca3ef821.chunk.js.map": "/jumi-react-app/static/js/3.ca3ef821.chunk.js.map",
@@ -16,8 +16,8 @@
     "static/js/5.df9b725b.chunk.js.map": "/jumi-react-app/static/js/5.df9b725b.chunk.js.map",
     "static/js/6.759c6232.chunk.js": "/jumi-react-app/static/js/6.759c6232.chunk.js",
     "static/js/6.759c6232.chunk.js.map": "/jumi-react-app/static/js/6.759c6232.chunk.js.map",
-    "static/js/7.96beb74b.chunk.js": "/jumi-react-app/static/js/7.96beb74b.chunk.js",
-    "static/js/7.96beb74b.chunk.js.map": "/jumi-react-app/static/js/7.96beb74b.chunk.js.map",
+    "static/js/7.46b66474.chunk.js": "/jumi-react-app/static/js/7.46b66474.chunk.js",
+    "static/js/7.46b66474.chunk.js.map": "/jumi-react-app/static/js/7.46b66474.chunk.js.map",
     "static/js/8.2cfd3eb6.chunk.js": "/jumi-react-app/static/js/8.2cfd3eb6.chunk.js",
     "static/js/8.2cfd3eb6.chunk.js.map": "/jumi-react-app/static/js/8.2cfd3eb6.chunk.js.map",
     "static/js/9.7325c14b.chunk.js": "/jumi-react-app/static/js/9.7325c14b.chunk.js",
@@ -30,7 +30,7 @@
     "static/js/12.e09c705b.chunk.js.map": "/jumi-react-app/static/js/12.e09c705b.chunk.js.map",
     "index.html": "/jumi-react-app/index.html",
     "static/css/3.150d169a.chunk.css.map": "/jumi-react-app/static/css/3.150d169a.chunk.css.map",
-    "static/css/main.a3e5e653.chunk.css.map": "/jumi-react-app/static/css/main.a3e5e653.chunk.css.map",
+    "static/css/main.6d74c7d8.chunk.css.map": "/jumi-react-app/static/css/main.6d74c7d8.chunk.css.map",
     "static/js/0.2998024b.chunk.js.LICENSE.txt": "/jumi-react-app/static/js/0.2998024b.chunk.js.LICENSE.txt",
     "static/js/3.ca3ef821.chunk.js.LICENSE.txt": "/jumi-react-app/static/js/3.ca3ef821.chunk.js.LICENSE.txt",
     "static/js/4.69bf39ec.chunk.js.LICENSE.txt": "/jumi-react-app/static/js/4.69bf39ec.chunk.js.LICENSE.txt",
@@ -171,10 +171,10 @@
     "static/media/tornado.164fb66d.mp4": "/jumi-react-app/static/media/tornado.164fb66d.mp4"
   },
   "entrypoints": [
-    "static/js/runtime-main.a62e994f.js",
+    "static/js/runtime-main.ea82097d.js",
     "static/css/3.150d169a.chunk.css",
     "static/js/3.ca3ef821.chunk.js",
-    "static/css/main.a3e5e653.chunk.css",
-    "static/js/main.ecb56bd0.chunk.js"
+    "static/css/main.6d74c7d8.chunk.css",
+    "static/js/main.fce5f971.chunk.js"
   ]
 }
