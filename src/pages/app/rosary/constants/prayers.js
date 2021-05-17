@@ -121,21 +121,31 @@ export const beginningPrayersKey = "beginningPrayers";
 export const endMysteryPrayersKey = "endMysteryPrayers";
 export const endingPrayersKey = "endingPrayers";
 
-export const defaultBeginningPrayers = [
+const beginningPrayers = [
   prayers.start,
   prayers.creed,
   prayers.actOfContrition,
 ];
+// return only valid prayers
+export const defaultBeginningPrayers = beginningPrayers.filter(
+  ({ label }) => label
+);
 
-export const defaultEndMysteryPrayers = [
+const endMysteryPrayers = [
   prayers.glory,
   prayers.jaculatoria2,
   prayers.jaculatoria3,
 ];
+// return only valid prayers
+export const defaultEndMysteryPrayers = endMysteryPrayers.filter(
+  ({ label }) => label
+);
 
-export const defaultEndingPrayers = [
+export const endingPrayers = [
   prayers.pope,
   prayers.salve,
   prayers.litanies,
   prayers.signOfCross,
 ];
+// return only valid prayers
+export const defaultEndingPrayers = endingPrayers.filter(({ label }) => label);

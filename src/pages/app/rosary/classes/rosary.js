@@ -154,7 +154,8 @@ export default class Rosary {
     // 5. set the ending prayers
     arr.push(...endingPrayers);
 
-    this._prayersList = arr;
+    const onlyValidPrayers = arr.filter(({ label }) => label);
+    this._prayersList = onlyValidPrayers;
   }
 
   // built the list of all the prayers that the rosary needs

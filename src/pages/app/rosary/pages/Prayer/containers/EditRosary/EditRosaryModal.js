@@ -22,6 +22,7 @@ const EditRosaryModal = ({ modal, toggle, rosary }) => {
     toggleBackgroundMusic,
     listOfPrayers,
     updateListOfPrayers,
+    setIsPlaying,
   } = useRosaryContext();
 
   const { t } = useTranslation();
@@ -43,6 +44,10 @@ const EditRosaryModal = ({ modal, toggle, rosary }) => {
       listOfPrayersCopy[endMysteryPrayersKey],
       listOfPrayersCopy[endingPrayersKey]
     );
+    // don't start rosary when user sets prayers list
+    setTimeout(() => {
+      setIsPlaying(false);
+    }, 100);
   };
 
   const onResetSettings = () => {
