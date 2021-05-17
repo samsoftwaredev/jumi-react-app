@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 const AudioControlsStyle = styled.div`
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 
-  .btn {
-    margin: 0 20px;
+  .btn-clear {
+    margin: 0 10px;
   }
 
   .prev svg,
@@ -23,6 +23,43 @@ const AudioControlsStyle = styled.div`
 
   path {
     fill: white;
+  }
+
+  @media (max-width: 496px) {
+    justify-content: center;
+
+    .btn-clear {
+      width: calc(100% * (1 / 3) - 10px - 1px);
+      margin: 5px 0;
+    }
+
+    #next-track {
+      order: 3;
+    }
+
+    #previous-track {
+      order: 1;
+    }
+
+    #pause-track {
+      order: 2;
+    }
+
+    #play-track {
+      order: 2;
+    }
+
+    #mute-track {
+      order: 5;
+    }
+
+    #unmute-track {
+      order: 5;
+    }
+
+    #rosary-settings {
+      order: 4;
+    }
   }
 `;
 

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const AudioCoverStyle = styled.div`
-  margin-bottom: 100px;
   width: 100%;
   max-width: 100%;
 

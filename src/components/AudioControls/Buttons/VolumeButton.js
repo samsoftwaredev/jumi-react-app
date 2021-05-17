@@ -7,10 +7,11 @@ const VolumeButton = ({ mute, onMute }) => {
   if (mute) {
     return (
       <Button
+        id="mute-track"
         color="light"
         className="btn-clear"
         onClick={() => onMute(false)}
-        aria-label="Unmute"
+        aria-label="Mute"
       >
         <FontAwesomeIcon icon={faVolumeMute} />
       </Button>
@@ -18,10 +19,11 @@ const VolumeButton = ({ mute, onMute }) => {
   } else {
     return (
       <Button
+        id="unmute-track"
         color="light"
         className="btn-clear"
         onClick={() => onMute(true)}
-        aria-label="Mute"
+        aria-label="Unmute"
       >
         <FontAwesomeIcon icon={faVolumeUp} />
       </Button>
