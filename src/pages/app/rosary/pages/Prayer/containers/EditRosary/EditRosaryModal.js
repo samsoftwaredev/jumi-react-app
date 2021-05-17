@@ -2,9 +2,13 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { useTranslation } from "react-i18next";
-
 import EditRosary from "./EditRosary";
 import { useRosaryContext } from "../../../../context/RosaryContext";
+import {
+  beginningPrayersKey,
+  endingPrayersKey,
+  endMysteryPrayersKey,
+} from "../../../../constants/prayers";
 
 const EditRosaryModal = ({ modal, toggle, rosary }) => {
   const {
@@ -17,7 +21,7 @@ const EditRosaryModal = ({ modal, toggle, rosary }) => {
     toggleAudioMute,
     toggleBackgroundMusic,
     listOfPrayers,
-    setListOfPrayers,
+    updateListOfPrayers,
   } = useRosaryContext();
 
   const { t } = useTranslation();
@@ -27,20 +31,24 @@ const EditRosaryModal = ({ modal, toggle, rosary }) => {
     setCurrentMystery(rosary.getMysteryInfo(name));
   };
 
-  const updatePrayersList = (objList = listOfPrayers) => {
-    setListOfPrayers(objList);
-  };
-
   const onUpdatePrayers = (newList, key) => {
-    updatePrayersList({ ...listOfPrayers, [key]: newList });
-    // TODO: update the rosary instance once users changes the prayers list
-    // rosary.setPrayersList(...listOfPrayers, ...newList);
+    const arr = newList.map(({ label }) =>
+      listOfPrayers[key].find((p) => t(p.label) === t(label))
+    );
+    const listOfPrayersCopy = { ...listOfPrayers, [key]: arr };
+    updateListOfPrayers(listOfPrayersCopy);
+    // update the rosary prayers base on what the user selected
+    rosary.setPrayersList(
+      listOfPrayersCopy[beginningPrayersKey],
+      listOfPrayersCopy[endMysteryPrayersKey],
+      listOfPrayersCopy[endingPrayersKey]
+    );
   };
 
   const onResetSettings = () => {
     setAudioMute(false);
     setBackgroundMusic(false);
-    updatePrayersList();
+    updateListOfPrayers();
     onUpdateMystery();
   };
 

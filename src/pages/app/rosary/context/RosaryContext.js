@@ -37,6 +37,10 @@ const RosaryContextProvider = ({ children }) => {
     setIsPlaying(!isPlaying);
   };
 
+  const updateListOfPrayers = (prayers = listOfDefaultPrayers) => {
+    setListOfPrayers(prayers);
+  };
+
   const store = {
     isPlaying,
     setIsPlaying,
@@ -49,7 +53,7 @@ const RosaryContextProvider = ({ children }) => {
     audioMute,
     setAudioMute,
     listOfPrayers,
-    setListOfPrayers,
+    updateListOfPrayers,
     toggleAudioMute,
     togglePlayPause,
     toggleBackgroundMusic,
