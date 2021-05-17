@@ -21,7 +21,7 @@ const RosaryContextProvider = ({ children }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [trackIndex, setTrackIndex] = useState(null);
   const [currentMystery, setCurrentMystery] = useState(null);
-  const [backgroundMusic, setBackgroundMusic] = useState(false);
+  const [backgroundMusic, setBackgroundMusic] = useState(true);
   const [audioMute, setAudioMute] = useState(false);
   const [listOfPrayers, setListOfPrayers] = useState(listOfDefaultPrayers);
 
