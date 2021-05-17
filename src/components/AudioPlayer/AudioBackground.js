@@ -27,6 +27,14 @@ const AudioBackground = ({ audioRef, volume = 0.2 }) => {
     audioRef.current.volume = audioMute ? 0 : volume;
   }, [audioMute]);
 
+  useEffect(() => {
+    return () => {
+      // clear audio
+      onPause();
+      audioRef.current = null;
+    };
+  }, []);
+
   return null;
 };
 

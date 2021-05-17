@@ -125,7 +125,7 @@ const RosaryAudio = ({ audioRef, rosary }) => {
   return (
     <div className="track-card">
       <AudioHeader title={mystery} subTitle={title} description={subTitle} />
-      <div className="d-flex justify-content-between align-items-center flex-column align-items">
+      <div className="d-flex align-items-center flex-column">
         <AudioCover
           title={audioTitle}
           artist={audioArtist}
