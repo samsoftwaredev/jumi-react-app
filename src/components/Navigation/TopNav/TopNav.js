@@ -27,6 +27,7 @@ const TopNav = ({ darkMode = false }) => {
     {
       label: "religiousGroups.label",
       path: "/app/groups",
+      disabled: true,
     },
   ];
 
