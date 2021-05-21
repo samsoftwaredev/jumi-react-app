@@ -41,10 +41,8 @@ const TopNav = ({ darkMode = false }) => {
 
   return (
     <Navbar
-      // background color
       dark={darkMode}
       light={!darkMode}
-      // color of text
       color={!darkMode && "light"}
       fixed="top"
       expand="md"

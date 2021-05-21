@@ -10,6 +10,7 @@ const PrayerEditList = ({ defaultList = [], onChange }) => {
   const getPrayers = (arr) =>
     Object.values(arr).map((p, index) => ({
       label: t(p.label),
+      description: t(p.description),
       value: index,
     }));
 
