@@ -10,9 +10,9 @@ import {
 } from "../constants/prayers";
 
 const listOfDefaultPrayers = {
-  [beginningPrayersKey]: defaultBeginningPrayers,
-  [endMysteryPrayersKey]: defaultEndMysteryPrayers,
-  [endingPrayersKey]: defaultEndingPrayers,
+  [beginningPrayersKey]: defaultBeginningPrayers(),
+  [endMysteryPrayersKey]: defaultEndMysteryPrayers(),
+  [endingPrayersKey]: defaultEndingPrayers(),
 };
 
 const RosaryContext = React.createContext();

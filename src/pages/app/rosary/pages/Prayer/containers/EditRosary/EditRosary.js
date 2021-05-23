@@ -24,7 +24,6 @@ const EditRosary = ({
   onUpdatePrayers,
 }) => {
   const { t } = useTranslation();
-  const manipulateList = (obj) => Object.values(obj);
 
   const dragMessage = (
     <div className="text-md-center">
@@ -74,7 +73,7 @@ const EditRosary = ({
       >
         {dragMessage}
         <PrayerEditList
-          defaultList={manipulateList(listOfPrayers[beginningPrayersKey])}
+          defaultList={listOfPrayers[beginningPrayersKey]}
           onChange={(newList) => onUpdatePrayers(newList, beginningPrayersKey)}
         />
       </SideBySide>
@@ -86,7 +85,7 @@ const EditRosary = ({
       >
         {dragMessage}
         <PrayerEditList
-          defaultList={manipulateList(listOfPrayers[endMysteryPrayersKey])}
+          defaultList={listOfPrayers[endMysteryPrayersKey]}
           onChange={(newList) => onUpdatePrayers(newList, endMysteryPrayersKey)}
         />
       </SideBySide>
@@ -98,7 +97,7 @@ const EditRosary = ({
       >
         {dragMessage}
         <PrayerEditList
-          defaultList={manipulateList(listOfPrayers[endingPrayersKey])}
+          defaultList={listOfPrayers[endingPrayersKey]}
           onChange={(newList) => onUpdatePrayers(newList, endingPrayersKey)}
         />
       </SideBySide>

@@ -33,10 +33,7 @@ const EditRosaryModal = ({ modal, toggle, rosary }) => {
   };
 
   const onUpdatePrayers = (newList, key) => {
-    const arr = newList.map(({ label }) =>
-      listOfPrayers[key].find((p) => t(p.label) === t(label))
-    );
-    const listOfPrayersCopy = { ...listOfPrayers, [key]: arr };
+    const listOfPrayersCopy = { ...listOfPrayers, [key]: newList };
     updateListOfPrayers(listOfPrayersCopy);
     // update the rosary prayers base on what the user selected
     rosary.setPrayersList(
@@ -44,10 +41,10 @@ const EditRosaryModal = ({ modal, toggle, rosary }) => {
       listOfPrayersCopy[endMysteryPrayersKey],
       listOfPrayersCopy[endingPrayersKey]
     );
-    // don't start rosary when user sets prayers list
-    setTimeout(() => {
-      setIsPlaying(false);
-    }, 100);
+    // // don't start rosary when prayers list is updated
+    // setTimeout(() => {
+    //   setIsPlaying(false);
+    // }, 100);
   };
 
   const onResetSettings = () => {

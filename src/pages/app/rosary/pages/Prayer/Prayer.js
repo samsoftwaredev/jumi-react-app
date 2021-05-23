@@ -6,7 +6,7 @@ import RosaryPlayer from "./containers/RosaryPlayer";
 const Prayer = () => {
   const { i18n } = useTranslation();
 
-  const rosary = new Rosary(i18n.language);
+  let rosary = new Rosary(i18n.language);
 
   return <RosaryPlayer rosary={rosary} />;
 };

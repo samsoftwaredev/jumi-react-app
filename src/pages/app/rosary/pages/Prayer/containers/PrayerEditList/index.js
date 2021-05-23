@@ -1,3 +1,1 @@
-import PrayerEditList from "./PrayerEditList";
-
-export default PrayerEditList;
+export { default } from "./PrayerEditList";

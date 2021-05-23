@@ -5,6 +5,7 @@ import {
   prayers,
 } from "../constants/prayers";
 import { rosaryDays, rosaryMysteries } from "../constants/mysteries";
+import { getValidPrayers } from "../helpers/validation";
 
 export default class Rosary {
   // private properties
@@ -119,9 +120,9 @@ export default class Rosary {
   }
 
   setPrayersList(
-    beginningPrayers = defaultBeginningPrayers,
-    afterEachMysteryPrayers = defaultEndMysteryPrayers,
-    endingPrayers = defaultEndingPrayers
+    beginningPrayers = defaultBeginningPrayers(),
+    afterEachMysteryPrayers = defaultEndMysteryPrayers(),
+    endingPrayers = defaultEndingPrayers()
   ) {
     const mysteryInfo = this._mysterySelected;
     const arr = [];
@@ -154,8 +155,7 @@ export default class Rosary {
     // 5. set the ending prayers
     arr.push(...endingPrayers);
 
-    const onlyValidPrayers = arr.filter(({ label }) => label);
-    this._prayersList = onlyValidPrayers;
+    this._prayersList = getValidPrayers(arr);
   }
 
   // built the list of all the prayers that the rosary needs
