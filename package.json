@@ -41,7 +41,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "connect": "ssh -i \"jumi_key.pem\" ubuntu@ec2-13-58-14-83.us-east-2.compute.amazonaws.com"
   },
   "eslintConfig": {
     "extends": [

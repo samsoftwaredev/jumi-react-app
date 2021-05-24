@@ -23,4 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 #amazon key
-juventud_misionera_key.pem
+*.pem
