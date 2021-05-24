@@ -16,10 +16,25 @@
     "prayRosary": { "label": "Rezar el Rosario" },
     "religiousGroups": { "label": "Grupos Religiosos" },
     "howToPrayRosary": { "label": "Aprende a Rezar" },
-    "language": { "label": "Lenguaje" },
+    "add": { "label": "Añadir" },
+    "language": {
+      "label": "Idioma",
+      "help": "Puedes cambiar el idioma del rosario. Tome encuenta que el audio también se actualizará según el idioma que seleccione."
+    },
     "save": { "label": "Salvar" },
     "reset": { "label": "Reinicializar" },
-    "settings": { "label": "Configurar" },
+    "settings": { "label": "Configuración" },
+    "prayerArragement": {
+      "label": "Puede ordenar la lista de oraciones de la forma que desee."
+    },
+    "audio": {
+      "label": "Audio",
+      "help": "Puede silenciar el audio si prefiere leer las oraciones."
+    },
+    "music": {
+      "label": "Música",
+      "help": "Puede agregar música de fondo mientras reza el rosario. Una vez que inicie el rosario, la música se comenzará automáticamente."
+    },
     "howToPray": {
       "label": "¿Cómo rezar el Santo Rosario?",
       "description": "Se enuncia en cada decena el \"misterio\", por ejemplo, en el primer misterio: \"La Encarnación del Hijo de Dios\". Después de una breve pausa de reflexión, se rezan: un Padre nuestro, diez Avemarías y un Gloria. A cada decena del \"rosario\" se puede añadir una invocación. A la final del Rosario se recita la Letanía Lauretana, u otras oraciones marianas."
@@ -27,6 +42,18 @@
     "summary": {
       "label": "Resumen",
       "description": "El rosario nos ayuda a contemplar la Vida de Jesús mediante los ojos de Maria.\n\nNo honramos a Maria, sino la acompañamos en su largo caminar. Al rezar el rosario, no hacemos otra cosa que pedirle a la Virgen María su ayuda para permanecer en unión espiritual con Jesús, para llegar a él.\n\nEl rosario es un rezo cristiano que sirve para conmemorar los 20 misterios de la vida y obra de Jesucristo y de la Virgen María. Se recitan después de anunciar cada uno de los misterios con un padre nuestro, diez avemarías y un gloria al Padre."
+    },
+    "beginningPrayers": {
+      "label": "Oraciones iniciales",
+      "help": "Lista de oraciones que le gustaría rezar al comienzo del rosario."
+    },
+    "endMysteryPrayers": {
+      "label": "Oraciones después de cada misterio",
+      "help": "Lista de oraciones que te gustaría rezar al final de cada uno de los misterios."
+    },
+    "endingPrayers": {
+      "label": "Oraciones finales",
+      "help": "Lista de oraciones que le gustaría rezar al final del rosario."
     },
     "prayers": {
       "label": "Oraciones",
@@ -98,6 +125,7 @@
     },
     "mysteries": {
       "label": "Misterios del Rosario",
+      "help": "Seleccione el misterio que le gustaría meditar hoy.",
       "description": "El Rosario está compuesto por veinte \"misterios\" (acontecimientos, momentos significativos) de la vida de Jesús y de María. Comprende los misterios gozosos (lunes y sábado), el segundo los luminosos (jueves), el tercero los dolorosos (martes y viernes) y el cuarto los gloriosos (miércoles y domingo).",
       "ordinalNumbers": {
         "first": "Primer Misterio",

@@ -30,6 +30,8 @@ const SelectMystery = ({ currentMystery, onUpdateMystery, todaysMystery }) => {
 
 SelectMystery.propTypes = {
   currentMystery: PropTypes.shape(),
+  onUpdateMystery: PropTypes.shape(),
+  todaysMystery: PropTypes.shape(),
 };
 
 export default SelectMystery;

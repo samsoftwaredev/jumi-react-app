@@ -12,6 +12,8 @@ import { initReactI18next } from "react-i18next";
 import ThemeContextProvider from "./context/ThemeContext";
 import { getLocalStorage } from "./storage/localStorage";
 
+export const i18n = i18next;
+
 i18next.use(initReactI18next).init({
   interpolation: {
     // React already does escaping

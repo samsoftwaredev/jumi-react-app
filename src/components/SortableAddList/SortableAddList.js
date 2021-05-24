@@ -17,7 +17,10 @@ const SortableAddList = ({
       <SelectableList
         placeholder={placeholder}
         onChange={onSelect}
-        options={list}
+        options={list.map((p) => ({
+          ...p,
+          label: `${p.label} - ${p.description?.slice(0, 30)}...`,
+        }))}
       />
     </div>
   );

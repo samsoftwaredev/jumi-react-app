@@ -1,13 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import PropTypes from "prop-types";
+import { useRosaryContext } from "../../pages/app/rosary/context/RosaryContext";
 
-const AudioBackground = ({
-  audioSrc,
-  autoPlay = false,
-  audioLoop = true,
-  volume = 0.2,
-}) => {
-  const audioRef = useRef();
+const AudioBackground = ({ audioRef, volume = 0.2 }) => {
+  const { isPlaying, audioMute, backgroundMusic } = useRosaryContext();
 
   const onPause = () => {
     audioRef?.current?.pause();
@@ -16,32 +12,36 @@ const AudioBackground = ({
   const onPlay = () => {
     if (audioRef?.current) {
       audioRef.current.play();
-      audioRef.current.volume = volume;
     }
   };
 
   useEffect(() => {
-    if (autoPlay) {
+    if (isPlaying && backgroundMusic) {
       onPlay();
     } else {
       onPause();
     }
-  }, [autoPlay]);
+  }, [isPlaying, backgroundMusic]);
 
-  return (
-    <audio controls className="d-none" ref={audioRef} loop={audioLoop}>
-      <source src={audioSrc} type="audio/ogg" />
-      <source src={audioSrc} type="audio/mpeg" />
-      <source src={audioSrc} type="audio/mp3" />
-      Your browser does not support the audio element.
-    </audio>
-  );
+  useEffect(() => {
+    audioRef.current.volume = audioMute ? 0 : volume;
+  }, [audioMute]);
+
+  useEffect(() => {
+    return () => {
+      // clear audio
+      onPause();
+      audioRef.current = null;
+    };
+  }, []);
+
+  return null;
 };
 
 AudioBackground.propTypes = {
   audioSrc: PropTypes.string,
-  autoPlay: PropTypes.bool,
-  audioLoop: PropTypes.bool,
+  isPlaying: PropTypes.bool,
+  audioMute: PropTypes.bool,
 };
 
 export default AudioBackground;

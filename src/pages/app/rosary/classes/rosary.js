@@ -5,6 +5,7 @@ import {
   prayers,
 } from "../constants/prayers";
 import { rosaryDays, rosaryMysteries } from "../constants/mysteries";
+import { getValidPrayers } from "../helpers/validation";
 
 export default class Rosary {
   // private properties
@@ -16,12 +17,14 @@ export default class Rosary {
   _mysterySelected = null;
   _prayersList = [];
   _prayerIndex = 0;
+  _language = null;
 
-  constructor() {
+  constructor(lang) {
     // initilize the prayer by setting the rosary
     this.setTodaysMystery();
     this.setPrayersList();
     this._prayersList = this.getPrayersList();
+    this._language = lang;
   }
 
   // private methods property
@@ -35,6 +38,15 @@ export default class Rosary {
   }
 
   // public methods property
+
+  getAudio(index = this._prayerIndex) {
+    const track = this._prayersList[index];
+    if (track?.isMystery) {
+      return track?.audioDescription[this._language];
+    } else {
+      return track?.audio ? track?.audio[this._language] : null;
+    }
+  }
 
   // move to the previous prayer
   prevPrayer() {
@@ -89,8 +101,12 @@ export default class Rosary {
     return mysteryName;
   }
 
-  setMystery(mystery) {
-    this._mysterySelected = mystery;
+  setMystery(name) {
+    // names such as "glorious", "sorrowful", "joyful", "luminous"
+    this._mysterySelected = this._rosaryMysteries[name];
+    // update the list of prayers when the mystery changes
+    // get all the prayers audio and images
+    this.setPrayersList();
   }
 
   getMysteryInfo(mysteryName) {
@@ -100,13 +116,13 @@ export default class Rosary {
   setTodaysMystery() {
     // if no mysteryName was passed, it will set the mystery to today's date
     const name = this.getTodaysMystery();
-    this.setMystery(this._rosaryMysteries[name]);
+    this.setMystery(name);
   }
 
   setPrayersList(
-    beginningPrayers = defaultBeginningPrayers,
-    afterEachMysteryPrayers = defaultEndMysteryPrayers,
-    endingPrayers = defaultEndingPrayers
+    beginningPrayers = defaultBeginningPrayers(),
+    afterEachMysteryPrayers = defaultEndMysteryPrayers(),
+    endingPrayers = defaultEndingPrayers()
   ) {
     const mysteryInfo = this._mysterySelected;
     const arr = [];
@@ -134,12 +150,12 @@ export default class Rosary {
         });
       });
       // 4. prayers after each mystery
-      arr.push(...afterEachMysteryPrayers);
+      arr.push(...afterEachMysteryPrayers.map((p) => ({ mystery, ...p })));
     });
     // 5. set the ending prayers
     arr.push(...endingPrayers);
 
-    this._prayersList = arr;
+    this._prayersList = getValidPrayers(arr);
   }
 
   // built the list of all the prayers that the rosary needs

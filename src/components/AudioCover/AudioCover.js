@@ -1,7 +1,9 @@
-import React from "react";
+import RichTextDisplay from "interweave";
+import React, { useState } from "react";
+import { Button } from "reactstrap";
 import PropTypes from "prop-types";
-import { AudioCoverStyle } from "./AudioCover.style";
 import { useTranslation } from "react-i18next";
+import { AudioCoverStyle } from "./AudioCover.style";
 
 const AudioCover = ({
   title = "",
@@ -10,6 +12,12 @@ const AudioCover = ({
   description = "",
 }) => {
   const { t } = useTranslation();
+  const [hide, setHide] = useState(true);
+
+  const toggle = () => {
+    setHide(!hide);
+  };
+
   return (
     <AudioCoverStyle>
       {image && (
@@ -19,8 +27,15 @@ const AudioCover = ({
           alt={`Track artwork for ${t(title)} by ${t(artist)}`}
         />
       )}
-      <h2 className="title">{t(title)}</h2>
-      <h3 className="description">{t(description)}</h3>
+      <p className="title">{t(title)}</p>
+      <div className={`description ${hide && "text-truncate height-sm"}`}>
+        <RichTextDisplay content={t(description)} />
+      </div>
+      <div className="text-center mt-3">
+        <Button onClick={toggle} color="link">
+          Show {hide ? "More" : "Less"}
+        </Button>
+      </div>
     </AudioCoverStyle>
   );
 };

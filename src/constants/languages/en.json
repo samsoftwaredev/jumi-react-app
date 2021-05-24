@@ -16,10 +16,25 @@
     "prayRosary": { "label": "Pray the Rosary" },
     "religiousGroups": { "label": "Religious Groups" },
     "howToPrayRosary": { "label": "How To Pray" },
-    "language": { "label": "Language" },
+    "add": { "label": "Add" },
+    "language": {
+      "label": "Language",
+      "help": "You can change the language of the rosary. The audio will also update depending on the language you select."
+    },
     "save": { "label": "Save" },
     "reset": { "label": "Reset" },
     "settings": { "label": "Settings" },
+    "prayerArragement": {
+      "label": "You can arrage the list of prayers in any order you want."
+    },
+    "audio": {
+      "label": "Audio",
+      "help": "You can mute the audio if prefer to read the prayers."
+    },
+    "music": {
+      "label": "Music",
+      "help": "You can add background music while you pray the rosary. Once you start the rosary the music will autoplay."
+    },
     "howToPray": {
       "label": "How to pray the Holy Rosary?",
       "description": "The \"mystery\" is enunciated in each decade, for example, in the first mystery: \"The Incarnation of the Son of God.\" After a brief pause for reflection, they pray: one Our Father, ten Hail Marys and one Gloria. An invocation can be added to each ten of the \"rosary\". At the end of the Rosary, the Lauretan Litany or other Marian prayers are recited."
@@ -27,6 +42,18 @@
     "summary": {
       "label": "Summary",
       "description": "The rosary helps us to contemplate the Life of Jesus through the eyes of Mary.\n\nWe do not honor Maria, but we accompany her on her long journey. When we pray the rosary, we do nothing but ask the Virgin Mary for her help to remain in spiritual union with Jesus, to reach him.\n\nThe rosary is a Christian prayer that serves to commemorate the 20 mysteries of the life and work of Jesus Christ and the Virgin Mary. They are recited after announcing each of the mysteries with an Our Father, ten Hail Marys and a glory to the Father. "
+    },
+    "beginningPrayers": {
+      "label": "Beginnig prayers:",
+      "help": "List of prayers that you would like to pray at the beginning of the rosary."
+    },
+    "endMysteryPrayers": {
+      "label": "Prayers after each mystery:",
+      "help": "List of prayers that you would like to pray at the end of each of the mysteries."
+    },
+    "endingPrayers": {
+      "label": "Ending prayers:",
+      "help": "List of prayers that you would like to pray at the end of the rosary."
     },
     "prayers": {
       "label": "Prayers",
@@ -98,6 +125,7 @@
     },
     "mysteries": {
       "label ": "Rosary Mysteries",
+      "help": "Select the mystery you would like to meditate today.",
       "description": "The Rosary is made up of twenty \"mysteries\" (events, significant moments) in the life of Jesus and Mary. It includes the joyful mysteries (Monday and Saturday), the second the luminous ones (Thursday), the third the painful ones (Tuesday and Friday) and the fourth the glorious ones (Wednesday and Sunday).",
       "ordinalNumbers": {
         "first": "1st Mystery",

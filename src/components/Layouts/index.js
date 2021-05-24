@@ -1,3 +1,1 @@
-import SideBySide from "./SideBySide";
-
-export { SideBySide };
+export { default as SideBySide } from "./SideBySide";

@@ -15,7 +15,7 @@ const SideBySide = ({ children, title = "", description = "" }) => (
 );
 
 SideBySide.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.node,
   title: PropTypes.string,
 };
 

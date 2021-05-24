@@ -33,7 +33,7 @@ body {
 
 .static-background {
   background-color: #8ec5fc;
-  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+  background-image: linear-gradient(90deg, #8ec5fc 0%, #e0c3fc 100%);
 }
 
 #container {
@@ -61,4 +61,23 @@ hr {
   &:hover {
     background-color: rgba(0, 0, 0, 0.2);
   }
+}
+
+.track-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  min-height: 70vh;
+  max-width: 550px;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 28px 28px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  color: white;
+  position: relative;
+}
+
+svg {
+  fill: white;
 }

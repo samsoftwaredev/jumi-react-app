@@ -32,7 +32,7 @@ const Rosary = () => {
 
   return (
     <RosaryContextProvider>
-      <MainLayout showFooter={location.pathname.includes("how-to-pray")}>
+      <MainLayout>
         {/* tabs to view components */}
         <Nav tabs className="d-flex justify-content-center">
           {tabs.map((t) => (

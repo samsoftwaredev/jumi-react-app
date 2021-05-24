@@ -1,50 +1,20 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
-import AudioCard from "../../../../../../../components/AudioCard";
-import { strToId } from "../../../../../../../helpers/transform";
+import AudioBackground from "../../../../../../../components/AudioPlayer/AudioBackground";
+import aveMaria from "../../../../audio/ave.mp3";
+import RosaryAudio from "../RosaryAudio";
 
-const RosaryPlayer = ({ rosary, language }) => {
-  const mystery = rosary.getMystery();
-  rosary.setMystery(mystery);
-
-  const [trackIndex, setTrackIndex] = useState(0);
-  const [track, setTrack] = useState(rosary.getPrayersList()[trackIndex]);
-
-  const nextPrayer = () => {
-    // set prayerIndex
-    const nextPrayerIndex = trackIndex + 1;
-    const prayer = rosary.jumpToPrayer(nextPrayerIndex);
-    // check if the prayer is defined
-    if (prayer) {
-      setTrackIndex(nextPrayerIndex);
-      setTrack(prayer);
-    }
-  };
-
-  const prevPrayer = () => {
-    // set prayerIndex
-    const prevPrayerIndex = trackIndex - 1;
-    const prayer = rosary.jumpToPrayer(prevPrayerIndex);
-    // check if the prayer is defined
-    if (prayer) {
-      setTrackIndex(prevPrayerIndex);
-      setTrack(prayer);
-    }
-  };
+const RosaryPlayer = ({ rosary }) => {
+  const audioRef = useRef(new Audio(rosary.getAudio()));
+  const audioBgRef = useRef(new Audio(aveMaria));
 
   return (
-    <div className="mt-4">
-      <AudioCard
-        title={track.label}
-        artist={track.artist}
-        description={track.description}
-        image={track.image}
-        id={strToId(track.label, trackIndex)}
-        audioSrc={track.audio ? track.audio[language] : null}
-        toPrevTrack={prevPrayer}
-        toNextTrack={nextPrayer}
-      />
-    </div>
+    <>
+      <AudioBackground audioRef={audioBgRef} />
+      <div className="mt-4">
+        <RosaryAudio audioRef={audioRef} rosary={rosary} />
+      </div>
+    </>
   );
 };
 

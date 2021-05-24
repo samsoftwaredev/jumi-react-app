@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 const AudioCoverStyle = styled.div`
+  width: 100%;
+  max-width: 100%;
+
   .artwork {
     border-radius: 120px;
     display: block;
     margin: auto;
-    max-height: 300px;
+    max-height: 200px;
     max-width: 300px;
   }
 
@@ -16,9 +19,14 @@ const AudioCoverStyle = styled.div`
 
   .description {
     text-align: left;
-    font-size: 1.5em;
     font-weight: 300;
     margin-top: 0;
+  }
+
+  .height-sm {
+    padding: 10px 0;
+    max-height: 120px;
+    overflow-y: hidden;
   }
 `;
 

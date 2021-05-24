@@ -11,94 +11,93 @@ import UpdateLangauge from "../UpdateLangauge";
 import { ChangeMystery } from "../SelectMystery";
 import { CheckboxContainer } from "../../../../../../../components/Fields/Checkbox";
 import PrayerEditList from "../PrayerEditList";
+import { useTranslation } from "react-i18next";
 
 const EditRosary = ({
-  autoPlayAudio,
-  onToggleAudioAutoplay,
   audioMute,
   onToggleAudioVolume,
-  bgMusic,
+  backgroundMusic,
   onToggleBackgroundMusic,
-  mystery,
+  currentMystery,
   onUpdateMystery,
   listOfPrayers,
   onUpdatePrayers,
 }) => {
-  const manipulateList = (obj) => Object.values(obj);
+  const { t } = useTranslation();
+
+  const dragMessage = (
+    <div className="text-md-center">
+      <small className="text-muted">{t("prayerArragement.label")}</small>
+    </div>
+  );
 
   return (
     <Row className="align-items-center">
-      <SideBySide
-        title="Language:"
-        description="You can change the language of the rosary. The audio will also update depending on the language you select."
-      >
+      <SideBySide title={t("language.label")} description={t("language.help")}>
         <UpdateLangauge />
       </SideBySide>
       <hr />
       {/* Audio Settings */}
-      <SideBySide
-        title="Audio:"
-        description="You can mute the audio if prefer to read the prayers."
-      >
+      <SideBySide title={t("audio.label")} description={t("audio.help")}>
         <>
-          <CheckboxContainer
-            value={autoPlayAudio}
-            onChange={onToggleAudioAutoplay}
-          >
-            Autoplay Audio
-          </CheckboxContainer>
           <CheckboxContainer value={audioMute} onChange={onToggleAudioVolume}>
             Mute Audio
           </CheckboxContainer>
         </>
       </SideBySide>
       <hr />
-      <SideBySide
-        title="Music:"
-        description="You can add background music while you pray the rosary. Once you start the rosary the music will autoplay."
-      >
-        <CheckboxContainer value={bgMusic} onChange={onToggleBackgroundMusic}>
+      <SideBySide title={t("music.label")} description={t("music.help")}>
+        <CheckboxContainer
+          value={backgroundMusic}
+          onChange={onToggleBackgroundMusic}
+        >
           Background Music
         </CheckboxContainer>
       </SideBySide>
       <hr />
       {/* user can select the mystery the will like to pray */}
       <SideBySide
-        title="Mystery:"
-        description="Select the mystery you would like meditate today."
+        title={t("mysteries.label")}
+        description={t("mysteries.help")}
       >
-        <ChangeMystery mystery={mystery} onUpdateMystery={onUpdateMystery} />
+        <ChangeMystery
+          mysteryLabel={t(currentMystery.label)}
+          onUpdateMystery={onUpdateMystery}
+        />
       </SideBySide>
       <hr />
       {/* Rosary, starting prayers that user can select */}
       <SideBySide
-        title="Beginnig prayers:"
-        description="List of prayers that you would like to pray at the beginning of the rosary."
+        title={t("beginningPrayers.label")}
+        description={t("beginningPrayers.help")}
       >
+        {dragMessage}
         <PrayerEditList
-          defaultList={manipulateList(listOfPrayers[beginningPrayersKey])}
+          defaultList={listOfPrayers[beginningPrayersKey]}
           onChange={(newList) => onUpdatePrayers(newList, beginningPrayersKey)}
         />
       </SideBySide>
       <hr />
       {/* Rosary, last prayers that user can select */}
       <SideBySide
-        title="Prayers after each mystery:"
-        description="List of prayers that you would like to pray at the end of each of the mysteries."
+        title={t("endMysteryPrayers.label")}
+        description={t("endMysteryPrayers.help")}
       >
+        {dragMessage}
         <PrayerEditList
-          defaultList={manipulateList(listOfPrayers[endMysteryPrayersKey])}
+          defaultList={listOfPrayers[endMysteryPrayersKey]}
           onChange={(newList) => onUpdatePrayers(newList, endMysteryPrayersKey)}
         />
       </SideBySide>
       <hr />
       {/* Rosary, last prayers that user can select */}
       <SideBySide
-        title="Ending prayers:"
-        description="List of prayers that you would like to pray at the end of the rosary."
+        title={t("endingPrayers.label")}
+        description={t("endingPrayers.help")}
       >
+        {dragMessage}
         <PrayerEditList
-          defaultList={manipulateList(listOfPrayers[endingPrayersKey])}
+          defaultList={listOfPrayers[endingPrayersKey]}
           onChange={(newList) => onUpdatePrayers(newList, endingPrayersKey)}
         />
       </SideBySide>
@@ -110,7 +109,6 @@ EditRosary.propTypes = {
   rosary: PropTypes.shape(),
   currentMystery: PropTypes.shape(),
   isMusicEnable: PropTypes.bool,
-  isAutoPlayAudio: PropTypes.bool,
   isAudioMute: PropTypes.bool,
   currentListOfPrayers: PropTypes.shape(),
   save: PropTypes.func,

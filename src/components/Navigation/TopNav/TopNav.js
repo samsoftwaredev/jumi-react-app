@@ -27,6 +27,7 @@ const TopNav = ({ darkMode = false }) => {
     {
       label: "religiousGroups.label",
       path: "/app/groups",
+      disabled: true,
     },
   ];
 
@@ -40,10 +41,8 @@ const TopNav = ({ darkMode = false }) => {
 
   return (
     <Navbar
-      // background color
       dark={darkMode}
       light={!darkMode}
-      // color of text
       color={!darkMode && "light"}
       fixed="top"
       expand="md"

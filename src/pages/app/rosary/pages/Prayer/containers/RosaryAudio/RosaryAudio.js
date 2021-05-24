@@ -1,25 +1,36 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
-import AudioControls from "../AudioControls";
-import AudioCover from "../AudioCover";
-import AudioHeader from "../AudioHeader/AudioHeader";
-import { useRosaryContext } from "../../pages/app/rosary/context/RosaryContext";
-import { strToId } from "../../helpers/transform";
+import AudioCover from "../../../../../../../components/AudioCover";
+import AudioHeader from "../../../../../../../components/AudioHeader/AudioHeader";
+import { useRosaryContext } from "../../../../context/RosaryContext";
+import { strToId } from "../../../../../../../helpers/transform";
+import { getOrdinalNumbers } from "../../helpers/transform";
+import AudioControls from "../../../../../../../components/AudioControls";
+import RosaryModalButton from "../EditRosary";
+import {
+  NextButton,
+  PlayPauseButton,
+  PrevButton,
+  VolumeButton,
+} from "../../../../../../../components/AudioControls/Buttons";
 
-const AudioCard = ({ getOrdinalNumbers, audioRef, rosary }) => {
+const RosaryAudio = ({ audioRef, rosary }) => {
   const {
     isPlaying,
     trackIndex,
     setTrackIndex,
-    track,
-    setTrack,
     audioMute,
-    setAudioMute,
     setIsPlaying,
+    togglePlayPause,
+    toggleAudioMute,
+    listOfPrayers,
+    currentMystery,
   } = useRosaryContext();
+
   const { t } = useTranslation();
 
+  const track = rosary.jumpToPrayer(trackIndex);
   const title = track?.mystery?.label;
   const subTitle = getOrdinalNumbers(track?.mystery?.mysteryIndex);
   const audioTitle = track?.isHailMary
@@ -30,6 +41,7 @@ const AudioCard = ({ getOrdinalNumbers, audioRef, rosary }) => {
   const audioImage = track?.mystery?.image || track?.image;
   const id = strToId(track?.label, trackIndex);
   const audioSrc = rosary?.getAudio(trackIndex);
+  const mystery = t(currentMystery?.label);
 
   const [trackProgress, setTrackProgress] = useState(null);
   // Refs
@@ -38,15 +50,6 @@ const AudioCard = ({ getOrdinalNumbers, audioRef, rosary }) => {
 
   // Destructure for conciseness
   const { duration } = audioRef.current;
-
-  const playPause = () => {
-    setIsPlaying(!isPlaying);
-  };
-
-  const toggleAudioMute = (bool) => {
-    audioRef.current.volume = bool ? 0 : 1;
-    setAudioMute(bool);
-  };
 
   const startTimer = () => {
     // Clear any timers already running
@@ -63,17 +66,18 @@ const AudioCard = ({ getOrdinalNumbers, audioRef, rosary }) => {
 
   useEffect(() => {
     if (isPlaying) {
+      // play track and set timer
       audioRef.current.play();
       startTimer();
     } else {
-      clearInterval(intervalRef.current);
+      // pause track and clear timer
       audioRef.current.pause();
+      clearInterval(intervalRef.current);
     }
   }, [isPlaying]);
 
   useEffect(() => {
     setTrackIndex(0);
-    setTrack(rosary.getPrayersList()[0]);
     // Pause and clean up on unmount
     return () => {
       audioRef.current.pause();
@@ -83,15 +87,20 @@ const AudioCard = ({ getOrdinalNumbers, audioRef, rosary }) => {
 
   // Handle setup when changing tracks
   useEffect(() => {
+    // exit block if track id is falsy
+    if (!id) return;
+
     audioRef.current.pause();
-
-    audioRef.current = new Audio(audioSrc);
-    setTrackProgress(audioRef.current.currentTime);
-
     if (isReady.current) {
+      // makes a request to get the audio
+      audioRef.current = new Audio(audioSrc);
+      // mute audio if audioMute was set by the user
       audioRef.current.volume = audioMute ? 0 : 1;
+      // play the track automatically
       audioRef.current.play();
       setIsPlaying(true);
+      // set timer of track
+      setTrackProgress(audioRef.current.currentTime);
       startTimer();
     } else {
       // Set the isReady ref as true for the next pass
@@ -103,35 +112,39 @@ const AudioCard = ({ getOrdinalNumbers, audioRef, rosary }) => {
     // set prayerIndex
     const prayer = rosary.jumpToPrayer(index);
     // check if the prayer is defined
-    if (prayer) {
-      setTrackIndex(index);
-      setTrack(prayer);
-    }
+    if (prayer) setTrackIndex(index);
+  };
+
+  const toggleMute = (bool) => {
+    audioRef.current.volume = bool ? 0 : 1;
+    toggleAudioMute(bool);
   };
 
   if (!audioSrc) return null;
 
   return (
     <div className="track-card">
-      <AudioHeader title={title} subTitle={subTitle} />
-      <div className="track-info">
+      <AudioHeader title={mystery} subTitle={title} description={subTitle} />
+      <div className="d-flex align-items-center flex-column">
         <AudioCover
           title={audioTitle}
           artist={audioArtist}
           image={audioImage}
           description={audioDescription}
         />
-        <AudioControls
-          mute={audioMute}
-          onMute={toggleAudioMute}
-          isPlaying={isPlaying}
-          onPlayPauseClick={playPause}
-          onPrevClick={() => moveToTrack(trackIndex - 1)}
-          onNextClick={() => moveToTrack(trackIndex + 1)}
-        />
+        <AudioControls>
+          <RosaryModalButton rosary={rosary} />
+          <PrevButton onPrevClick={() => moveToTrack(trackIndex - 1)} />
+          <PlayPauseButton
+            isPlaying={isPlaying}
+            onPlayPauseClick={togglePlayPause}
+          />
+          <NextButton onNextClick={() => moveToTrack(trackIndex + 1)} />
+          <VolumeButton mute={audioMute} onMute={toggleMute} />
+        </AudioControls>
       </div>
     </div>
   );
 };
 
-export default AudioCard;
+export default RosaryAudio;

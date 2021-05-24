@@ -1,110 +1,75 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { useTranslation } from "react-i18next";
-import {
-  defaultEndingPrayers,
-  defaultEndMysteryPrayers,
-  defaultBeginningPrayers,
-  beginningPrayersKey,
-  endMysteryPrayersKey,
-  endingPrayersKey,
-} from "../../../../constants/prayers";
 import EditRosary from "./EditRosary";
+import { useRosaryContext } from "../../../../context/RosaryContext";
+import {
+  beginningPrayersKey,
+  endingPrayersKey,
+  endMysteryPrayersKey,
+} from "../../../../constants/prayers";
 
-const listOfDefaultPrayers = {
-  [beginningPrayersKey]: defaultBeginningPrayers,
-  [endMysteryPrayersKey]: defaultEndMysteryPrayers,
-  [endingPrayersKey]: defaultEndingPrayers,
-};
+const EditRosaryModal = ({ modal, toggle, rosary }) => {
+  const {
+    currentMystery,
+    setCurrentMystery,
+    backgroundMusic,
+    setBackgroundMusic,
+    audioMute,
+    setAudioMute,
+    toggleAudioMute,
+    toggleBackgroundMusic,
+    listOfPrayers,
+    updateListOfPrayers,
+    setIsPlaying,
+  } = useRosaryContext();
 
-const EditRosaryModal = ({
-  modal,
-  toggle,
-  rosary,
-  currentMystery = {},
-  isMusicEnable = false,
-  isAutoPlayAudio = true,
-  isAudioMute = false,
-  currentListOfPrayers = listOfDefaultPrayers,
-  save,
-}) => {
   const { t } = useTranslation();
 
-  const [mystery, setMystery] = useState(currentMystery);
-  const [bgMusic, setBgMusic] = useState(isMusicEnable);
-  const [autoPlay, setAutoplay] = useState(isAutoPlayAudio);
-  const [mute, setMute] = useState(isAudioMute);
-  const [listOfPrayers, setListOfPrayers] = useState(currentListOfPrayers);
-
-  const onToggleAudioAutoplay = () => {
-    setAutoplay(!autoPlay);
-    save({ autoPlay: !autoPlay });
-  };
-
-  const onToggleAudioVolume = () => {
-    setMute(!mute);
-    save({ mute: !mute });
-  };
-
-  const onToggleBackgroundMusic = () => {
-    setBgMusic(!bgMusic);
-    save({ bgMusic: !bgMusic });
-  };
-
   const onUpdateMystery = ({ value: name = "" } = { name: "" }) => {
-    rosary.setMystery(rosary.getMysteryInfo(name));
-    setMystery(rosary.getMystery());
-    save({ mystery: rosary.getMystery() });
-  };
-
-  const updatePrayersList = (objList = listOfDefaultPrayers) => {
-    setListOfPrayers(objList);
-    save({
-      beginningPrayers: objList[beginningPrayersKey],
-      endMysteryPrayers: objList[endMysteryPrayersKey],
-      endingPrayers: objList[endingPrayersKey],
-    });
+    rosary.setMystery(name);
+    setCurrentMystery(rosary.getMysteryInfo(name));
   };
 
   const onUpdatePrayers = (newList, key) => {
-    updatePrayersList({ ...listOfPrayers, [key]: newList });
+    const listOfPrayersCopy = { ...listOfPrayers, [key]: newList };
+    updateListOfPrayers(listOfPrayersCopy);
+    // update the rosary prayers base on what the user selected
+    rosary.setPrayersList(
+      listOfPrayersCopy[beginningPrayersKey],
+      listOfPrayersCopy[endMysteryPrayersKey],
+      listOfPrayersCopy[endingPrayersKey]
+    );
+    // // don't start rosary when prayers list is updated
+    // setTimeout(() => {
+    //   setIsPlaying(false);
+    // }, 100);
   };
 
   const onResetSettings = () => {
-    setAutoplay(true);
-    setMute(false);
-    setBgMusic(false);
-    updatePrayersList();
+    setAudioMute(false);
+    setBackgroundMusic(false);
+    updateListOfPrayers();
     onUpdateMystery();
   };
 
-  const onSaveSettings = () => {
-    save({
-      mystery,
-      bgMusic,
-      mute,
-      autoPlay,
-      beginningPrayers: listOfPrayers[beginningPrayersKey],
-      endMysteryPrayers: listOfPrayers[endMysteryPrayersKey],
-      endingPrayers: listOfPrayers[endingPrayersKey],
-    });
-    // close modal
-    toggle();
-  };
+  useEffect(() => {
+    // set a mystery as default
+    setCurrentMystery(rosary.getMystery());
+  }, []);
 
   return (
     <Modal isOpen={modal} size="lg" toggle={toggle}>
       <ModalHeader toggle={toggle}>{t("settings.label")}</ModalHeader>
       <ModalBody>
         <EditRosary
-          autoPlayAudio={autoPlay}
-          onToggleAudioAutoplay={onToggleAudioAutoplay}
-          audioMute={mute}
-          onToggleAudioVolume={onToggleAudioVolume}
-          bgMusic={bgMusic}
-          onToggleBackgroundMusic={onToggleBackgroundMusic}
-          mystery={mystery}
+          rosary={rosary}
+          audioMute={audioMute}
+          onToggleAudioVolume={toggleAudioMute}
+          backgroundMusic={backgroundMusic}
+          onToggleBackgroundMusic={toggleBackgroundMusic}
+          currentMystery={currentMystery}
           onUpdateMystery={onUpdateMystery}
           listOfPrayers={listOfPrayers}
           onUpdatePrayers={onUpdatePrayers}
@@ -114,7 +79,7 @@ const EditRosaryModal = ({
         <Button color="light" onClick={onResetSettings}>
           {t("reset.label")}
         </Button>
-        <Button color="primary" onClick={onSaveSettings}>
+        <Button color="primary" onClick={toggle}>
           {t("save.label")}
         </Button>
       </ModalFooter>
@@ -124,12 +89,8 @@ const EditRosaryModal = ({
 
 EditRosaryModal.propTypes = {
   rosary: PropTypes.shape(),
-  currentMystery: PropTypes.shape(),
-  isMusicEnable: PropTypes.bool,
-  isAutoPlayAudio: PropTypes.bool,
-  isAudioMute: PropTypes.bool,
-  currentListOfPrayers: PropTypes.shape(),
-  save: PropTypes.func,
+  modal: PropTypes.bool,
+  toggle: PropTypes.func,
 };
 
 export default EditRosaryModal;
