@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import "../assets/styles/main.scss";
-import PageNotFound from "../components/error/PageNotFound";
+import { PageNotFound } from "../components/error";
 import { LoadingPage } from "../components/Loading";
 
 const Auth = lazy(() => import("./auth"));

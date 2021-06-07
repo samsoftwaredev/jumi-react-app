@@ -20,8 +20,8 @@ i18next.use(initReactI18next).init({
     escapeValue: false,
   },
   // get language from local storage if any
-  lng: getLocalStorage("language") || "en", // 'en' | 'es'
-  fallbackLng: "es",
+  lng: getLocalStorage("language") || "es", // 'en' | 'es'
+  fallbackLng: "en",
   // Using simple hardcoded resources for simple example
   resources: {
     en,

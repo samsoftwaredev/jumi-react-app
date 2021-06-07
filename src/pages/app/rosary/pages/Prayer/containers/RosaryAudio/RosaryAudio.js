@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import PropTypes from "prop-types";
 import AudioCover from "../../../../../../../components/AudioCover";
-import AudioHeader from "../../../../../../../components/AudioHeader/AudioHeader";
+import AudioHeader from "../../../../../../../components/AudioHeader";
 import { useRosaryContext } from "../../../../context/RosaryContext";
 import { strToId } from "../../../../../../../helpers/transform";
 import { getOrdinalNumbers } from "../../helpers/transform";

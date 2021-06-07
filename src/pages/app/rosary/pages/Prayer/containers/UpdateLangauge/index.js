@@ -1,3 +1,1 @@
-import UpdateLangauge from "./UpdateLangauge";
-
-export default UpdateLangauge;
+export { default } from "./UpdateLangauge";

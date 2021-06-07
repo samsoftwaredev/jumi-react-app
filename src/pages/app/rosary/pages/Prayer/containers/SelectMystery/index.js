@@ -1,4 +1,2 @@
-import ChangeMystery from "./ChangeMystery";
-import SelectMystery from "./SelectMystery";
-
-export { SelectMystery as default, ChangeMystery };
+export { default as ChangeMystery } from "./ChangeMystery";
+export { default } from "./SelectMystery";

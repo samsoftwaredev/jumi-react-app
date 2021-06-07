@@ -1,3 +1,1 @@
-import Prayer from "./Prayer";
-
-export default Prayer;
+export { default } from "./Prayer";

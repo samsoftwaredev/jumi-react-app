@@ -1,3 +1,1 @@
-import aveAudio from "./ave.mp3";
-
-export { aveAudio };
+export { default as aveAudio } from "./ave.mp3";

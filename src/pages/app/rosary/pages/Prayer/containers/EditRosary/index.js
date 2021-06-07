@@ -1,5 +1,3 @@
-import EditRosary from "./EditRosary";
-import EditRosaryModal from "./EditRosaryModal";
-import RosaryModalButton from "./RosaryModalButton";
-
-export { EditRosary, EditRosaryModal, RosaryModalButton as default };
+export { default as EditRosary } from "./EditRosary";
+export { default as EditRosaryModal } from "./EditRosaryModal";
+export { default } from "./RosaryModalButton";
