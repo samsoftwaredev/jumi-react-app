@@ -6,16 +6,14 @@ import { LoadingPage } from "../components/Loading";
 
 const Auth = lazy(() => import("./auth"));
 const App = lazy(() => import("./app"));
-const Home = lazy(() => import("./app/Home"));
 
 const Main = () => (
   <Suspense fallback={<LoadingPage />}>
     <Switch>
       <Route path="/app" component={App} />
       <Route path="/auth" component={Auth} />
-      <Route exact path="/" component={Home} />
       <Route path="/error" component={PageNotFound} />
-      <Redirect to="/" />
+      <Redirect to="/app" />
     </Switch>
   </Suspense>
 );
