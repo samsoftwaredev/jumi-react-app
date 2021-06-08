@@ -1,1 +1,2 @@
-export { default } from "./Rosary";
+import Rosary from "./Rosary";
+export default Rosary;
