@@ -1,2 +1,1 @@
-import Rosary from "./Rosary";
-export default Rosary;
+export { default } from "./Rosary";

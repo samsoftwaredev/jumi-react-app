@@ -10,8 +10,7 @@ import { Nav, NavItem } from "reactstrap";
 import Translate from "../../../components/Translate";
 import MainLayout from "../../../layout/MainLayout/MainLayout";
 import RosaryContextProvider from "./context/RosaryContext";
-import HowTo from "./pages/HowTo";
-import Prayer from "./pages/Prayer";
+import { Prayer, HowTo } from "./pages";
 
 const Rosary = () => {
   let match = useRouteMatch();
@@ -20,14 +19,16 @@ const Rosary = () => {
   const tabs = [
     {
       path: match.path,
+      exact: false,
       label: "prayRosary.label",
       component: Prayer,
     },
-    {
-      path: `${match.path}/how-to-pray`,
-      label: "howToPrayRosary.label",
-      component: HowTo,
-    },
+    // {
+    //   path: `${match.path}/how-to-pray`,
+    //   exact: true,
+    //   label: "howToPrayRosary.label",
+    //   component: HowTo,
+    // },
   ];
 
   return (
@@ -51,7 +52,12 @@ const Rosary = () => {
         {/* routes & components */}
         <Switch>
           {tabs.map((t) => (
-            <Route key={t?.path} exact path={t?.path} component={t.component} />
+            <Route
+              exact={t?.exact}
+              key={t?.path}
+              path={t?.path}
+              component={t?.component}
+            />
           ))}
         </Switch>
       </MainLayout>

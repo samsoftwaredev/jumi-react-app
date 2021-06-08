@@ -2,9 +2,9 @@ import React, { lazy, Suspense } from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 import { LoadingPage } from "../../components/Loading";
 
-const Rosary = lazy(() => import("./Rosary"));
-const Home = lazy(() => import("./Home"));
-const Groups = lazy(() => import("./Groups"));
+const Rosary = lazy(() => import("./rosary"));
+const Home = lazy(() => import("./home"));
+const Groups = lazy(() => import("./groups"));
 
 const Main = () => {
   let match = useRouteMatch();

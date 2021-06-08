@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import PropTypes from "prop-types";
-import { useRosaryContext } from "../../pages/app/Rosary/context/RosaryContext";
+import { useRosaryContext } from "../../pages/app/rosary/context/RosaryContext";
 
 const AudioBackground = ({ audioRef, volume = 0.2 }) => {
   const { isPlaying, audioMute, backgroundMusic } = useRosaryContext();

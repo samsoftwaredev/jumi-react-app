@@ -1,7 +1,8 @@
 import { Col, Container, Row } from "reactstrap";
 import Translate from "../Translate";
+import { FooterStyle } from "./Footer.style";
 
-const MainFooter = () => {
+const Footer = () => {
   const socialMedia = [
     {
       icon: "",
@@ -16,7 +17,7 @@ const MainFooter = () => {
   ];
 
   return (
-    <footer id="footer" className="bg-light mt-5">
+    <FooterStyle id="footer">
       <Container>
         <Row className="pt-2 align-items-center">
           <Col md={6}>
@@ -25,9 +26,9 @@ const MainFooter = () => {
             </p>
           </Col>
           <Col md={6}>
-            <h5>
+            <h6>
               <Translate text="followUs.label" />:
-            </h5>
+            </h6>
             <ul className="ml-4 list-group ">
               {socialMedia.map((s) => (
                 <li key={s.label}>
@@ -40,7 +41,7 @@ const MainFooter = () => {
           </Col>
         </Row>
       </Container>
-    </footer>
+    </FooterStyle>
   );
 };
-export default MainFooter;
+export default Footer;

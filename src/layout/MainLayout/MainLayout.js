@@ -1,4 +1,4 @@
-import MainFooter from "../../components/footers/MainFooter";
+import Footer from "../../components/Footer";
 import { TopNav } from "../../components/Navigation";
 import { MainLayoutStyle } from "./MainLayout.style";
 
@@ -8,7 +8,7 @@ const MainLayout = ({ children, showFooter = true }) => (
     <MainLayoutStyle id="container" className="pt-2">
       {children}
     </MainLayoutStyle>
-    {showFooter && <MainFooter />}
+    {showFooter && <Footer />}
   </div>
 );
 
