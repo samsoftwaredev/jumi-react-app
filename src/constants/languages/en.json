@@ -17,6 +17,8 @@
     "religiousGroups": { "label": "Religious Groups" },
     "howToPrayRosary": { "label": "How To Pray" },
     "add": { "label": "Add" },
+    "backgroundMusic": { "label": "Background Music" },
+    "muteAudio": { "label": "Mute Audio" },
     "language": {
       "label": "Language",
       "help": "You can change the language of the rosary. The audio will also update depending on the language you select."

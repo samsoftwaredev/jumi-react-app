@@ -41,7 +41,7 @@ const EditRosary = ({
       <SideBySide title={t("audio.label")} description={t("audio.help")}>
         <>
           <CheckboxContainer value={audioMute} onChange={onToggleAudioVolume}>
-            Mute Audio
+            {t("muteAudio.label")}
           </CheckboxContainer>
         </>
       </SideBySide>
@@ -51,7 +51,7 @@ const EditRosary = ({
           value={backgroundMusic}
           onChange={onToggleBackgroundMusic}
         >
-          Background Music
+          {t("backgroundMusic.label")}
         </CheckboxContainer>
       </SideBySide>
       <hr />

@@ -17,6 +17,8 @@
     "religiousGroups": { "label": "Grupos Religiosos" },
     "howToPrayRosary": { "label": "Aprende a Rezar" },
     "add": { "label": "Añadir" },
+    "backgroundMusic": { "label": "Música de fondo" },
+    "muteAudio": { "label": "Silenciar el audio" },
     "language": {
       "label": "Idioma",
       "help": "Puedes cambiar el idioma del rosario. Tome encuenta que el audio también se actualizará según el idioma que seleccione."
