@@ -1,3 +1,1 @@
-import TopNav from "./TopNav";
-
-export { TopNav };
+export { default as TopNav } from "./TopNav";

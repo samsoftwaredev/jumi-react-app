@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   Collapse,
-  Navbar,
   NavbarToggler,
   Nav,
   NavItem,
@@ -11,8 +10,9 @@ import {
 import { animateScroll } from "react-scroll";
 import Translate from "../../Translate";
 import ChangeLanguage from "../../Translate/ChangeLanguage";
+import { TopNavStyle } from "./TopNav.style";
 
-const TopNav = ({ darkMode = false }) => {
+const TopNav = () => {
   let location = useLocation();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -40,13 +40,7 @@ const TopNav = ({ darkMode = false }) => {
   }, [location.pathname]);
 
   return (
-    <Navbar
-      dark={darkMode}
-      light={!darkMode}
-      color={!darkMode && "light"}
-      fixed="top"
-      expand="md"
-    >
+    <TopNavStyle dark={true} expand="md">
       <Link className="navbar-brand" to="/">
         <Translate text="app.shortName" />
       </Link>
@@ -68,7 +62,7 @@ const TopNav = ({ darkMode = false }) => {
           <ChangeLanguage />
         </UncontrolledDropdown>
       </Collapse>
-    </Navbar>
+    </TopNavStyle>
   );
 };
 
