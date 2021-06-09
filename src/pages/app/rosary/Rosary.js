@@ -13,7 +13,7 @@ import RosaryContextProvider from "./context/RosaryContext";
 import { Prayer, HowTo } from "./pages";
 
 const Rosary = () => {
-  const { path, url } = useRouteMatch();
+  const { path } = useRouteMatch();
   const { pathname } = useLocation();
 
   const tabs = [
@@ -39,9 +39,7 @@ const Rosary = () => {
           {tabs.map((t) => (
             <NavItem key={t.label}>
               <Link
-                className={`nav-link ${
-                  location.pathname === t.path && "active"
-                }`}
+                className={`nav-link ${pathname === t.path && "active"}`}
                 to={t.path}
               >
                 <Translate text={t.label} />
