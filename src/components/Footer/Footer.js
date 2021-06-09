@@ -18,8 +18,8 @@ const Footer = () => {
 
   return (
     <FooterStyle id="footer">
-      <Container>
-        <Row className="pt-2 align-items-center">
+      <Container className="mt-5">
+        <Row className="align-items-center">
           <Col md={6}>
             <p className="text-center text-muted">
               © Copyright {new Date().getFullYear()} JUMI

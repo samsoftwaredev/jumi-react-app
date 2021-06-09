@@ -27,7 +27,6 @@ const TopNav = () => {
     {
       label: "religiousGroups.label",
       path: "/app/groups",
-      disabled: true,
     },
   ];
 
