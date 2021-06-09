@@ -13,22 +13,22 @@ import RosaryContextProvider from "./context/RosaryContext";
 import { Prayer, HowTo } from "./pages";
 
 const Rosary = () => {
-  let match = useRouteMatch();
-  let location = useLocation();
+  const { path, url } = useRouteMatch();
+  const { pathname } = useLocation();
 
   const tabs = [
     {
-      path: match.path,
-      exact: false,
+      path: path,
+      exact: true,
       label: "prayRosary.label",
       component: Prayer,
     },
-    // {
-    //   path: `${match.path}/how-to-pray`,
-    //   exact: true,
-    //   label: "howToPrayRosary.label",
-    //   component: HowTo,
-    // },
+    {
+      path: `${path}/how-to-pray`,
+      exact: false,
+      label: "howToPrayRosary.label",
+      component: HowTo,
+    },
   ];
 
   return (

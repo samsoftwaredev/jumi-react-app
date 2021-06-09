@@ -12,8 +12,8 @@ const Main = () => {
     <Suspense fallback={<LoadingPage />}>
       <Switch>
         <Route exact path={`${match.path}/`} component={Home} />
-        <Route exact path={`${match.path}/rosary`} component={Rosary} />
-        <Route exact path={`${match.path}/groups`} component={Groups} />
+        <Route path={`${match.path}/rosary`} component={Rosary} />
+        <Route path={`${match.path}/groups`} component={Groups} />
       </Switch>
     </Suspense>
   );
