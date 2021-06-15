@@ -33,7 +33,7 @@ const Rosary = () => {
 
   return (
     <RosaryContextProvider>
-      <MainLayout>
+      <MainLayout showFooter={false}>
         {/* tabs to view components */}
         <Nav tabs className="d-flex justify-content-center">
           {tabs.map((t) => (
