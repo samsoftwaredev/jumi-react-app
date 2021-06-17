@@ -1,5 +1,7 @@
 #! /bin/sh
 
+# get the latest code
+git pull
 # kill port
 fuser -k 3001/tcp
 # start app
