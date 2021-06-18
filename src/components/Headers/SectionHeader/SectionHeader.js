@@ -1,13 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const SectionHeader = ({
-  className = "text-center text-light m-5",
-  title = "",
-  description = "",
-}) => (
-  <div className={className}>
-    <h2>{title}</h2>
+const SectionHeader = ({ className = "", title = "", description = "" }) => (
+  <div className={`text-center text-light m-5 squares-bg ${className}`}>
+    <h2 className="font-weight-bold">{title}</h2>
     <p>{description}</p>
   </div>
 );

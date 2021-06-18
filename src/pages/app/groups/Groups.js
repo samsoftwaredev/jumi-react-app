@@ -1,9 +1,10 @@
 import { useTranslation } from "react-i18next";
-import { Row } from "reactstrap";
-import { SectionHeader } from "../../../components";
+import { Row, Col } from "reactstrap";
+import { LiveBackground, SectionHeader } from "../../../components";
 import MainLayout from "../../../layout/MainLayout/MainLayout";
 import { GroupCard } from "./containers";
-import { hmsp, tov } from "./images";
+import { hmsp, tov, people } from "./images";
+import { ImageStyle } from "./Groups.style";
 
 const listOfGroups = [
   {
@@ -69,10 +70,23 @@ const Groups = () => {
   const { t } = useTranslation();
   return (
     <MainLayout>
-      <SectionHeader
-        title={t("religiousGroups.label")}
-        description={t("religiousGroups.description")}
-      />
+      <LiveBackground>
+        <Row className="mb-5 d-flex justify-content-center align-items-center">
+          <Col sm={12} md={6}>
+            <SectionHeader
+              title={t("religiousGroups.label")}
+              description={t("religiousGroups.description")}
+            />
+          </Col>
+          <Col sm={12} md={6}>
+            <ImageStyle
+              className="img-fluid"
+              src={people}
+              alt="Young-people-hugging"
+            />
+          </Col>
+        </Row>
+      </LiveBackground>
       <Row>
         {listOfGroups.map((i) => (
           <GroupCard

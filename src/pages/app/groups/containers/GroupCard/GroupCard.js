@@ -1,5 +1,5 @@
 import React from "react";
-import { Col } from "reactstrap";
+import { Col, Card, CardBody, CardTitle } from "reactstrap";
 import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 
@@ -13,19 +13,17 @@ const GroupCard = ({
   const { t } = useTranslation();
   return (
     <Col md={6} lg={4}>
-      <div className="card">
-        <div style={{ maxWidth: "200px", minHeight: "200px" }}>
-          <img className="rounded img-fluid" src={image} alt={eventName} />
-        </div>
-        <div>
-          <h5>{eventName}</h5>
+      <Card className="clear-card">
+        <img src={image} alt={eventName} />
+        <CardBody>
+          <CardTitle>{eventName}</CardTitle>
           <p>{institutionName}</p>
           <p>
             {t("age.label")} {ages}
           </p>
           <p>{online ? "Is Online" : "In Person"}</p>
-        </div>
-      </div>
+        </CardBody>
+      </Card>
     </Col>
   );
 };

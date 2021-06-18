@@ -63,7 +63,7 @@ hr {
   }
 }
 
-.card {
+.clear-card {
   border: none;
   background-color: transparent;
   border-radius: 20px;
@@ -74,14 +74,14 @@ hr {
   position: relative;
 }
 
-.track-card {
+.track-clear-card {
   display: flex;
   justify-content: center;
   flex-direction: column;
 
   min-height: 70vh;
   max-width: 550px;
-  @extend .card;
+  @extend .clear-card;
 }
 
 svg {

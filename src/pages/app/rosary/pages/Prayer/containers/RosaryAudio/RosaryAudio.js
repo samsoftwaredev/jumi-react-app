@@ -123,7 +123,7 @@ const RosaryAudio = ({ audioRef, rosary }) => {
   if (!audioSrc) return null;
 
   return (
-    <div className="track-card">
+    <div className="track-clear-card">
       <AudioHeader title={mystery} subTitle={title} description={subTitle} />
       <div className="d-flex align-items-center flex-column">
         <AudioCover
