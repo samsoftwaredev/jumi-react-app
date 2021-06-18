@@ -14,7 +14,10 @@
     "start": { "label": "Comenzar" },
     "followUs": { "label": "Siguenos" },
     "prayRosary": { "label": "Rezar el Rosario" },
-    "religiousGroups": { "label": "Grupos Religiosos" },
+    "religiousGroups": {
+      "label": "Grupos Religiosos",
+      "description ": "Únete a un grupo que te apasione. Puede hacer clic en un grupo para ver más detalles."
+    },
     "howToPrayRosary": { "label": "Aprende a Rezar" },
     "add": { "label": "Añadir" },
     "language": {
@@ -24,7 +27,7 @@
     "save": { "label": "Salvar" },
     "reset": { "label": "Reinicializar" },
     "settings": { "label": "Configuración" },
-    "prayerArragement": {
+    "prayerArrangement": {
       "label": "Puede ordenar la lista de oraciones de la forma que desee."
     },
     "audio": {

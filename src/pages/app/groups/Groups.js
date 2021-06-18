@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Container } from "reactstrap";
 import { SectionHeader } from "../../../components";
 import MainLayout from "../../../layout/MainLayout/MainLayout";
@@ -65,12 +66,12 @@ const listOfGroups = [
 ];
 
 const Groups = () => {
+  const { t } = useTranslation();
   return (
     <MainLayout>
       <SectionHeader
-        title="Meetups"
-        description="Join a group you fill passionate about. You can click on a group to see
-              more details."
+        title={t("religiousGroups.label")}
+        description={t("religiousGroups.description")}
       />
       <Container className="d-lg-flex">
         {listOfGroups.map((i) => (

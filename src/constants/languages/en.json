@@ -14,7 +14,10 @@
     "start": { "label": "Start" },
     "followUs": { "label": "Follow Us" },
     "prayRosary": { "label": "Pray the Rosary" },
-    "religiousGroups": { "label": "Religious Groups" },
+    "religiousGroups": {
+      "label": "Religious Groups",
+      "description ": "Join a group you feel passionate about. You can click on a group to see more details."
+    },
     "howToPrayRosary": { "label": "How To Pray" },
     "add": { "label": "Add" },
     "language": {
@@ -24,8 +27,8 @@
     "save": { "label": "Save" },
     "reset": { "label": "Reset" },
     "settings": { "label": "Settings" },
-    "prayerArragement": {
-      "label": "You can arrage the list of prayers in any order you want."
+    "prayerArrangement": {
+      "label": "You can arrange the list of prayers in any order you want."
     },
     "audio": {
       "label": "Audio",
@@ -33,7 +36,7 @@
     },
     "music": {
       "label": "Music",
-      "help": "You can add background music while you pray the rosary. Once you start the rosary the music will autoplay."
+      "help": "You can add background music while you pray the rosary. Once you start the rosary the music will auto-play."
     },
     "howToPray": {
       "label": "How to pray the Holy Rosary?",
@@ -44,7 +47,7 @@
       "description": "The rosary helps us to contemplate the Life of Jesus through the eyes of Mary.\n\nWe do not honor Maria, but we accompany her on her long journey. When we pray the rosary, we do nothing but ask the Virgin Mary for her help to remain in spiritual union with Jesus, to reach him.\n\nThe rosary is a Christian prayer that serves to commemorate the 20 mysteries of the life and work of Jesus Christ and the Virgin Mary. They are recited after announcing each of the mysteries with an Our Father, ten Hail Marys and a glory to the Father. "
     },
     "beginningPrayers": {
-      "label": "Beginnig prayers:",
+      "label": "Beginning prayers:",
       "help": "List of prayers that you would like to pray at the beginning of the rosary."
     },
     "endMysteryPrayers": {
@@ -116,7 +119,7 @@
       },
       "pope": {
         "label": "For The Intentions of the Holy Father",
-        "description": "Our Father, one Hail Mary, and one Glory Be for the tntentions of the Holy Father."
+        "description": "Our Father, one Hail Mary, and one Glory Be for the intentions of the Holy Father."
       },
       "litanies": {
         "label": "Litany of the Blessed Virgin Mary",
@@ -142,7 +145,7 @@
         },
         "second": {
           "label": "The Visitation of Mary to Elizabeth",
-          "description": "Elizabeth greets Mary: “Blessed art Thou amoung women and blessed is the fruit of thy womb.”"
+          "description": "Elizabeth greets Mary: “Blessed art Thou among women and blessed is the fruit of thy womb.”"
         },
         "third": {
           "label": "The Nativity of our Lord Jesus Christ",

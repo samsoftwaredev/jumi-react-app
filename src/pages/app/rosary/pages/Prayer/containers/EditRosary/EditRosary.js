@@ -7,7 +7,7 @@ import {
   endingPrayersKey,
 } from "../../../../constants/prayers";
 import { SideBySide } from "../../../../../../../components/Layouts";
-import UpdateLangauge from "../UpdateLangauge";
+import UpdateLanguage from "../UpdateLanguage";
 import { ChangeMystery } from "../SelectMystery";
 import { CheckboxContainer } from "../../../../../../../components/Fields/Checkbox";
 import PrayerEditList from "../PrayerEditList";
@@ -27,23 +27,21 @@ const EditRosary = ({
 
   const dragMessage = (
     <div className="text-md-center">
-      <small className="text-muted">{t("prayerArragement.label")}</small>
+      <small className="text-muted">{t("prayerArrangement.label")}</small>
     </div>
   );
 
   return (
     <Row className="align-items-center">
       <SideBySide title={t("language.label")} description={t("language.help")}>
-        <UpdateLangauge />
+        <UpdateLanguage />
       </SideBySide>
       <hr />
       {/* Audio Settings */}
       <SideBySide title={t("audio.label")} description={t("audio.help")}>
-        <>
-          <CheckboxContainer value={audioMute} onChange={onToggleAudioVolume}>
-            Mute Audio
-          </CheckboxContainer>
-        </>
+        <CheckboxContainer value={audioMute} onChange={onToggleAudioVolume}>
+          Mute Audio
+        </CheckboxContainer>
       </SideBySide>
       <hr />
       <SideBySide title={t("music.label")} description={t("music.help")}>

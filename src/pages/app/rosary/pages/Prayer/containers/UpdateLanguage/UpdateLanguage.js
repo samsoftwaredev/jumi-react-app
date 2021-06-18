@@ -4,7 +4,7 @@ import { UncontrolledButtonDropdown } from "reactstrap";
 import ChangeLanguage from "../../../../../../../components/Translate/ChangeLanguage";
 import { useTranslation } from "react-i18next";
 
-const UpdateLangauge = () => {
+const UpdateLanguage = () => {
   const { i18n } = useTranslation();
 
   const getSpeaker = () => {
@@ -27,4 +27,4 @@ const UpdateLangauge = () => {
   );
 };
 
-export default UpdateLangauge;
+export default UpdateLanguage;
