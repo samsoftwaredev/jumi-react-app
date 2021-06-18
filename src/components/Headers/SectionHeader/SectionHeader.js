@@ -9,7 +9,7 @@ const SectionHeader = ({
   return (
     <div className={className}>
       <h2>{title}</h2>
-      <p>{description}</p>
+      {/* <p>{description}</p> */}
     </div>
   );
 };
