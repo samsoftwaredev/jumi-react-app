@@ -5,18 +5,23 @@
       "shortName": "JUMI"
     },
     "objective": {
-      "label": "Atraer a más jóvenes a conocer de Dios y la religión Católica.",
-      "description": "Unamonos en oración!"
+      "label": "Atraer a más jóvenes a conocer de Dios y la religión Católica."
     },
     "age": { "label": "Edades" },
     "home": { "label": "Casa" },
     "name": { "label": "Nombre" },
     "start": { "label": "Comenzar" },
     "followUs": { "label": "Siguenos" },
+    "rosary": {
+      "label": "El Rosario",
+      "description": "El rosario nos ayuda a contemplar la Vida de Jesús mediante los ojos de Maria.",
+      "invite": "Unamonos en oración!"
+    },
     "prayRosary": { "label": "Rezar el Rosario" },
     "religiousGroups": {
       "label": "Grupos Religiosos",
-      "description": "Únete a un grupo que te apasione. Puede hacer clic en un grupo para ver más detalles."
+      "description": "Únete a un grupo que te apasione para que conozcas y aprendas de fe cristiana.",
+      "invite": "Únete a un Grupo Religiosos"
     },
     "howToPrayRosary": { "label": "Aprende a Rezar" },
     "add": { "label": "Añadir" },

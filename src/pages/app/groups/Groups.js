@@ -13,7 +13,7 @@ const listOfGroups = [
     abbrv: "TOV",
     location: "Richmond, CA. USA",
     online: false,
-    offline: true,
+    inPerson: true,
     date: new Date().toString(),
     languages: ["es"],
     image: tov,
@@ -27,7 +27,7 @@ const listOfGroups = [
     abbrv: "JUMI",
     location: "Richmond, CA. USA",
     online: false,
-    offline: true,
+    inPerson: true,
     date: new Date().toString(),
     languages: ["es"],
     image: hmsp,
@@ -42,7 +42,7 @@ const listOfGroups = [
     abbrv: "",
     location: "El Paso, TX. USA",
     online: true,
-    offline: false,
+    inPerson: false,
     date: new Date().toString(),
     languages: ["es", "en"],
     image: "",
@@ -56,7 +56,7 @@ const listOfGroups = [
     abbrv: "",
     location: "Berkely, CA. USA",
     online: true,
-    offline: true,
+    inPerson: true,
     date: new Date().toString(),
     languages: ["en"],
     image: "",
@@ -82,12 +82,12 @@ const Groups = () => {
             <ImageStyle
               className="img-fluid"
               src={people}
-              alt="Young-people-hugging"
+              alt="Young People Group"
             />
           </Col>
         </Row>
       </LiveBackground>
-      <Row>
+      <Row className="m-3">
         {listOfGroups.map((i) => (
           <GroupCard
             key={i?.id}
@@ -96,6 +96,7 @@ const Groups = () => {
             institutionName={i?.institutionName}
             ages={i?.ages}
             online={i?.online}
+            inPerson={i?.inPerson}
           />
         ))}
       </Row>

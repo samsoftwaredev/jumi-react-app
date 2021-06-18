@@ -84,6 +84,17 @@ hr {
   @extend .clear-card;
 }
 
+.btn-pink {
+  font-weight: 900;
+  border-radius: 0px;
+  border: none;
+  padding: 1em;
+  background-color: #e0c3fc;
+  &:hover {
+    background-color: #ce99ff;
+  }
+}
+
 svg {
   fill: white;
 }

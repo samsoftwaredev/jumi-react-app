@@ -1,3 +1,4 @@
+import { Row } from "reactstrap";
 import styled from "styled-components";
 
 const BannerStyle = styled.div`
@@ -11,6 +12,17 @@ const BannerStyle = styled.div`
     }
   }
 
+  .banner-header-sub {
+    align-text: right;
+    color: white;
+    font-weight: 900;
+    font-size: 2rem;
+    max-width: 200px;
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+
   .banner-description {
     color: #eee;
     font-size: 2rem;
@@ -20,26 +32,29 @@ const BannerStyle = styled.div`
     }
   }
 
-  .banner-action {
-    font-size: 0.8rem;
+  .banner-description-sub {
+    color: #eee;
+    font-size: 1.5rem;
+    max-width: 700px;
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
   }
 
-  .banner-button {
-    font-weight: 900;
-    border-radius: 0px;
-    border: none;
-    padding: 1em;
-    background-color: #e0c3fc;
-    &:hover {
-      background-color: #ce99ff;
-    }
+  .banner-action {
+    font-size: 0.8rem;
   }
 `;
 
 const ImageStyle = styled.img`
+  margin-top: 20px;
   transform: rotate(4deg);
   border-radius: 20px;
   box-shadow: -9px 21px 29px -14px rgba(0, 0, 0, 0.65);
 `;
 
-export { BannerStyle, ImageStyle };
+const RowStyle = styled(Row)`
+  margin: 300px 0;
+`;
+
+export { BannerStyle, ImageStyle, RowStyle };

@@ -5,18 +5,23 @@
       "shortName": "JUMI"
     },
     "objective": {
-      "label": "Our mission is to help close the gap between the youth and God, and the Catholic church.",
-      "description": "Join us in prayers!"
+      "label": "Our mission is to help close the gap between the youth and God, and the Catholic church."
     },
     "age": { "label": "Age" },
     "home": { "label": "Home" },
     "name": { "label": "Name" },
     "start": { "label": "Start" },
     "followUs": { "label": "Follow Us" },
+    "rosary": {
+      "label": "The Rosary",
+      "description": "The rosary helps us to contemplate the Life of Jesus through the eyes of Mary.",
+      "invite": "Join us in prayers!"
+    },
     "prayRosary": { "label": "Pray the Rosary" },
     "religiousGroups": {
       "label": "Religious Groups",
-      "description": "Join a group you feel passionate about. You can click on a group to see more details."
+      "description": "Join a group that you are passionate about so that you know and learn about your Christian faith.",
+      "invite": "Join a Religious Group"
     },
     "howToPrayRosary": { "label": "How To Pray" },
     "add": { "label": "Add" },
