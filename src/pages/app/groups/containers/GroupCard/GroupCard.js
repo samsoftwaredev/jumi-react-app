@@ -8,7 +8,7 @@ const GroupCard = ({
   ages = "",
   online = "",
 }) => (
-  <div className="d-flex card mx-3 my-5">
+  <div className="d-flex w-100 card mx-3 my-5 flex-fill">
     <div style={{ maxWidth: "200px", minHeight: "200px" }}>
       <img className="rounded img-fluid" src={image} alt={eventName} />
     </div>
