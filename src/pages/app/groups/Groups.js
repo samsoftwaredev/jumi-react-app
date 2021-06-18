@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Container } from "reactstrap";
+import { Row } from "reactstrap";
 import { SectionHeader } from "../../../components";
 import MainLayout from "../../../layout/MainLayout/MainLayout";
 import { GroupCard } from "./containers";
@@ -32,7 +32,7 @@ const listOfGroups = [
     image: hmsp,
     institutionName: "HMSP",
     description:
-      "Learn the about the word of God, while having fun doing activities and metting people your age.",
+      "Learn the about the word of God, while having fun doing activities and meeting people your age.",
     ages: "18-30",
   },
   {
@@ -73,9 +73,10 @@ const Groups = () => {
         title={t("religiousGroups.label")}
         description={t("religiousGroups.description")}
       />
-      <Container className="d-lg-flex">
+      <Row>
         {listOfGroups.map((i) => (
           <GroupCard
+            key={i?.id}
             image={i?.image}
             eventName={i?.eventName}
             institutionName={i?.institutionName}
@@ -83,7 +84,7 @@ const Groups = () => {
             online={i?.online}
           />
         ))}
-      </Container>
+      </Row>
     </MainLayout>
   );
 };

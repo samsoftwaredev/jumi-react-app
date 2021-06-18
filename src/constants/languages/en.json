@@ -16,7 +16,7 @@
     "prayRosary": { "label": "Pray the Rosary" },
     "religiousGroups": {
       "label": "Religious Groups",
-      "description ": "Join a group you feel passionate about. You can click on a group to see more details."
+      "description": "Join a group you feel passionate about. You can click on a group to see more details."
     },
     "howToPrayRosary": { "label": "How To Pray" },
     "add": { "label": "Add" },

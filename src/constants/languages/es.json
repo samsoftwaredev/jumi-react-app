@@ -8,7 +8,7 @@
       "label": "Atraer a más jóvenes a conocer de Dios y la religión Católica.",
       "description": "Unamonos en oración!"
     },
-    "age": { "label": "Años" },
+    "age": { "label": "Edades" },
     "home": { "label": "Casa" },
     "name": { "label": "Nombre" },
     "start": { "label": "Comenzar" },
@@ -16,7 +16,7 @@
     "prayRosary": { "label": "Rezar el Rosario" },
     "religiousGroups": {
       "label": "Grupos Religiosos",
-      "description ": "Únete a un grupo que te apasione. Puede hacer clic en un grupo para ver más detalles."
+      "description": "Únete a un grupo que te apasione. Puede hacer clic en un grupo para ver más detalles."
     },
     "howToPrayRosary": { "label": "Aprende a Rezar" },
     "add": { "label": "Añadir" },
