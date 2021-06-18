@@ -48,7 +48,8 @@
     "webpack": "./node_modules/.bin/webpack -w",
     "deploy": "gh-pages -d build",
     "connect": "ssh -i \"instance_key.pem\" ubuntu@ec2-3-23-60-63.us-east-2.compute.amazonaws.com",
-    "start": "npm run build && npm run server"
+    "start": "npm run build && npm run server",
+    "dev": "npm run react && npm run server-nodemon"
   },
   "eslintConfig": {
     "extends": [

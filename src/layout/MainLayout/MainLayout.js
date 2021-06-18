@@ -1,4 +1,4 @@
-import Footer from "../../components/Footer";
+import { Footer } from "../../components";
 import { TopNav } from "../../components/Navigation";
 import { MainLayoutStyle } from "./MainLayout.style";
 

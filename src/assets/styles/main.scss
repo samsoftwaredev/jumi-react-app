@@ -63,6 +63,17 @@ hr {
   }
 }
 
+.card {
+  border: none;
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 28px 28px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  color: white;
+  position: relative;
+}
+
 .track-card {
   display: flex;
   justify-content: center;
@@ -70,12 +81,7 @@ hr {
 
   min-height: 70vh;
   max-width: 550px;
-  border-radius: 20px;
-  padding: 24px;
-  box-shadow: 0 28px 28px rgba(0, 0, 0, 0.2);
-  margin: auto;
-  color: white;
-  position: relative;
+  @extend .card;
 }
 
 svg {

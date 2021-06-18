@@ -1,5 +1,7 @@
-import { Col, Container, Row } from "reactstrap";
+import { Container } from "reactstrap";
+import { SectionHeader } from "../../../components";
 import MainLayout from "../../../layout/MainLayout/MainLayout";
+import { GroupCard } from "./containers";
 import { hmsp, tov } from "./images";
 
 const listOfGroups = [
@@ -65,23 +67,20 @@ const listOfGroups = [
 const Groups = () => {
   return (
     <MainLayout>
-      <h2>Meetups:</h2>
-      <Container>
+      <SectionHeader
+        title="Meetups"
+        description="Join a group you fill passionate about. You can click on a group to see
+              more details."
+      />
+      <Container className="d-lg-flex">
         {listOfGroups.map((i) => (
-          <Row key={i.id} className="d-flex justify-content-center my-5" form>
-            <Col xs={2} sm={2} md={4}>
-              <img
-                className="rounded img-fluid"
-                src={i?.image}
-                alt={i?.eventName}
-              />
-            </Col>
-            <Col>
-              <small className="d-block">{i?.date}</small>
-              <h5>{i?.eventName}</h5>
-              <p>{i?.institutionName}</p>
-            </Col>
-          </Row>
+          <GroupCard
+            image={i?.image}
+            eventName={i?.eventName}
+            institutionName={i?.institutionName}
+            ages={i?.ages}
+            online={i?.online}
+          />
         ))}
       </Container>
     </MainLayout>
