@@ -87,7 +87,7 @@ const Overview = () => {
           </Col>
         </Row>
       </LiveBackground>
-      <Row className="m-3">
+      <Row className="m-md-3">
         {listOfGroups.map((i) => (
           <GroupCard
             key={i?.id}

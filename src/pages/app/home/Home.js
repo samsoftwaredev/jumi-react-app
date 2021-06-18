@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <MainLayout>
       <LiveBackground>
-        <RowStyle className="my-5 d-flex justify-content-center align-items-center">
+        <RowStyle className="d-flex justify-content-center align-items-center">
           <Col sm={12} md={6}>
             <BannerStyle>
               <h1 className="banner-header">
@@ -38,15 +38,15 @@ const Home = () => {
           </Col>
         </RowStyle>
         <RowStyle className="d-flex justify-content-center align-items-center">
-          <Col md={6}>
+          <Col sm={12} md={6} className="order-md-0 order-1">
             <ImageStyle
               className="img-fluid"
               src={virginMary}
               alt="Virgin Mary"
             />
           </Col>
-          <Col sm={12} md={6}>
-            <BannerStyle className="text-right">
+          <Col sm={12} md={6} className="order-md-1 order-0">
+            <BannerStyle>
               <h3 className="banner-header-sub">
                 <Translate text="rosary.label" />
               </h3>

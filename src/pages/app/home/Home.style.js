@@ -54,7 +54,10 @@ const ImageStyle = styled.img`
 `;
 
 const RowStyle = styled(Row)`
-  margin: 300px 0;
+  margin-bottom: 20em;
+  @media (max-width: 768px) {
+    margin-bottom: 5em;
+  }
 `;
 
 export { BannerStyle, ImageStyle, RowStyle };

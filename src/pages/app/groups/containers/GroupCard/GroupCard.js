@@ -1,6 +1,7 @@
 import React from "react";
-import { Col, Card, CardBody, CardTitle, Button } from "reactstrap";
+import { Col, CardBody, CardTitle, Button } from "reactstrap";
 import PropTypes from "prop-types";
+import { GroupCardStyle } from "./GroupCard.style";
 import { useTranslation } from "react-i18next";
 import { useHistory, useRouteMatch } from "react-router-dom";
 
@@ -18,8 +19,8 @@ const GroupCard = ({
   let match = useRouteMatch();
 
   return (
-    <Col md={6} lg={4} className="my-4">
-      <Card className="clear-card" style={{ height: "550px" }}>
+    <Col md={6} lg={4} className="my-4 px-sm-0 px-md-3">
+      <GroupCardStyle className="clear-card">
         {image ? (
           <img className="rounded" src={image} alt={eventName} />
         ) : (
@@ -40,7 +41,7 @@ const GroupCard = ({
         >
           View More
         </Button>
-      </Card>
+      </GroupCardStyle>
     </Col>
   );
 };
