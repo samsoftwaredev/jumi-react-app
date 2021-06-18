@@ -7,7 +7,7 @@
     "objective": {
       "label": "Our mission is to help close the gap between the youth and God, and the Catholic church."
     },
-    "age": { "label": "Age" },
+    "age": { "label": "Ages" },
     "home": { "label": "Home" },
     "name": { "label": "Name" },
     "start": { "label": "Start" },

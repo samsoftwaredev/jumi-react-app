@@ -51,8 +51,8 @@ const Rosary = () => {
         <Switch>
           {tabs.map((t) => (
             <Route
-              exact={t?.exact}
               key={t?.path}
+              exact={t?.exact}
               path={t?.path}
               component={t?.component}
             />
