@@ -93,6 +93,12 @@ hr {
   &:hover {
     background-color: #ce99ff;
   }
+  &:active,
+  &.active,
+  &:focus,
+  &.focus {
+    background-color: #ce99ff !important;
+  }
 }
 
 svg {

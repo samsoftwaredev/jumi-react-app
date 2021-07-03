@@ -20,6 +20,7 @@
     "interweave": "^12.7.0",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.33",
+    "pg": "^8.6.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -49,7 +50,7 @@
     "deploy": "gh-pages -d build",
     "connect": "ssh -i \"instance_key.pem\" ubuntu@ec2-3-23-60-63.us-east-2.compute.amazonaws.com",
     "start": "npm run build && npm run server",
-    "dev": "npm run react && npm run server-nodemon"
+    "dev": "npm run server-nodemon && npm run react"
   },
   "eslintConfig": {
     "extends": [

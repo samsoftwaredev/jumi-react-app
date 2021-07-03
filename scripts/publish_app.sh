@@ -11,3 +11,5 @@ kill -CONT
 bg %1
 # see app running
 fuser 3001/tcp
+# exit instance
+# exit

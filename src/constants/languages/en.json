@@ -12,6 +12,7 @@
     "name": { "label": "Name" },
     "start": { "label": "Start" },
     "followUs": { "label": "Follow Us" },
+    "viewMore": { "label": "View More" },
     "rosary": {
       "label": "The Rosary",
       "description": "The rosary helps us to contemplate the Life of Jesus through the eyes of Mary.",
@@ -20,7 +21,7 @@
     "prayRosary": { "label": "Pray the Rosary" },
     "religiousGroups": {
       "label": "Religious Groups",
-      "description": "Join a group that you are passionate about so that you know and learn about your Christian faith.",
+      "description": "Join a group that you feel passionate about so that you can learn and grow as a christian.",
       "invite": "Join a Religious Group"
     },
     "howToPrayRosary": { "label": "How To Pray" },
