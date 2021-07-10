@@ -13,6 +13,11 @@
     "start": { "label": "Comenzar" },
     "followUs": { "label": "Siguenos" },
     "viewMore": { "label": "Ver Más" },
+    "articles": {
+      "label": "Aprende Interactuando",
+      "description": "Aprenda más sobre tu fe y la Iglesia Católica.",
+      "invite": "Empiece a aprender hoy"
+    },
     "rosary": {
       "label": "El Rosario",
       "description": "El rosario nos ayuda a contemplar la Vida de Jesús mediante los ojos de Maria.",

@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import { Nav, NavItem } from "reactstrap";
 import Translate from "../../../components/Translate";
-import MainLayout from "../../../layout/MainLayout/MainLayout";
+import MainLayout from "../../../layout/MainLayout";
 import RosaryContextProvider from "./context/RosaryContext";
 import { Prayer, HowTo } from "./pages";
 

@@ -19,6 +19,11 @@
       "invite": "Join us in prayers!"
     },
     "prayRosary": { "label": "Pray the Rosary" },
+    "articles": {
+      "label": "Interactive Learning",
+      "description": "Learn more about your faith and the Catholic church.",
+      "invite": "Start Learning Today"
+    },
     "religiousGroups": {
       "label": "Religious Groups",
       "description": "Join a group that you feel passionate about so that you can learn and grow as a christian.",

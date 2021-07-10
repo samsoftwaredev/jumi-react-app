@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Row, Col } from "reactstrap";
 import { LiveBackground, SectionHeader } from "../../../../../components";
-import MainLayout from "../../../../../layout/MainLayout/MainLayout";
+import MainLayout from "../../../../../layout/MainLayout";
 import { GroupCard } from "../../containers";
 import { hmsp, tov, people } from "../../images";
 import { ImageStyle } from "./Overview.style";

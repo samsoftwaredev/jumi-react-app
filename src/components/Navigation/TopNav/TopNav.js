@@ -28,6 +28,10 @@ const TopNav = () => {
       label: "religiousGroups.label",
       path: "/app/groups",
     },
+    {
+      label: "articles.label",
+      path: "/app/articles",
+    },
   ];
 
   useEffect(() => {

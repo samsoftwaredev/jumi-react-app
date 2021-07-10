@@ -2,14 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import MainLayout from "../../../../../layout/MainLayout";
 
-const Group = ({ props }) => {
+const Article = ({ props }) => {
   return (
     <MainLayout>
-      <div>Group</div>
+      <div>Article</div>
     </MainLayout>
   );
 };
 
-Group.propTypes = {};
+Article.propTypes = {};
 
-export default Group;
+export default Article;

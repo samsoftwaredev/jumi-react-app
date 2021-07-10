@@ -50,7 +50,7 @@
     "deploy": "gh-pages -d build",
     "connect": "ssh -i \"instance_key.pem\" ubuntu@ec2-3-23-60-63.us-east-2.compute.amazonaws.com",
     "start": "npm run build && npm run server",
-    "dev": "npm run server-nodemon && npm run react"
+    "dev": "npm run react && npm run server-nodemon"
   },
   "eslintConfig": {
     "extends": [

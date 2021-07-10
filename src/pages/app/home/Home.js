@@ -2,10 +2,10 @@ import { Button, Col } from "reactstrap";
 import { useTranslation } from "react-i18next";
 import { BannerStyle, ImageStyle, RowStyle } from "./Home.style";
 import Translate from "../../../components/Translate";
-import MainLayout from "../../../layout/MainLayout/MainLayout";
+import MainLayout from "../../../layout/MainLayout";
 import { useHistory } from "react-router";
 import { LiveBackground } from "../../../components";
-import { groupPeople, virginMary } from "./images";
+import { groupPeople, virginMary, friends } from "./images";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -61,6 +61,27 @@ const Home = () => {
                 <Translate text="prayRosary.label" />
               </Button>
             </BannerStyle>
+          </Col>
+        </RowStyle>
+        <RowStyle className="d-flex justify-content-center align-items-center">
+          <Col sm={12} md={6} className="order-md-0 order-1">
+            <BannerStyle>
+              <h3 className="banner-header-sub">
+                <Translate text="articles.label" />
+              </h3>
+              <p className="banner-description-sub">
+                {t("articles.description")}
+              </p>
+              <Button
+                className="btn-pink"
+                onClick={() => history.push("/app/articles")}
+              >
+                <Translate text="articles.invite" />
+              </Button>
+            </BannerStyle>
+          </Col>
+          <Col sm={12} md={6} className="order-md-1 order-0">
+            <ImageStyle className="img-fluid" src={friends} alt="Virgin Mary" />
           </Col>
         </RowStyle>
       </LiveBackground>
